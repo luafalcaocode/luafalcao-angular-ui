@@ -1,4 +1,5 @@
-<nav class="show-on-large-only" id="navDesktop">
+<header>
+  <nav class="show-on-large-only" id="navDesktop">
     <div class="row">
       <div class="col-lg-2 column-a">
         <a routerLink="">Luã Falcão</a>
@@ -11,30 +12,30 @@
             </a>
           </li>
           <li>
-            <a routerLink="">Serviços
+            <a routerLink="">Cursos
               <span class="glyphicon glyphicon-menu-down"></span>
             </a>
           </li>
           <li>
-            <a routerLink="">Currículo</a>
+            <a routerLink="">Artigos</a>
           </li>
           <li>
-            <a routerLink="">Artigos</a>
+            <a routerLink="">Sobre</a>
           </li>
           <li>
             <a routerLink="">Contato</a>
           </li>
         </ul>
       </div>
-      <div class="col-lg-4 column-b">             
-          <i class="material-icons" (click)="mobileMenuService.showSearchContainer()">
-              search
-            </i>            
-        <a routerLink="">Login</a> 
+      <div class="col-lg-4 column-b">
+        <i class="material-icons" (click)="mobileMenuService.showSearchContainer()">
+          search
+        </i>
+        <a routerLink="">Login</a>
       </div>
     </div>
   </nav>
-  
+
   <nav id="navMobile">
     <div class="row">
       <div class="col-sm-6 column-a">
@@ -85,3 +86,4 @@
   </nav>
 
   <app-search-field></app-search-field>
+</header>

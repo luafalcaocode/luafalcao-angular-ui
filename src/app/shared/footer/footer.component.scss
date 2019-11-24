@@ -1,0 +1,63 @@
+$colors: (
+  navbar-background: #25292d,
+  normal_text: rgba(255, 255, 255, 0.65),
+  navbar-link-hovered: #fff,
+  navbar-mobile-background: rgb(37, 41, 45),
+  navbar-search-background: #1e1e23,
+  navbar-search-border: #535659,
+  _green: #00bc6e,
+  _dark: #000,
+  _white: #fff
+);
+
+footer {
+    height: auto;
+    background-color: map-get($colors, _dark);
+    color: map-get($colors, normal_text);
+    bottom: -30px;
+    width: 100%;   
+    height: 310px;
+    padding: 80px;
+    padding-top: 50px;
+    position: relative;
+
+}
+
+ul {
+    list-style-type: none;
+}
+
+h5 {
+    font-weight: bold;
+}
+
+h2, h4 {
+    margin-bottom: 20px;
+}
+
+.footer-headers {
+    margin-bottom: 10px;
+}
+
+.footer-sections{
+    padding-top: 10px;
+}
+
+.social-icon-container {
+    margin-top: 20px;
+    height: 32px;
+}
+
+.social-icon, i {
+    color: #fff !important;
+    font-size: 30px
+}
+
+.social-icon:hover {
+    cursor: pointer;
+}
+
+.copyright-container {
+    margin-top: 30px;
+    text-align: right;
+}

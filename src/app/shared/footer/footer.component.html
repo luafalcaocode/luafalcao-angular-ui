@@ -1,1 +1,52 @@
-<p>footer works!</p>
+<footer>
+    <div class="row footer-headers">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-4">
+                    <h2 class="u-normal u-white">Luã Falcão</h2>
+                    <p>Melhorar o mundo com os meus códigos <br /> é a minha missão!</p>
+                </div>
+                <div class="col-md-4 footer-sections">
+                    <h4 class="u-white">Contato</h4>
+                    <ul class="u-padding-zero">
+                        <li>E-mail: {{ email }}</li>
+                        <li>Telefone: {{ telefone }}</li>
+                    </ul>
+                </div>
+                <div class="col-md-4 footer-sections">
+                    <h4 class="u-white">Veja Também</h4>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <ul class="u-padding-zero">
+                                <li>Link 1</li>
+                                <li>Link 2</li>
+                                <li>Link 3</li>
+                            </ul>
+
+                        </div>
+                        <div class="col-md-6">
+                            <ul class="u-padding-zero">
+                                <li>Link 1</li>
+                                <li>Link 2</li>
+                                <li>Link 3</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row social-icon-container">
+        <div class="col-md-12">
+            <a href="https://linkedin.com/in/luafalcao" target="_blank"><i class="fab fa-linkedin social-icon"></i></a>&nbsp;&nbsp;&nbsp;
+            <i class="fab fa-whatsapp-square social-icon" (click)="showWhatsAppInfo()"></i>
+        </div>
+    </div>
+
+    <div class="row copyright-container">
+        <div class="col-md-12">
+            <p class="u-white">&copy; Luã Falcão 2019 - Todos os direitos reservados</p>
+        </div>
+    </div>
+</footer>
