@@ -25,22 +25,7 @@ export class MobileMenuService {
     this.isNavMobileOpen = !this.isNavMobileOpen;
   }
 
-  showSearchField() {
-    const navbarInput = document.getElementById('navbarInput');
-    navbarInput.style.width = '296px';
-    navbarInput.style.width = 'auto';
-    navbarInput.style.display = 'block';
-    navbarInput.style.border = 'solid 1px #535659';
-    navbarInput.style.background = '#1e1e23';
-    navbarInput.style['caretColor'] = '#00BC6E';
+  showSearchContainer() {
+    document.getElementById('searchFieldContainer').style.display = 'block';
   }
-  hideSearchField() {
-    const navbarInput = document.getElementById('navbarInput');
-    navbarInput.style.width = '0px';
-    navbarInput.style.border = 'none';
-    navbarInput.style.background = 'none';
-    navbarInput.style['caretColor'] = '#25292D';
-  }
-
-
 }

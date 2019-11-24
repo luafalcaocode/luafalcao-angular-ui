@@ -3,6 +3,10 @@ body {
     overflow-x: hidden;
 }
 
+a:hover, button:hover, i:hover {
+    cursor: url(http://cur.cursors-4u.net/games/gam-4/gam372.cur), auto !important
+}
+
 .main-container {
     overflow-x: hidden;
 }
@@ -16,4 +20,8 @@ body {
 
 .u-left {
     float: left;
+}
+
+.u-uppercase {
+    text-transform: uppercase;
 }

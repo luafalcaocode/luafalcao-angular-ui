@@ -42,7 +42,7 @@ nav {
             a:hover {
                 color: map-get($colors, navbar-link-hovered);
                 text-decoration: none;
-                transition: .27s;
+                transition: .27s;                
             }
         }
     }

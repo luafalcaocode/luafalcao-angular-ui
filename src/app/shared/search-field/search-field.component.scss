@@ -1,0 +1,81 @@
+$colors: (
+  _white: #fff,
+  _niceGreen: #00e59b,
+  _niceBlue: #66afe9
+);
+
+#searchFieldContainer {
+  position: fixed;
+  z-index: 1000;
+  background: #000;
+  opacity: 0.6;
+  width: 100%;
+  height: 100%;
+  padding: 200px;
+  transition: .5s ease-out;
+
+  form {
+    label {
+      color: map-get($colors, _white);
+      font-size: 14px;
+      font-weight: normal;
+    }
+
+    .seach-field-close-icon {
+        color: map-get($colors, _white);
+        font-size: 18px;
+        float: right;
+        margin-top: -40px;
+        font-size: 30px;
+        transition: .2s ease-out;
+    }
+
+    .seach-field-close-icon:hover {
+        transition: .3s;
+        font-size: 38px;
+        cursor: pointer;
+        color: map-get($colors, _niceGreen);
+    }
+
+    .seach-field-close-icon:active {
+        color: map-get($colors, _white);
+    }
+
+    input {
+      background: none;
+      height: 60px;
+      border-radius: 0;
+      border-color:  map-get($colors, _niceGreen);
+      font-size: 24px;
+      color: map-get($colors, _white);
+      font-weight: bold;
+      
+    }
+
+    button {
+      margin-top: -40px;
+      position: relative;
+      float: right;
+      margin-right: 10px;
+      border: none;
+      background: none;
+      color: map-get($colors, _niceGreen);
+      font-size: 12px;
+      transition: .25s ease-out;
+    }
+
+    button:hover {
+        transition: .27;
+        color: map-get($colors, _white);
+    }
+
+    button:active {
+        color: map-get($colors, _niceGreen);
+        transition: .27;
+    }
+
+    button:focus {
+        outline: 0;
+    }
+  }
+}
