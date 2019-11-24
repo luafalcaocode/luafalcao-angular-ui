@@ -1,0 +1,189 @@
+$colors: (
+    navbar-background: #25292D,
+    navbar-link:rgba(255,255,255,.65),
+    navbar-link-hovered: #fff,
+    navbar-mobile-background: rgb(37, 41, 45),
+    navbar-search-background: #1e1e23,
+    navbar-search-border: #535659,
+    _green: #00BC6E,
+    _dark: #232326
+);
+
+nav {
+    height: 80px;
+    background: map-get($colors, navbar-background);
+    padding-top: 26px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+
+    ul {
+        list-style-type: none;     
+        margin-top: 4px;   
+
+        li {
+            display: inline;
+            padding-left: 18px;
+            padding-right: 18px;            
+            font-size: 16px;
+            
+
+            a, a:active {
+                color: map-get($colors, navbar-link);
+                transition: .25s ease-out;
+                text-decoration: none;
+                
+                .glyphicon {
+                    font-size: 10px;
+                }
+            }
+            a:hover {
+                color: map-get($colors, navbar-link-hovered);
+                text-decoration: none;
+                transition: .27s;
+            }
+        }
+    }
+
+    .column-a {
+        a, a:active {
+            color: map-get($colors, navbar-link-hovered);
+            transition: .25s ease-out;
+            text-decoration: none;
+
+            float: left;
+            margin-left: 30px;    
+            font-size: 26px;            
+            margin-top: -5px;
+        }  
+        a:hover {
+            color: map-get($colors, navbar-link);
+            text-decoration: none;
+            transition: .27s;
+        }  
+    }
+
+    .column-b {
+        text-align: right;
+        font-size: 18px;   
+        margin-top: -4px;     
+
+        a, a:active {
+            float: right;
+            margin-right: 30px;
+            color: map-get($colors, navbar-link);
+            transition: .25s ease-out;
+            text-decoration: none;
+            margin-top: 4px;
+        }
+
+        a:hover {
+            color: map-get($colors, navbar-link-hovered);
+            text-decoration: none;
+            transition: .27s;
+        }
+
+        .material-icons {
+            z-index: 3;
+            text-align: right;
+            color: map-get($colors, navbar-link);
+            padding-right: 30px;
+            margin-top: 7px;
+            
+        }
+
+        .material-icons:hover {
+            color: map-get($colors, navbar-link-hovered);
+            cursor: pointer;
+        }
+        
+    }
+
+    .small-menu-icon {
+        font-size: 32px;
+        margin-top: -5px;
+        margin-right: 30px;
+        color: map-get($colors, navbar-link-hovered);
+    }
+}
+
+
+#navDesktop {
+    // desktops and laptops
+    @media only screen and (max-width: 1200px) {
+        display: none;
+    }
+
+    .input-navbar {
+        caret-color: map-get($colors, _green);
+        color: map-get($colors, _green);
+        transition: all 0.30s linear;
+        // margin-top: -46px;
+        // margin-left: 655px;
+        // height: 56px;
+        // width: 0;
+        background: none;
+        border: none;
+        color: map-get($colors, _green);
+        // z-index: 2;
+    }
+
+    .input-navbar:focus {
+        box-shadow: none;
+    }
+}
+
+#navMobile {
+    // mobile customized
+    @media (min-width: 1200px) {
+        display: none;
+    }
+
+    .nav-mobile-items {
+        background: map-get($colors,  navbar-mobile-background);
+        // border: solid 1px map-get($colors, _green);        
+        width: 380px;
+        position: fixed;
+        right: -500px;
+        z-index: 4;
+        top: 0;
+        height: 100%;
+        transition: 0.4s;
+        
+        ul {
+            padding: 0;
+
+            li {
+                display: block;
+                padding-top: 30px;
+                padding-bottom: 10px;
+                padding-left: 30px;
+                padding-right: 30px;
+                font-size: 18px;                
+                padding-top: 20px;
+                height: 70px;
+
+                a {
+                    i {
+                        font-size: 28px;
+                        float: right;
+                    }
+                }
+            }
+
+            li:hover, li:active {
+                cursor: pointer;
+                background-color: map-get($colors, _green);
+                color: map-get($colors, navbar-link-hovered);
+                a {
+                    color: map-get($colors, navbar-link-hovered);
+                    i {
+                       color: map-get($colors, navbar-link-hovered);
+                    }
+                }
+            }            
+        }
+    }
+}
