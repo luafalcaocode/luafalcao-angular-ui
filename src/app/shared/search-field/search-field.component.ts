@@ -10,6 +10,7 @@ export class SearchFieldComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    
   }
 
   closeContainer() {

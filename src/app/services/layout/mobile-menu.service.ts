@@ -27,5 +27,6 @@ export class MobileMenuService {
 
   showSearchContainer() {
     document.getElementById('searchFieldContainer').style.display = 'block';
+    document.getElementById('searchField').focus();
   }
 }
