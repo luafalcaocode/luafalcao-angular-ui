@@ -6,7 +6,7 @@
                     <i class="material-icons seach-field-close-icon" (click)="closeContainer()">clear </i>
                     <label for="pesquisar">Pesquisar em luafalcao.com</label>
                     <input type="text" class="form-control"  id="searchField" name="searchField" [(ngModel)]="searchField" placeholder="pesquise por um artigo, projeto, tecnologia ou meios de contato." />
-                    <button type="button" class="u-uppercase">Pesquisar</button>
+                    <button type="button" class="u-uppercase" [hidden]="!searchField.length > 0">Pesquisar</button>
                 </div>
             </form>
         </div>
