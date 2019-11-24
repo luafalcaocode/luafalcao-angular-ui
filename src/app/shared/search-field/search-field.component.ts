@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchFieldComponent implements OnInit {
   public isContainerIsVisible: boolean = false;
+  public searchField: string = '';
+
   constructor() { }
 
   ngOnInit() {
@@ -15,5 +17,6 @@ export class SearchFieldComponent implements OnInit {
 
   closeContainer() {
     document.getElementById('searchFieldContainer').style.display = 'none';
+    this.searchField = '';
   }
 }
