@@ -111,7 +111,6 @@ nav {
 
 
 #navDesktop {
-    // desktops and laptops
     @media only screen and (max-width: 1200px) {
         display: none;
     }
@@ -120,14 +119,9 @@ nav {
         caret-color: map-get($colors, _green);
         color: map-get($colors, _green);
         transition: all 0.30s linear;
-        // margin-top: -46px;
-        // margin-left: 655px;
-        // height: 56px;
-        // width: 0;
         background: none;
         border: none;
         color: map-get($colors, _green);
-        // z-index: 2;
     }
 
     .input-navbar:focus {
@@ -136,14 +130,12 @@ nav {
 }
 
 #navMobile {
-    // mobile customized
     @media (min-width: 1200px) {
         display: none;
     }
 
     .nav-mobile-items {
         background: map-get($colors,  navbar-mobile-background);
-        // border: solid 1px map-get($colors, _green);        
         width: 380px;
         position: fixed;
         right: -500px;
