@@ -16,7 +16,7 @@ header {
   width: 100%;
   left: 0;
   z-index: 1000;
-  
+
   nav {
     height: 80px;
     background: map-get($colors, navbar-background);
@@ -183,4 +183,11 @@ header {
       }
     }
   }
+}
+
+a.login {
+  border: solid 1px white !important;
+  padding: 5px 20px 5px 20px;
+  border-radius: 4px;
+  margin-top: -1px !important;
 }
