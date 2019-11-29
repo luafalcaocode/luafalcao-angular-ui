@@ -145,6 +145,7 @@ header {
       top: 0;
       height: 100%;
       transition: 0.4s;
+      overflow-y: auto;
 
       ul {
         padding: 0;
@@ -171,7 +172,7 @@ header {
         li:active {
           cursor: pointer;
           background-color: map-get($colors, _green);
-          color: map-get($colors, navbar-link-hovered);
+          color: map-get($colors, _white);
           a {
             color: map-get($colors, navbar-link-hovered);
             i {
