@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import Swal from 'sweetalert2';
+
 
 @Component({
   selector: 'app-footer',
@@ -18,11 +18,7 @@ export class FooterComponent implements OnInit {
   }
 
   showWhatsAppInfo() {
-    Swal.fire({
-      icon: 'info',
-      title: 'Fale comigo através do Whats App',
-      html: '<h5><strong>+55 (21) 97322-1432</strong></h5>',
-    });
+   
   }
 
 }
