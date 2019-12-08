@@ -1,0 +1,84 @@
+$colors: (
+    darkBluee: #00214E,
+    clearGray: #f5f5f5,
+    darkGrayy: #eeeeee,
+    yelloww:  rgb(240, 189, 30),
+    whitee: #fffffF
+);
+
+
+
+
+.centered-modal-container {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;    
+    z-index: 999;
+    position: fixed;
+    background: rgba(0, 0, 0, 0.7);
+
+    .centered-modal-content {
+        width: 60%;        
+        height: auto;
+        background: #fff;
+        min-height: 500px;
+        position: fixed;
+        top: 12%;
+        left: 21%;
+        padding: 20px;
+        padding-top: 5px;
+        box-shadow: 2px 2px 9px #000; 
+        border-radius: 4px;
+        transition: .4 ease-in-out;           
+
+        @media only screen and (max-width: 767px) and (orientation: portrait) {
+            width: 90%;
+            left: 5%;
+        }
+
+        @media only screen and (max-width: 767px) and (orientation: landscape) {
+            min-height: auto;
+        }
+
+        h2 {
+            margin-top: 10px;
+            font-weight: bold;
+            color: map-get($colors, darkBluee);
+            
+            @media (max-width: 767px) {
+                font-size: 26px;
+              
+            }
+        }
+    }    
+
+    .centered-modal-close{
+        position: relative;
+        margin-top: 10px;
+        font-size: 28px;
+
+        @media (max-width: 767px) {
+            font-size: 24px;
+        }
+
+        cursor: pointer;
+        color: map-get($colors, darkBluee);
+        transition: ease-out 0.4s;
+
+        .glyphicon {
+            float: right;            
+           
+        }
+    
+    }
+    .centered-modal-close:hover{
+        color: map-get($colors, yelloww);
+        transition: 0.5s;
+    }
+
+    .centered-modal-close:active {
+        color: map-get($colors, darkBluee);
+        transition: 0.5s;
+    }
+}

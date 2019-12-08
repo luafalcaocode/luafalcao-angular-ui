@@ -31,7 +31,7 @@
         <i class="material-icons" (click)="mobileMenuService.showSearchContainer()">
           search
         </i>
-        <a routerLink="" class="login">Login</a>
+        <a routerLink="" class="login" (click)="showLoginModal()">Login</a>
       </div>
     </div>
   </nav>
@@ -85,5 +85,6 @@
     </div>
   </nav>
 
+  <app-login-modal></app-login-modal>
   <app-search-field></app-search-field>
 </header>

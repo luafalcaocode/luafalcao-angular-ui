@@ -5,14 +5,15 @@ import { FooterComponent } from './footer/footer.component';
 import { SearchFieldComponent } from './search-field/search-field.component';
 
 import { FormsModule } from '@angular/forms';
-
+import { ModalModule } from '../modal/modal.module';
 
 
 @NgModule({
   declarations: [HeaderComponent, FooterComponent, SearchFieldComponent],
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    ModalModule
   ],
   exports: [
     HeaderComponent,
