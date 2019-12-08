@@ -22,5 +22,9 @@ export class HeaderComponent implements OnInit {
     this.modalService.show();
   }
 
-  
+  openContainer() {
+    let container =  document.getElementById('searchFieldContainer');
+    container.classList.remove('fadeOut');
+    container.classList.add('fadeInTransparent');
+  }  
 }

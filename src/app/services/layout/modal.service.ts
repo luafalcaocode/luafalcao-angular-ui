@@ -9,16 +9,16 @@ export class ModalService {
 
   show() {
     let modal =  document.getElementById('centeredModal');
-    modal.classList.remove('hide-modal');
-    modal.classList.add('show-modal');
+    modal.classList.remove('fadeOut');
+    modal.classList.add('fadeIn');
 
     document.getElementsByTagName('body')[0].style.overflow = 'hidden'; 
   }
 
   hide() {
     let modal =  document.getElementById('centeredModal');
-    modal.classList.remove('show-modal');
-    modal.classList.add('hide-modal');
+    modal.classList.remove('fadeIn');
+    modal.classList.add('fadeOut');
 
     document.getElementsByTagName('body')[0].style.overflow = 'auto'; 
   }  

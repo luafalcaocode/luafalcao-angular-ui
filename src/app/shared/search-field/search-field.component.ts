@@ -15,8 +15,10 @@ export class SearchFieldComponent implements OnInit {
     
   }
 
+
   closeContainer() {
-    document.getElementById('searchFieldContainer').style.display = 'none';
-    this.searchField = '';
+    let container =  document.getElementById('searchFieldContainer');
+    container.classList.remove('fadeIn');
+    container.classList.add('fadeOut');
   }
 }

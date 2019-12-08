@@ -3,7 +3,8 @@ $colors: (
     clearGray: #f5f5f5,
     darkGrayy: #eeeeee,
     yelloww:  rgb(240, 189, 30),
-    whitee: #fffffF
+    whitee: #fffffF,
+    _niceGreen: #00e59b,
 );
 
 
@@ -16,7 +17,7 @@ $colors: (
     height: 100%;    
     z-index: 999;
     position: fixed;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.4);
 
     .centered-modal-content {
         width: 60%;        
@@ -73,7 +74,7 @@ $colors: (
     
     }
     .centered-modal-close:hover{
-        color: map-get($colors, yelloww);
+        color: map-get($colors, _niceGreen);
         transition: 0.5s;
     }
 

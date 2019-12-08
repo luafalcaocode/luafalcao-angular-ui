@@ -21,6 +21,8 @@ header {
     height: 80px;
     background: map-get($colors, navbar-background);
     padding-top: 26px;
+    padding-left: 100px;
+    padding-right: 100px;
 
     ul {
       list-style-type: none;

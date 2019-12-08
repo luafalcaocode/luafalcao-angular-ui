@@ -24,9 +24,4 @@ export class MobileMenuService {
 
     this.isNavMobileOpen = !this.isNavMobileOpen;
   }
-
-  showSearchContainer() {
-    document.getElementById('searchFieldContainer').style.display = 'block';
-    document.getElementById('searchField').focus();
-  }
 }
