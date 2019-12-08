@@ -24,6 +24,11 @@ header {
     padding-left: 100px;
     padding-right: 100px;
 
+    @media only screen and (max-width: 1024px) {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
     ul {
       list-style-type: none;
       margin-top: 4px;
@@ -98,11 +103,13 @@ header {
         color: map-get($colors, navbar-link);
         padding-right: 30px;
         margin-top: 7px;
+        transition: .25 ease-out;
       }
 
-      .material-icons:hover {
+      .material-icons:hover, .fa-youtube {
         color: map-get($colors, navbar-link-hovered);
         cursor: pointer;
+        transition: .24s
       }
     }
 

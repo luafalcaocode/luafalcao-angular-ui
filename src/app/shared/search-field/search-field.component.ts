@@ -20,5 +20,7 @@ export class SearchFieldComponent implements OnInit {
     let container =  document.getElementById('searchFieldContainer');
     container.classList.remove('fadeIn');
     container.classList.add('fadeOut');
+
+    document.getElementsByTagName('body')[0].style.overflow = 'auto'; 
   }
 }
