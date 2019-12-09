@@ -6,10 +6,11 @@ import { SearchFieldComponent } from './search-field/search-field.component';
 
 import { FormsModule } from '@angular/forms';
 import { ModalModule } from '../modal/modal.module';
+import { MenuComponent } from './header/menu/menu.component';
 
 
 @NgModule({
-  declarations: [HeaderComponent, FooterComponent, SearchFieldComponent],
+  declarations: [HeaderComponent, FooterComponent, SearchFieldComponent, MenuComponent],
   imports: [
     CommonModule,
     FormsModule,

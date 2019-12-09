@@ -6,7 +6,7 @@
       </div>
       <div class="col-lg-6">
         <ul id="navbarItems">
-          <li>
+          <li (mouseenter)="showMenu('projetos')">
             <a routerLink="">Projetos
               <span class="glyphicon glyphicon-menu-down"></span>
             </a>
@@ -37,6 +37,8 @@
       </div>
     </div>
   </nav>
+  
+  <app-menu [menu]="menu" class="fadeOut" id="projetos"></app-menu>
 
   <nav id="navMobile">
     <div class="row">

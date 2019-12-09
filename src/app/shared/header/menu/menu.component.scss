@@ -1,0 +1,20 @@
+$colors : (
+    _white: #fff
+);
+
+.lua-menu {
+  position: absolute;
+  left: 350px;
+  border: solid 2px #fff;
+  width: 300px;
+  height: 300px;
+  border-radius: 4px;
+  top: 65px;
+  padding-top: 40px;
+  background: map-get($colors, _white);
+}
+
+ul {
+    list-style-type: none;
+    margin-left: -10px;
+}
