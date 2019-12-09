@@ -4,7 +4,6 @@ $colors : (
 
 .lua-menu {
   position: absolute;
-  left: 350px;
   border: solid 2px #fff;
   width: 300px;
   height: 300px;
@@ -12,6 +11,14 @@ $colors : (
   top: 65px;
   padding-top: 40px;
   background: map-get($colors, _white);
+}
+
+#menuProjetos {
+  left: 350px;
+}
+
+#menuServicos {
+  left: 440px;
 }
 
 ul {

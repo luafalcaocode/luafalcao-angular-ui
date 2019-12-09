@@ -10,7 +10,8 @@ import { MenuService } from '../../services/layout/menu.service';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  private menu: string[];
+  private menuProjetos: string[];
+  private menuServicos: string[];
   private id: string;
 
   constructor(public mobileMenuService: MobileMenuService, public modalService: ModalService, public menuService: MenuService) {
@@ -18,13 +19,21 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.menu = [
+    this.menuProjetos = [
       'Item 1',
       'Item 2',
       'Item 3',
       'Item 4',
       'Item 5'
-    ]
+    ];
+
+    this.menuServicos = [
+      'Serviço 1',
+      'Serviço 2',
+      'Serviço 3',
+      'Serviço 4',
+      'Serviço 5'
+    ];
   }
 
   showLoginModal() {
