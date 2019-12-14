@@ -4,21 +4,32 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class MenuService {
-
-  constructor() { }
+  private menus: string[];
+  
+  constructor() {
+    this.menus = [
+      'menuProjetos',
+      'menuServicos'
+    ];
+   }
 
   showMenu(id : string) {
     let menu = document.getElementById(id);
     menu.classList.remove('fadeOut');
     menu.classList.add('fadeIn');
-    this.hideMenu(id);
   }
 
   hideMenu(id: string) {
-    document.getElementById(id).addEventListener('mouseleave', (event) => {
       let menu = document.getElementById(id);
       menu.classList.remove('fadeIn');
       menu.classList.add('fadeOut');
-    });
+  }
+
+  hideAllMenus() {
+    this.menus.forEach(id => {
+      let menu = document.getElementById(id);
+      menu.classList.remove('fadeIn');
+      menu.classList.add('fadeOut');
+    });    
   }
 }

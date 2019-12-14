@@ -6,23 +6,25 @@
       </div>
       <div class="col-lg-6">
         <ul id="navbarItems">
-          <li (mouseenter)="showMenu('menuProjetos')">
-            <a routerLink="">Projetos
+          <li (mouseleave)="hideMenu('menuProjetos')">
+            <a routerLink="" (mouseenter)="showMenu('menuProjetos')" [className]="isMenuProjectsOpen ? 'active-menu' : 'inative-menu'">Projetos 
               <span class="glyphicon glyphicon-menu-down"></span>
             </a>
+            <app-menu [menu]="menuProjetos" class="fadeOut" id="menuProjetos" (mouseenter)="showMenu('menuProjetos')" (mouseleave)="hideMenu('menuProjetos')"></app-menu>
           </li>
-          <li (mouseenter)="showMenu('menuServicos')">
-            <a routerLink="">Serviços
+          <li (mouseleave)="hideMenu('menuServicos')">
+            <a routerLink="" (mouseenter)="showMenu('menuServicos')">Serviços
               <span class="glyphicon glyphicon-menu-down"></span>
             </a>
-          </li>
-          <li>
+            <app-menu [menu]="menuServicos" class="fadeOut" id="menuServicos" (mouseenter)="showMenu('menuServicos')" (mouseleave)="hideMenu('menuServicos')"></app-menu>
+          </li> 
+          <li (mouseenter)="hideAllMenus()">
             <a routerLink="">Artigos</a>
           </li>
-          <li>
+          <li (mouseenter)="hideAllMenus()">
             <a routerLink="">Sobre</a>
           </li>
-          <li>
+          <li (mouseenter)="hideAllMenus()">
             <a routerLink="">Contato</a>
           </li>
         </ul>
@@ -38,8 +40,8 @@
     </div>
   </nav>
   
-  <app-menu [menu]="menuProjetos" class="fadeOut" id="menuProjetos"></app-menu>
-  <app-menu [menu]="menuServicos" class="fadeOut" id="menuServicos"></app-menu>
+  
+ 
 
   <nav id="navMobile">
     <div class="row">

@@ -13,6 +13,8 @@ export class HeaderComponent implements OnInit {
   private menuProjetos: string[];
   private menuServicos: string[];
   private id: string;
+  private isMenuServicesOpen: boolean;
+  private isMenuProjectsOpen: boolean;
 
   constructor(public mobileMenuService: MobileMenuService, public modalService: ModalService, public menuService: MenuService) {
     
@@ -49,6 +51,27 @@ export class HeaderComponent implements OnInit {
   }  
 
   showMenu(id: string) {
+    if (id.toLowerCase().includes('projetos')) {
+      this.isMenuProjectsOpen = true;
+      this.isMenuServicesOpen = false;
+    }
+
+    if (id.toLowerCase().includes('servicos')) {
+      this.isMenuServicesOpen = true;
+      this.isMenuProjectsOpen = false;
+    }
+
     this.menuService.showMenu(id);
+  }
+
+  hideMenu(id: string) {
+    if (id.toLowerCase().includes('projetos')) {
+      this.isMenuProjectsOpen = false;
+    }
+
+    if (id.toLowerCase().includes('servicos')) {
+      this.isMenuServicesOpen = false;
+    }
+    this.menuService.hideMenu(id);
   }
 }
