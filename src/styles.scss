@@ -1,67 +1,77 @@
-$colors : (
-    _white: #fff,
-    _blue: #1074e7,
-);
-
-body {
-    font-family: 'Roboto', sans-serif;
-    overflow-x: hidden;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.4);
+:root {
+    --white: #fff;
+    --blue: #1074e7;
+    --niceGreen: #00e59b;
+    --niceBlue: #66afe9;
+    --green: #00bc6e;
+    --dark: #000;
+    --silver: rgba(255, 255, 255, 0.65);
 }
 
 
-a:hover, button:hover, i:hover {
-   // cursor: url(http://cur.cursors-4u.net/games/gam-4/gam372.cur), auto !important
-   cursor: pointer;
+body {
+  font-family: "Roboto", sans-serif;
+  overflow-x: hidden;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+a:hover,
+button:hover,
+i:hover {
+  // cursor: url(http://cur.cursors-4u.net/games/gam-4/gam372.cur), auto !important
+  cursor: pointer;
 }
 
 .main-container {
-    overflow-x: hidden;
+  overflow-x: hidden;
 }
 
 /* Helpers */
 .u-right {
-    float: right;
+  float: right;
 }
 
 .u-left {
-    float: left;
+  float: left;
 }
 
 .u-uppercase {
-    text-transform: uppercase;
+  text-transform: uppercase;
 }
 
 .u-hide {
-    display: none;
+  display: none;
 }
 
 .u-normal {
-    font-weight: normal;
+  font-weight: normal;
 }
 
 .u-white {
-    color: map-get($colors, _white);
+  color: var(--white);
 }
 
 .u-padding-zero {
-    padding: 0;
+  padding: 0;
 }
 
 /* modal */
 .fadeIn {
-    opacity: 1;
-    transition: .3s linear;
+  opacity: 1;
+  transition: 0.3s linear;
 }
 
 .fadeInTransparent {
-    opacity: 0.4;
-    transition: .3s linear;
+  opacity: 0.4;
+  transition: 0.3s linear;
 }
 
 .fadeOut {
-    opacity: 0;
-    pointer-events: none;
-    transition: .3s linear;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s linear;
+  transition: transform 0.2s;
 }
+
+

@@ -1,16 +1,12 @@
-$colors : (
-    _white: #fff
-);
-
 .lua-menu {
   position: absolute;
-  border: solid 2px #fff;
+  border: solid 2px var(--white);
   width: 300px;
   height: 300px;
   border-radius: 4px;
   top: 40px;
   padding-top: 40px;
-  background: map-get($colors, _white);
+  background: var(--white);
 }
 
 #menuProjetos {

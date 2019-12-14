@@ -1,19 +1,7 @@
-$colors: (
-  navbar-background: #25292d,
-  normal_text: rgba(255, 255, 255, 0.65),
-  navbar-link-hovered: #fff,
-  navbar-mobile-background: rgb(37, 41, 45),
-  navbar-search-background: #1e1e23,
-  navbar-search-border: #535659,
-  _green: #00bc6e,
-  _dark: #000,
-  _white: #fff
-);
-
 footer {
   height: auto;
-  background-color: map-get($colors, _dark);
-  color: map-get($colors, normal_text);
+  background-color: var(--dark);
+  color: var(--silver);
   bottom: -30px;
   width: 100%;
   height: 310px;

@@ -1,14 +1,3 @@
-$colors: (
-  _black: #000,
-  _blue: #1074e7,
-  _silver: #006,
-  clearGray: #f5f5f5,
-  darkGrayy: #eeeeee,
-  yelloww: rgb(240, 189, 30),
-  whitee: #ffffff,
-  _niceGreen: #00e59b
-);
-
 .centered-modal-container {
   top: 0;
   left: 0;
@@ -44,7 +33,7 @@ $colors: (
     h2 {
       margin-top: 10px;
       font-weight: bold;
-      color: map-get($colors, _black);
+      color: var(--dark);
 
       @media (max-width: 767px) {
         font-size: 26px;
@@ -62,7 +51,7 @@ $colors: (
     }
 
     cursor: pointer;
-    color: map-get($colors, _black);
+    color: var(--dark);
     transition: ease-out 0.4s;
 
     .glyphicon {
@@ -70,12 +59,12 @@ $colors: (
     }
   }
   .centered-modal-close:hover {
-    color: map-get($colors, _silver);
+    color: var(--niceGreen);
     transition: 0.5s;
   }
 
   .centered-modal-close:active {
-    color: map-get($colors, _black);
+    color: var(--dark);
     transition: 0.5s;
   }
 }
