@@ -13,7 +13,7 @@
             <app-menu [menu]="menuProjetos" class="fadeOut" id="menuProjetos" (mouseenter)="showMenu('menuProjetos')" (mouseleave)="hideMenu('menuProjetos')"></app-menu>
           </li>
           <li (mouseleave)="hideMenu('menuServicos')">
-            <a routerLink="" (mouseenter)="showMenu('menuServicos')">Serviços
+            <a routerLink="" (mouseenter)="showMenu('menuServicos')" [className]="isMenuServicesOpen ? 'active-menu' : 'inative-menu'">Serviços
               <span class="glyphicon glyphicon-menu-down"></span>
             </a>
             <app-menu [menu]="menuServicos" class="fadeOut" id="menuServicos" (mouseenter)="showMenu('menuServicos')" (mouseleave)="hideMenu('menuServicos')"></app-menu>
