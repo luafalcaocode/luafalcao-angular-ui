@@ -4,11 +4,12 @@ import { HomeComponent } from './home.component';
 import { SharedModule } from '../shared/shared.module';
 import { CarouselComponent } from './carousel/carousel/carousel.component';
 import { HighlightsComponent } from './highlights/highlights.component';
+import { JobsComponent } from './jobs/jobs.component';
 
 
 
 @NgModule({
-  declarations: [HomeComponent, CarouselComponent, HighlightsComponent],
+  declarations: [HomeComponent, CarouselComponent, HighlightsComponent, JobsComponent],
   imports: [
     CommonModule,
     SharedModule

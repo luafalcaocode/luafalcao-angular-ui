@@ -1,0 +1,10 @@
+<section>
+    <div class="row">
+      <div class="col-xs-12">
+        <h3>Empresas para as quais desenvolvi soluções baseadas na web</h3>
+        <a [href]="image.link" target="_blank" *ngFor="let image of images">
+          <img [src]="image.src" [id]="image.id" [class]="image.specialClass" />
+        </a>
+      </div>
+    </div>
+  </section>
