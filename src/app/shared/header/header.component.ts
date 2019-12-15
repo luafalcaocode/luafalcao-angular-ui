@@ -12,11 +12,11 @@ import { MenuViewModel } from '../../viewModels/menu.viewModel';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  private menuProjetos: MenuViewModel[];
-  private menuServicos: MenuViewModel[];
-  private id: string;
-  private isMenuServicesOpen: boolean;
-  private isMenuProjectsOpen: boolean;
+  public menuProjetos: MenuViewModel[];
+  public menuServicos: MenuViewModel[];
+  public id: string;
+  public isMenuServicesOpen: boolean;
+  public isMenuProjectsOpen: boolean;
 
   constructor(public mobileMenuService: MobileMenuService, public modalService: ModalService, public menuService: MenuService) {
     

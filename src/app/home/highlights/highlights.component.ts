@@ -8,10 +8,10 @@ import { SlideViewModel } from '../../viewModels/slide.viewModel';
 })
 export class HighlightsComponent implements OnInit {
 
-  private slides: SlideViewModel[];
-  private slideSelectedContent: SlideViewModel;
-  private assets_path: string = '../../assets/backgrounds/';
-  private slideInterval: any;
+  public slides: SlideViewModel[];
+  public slideSelectedContent: SlideViewModel;
+  public assets_path: string = '../../assets/backgrounds/';
+  public slideInterval: any;
 
   constructor() {
     this.slides = [
