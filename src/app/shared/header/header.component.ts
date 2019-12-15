@@ -35,7 +35,8 @@ export class HeaderComponent implements OnInit {
       new MenuViewModel(1, 'De um novo Site Institucional', 'link do serviço corporativo aqui'),
       new MenuViewModel(2, 'De um Blog com edição de conteúdo', 'link do projeto pessoal aqui'),
       new MenuViewModel(3, 'De uma Web API', 'link do projeto pessoal aqui'),
-      new MenuViewModel(4, 'De um pacote de UI com design responsivo', 'link do projeto pessoal aqui')
+      new MenuViewModel(4, 'De um pacote de UI com design responsivo', 'link do projeto pessoal aqui'),
+      new MenuViewModel(4, 'De uma consultoria personalizada', 'link do projeto pessoal aqui')
     ];
   }
 

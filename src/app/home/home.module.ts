@@ -5,11 +5,13 @@ import { SharedModule } from '../shared/shared.module';
 import { CarouselComponent } from './carousel/carousel/carousel.component';
 import { HighlightsComponent } from './highlights/highlights.component';
 import { JobsComponent } from './jobs/jobs.component';
+import { ArticlesComponent } from './articles/articles.component';
+import { ChatComponent } from './chat/chat.component';
 
 
 
 @NgModule({
-  declarations: [HomeComponent, CarouselComponent, HighlightsComponent, JobsComponent],
+  declarations: [HomeComponent, CarouselComponent, HighlightsComponent, JobsComponent, ArticlesComponent, ChatComponent],
   imports: [
     CommonModule,
     SharedModule
