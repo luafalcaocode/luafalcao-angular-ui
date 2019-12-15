@@ -1,4 +1,4 @@
-#highlight {
+.highlight {
   width: 100%;
   margin-top: -20px;
   background-size: cover;
@@ -31,10 +31,11 @@ h3 {
 }
 
 .slide-navigation {
-  margin-left: 0;
+  margin-left: 130px;
+  margin-top: -140px;
 
   @media only screen and (max-width: 747px) {
-      margin-top: 50px;
+    margin-top: 50px;
   }
 }
 
@@ -59,5 +60,5 @@ h3 {
 }
 
 .active-slide-navigation {
-    background: var(--white) !important;
+  background: var(--white) !important;
 }

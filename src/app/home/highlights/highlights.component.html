@@ -1,18 +1,20 @@
-<section id="highlight" [ngStyle]="{'background-image' : 'url(' + assets_path + slideSelectedContent.image + ')'}">
-    <!-- Conteúdo Principal do Slide -->
+<section class="highlight" [ngClass]="{'u-hide' : !slide.isActive}"
+    [ngStyle]="{'background-image' : 'url(' + assets_path + slide.image + ')'}" *ngFor="let slide of slides">
     <div class="row hightlight-slide">
         <div class="col-md-7 col-xs-12">
-            <h1>{{ slideSelectedContent.title }}</h1>
-            <h3>{{ slideSelectedContent.subtitle }}</h3>
-        </div>
-    </div>
-
-    <!-- Setas de Navegação-->
-    <div class="row">
-        <div class="col-xs-12">
-            <ul class="slide-navigation">
-                <li *ngFor="let slide of slides"  [ngClass]="{'active-slide-navigation' : slide.isActive, 'slide-navigation-action': true }" [id]="slide.id" (click)="changeSlide($event)"></li>
-            </ul>
+            <h1>{{ slide.title }}</h1>
+            <h3>{{ slide.subtitle }}</h3>
         </div>
     </div>
 </section>
+
+<!-- Setas de Navegação-->
+<div class="row">
+    <div class="col-xs-12">
+        <ul class="slide-navigation">
+            <li *ngFor="let slide of slides"
+                [ngClass]="{'active-slide-navigation' : slide.isActive, 'slide-navigation-action': true }"
+                [id]="slide.id" (click)="changeSlideByClicking(slide.id)"></li>
+        </ul>
+    </div>
+</div>

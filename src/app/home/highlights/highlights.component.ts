@@ -11,6 +11,7 @@ export class HighlightsComponent implements OnInit {
   private slides: SlideViewModel[];
   private slideSelectedContent: SlideViewModel;
   private assets_path: string = '../../assets/backgrounds/';
+  private slideInterval: any;
 
   constructor() {
     this.slides = [
@@ -20,28 +21,42 @@ export class HighlightsComponent implements OnInit {
     ];
 
 
-    this.slideSelectedContent = this.slides[0];
-    this.slideSelectedContent.isActive = true;
+    this.slides[0].isActive = true;
   }
 
   ngOnInit() {
+
   }
 
-  changeSlide(event: any) {
+  ngAfterViewInit() {
+    this.autoplaySlide();
+  }
+
+  changeSlideByClicking(id: number) {
+    clearInterval(this.slideInterval);
     this.slides.map(slide => slide.isActive = false);
-    let slide = this.slides.filter(slide => slide.id == event.target.id)[0];
+    let slide = this.slides.filter(slide => slide.id == id)[0];
     slide.isActive = true;
-    this.slideSelectedContent = slide;
+  }
+
+  changeSlide(id: number) {
+    this.slides.map(slide => slide.isActive = false);
+    let slide = this.slides.filter(slide => slide.id == id)[0];
+    slide.isActive = true;
   }
 
   autoplaySlide() {
     let atual: number = 1;
-    let interval = setInterval(() => {
+    this.slideInterval = setInterval(() => {
       this.changeSlide(atual);
       atual++;
-      if (atual == this.slides.length) {  
-        clearInterval(interval);
+      if (atual == this.slides.length) {
+        atual = 0;
       }
-    }, 5000);
-  }  
+    }, 1000);
+  }
+
+  stopAutoPlay() {
+    clearInterval(this.slideInterval);
+  }
 }
