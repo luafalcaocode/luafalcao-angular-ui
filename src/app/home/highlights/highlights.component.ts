@@ -36,11 +36,10 @@ export class HighlightsComponent implements OnInit {
   autoplaySlide() {
     let atual: number = 1;
     let interval = setInterval(() => {
-      this.slideSelectedContent = this.slides[atual];
-      this.toggleActiveSlideClass(atual.toString());
+      this.changeSlide(atual);
       atual++;
       if (atual == this.slides.length) {
-       clearInterval(interval);
+        clearInterval(interval);
       }
     }, 5000);
   }
