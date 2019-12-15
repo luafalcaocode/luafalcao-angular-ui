@@ -34,14 +34,14 @@ export class HomeComponent implements OnInit {
       },
       {
         id: 4,
-        src: '../../../assets/logos/infobase-logo.png',
-        link: 'http://infobase.com.br',
-        specialClass: 'medium-image'
+        src: '../../../assets/logos/braslight-logo.png',
+        link: 'https://www.braslight.com.br/v2/',
+        specialClass: ''
       },
       {
         id: 5,
-        src: '../../../assets/logos/fd-logo.png',
-        link: 'http://www.firstdecision.com.br/',
+        src: '../../../assets/logos/prudential-logo.png',
+        link: 'https://www.prudentialdobrasil.com.br/',
         specialClass: ''
       },
       {
@@ -58,15 +58,21 @@ export class HomeComponent implements OnInit {
       },
       {
         id: 8,
-        src: '../../../assets/logos/braslight-logo.png',
-        link: 'https://www.braslight.com.br/v2/',
-        specialClass: ''
+        src: '../../../assets/logos/infobase-logo.png',
+        link: 'http://infobase.com.br',
+        specialClass: 'medium-image infobase-logo'
       },
       {
         id: 9,
-        src: '../../../assets/logos/prudential-logo.png',
-        link: 'https://www.prudentialdobrasil.com.br/',
-        specialClass: ''
+        src: '../../../assets/logos/fd-logo.png',
+        link: 'http://www.firstdecision.com.br/',
+        specialClass: 'first-logo'
+      },
+      {
+        id: 10,
+        src: '../../../assets/logos/perlink-logo.png',
+        link: 'http://www.perlink.com.br/',
+        specialClass: 'perlink-logo'
       }
     ]
   }

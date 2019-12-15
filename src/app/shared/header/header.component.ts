@@ -24,10 +24,10 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
     this.menuProjetos = [
-      new MenuViewModel(1, 'Aplicações Empresariais', 'link do projeto corporativo aqui'),
-      new MenuViewModel(2, 'Aplicações Pessoais', 'link do projeto pessoal aqui'),
-      new MenuViewModel(3, 'Contos Literários', 'link do projeto pessoal aqui'),
-      new MenuViewModel(4, 'Como Redator na Internet', 'link do projeto pessoal aqui')
+      new MenuViewModel(1, 'Projetos de TI Empresariais', 'link do projeto corporativo aqui'),
+      new MenuViewModel(2, 'Projetos de TI Pessoais', 'link do projeto pessoal aqui'),
+      new MenuViewModel(3, 'Projetos de Contos Literários', 'link do projeto pessoal aqui'),
+      new MenuViewModel(4, 'Redator de Conteúdo para Web', 'link do projeto pessoal aqui')
 
     ];
 
