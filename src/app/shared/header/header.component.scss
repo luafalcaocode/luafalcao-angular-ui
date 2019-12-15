@@ -15,11 +15,11 @@ header {
   position: fixed;
   width: 100%;
   left: 0;
-  z-index: 1000;
+  z-index: 9000;
 
   nav {
     height: 80px;
-    background: map-get($colors, navbar-background);
+    background: var(--dark);
     padding-top: 26px;
     padding-left: 100px;
     padding-right: 100px;
@@ -149,7 +149,7 @@ header {
     }
 
     .nav-mobile-items {
-      background: map-get($colors, navbar-mobile-background);
+      background: var(--dark);
       width: 380px;
       position: fixed;
       right: -500px;
@@ -212,4 +212,10 @@ a.login {
 .inative-menu {
   color: map-get($colors, navbar-link) !important;
   transition: 0.25s ease-out !important;
+}
+
+.lcode {
+  padding-top: 3px;
+  font-weight: normal;
+  text-transform:  normal;
 }

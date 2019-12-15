@@ -1,12 +1,15 @@
 #searchFieldContainer {
   position: fixed;
   z-index: 1000;
-  background: #000;
+  background: var(--dark);
   width: 100%;
-  height: 100%;
   padding: 200px;
-  margin-top: -15px;
+  padding-top: 300px;
   transition: .5s ease-out;
+  z-index: 9999;
+  top: 0;
+  margin-top: 0;
+  height: 100%;
 
   form {
     label {

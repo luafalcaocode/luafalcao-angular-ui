@@ -45,7 +45,7 @@ export class HeaderComponent implements OnInit {
   openContainer() {
     let container =  document.getElementById('searchFieldContainer');
     container.classList.remove('fadeOut');
-    container.classList.add('fadeInTransparent');
+    container.classList.add('fadeIn');
 
     document.getElementsByTagName('body')[0].style.overflow = 'hidden'; 
   }  
