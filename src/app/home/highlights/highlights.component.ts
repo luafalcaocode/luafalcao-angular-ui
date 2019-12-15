@@ -21,15 +21,17 @@ export class HighlightsComponent implements OnInit {
 
 
     this.slideSelectedContent = this.slides[0];
+    this.slideSelectedContent.isActive = true;
   }
 
   ngOnInit() {
   }
 
-  changeSlide(id: number) {
-    let slide = this.slides.filter(slide => slide.id == id)[0];
+  changeSlide(event: any) {
+    this.slides.map(slide => slide.isActive = false);
+    let slide = this.slides.filter(slide => slide.id == event.target.id)[0];
+    slide.isActive = true;
     this.slideSelectedContent = slide;
-    this.toggleActiveSlideClass(id.toString());
   }
 
   autoplaySlide() {
@@ -37,21 +39,9 @@ export class HighlightsComponent implements OnInit {
     let interval = setInterval(() => {
       this.changeSlide(atual);
       atual++;
-      if (atual == this.slides.length) {
+      if (atual == this.slides.length) {  
         clearInterval(interval);
       }
     }, 5000);
-  }
-
-  toggleActiveSlideClass(id: string) {
-    let slides = document.getElementsByClassName('slide-navigation-action');
-    slides[0].classList.remove('active-slide-navigation');
-    slides[1].classList.remove('active-slide-navigation');
-    slides[2].classList.remove('active-slide-navigation');
-
-    let navigation = document.getElementById(id);
-    if (navigation != undefined) {
-      document.getElementById(id).classList.add('active-slide-navigation');
-    }
-  }
+  }  
 }

@@ -2,7 +2,7 @@
     <h4>{{ id == 'menuProjetos' ? 'Meus Trabalhos' : 'O que você precisa?'}}</h4>
     <ul id="{{id + '_menu'}}">
         <li *ngFor="let item of menu">
-            <a routerLink="" [id]="item.id">{{ item.name }}</a>
+           <a routerLink="" [id]="item.id">{{ item.name }}</a>
         </li>
     </ul>
 </div>

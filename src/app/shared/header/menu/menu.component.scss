@@ -31,9 +31,9 @@ ul {
   li:hover {
     cursor: pointer;
     font-size: 16px;
-    font-weight: bold;
+    font-weight: normal;
     transition: 0.3s;
-    color: var(--dark);
+    color: var(--blue);
   }
 }
 
@@ -45,6 +45,8 @@ a:link {
 a:hover{
   color: var(--dark);
   text-decoration: none;
+  font-weight: 500;
+
 }
 
 h4 {

@@ -3,6 +3,7 @@ export class SlideViewModel {
     public subtitle: string;
     public image: string;
     public id: number;
+    public isActive: boolean;
 
     constructor(title: string, subtitle: string, image: string, id: number) {
         this.title = title;
