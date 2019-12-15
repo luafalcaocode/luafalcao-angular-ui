@@ -1,54 +1,60 @@
 #highlight {
-    min-height: 700px;
-    width: 100%;
-    margin-top: -20px;
-    background-image: url('../../../assets/backgrounds/highlight_1.png');
-    background-size: cover;
-    padding: 150px;
-    padding-left: 130px;
-    color: var(--white);
+  width: 100%;
+  margin-top: -20px;
+//   background-image: url("../../../assets/backgrounds/highlight_1.png");
+  background-size: cover;
+  padding: 150px;
+  padding-left: 130px;
+  color: var(--white);
 
-    @media only screen and (max-width: 747px) {
-        padding: 30px;
-        padding-top: 40px;
-    }
+  @media only screen and (max-width: 747px) {
+    padding: 30px;
+    padding-top: 40px;
+  }
+}
+
+.hightlight-slide {
+  height: 400px;
 }
 
 h1 {
-    font-size: 50px;
+  font-size: 50px;
 }
 
-h1, h3 {
-    font-weight: lighter;;
+h1,
+h3 {
+  font-weight: lighter;
 }
 
 .slide-navigation {
-    list-style-type: none;
-    padding-left: 0;
-    margin-top: 50px;
+  list-style-type: none;
+  padding-left: 0;
 }
 
-
-.slide-navigation{
-    margin-left: 0;
+.slide-navigation {
+  margin-left: 0;
 }
 
 .slide-navigation-action {
-    display: inline-block;
-    margin-left: 10px;
-    margin-right: 10px;
-    width: 40px;
-    height: 8px;
-    border: solid 1px var(--white);
-    transition: .4s ease-out;
+  display: inline-block;
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 40px;
+  height: 8px;
+  border: solid 1px var(--white);
+  transition: 0.4s ease-out;
 }
 
 .slide-navigation-action:first-child {
-    margin-left: 0;
+  margin-left: 0;
 }
 
 .slide-navigation-action:hover {
-    cursor: pointer;
+  cursor: pointer;
+  background: var(--white);
+  transition: 0.3s;
+}
+
+.active-slide-navigation {
     background: var(--white);
-    transition: .3s;
 }

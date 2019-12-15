@@ -1,21 +1,17 @@
-<section id="highlight">
-    <div class="row">
+<section id="highlight" [ngStyle]="{'background-image' : 'url(' + assets_path + slideSelectedContent.image + ')'}">
+    <!-- Conteúdo Principal do Slide -->
+    <div class="row hightlight-slide">
         <div class="col-md-7 col-xs-12">
-            <h1>Design Patterns #6: Abstract Factory</h1>
-            <h3>
-                Caindo na categoria de Padrões Criacionais o poderoso Abstract Factory é uma ferramenta muito útil para
-                ajudar
-                na portabilidade.
-            </h3>
+            <h1>{{ slideSelectedContent.title }}</h1>
+            <h3>{{ slideSelectedContent.subtitle }}</h3>
         </div>
     </div>
 
+    <!-- Setas de Navegação-->
     <div class="row">
         <div class="col-xs-12">
             <ul class="slide-navigation">
-                <li class="slide-navigation-action"></li>
-                <li class="slide-navigation-action"></li>
-                <li class="slide-navigation-action"></li>
+                <li *ngFor="let slide of slides" class="slide-navigation-action" [id]="slide.id" (click)="changeSlide(slide.id)"></li>
             </ul>
         </div>
     </div>
