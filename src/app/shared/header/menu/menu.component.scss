@@ -18,22 +18,30 @@
 }
 
 ul {
-    list-style-type: none;
-    margin-left: -10px;
+  list-style-type: none;
+  margin-left: -10px;
 
-    li {
-      color: var(--dark);
-      font-size: 14px;
-      transition: .4s ease-out;
-      height: 30px;
-      margin-right: 25px;
-    }
+  li {
+    font-size: 14px;
+    transition: 0.4s ease-out;
+    height: 30px;
+    margin-right: 25px;
+  }
 
-    li:hover {
-      cursor: pointer;
-      font-size: 16px;
-      transition: .3s;
-      color: var(--dark);
-    }
+  li:hover {
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+    color: var(--dark);
+  }
 }
 
+a:link {
+  color: var(--dark);
+  transition: 0.4s ease-out;
+}
+
+a:hover{
+  color: var(--dark);
+  text-decoration: none;
+}

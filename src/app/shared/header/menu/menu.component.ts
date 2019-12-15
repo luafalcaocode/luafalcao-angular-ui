@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { MenuViewModel } from 'src/app/viewModels/menu.viewModel';
 
 @Component({
   selector: 'app-menu',
@@ -6,7 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./menu.component.scss']
 })
 export class MenuComponent implements OnInit {
-  @Input() menu: string[];
+  @Input() menu: MenuViewModel[];
   @Input() id: string;
 
   constructor() { }

@@ -4,13 +4,15 @@ import { MobileMenuService } from '../../services/layout/mobile-menu.service';
 import { ModalService } from '../../services/layout/modal.service';
 import { MenuService } from '../../services/layout/menu.service';
 
+import { MenuViewModel } from '../../viewModels/menu.viewModel';
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  private menuProjetos: string[];
+  private menuProjetos: MenuViewModel[];
   private menuServicos: string[];
   private id: string;
   private isMenuServicesOpen: boolean;
@@ -22,11 +24,8 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
     this.menuProjetos = [
-      'Item 1',
-      'Item 2',
-      'Item 3',
-      'Item 4',
-      'Item 5'
+      new MenuViewModel(1, 'Projetos Corporativos', 'link do projeto corporativo aqui'),
+      new MenuViewModel(1, 'Projetos Pessoais', 'link do projeto pessoal aqui')
     ];
 
     this.menuServicos = [

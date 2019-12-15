@@ -8,7 +8,7 @@
 
   @media only screen and (max-width: 747px) {
     padding: 30px;
-    padding-top: 40px;
+    padding-top: 0;
   }
 }
 
@@ -32,6 +32,10 @@ h3 {
 
 .slide-navigation {
   margin-left: 0;
+
+  @media only screen and (max-width: 747px) {
+      margin-top: 50px;
+  }
 }
 
 .slide-navigation-action {

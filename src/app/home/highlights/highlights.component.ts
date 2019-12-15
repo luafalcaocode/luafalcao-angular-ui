@@ -34,6 +34,7 @@ export class HighlightsComponent implements OnInit {
   }
 
   autoplaySlide() {
+    debugger;
     let atual: number = 1;
     let interval = setInterval(() => {
       this.changeSlide(atual);
