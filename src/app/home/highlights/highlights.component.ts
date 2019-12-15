@@ -53,7 +53,7 @@ export class HighlightsComponent implements OnInit {
       if (atual == this.slides.length) {
         atual = 0;
       }
-    }, 1000);
+    }, 5000);
   }
 
   stopAutoPlay() {

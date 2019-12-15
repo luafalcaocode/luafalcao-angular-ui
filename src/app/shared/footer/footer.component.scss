@@ -6,12 +6,17 @@ footer {
   width: 100%;
   height: 310px;
 
+  @media (max-width: 747px) {
+    padding-left: 30px;
+    padding-bottom: 0;
+  }
+
   @media only screen and (max-width: 747px) and (orientation: portrait) {
-    min-height: 700px;
+    min-height: 590px;
   }
 
   @media only screen and (max-width: 747px) and (orientation: landscape) {
-    min-height: 630px;
+    min-height: 570px;
   }
 
   @media only screen and (max-width: 747px) {
@@ -62,4 +67,9 @@ i {
 .copyright-container {
   margin-top: 30px;
   text-align: right;
+
+  @media (max-width: 767px) {
+    text-align: left;
+    font-size: 12px;
+  }
 }
