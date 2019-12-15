@@ -24,7 +24,6 @@ export class HighlightsComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.autoplaySlide();
   }
 
   changeSlide(id: number) {
@@ -34,7 +33,6 @@ export class HighlightsComponent implements OnInit {
   }
 
   autoplaySlide() {
-    debugger;
     let atual: number = 1;
     let interval = setInterval(() => {
       this.changeSlide(atual);
@@ -53,7 +51,7 @@ export class HighlightsComponent implements OnInit {
 
     let navigation = document.getElementById(id);
     if (navigation != undefined) {
-      navigation.classList.add('active-slide-navigation');
+      document.getElementById(id).classList.add('active-slide-navigation');
     }
   }
 }

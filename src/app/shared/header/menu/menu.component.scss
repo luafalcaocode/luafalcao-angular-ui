@@ -1,7 +1,7 @@
 .lua-menu {
   position: absolute;
   border: solid 2px var(--white);
-  width: 300px;
+  width: 370px;
   height: 300px;
   border-radius: 4px;
   top: 40px;
@@ -31,6 +31,7 @@ ul {
   li:hover {
     cursor: pointer;
     font-size: 16px;
+    font-weight: bold;
     transition: 0.3s;
     color: var(--dark);
   }
@@ -44,4 +45,14 @@ a:link {
 a:hover{
   color: var(--dark);
   text-decoration: none;
+}
+
+h4 {
+  padding-left: 30px;
+  padding-bottom: 10px;
+}
+
+.material-icons {
+  font-size: 14px;
+  vertical-align: -3px;
 }

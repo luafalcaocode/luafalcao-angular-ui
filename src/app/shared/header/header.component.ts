@@ -13,7 +13,7 @@ import { MenuViewModel } from '../../viewModels/menu.viewModel';
 })
 export class HeaderComponent implements OnInit {
   private menuProjetos: MenuViewModel[];
-  private menuServicos: string[];
+  private menuServicos: MenuViewModel[];
   private id: string;
   private isMenuServicesOpen: boolean;
   private isMenuProjectsOpen: boolean;
@@ -24,16 +24,18 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
     this.menuProjetos = [
-      new MenuViewModel(1, 'Projetos Corporativos', 'link do projeto corporativo aqui'),
-      new MenuViewModel(1, 'Projetos Pessoais', 'link do projeto pessoal aqui')
+      new MenuViewModel(1, 'Aplicações Empresariais', 'link do projeto corporativo aqui'),
+      new MenuViewModel(2, 'Aplicações Pessoais', 'link do projeto pessoal aqui'),
+      new MenuViewModel(3, 'Contos Literários', 'link do projeto pessoal aqui'),
+      new MenuViewModel(4, 'Como Redator na Internet', 'link do projeto pessoal aqui')
+
     ];
 
     this.menuServicos = [
-      'Serviço 1',
-      'Serviço 2',
-      'Serviço 3',
-      'Serviço 4',
-      'Serviço 5'
+      new MenuViewModel(1, 'De um novo Site Institucional', 'link do serviço corporativo aqui'),
+      new MenuViewModel(2, 'De um Blog com edição de conteúdo', 'link do projeto pessoal aqui'),
+      new MenuViewModel(3, 'De uma Web API', 'link do projeto pessoal aqui'),
+      new MenuViewModel(4, 'De um pacote de UI com design responsivo', 'link do projeto pessoal aqui')
     ];
   }
 
