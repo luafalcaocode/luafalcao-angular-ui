@@ -8,7 +8,7 @@ import { ImageViewModel } from '../viewModels/image.viewModel';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  private images: ImageViewModel[];
+  public images: ImageViewModel[];
 
   constructor() {
 
