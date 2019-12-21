@@ -7,4 +7,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'luafalcao';
+  public isUserUsingInternetExplorer: boolean;
+
+  constructor() {
+    if (navigator.userAgent.indexOf('Trident/') > - 1) {
+      this.isUserUsingInternetExplorer = true;
+    }   
+    else {
+      this.isUserUsingInternetExplorer = true;
+    }
+  }
 }

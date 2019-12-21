@@ -6,3 +6,44 @@
     padding-bottom: 2.5rem;
    
 }
+
+
+
+.internet-explorer-friendly-message {
+    z-index: 100000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    text-align: center;
+    opacity: 1;
+    padding: 30px;
+
+    img {
+        padding-top: 100px;
+        @media (max-width: 1024px) {
+            padding: 0;
+            width: 100%;
+            height: auto;
+        }
+        width: auto;
+        height: 450px;
+    }
+
+    .friendly-message-container {
+        margin-top: 40px;
+      
+        
+        strong {
+            font-size: 26px;
+            font-variant: small-caps;
+        }
+
+        p {
+            margin-top: 10px;
+            font-size: 18px;
+        }
+    }
+}
