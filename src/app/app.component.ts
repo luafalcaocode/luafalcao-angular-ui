@@ -14,7 +14,7 @@ export class AppComponent {
       this.isUserUsingInternetExplorer = true;
     }   
     else {
-      this.isUserUsingInternetExplorer = true;
+      this.isUserUsingInternetExplorer = false;
     }
   }
 }
