@@ -7,10 +7,11 @@ import { SearchFieldComponent } from './search-field/search-field.component';
 import { FormsModule } from '@angular/forms';
 import { ModalModule } from '../modal/modal.module';
 import { MenuComponent } from './header/menu/menu.component';
+import { TooltipComponent } from './tooltip/tooltip.component';
 
 
 @NgModule({
-  declarations: [HeaderComponent, FooterComponent, SearchFieldComponent, MenuComponent],
+  declarations: [HeaderComponent, FooterComponent, SearchFieldComponent, MenuComponent, TooltipComponent],
   imports: [
     CommonModule,
     FormsModule,
@@ -19,7 +20,8 @@ import { MenuComponent } from './header/menu/menu.component';
   exports: [
     HeaderComponent,
     FooterComponent,
-    SearchFieldComponent
+    SearchFieldComponent,
+    TooltipComponent
   ]
 })
 export class SharedModule { }

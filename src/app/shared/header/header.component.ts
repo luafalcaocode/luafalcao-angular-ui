@@ -17,9 +17,10 @@ export class HeaderComponent implements OnInit {
   public id: string;
   public isMenuServicesOpen: boolean;
   public isMenuProjectsOpen: boolean;
+  public isSearchTooltipVisible: boolean;
 
   constructor(public mobileMenuService: MobileMenuService, public modalService: ModalService, public menuService: MenuService) {
-    
+
   }
 
   ngOnInit() {
@@ -45,12 +46,12 @@ export class HeaderComponent implements OnInit {
   }
 
   openContainer() {
-    let container =  document.getElementById('searchFieldContainer');
+    let container = document.getElementById('searchFieldContainer');
     container.classList.remove('fadeOut');
     container.classList.add('fadeIn');
 
-    document.getElementsByTagName('body')[0].style.overflow = 'hidden'; 
-  }  
+    document.getElementsByTagName('body')[0].style.overflow = 'hidden';
+  }
 
   showMenu(id: string) {
     if (id.toLowerCase().includes('projetos')) {
@@ -75,5 +76,47 @@ export class HeaderComponent implements OnInit {
       this.isMenuServicesOpen = false;
     }
     this.menuService.hideMenu(id);
+  }
+
+  showTooltip(event) {
+    switch (event.target.id) {
+      case 'pesquisar':
+        document.getElementById('tooltipPesquisar').classList.add('fadeIn');
+        document.getElementById('tooltipPesquisar').classList.remove('fadeOut');
+        this.isSearchTooltipVisible = true;
+        break;
+
+      case 'youTube':
+        document.getElementById('tooltipYouTube').classList.add('fadeIn');
+        document.getElementById('tooltipYouTube').classList.remove('fadeOut');
+        this.isSearchTooltipVisible = true;
+        break;
+
+      case 'idiomas':
+        document.getElementById('tooltipIdiomas').classList.add('fadeIn');
+        document.getElementById('tooltipIdiomas').classList.remove('fadeOut');
+        this.isSearchTooltipVisible = true;
+        break;
+    }
+  }
+
+  hideToolTip(event) {
+    switch (event.target.id) {
+      case 'pesquisar':
+        document.getElementById('tooltipPesquisar').classList.add('fadeOut');
+        document.getElementById('tooltipPesquisar').classList.remove('fadeIn');
+        break;
+
+      case 'youTube':
+        document.getElementById('tooltipYouTube').classList.add('fadeOut');
+        document.getElementById('tooltipYouTube').classList.remove('fadeIn');
+        break;
+
+      case 'idiomas':
+        document.getElementById('tooltipIdiomas').classList.add('fadeOut');
+        document.getElementById('tooltipIdiomas').classList.remove('fadeIn');
+        break;
+
+    }
   }
 }

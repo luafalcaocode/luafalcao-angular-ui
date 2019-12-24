@@ -215,8 +215,27 @@ a.login {
 }
 
 .lcode {
-  padding-top: 3px;
+  padding-top: 2px;
   font-weight: normal;
   text-transform: normal;
   margin-top: -10px;
+}
+
+
+#tooltipPesquisar {
+  right: 330px;
+  top: 70px;
+  position: absolute;
+}
+
+#tooltipYouTube {
+  right: 270px;
+  top: 70px;
+  position: absolute;
+}
+
+#tooltipIdiomas {
+  right: 220px;
+  top: 70px;
+  position: absolute;
 }
