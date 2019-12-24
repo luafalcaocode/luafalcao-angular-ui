@@ -5,21 +5,27 @@
   height: 100%;
   z-index: 999;
   position: fixed;
-  background: rgba(0, 0, 0, 0.4);
+ 
 
   .centered-modal-content {
-    width: 60%;
+    background-image: url("../../../assets/backgrounds/moria.png");
+    background-position: center bottom;
+    background-size: cover;
+    width: 40%;
     height: auto;
-    background: #fff;
     min-height: 500px;
     position: fixed;
-    top: 12%;
-    left: 21%;
-    padding: 20px;
-    padding-top: 5px;
-    box-shadow: 2px 2px 9px #000;
-    border-radius: 4px;
+    top: 7%;
+    left: 31%;
+    padding: 70px;
+    padding-top: 50px;
+    box-shadow: 2px 2px 9px var(--dark);
+
     transition: 0.4 ease-in-out;
+
+    @media (max-width: 1024px) {
+      padding: 0;
+    }
 
     @media only screen and (max-width: 767px) and (orientation: portrait) {
       width: 90%;
@@ -27,13 +33,15 @@
     }
 
     @media only screen and (max-width: 767px) and (orientation: landscape) {
-      min-height: auto;
+      min-height: 300px;
+      width: 60%;
+      left: 19%;
     }
 
     h2 {
       margin-top: 10px;
       font-weight: bold;
-      color: var(--dark);
+      color: var(--white);
 
       @media (max-width: 767px) {
         font-size: 26px;
@@ -67,4 +75,79 @@
     color: var(--dark);
     transition: 0.5s;
   }
+}
+
+form {
+  min-height: 400px;
+  background-color: var(--transparent);
+  margin-top: 10px;
+  border-radius: 4px;
+  padding: 50px;
+
+  .campos-login {
+    width: 100%;
+    height: 50px;
+  }
+
+  label {
+    font-size: 12px;
+    vertical-align: 3px;
+    padding-left: 4px;
+    font-weight: normal;
+  }
+
+  a:link {
+    font-size: 12px;
+  }
+}
+
+.user {
+  font-size: 62px;
+  margin-top: 10px;
+  position: absolute;
+  z-index: 100;
+  background: var(--transparent);
+  border-radius: 50%;
+}
+
+.button {
+  height: 50px;
+  width: 100%;
+  background: var(--dark);
+  color: var(--white);
+  transition: 0.4s ease-out;
+  padding-top: 10px;
+}
+
+.button:focus {
+  outline-style: none;
+  transition: 0.3s;
+  background: var(--dark);
+  color: var(--white);
+  border: solid 1px var(--dark);
+}
+
+.button:hover {
+  transition: 0.3s;
+  background: var(--white);
+  color: var(--dark);
+  border: solid 1px var(--dark);
+}
+
+.glyphicon-remove {
+  top: -70px;
+  color: var(--transparent);
+  right: -85px;
+  transition: 0.4s ease-out;
+
+  @media (max-width: 1024px) {
+    top: -20px;
+    color: var(--white);
+    right: -10px;
+  }
+}
+
+.glyphicon-remove:hover {
+  transition: 0.3s;
+  color: var(--white);
 }
