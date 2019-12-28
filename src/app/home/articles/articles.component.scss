@@ -1,9 +1,16 @@
 #articles {
     min-height: 600px;
+    padding-top: 30px;
+    background-color: white;
+    // // background-image: url('../../../assets/backgrounds/gradient.jpg');
+    // background-image: url('../../../assets/backgrounds/ubuntu.jpg');
+    background-size: cover;
+    color: var(--darking);
+    padding-bottom: 60px;
 }
 
 h3 {
-    font-size: 24px;
+    font-size: 30px;
     text-transform: uppercase;
     font-weight: bold;
     text-align: center;
@@ -11,4 +18,105 @@ h3 {
 
 h5 {
     text-align: center;
+    color: var(--darkGray);
+    font-weight: normal;
 }
+
+.container-articles {
+    padding-top: 30px;
+    padding-left: 200px;
+    padding-right: 200px;
+
+    @media (max-width: 1024px) {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+}
+
+.articles-feature {
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: solid 1px var(--darking);
+    width: 100%;
+}
+
+.articles-title {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+.articles-info {
+    display: inline-block;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.articles-preview {
+    margin-bottom: 20px;
+}
+
+a.articles-read-more:link {
+    text-decoration: underline;
+    transition: .4s ease-out;
+}
+
+.articles-read-more:hover {
+    transition: .3s;
+}   
+
+.articles-thumbnail {
+    height: 100px;
+    width: 100px;
+}
+
+.articles-side-title {
+    font-size: 22px;
+    font-weight: bold;
+    display: inline-block;
+    height: 40px;
+}
+
+.articles-side-group:first-child {
+    margin-top: 0;
+}
+
+.articles-side-info {
+    margin-top: 3px;
+}
+
+.articles-side-group {
+    margin-top: 20px;
+    margin-bottom: 10px;;
+    transition: .4s ease-out;
+}
+
+
+.articles-side-group:hover {
+    cursor: pointer;
+    transition: .3s;
+    transform: scale(1.1);
+}
+
+
+.articles-side-group-col:first-child {
+    padding-top: 0;
+}
+
+.articles-side-group-col {
+    padding-left: 0;
+    padding-bottom: 20px;
+  
+}
+
+.articles-side-container {
+    padding-left: 70px;
+
+    @media (max-width: 1024px) {
+        padding-left: 15px;
+        padding-top: 40px;
+        text-align: center;
+    }
+}
+

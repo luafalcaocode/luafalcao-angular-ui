@@ -8,7 +8,10 @@
     --silver: rgba(255, 255, 255, 0.65);
     --darkGray: #25292d;
     --shadow: rgba(0, 0, 0, 0.5);
-    --transparent: rgba(255, 255, 255, 0.5)
+    --transparent: rgba(255, 255, 255, 0.5);
+    --darking: #24292E;
+    --darkGray: #696969;
+    --link: #337ab7; 
 }
 
 
@@ -66,6 +69,10 @@ a {
 
 .u-padding-zero {
   padding: 0;
+}
+
+.u-padding-left-zero {
+  padding-left: 0 !important;
 }
 
 /* modal */
