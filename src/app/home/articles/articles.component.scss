@@ -20,6 +20,7 @@ h5 {
     text-align: center;
     color: var(--darkGray);
     font-weight: normal;
+    font-size: 20px;
 }
 
 .container-articles {
@@ -51,10 +52,12 @@ h5 {
     display: inline-block;
     margin-bottom: 15px;
     font-weight: bold;
+    text-transform: uppercase;
 }
 
 .articles-preview {
     margin-bottom: 20px;
+    font-size: 16px;
 }
 
 a.articles-read-more:link {
@@ -111,7 +114,7 @@ a.articles-read-more:link {
 }
 
 .articles-side-container {
-    padding-left: 70px;
+    padding-left: 50px;
 
     @media (max-width: 1024px) {
         padding-left: 15px;

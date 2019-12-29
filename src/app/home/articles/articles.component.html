@@ -2,38 +2,30 @@
     <h3>Últimos Artigos</h3>
     <h5>Acompanhe nossas publicações com contéudo acadêmico e profissional</h5>
 
+    <!-- Último Artigo Publicado na seção de destaque-->
     <div class="row container-articles">
         <div class="col-md-7 col-xs-12 u-padding-left-zero">
             <div>
-                <img src="https://i.picsum.photos/id/237/700/400.jpg" class="articles-feature" /> <br />
+                <img [src]="articles[0].image" class="articles-feature" /> <br />
                 <div class="articles-text-group">
-                    <span class="articles-title">Lorem ispum dolor sit stat amet.</span> <br />
-                    <span class="articles-info">AUTOR &nbsp; | &nbsp; 99/99/9999 </span> <br />
+                    <span class="articles-title">{{ selectedArticle.title }}</span> <br />
+                        <span class="articles-info">{{ selectedArticle.author }} &nbsp; | &nbsp; {{ selectedArticle.publishedDate }} </span> <br />
                     <p class="articles-preview">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget pharetra lectus. In a pulvinar
-                        turpis. Morbi a sapien rutrum, fringilla justo non, tempor est. Mauris at ligula urna.
+                        {{ selectedArticle.preview }}
                     </p>
                     <a href="" class="articles-read-more">LEIA MAIS</a>
                 </div>
             </div>
         </div>
+
+        <!-- Lista de Artigos Laterais -->
         <div class="col-md-5 col-xs-12 articles-side-container">
-            <div class="row articles-side-group">
-                <div class="col-xs-12 articles-side-group-col">
-                    <span class="articles-side-title">Lorem ispum dolor sit stat amet.</span> <br />
-                    <span class="articles-side-info">AUTOR &nbsp; | &nbsp; 99/99/9999 </span> <br />
-                </div>
-            </div>
-            <div class="row articles-side-group">              
-                <div class="col-xs-12 articles-side-group-col">
-                    <span class="articles-side-title">Lorem ispum dolor sit stat amet.</span> <br />
-                    <span class="articles-side-info">AUTOR &nbsp; | &nbsp; 99/99/9999 </span> <br />
-                </div>
-            </div>
-            <div class="row articles-side-group">              
-                <div class="col-xs-12 articles-side-group-col">
-                    <span class="articles-side-title">Lorem ispum dolor sit stat amet.</span> <br />
-                    <span class="articles-side-info">AUTOR &nbsp; | &nbsp; 99/99/9999 </span> <br />
+            <div *ngFor="let article of articles">
+                <div class="row articles-side-group" >
+                    <div class="col-xs-12 articles-side-group-col">
+                        <span class="articles-side-title">{{ article.title }} </span> <br />
+                        <span class="articles-side-info">{{ article.author }} &nbsp; | &nbsp; {{ article.publishedDate }} </span> <br />
+                    </div>
                 </div>
             </div>
         </div>
