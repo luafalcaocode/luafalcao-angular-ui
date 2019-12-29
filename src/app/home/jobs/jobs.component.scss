@@ -1,6 +1,7 @@
 section {
     padding: 40px;
     text-align: center;   
+    height: 300px;
     
     @media (max-width: 747px) {
         padding-top: 10px;
@@ -14,8 +15,8 @@ section {
         }
 
       
-        font-weight: 500;
-        text-transform: normal;
+        font-weight: normal;
+        text-transform: uppercase;
         font-size: 30px;
     }    
 

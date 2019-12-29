@@ -36,6 +36,10 @@ a {
 }
 
 /* Helpers */
+.u-pointer {
+  cursor: pointer;
+}
+
 .u-center {
   text-align: center;
 }
@@ -61,6 +65,10 @@ a {
 
 .u-bold {
   font-weight: bold;
+}
+
+.u-lighter {
+  font-weight: lighter !important;
 }
 
 .u-white {

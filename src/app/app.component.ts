@@ -10,7 +10,7 @@ export class AppComponent {
   public isUserUsingInternetExplorer: boolean;
 
   constructor() {
-    if (navigator.userAgent.indexOf('Trident/') > - 1) {
+    if (navigator.userAgent.indexOf('Trident/') > - 1 || navigator.userAgent.indexOf('Edge/') > - 1) {
       this.isUserUsingInternetExplorer = true;
     }   
     else {

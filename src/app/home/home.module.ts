@@ -8,11 +8,12 @@ import { JobsComponent } from './jobs/jobs.component';
 import { ArticlesComponent } from './articles/articles.component';
 import { ChatComponent } from './chat/chat.component';
 import { DarkPlaceComponent } from './dark-place/dark-place.component';
+import { TechnolgiesComponent } from './technolgies/technolgies.component';
 
 
 
 @NgModule({
-  declarations: [HomeComponent, CarouselComponent, HighlightsComponent, JobsComponent, ArticlesComponent, ChatComponent, DarkPlaceComponent],
+  declarations: [HomeComponent, CarouselComponent, HighlightsComponent, JobsComponent, ArticlesComponent, ChatComponent, DarkPlaceComponent, TechnolgiesComponent],
   imports: [
     CommonModule,
     SharedModule

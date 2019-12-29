@@ -38,7 +38,7 @@ export class ArticlesComponent implements OnInit {
                 'https://i.picsum.photos/id/237/700/400.jpg', 
                 'Luã Falcão',
                 '07/11/2019', 
-                'Autenticação JWT com ASP .NET Core API',
+                'Autenticação JWT usando .NET Core',
                 '')
     ];
    }
