@@ -16,7 +16,7 @@ export class HighlightsComponent implements OnInit {
   constructor() {
     this.slides = [
       new SlideViewModel(`Design Patterns #5: Abstract Factory`, `Neste artigo, mostro como você pode usar o Abstract Factory para oferecer portabilidade à sua aplicação.`, `highlight_1.png`, 0),
-      new SlideViewModel(`Crazy & Mad Girs`, 'Confira o jogo eletrônico que desenvolvi para PC com a ferramenta Blitz 3D ', 'gradient.jpg', 1),
+      new SlideViewModel(`Crazy & Mad Girls`, 'Confira o jogo eletrônico que desenvolvi para PC com a ferramenta Blitz 3D ', 'gradient.jpg', 1),
       new SlideViewModel(`Usando o GIT via linha de comando`, 'Neste tutorial, mostro como executar os comandos básicos do GIT via linha de comando.', 'moria.png', 2)
     ];
 

@@ -9,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class FooterComponent implements OnInit {
   email: string;
   telefone: string;
-  constructor() { 
+  constructor() {
     this.email = 'lpjfalcao@gmail.com';
     this.telefone = '+55 (21) 97322-1432'
   }
@@ -18,7 +18,7 @@ export class FooterComponent implements OnInit {
   }
 
   showWhatsAppInfo() {
-   
-  }
 
+  }
+  
 }

@@ -24,36 +24,29 @@ ul {
 
   li {
     font-size: 14px;
-    transition: 0.4s ease-out;
+    transition: 0.3s linear;
     height: 30px;
     margin-right: 25px;
   }
 
   li:hover {
     cursor: pointer;
-    font-size: 16px;
-    font-weight: normal;
-    transition: 0.3s;
+    transition: 0.4s;
     color: var(--blue);
+    font-size: 16px;
+    font-weight: bold;
   }
 }
 
-a:link {
-  color: var(--dark);
-  transition: 0.4s ease-out;
-}
-
-a:hover{
-  color: var(--dark);
+a:hover {
   text-decoration: none;
-  font-weight: 500;
-  transition: .3s;
-
+  color: var(--dark);
 }
 
 h4 {
   padding-left: 30px;
   padding-bottom: 10px;
+  font-weight: lighter;
 }
 
 .material-icons {
