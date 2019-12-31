@@ -62,6 +62,18 @@ a {
   display: none;
 }
 
+.u-hidden {
+  visibility: hidden;
+}
+
+.u-inline {
+  display: inline;
+}
+
+.u-border-none {
+  border: none !important;
+}
+
 .u-normal {
   font-weight: normal;
 }

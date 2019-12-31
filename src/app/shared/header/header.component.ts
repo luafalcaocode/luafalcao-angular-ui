@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { MobileMenuService } from '../../services/layout/mobile-menu.service';
 import { ModalService } from '../../services/layout/modal.service';
 import { MenuService } from '../../services/layout/menu.service';
+import { LoginService } from '../../services/login.service';
 
 import { MenuViewModel } from '../../viewModels/menu.viewModel';
 
@@ -19,7 +20,7 @@ export class HeaderComponent implements OnInit {
   public isMenuProjectsOpen: boolean;
   public isSearchTooltipVisible: boolean;
 
-  constructor(public mobileMenuService: MobileMenuService, public modalService: ModalService, public menuService: MenuService) {
+  constructor(public mobileMenuService: MobileMenuService, public modalService: ModalService, public menuService: MenuService, public loginService: LoginService) {
 
   }
 
@@ -96,6 +97,11 @@ export class HeaderComponent implements OnInit {
         document.getElementById('tooltipIdiomas').classList.remove('fadeOut');
         this.isSearchTooltipVisible = true;
         break;
+      case 'usuario':
+        document.getElementById('tooltipUsuario').classList.add('fadeIn');
+        document.getElementById('tooltipUsuario').classList.remove('fadeOut');
+        this.isSearchTooltipVisible = true;
+        break;
     }
   }
 
@@ -116,6 +122,10 @@ export class HeaderComponent implements OnInit {
         document.getElementById('tooltipIdiomas').classList.remove('fadeIn');
         break;
 
+      case 'usuario':
+        document.getElementById('tooltipUsuario').classList.add('fadeOut');
+        document.getElementById('tooltipUsuario').classList.remove('fadeIn');
+        break;
     }
   }
 }

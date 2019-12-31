@@ -198,11 +198,19 @@ header {
 }
 
 a.login {
-  border: solid 1px white !important;
+  border: solid 1px white;
   padding: 5px 20px 5px 20px;
   border-radius: 4px;
   margin-top: -1px !important;
+  width: 88px;
+  height: 37.6px;
 }
+
+i.user {
+  margin-top: -5px !important;
+  font-size: 36px;
+}
+
 
 .active-menu {
   color: map-get($colors, navbar-link-hovered) !important;
@@ -236,6 +244,13 @@ a.login {
 
 #tooltipIdiomas {
   right: 220px;
+  top: 70px;
+  position: absolute;
+}
+
+
+#tooltipUsuario {
+  right: 140px;
   top: 70px;
   position: absolute;
 }

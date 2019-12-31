@@ -37,12 +37,7 @@ ul {
   }
 }
 
-a:link {
-  transition: .4s;
-}
-
 a:hover {
-  transition: .3s ease-out;
   text-decoration: none;
   color: var(--blueFlat);
 }

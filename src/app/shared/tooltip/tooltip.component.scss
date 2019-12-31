@@ -1,12 +1,9 @@
 .lua-tooltip {
   height: 25px;
-  float: right;
   background-color: var(--white);
   box-shadow: 2px 2px 2px var(--shadow);
   opacity: .9;
- 
   position: absolute;
-
 
   .lua-tooltip-group {
     text-align: center;

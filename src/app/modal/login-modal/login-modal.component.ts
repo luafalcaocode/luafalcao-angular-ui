@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { ModalService } from '../../services/layout/modal.service';
+import { LoginService } from '../../services/login.service';
 
 @Component({
   selector: 'app-login-modal',
@@ -9,7 +10,7 @@ import { ModalService } from '../../services/layout/modal.service';
 })
 export class LoginModalComponent implements OnInit {
 
-  constructor(public modalService: ModalService) { }
+  constructor(public modalService: ModalService, public loginService: LoginService) { }
 
   ngOnInit() {
     
@@ -19,4 +20,8 @@ export class LoginModalComponent implements OnInit {
     this.modalService.hide();
   }
 
+  login() {
+    this.loginService.login();
+    this.hide();
+  }
 }
