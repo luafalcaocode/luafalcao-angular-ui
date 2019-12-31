@@ -27,7 +27,7 @@ footer {
   }
 
   padding: 80px;
-  padding-top: 50px;
+  padding-top: 40px;
   position: relative;
 }
 
@@ -50,6 +50,18 @@ h4 {
 
 .footer-sections {
   padding-top: 10px;
+
+  ul {
+    li {
+      margin-bottom: 10px;
+      transition: .4s ease-out;
+    }
+
+    li:hover {
+      color: var(--white);
+      transition: .3s;
+    }
+  }
 }
 
 .social-icon-container {
@@ -59,12 +71,13 @@ h4 {
 
 .social-icon,
 i {
-  color: #fff !important;
+  color: var(--white) !important;
   font-size: 30px;
 }
 
 .social-icon:hover {
   cursor: pointer;
+  
 }
 
 .copyright-container {
@@ -75,4 +88,16 @@ i {
     text-align: left;
     font-size: 12px;
   }
+}
+
+.fa-whatsapp {
+  color: var(--grass);
+  font-size: 24px;
+  vertical-align: middle;
+}
+
+.fa-envelope {
+  color: var(--blueFlat);
+  font-size: 24px;
+  vertical-align: middle;
 }

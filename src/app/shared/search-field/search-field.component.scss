@@ -1,7 +1,7 @@
 #searchFieldContainer {
   position: fixed;
   z-index: 1000;
-  background: var(--dark);
+  background: var(--almostDark);
   width: 100%;
   padding: 200px;
   padding-top: 240px;
@@ -31,7 +31,7 @@
         transition: .3s;
         font-size: 38px;
         cursor: pointer;
-        color: var(--niceGreen);
+        color: var(--blueFlat);
     }
 
     .seach-field-close-icon:active {
@@ -42,7 +42,7 @@
       background: none;
       height: 60px;
       border-radius: 0;
-      border-color: var(--niceGreen);
+      border-color: var(--blueFlat);
       font-size: 24px;
       color: var(--white);
       font-weight: bold;
@@ -56,7 +56,7 @@
       margin-right: 10px;
       border: none;
       background: none;
-      color: var(--niceGreen);
+      color: var(--blueFlat);
       font-size: 12px;
       transition: .25s ease-out;
     }
@@ -67,7 +67,7 @@
     }
 
     button:active {
-        color: var(--niceGreen);
+        color: var(--blueFlat);
         transition: .27;
     }
 
