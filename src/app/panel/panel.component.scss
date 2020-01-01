@@ -1,0 +1,43 @@
+#panel {
+    height: 100%;
+    background-color: var(--clearGray);
+    padding-top: 120px;
+    padding-left: 130px;
+    
+    h3 {
+        font-weight: bold;
+        font-size: 18px;
+        text-transform: uppercase;
+        margin-bottom: 20px;;
+    }
+
+    ul {
+        list-style-type: none;
+        padding-left: 0;
+        padding-top: 10px;
+        border: solid 1px var(--borderGray);
+        border-bottom: solid 3px var(--blueFlat);
+        background-color: var(--white);
+        width: 250px;
+        min-height: 500px;
+
+        li {
+            transition: 0.4s ease;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-left: 14px;
+
+            .arrow-icon {
+                vertical-align: -7px;
+                padding-right: 11px;
+                padding-left: 150px;
+            }
+        }
+
+        li:hover {
+            cursor: pointer;
+            color: var(--white);
+            background-color: var(--blueFlat);
+        }
+    }
+}

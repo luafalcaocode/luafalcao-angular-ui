@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { MobileMenuService } from '../../services/layout/mobile-menu.service';
 import { ModalService } from '../../services/layout/modal.service';
@@ -21,7 +22,7 @@ export class HeaderComponent implements OnInit {
   public isMenuLoggedOpen: boolean;
   public isSearchTooltipVisible: boolean;
 
-  constructor(public mobileMenuService: MobileMenuService, public modalService: ModalService, public menuService: MenuService, public loginService: LoginService) {
+  constructor(public mobileMenuService: MobileMenuService, public modalService: ModalService, public menuService: MenuService, public loginService: LoginService, public router: Router) {
 
   }
 
@@ -147,6 +148,11 @@ export class HeaderComponent implements OnInit {
     this.isMenuLoggedOpen = false;
     document.getElementById('menuLogged').classList.add('fadeOut');
     document.getElementById('menuLogged').classList.remove('fadeIn');
+  }
+
+  navigateTo(path: string) {
+    this.router.navigate(['/' + path]);
+    window.scrollTo(0, 0);
   }
 
 
