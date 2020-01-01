@@ -40,4 +40,11 @@
             background-color: var(--blueFlat);
         }
     }
+
+    .col-md-8 {
+        background-color: var(--white);
+        min-height: 800px;
+        border: solid 1px var(--borderGray);
+        border-bottom: solid 3px var(--blueFlat);
+    }
 }
