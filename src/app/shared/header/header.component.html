@@ -35,7 +35,7 @@
       </div>
       <div class="col-lg-4 column-b">
         <!-- Pesquisar -->
-        <i class="material-icons" (click)="openContainer()" (mouseenter)="showTooltip($event)" (mouseleave)="hideToolTip($event)" id="pesquisar">
+        <i class="material-icons header-icon" (click)="openContainer()" (mouseenter)="showTooltip($event)" (mouseleave)="hideToolTip($event)" id="pesquisar">
           search
         </i>
         <div id="tooltipPesquisar" class="fadeOut">
@@ -43,7 +43,7 @@
         </div>
 
         <!-- Canal do YouTube -->
-        <i class="material-icons" (mouseenter)="showTooltip($event)" (mouseleave)="hideToolTip($event)" id="youTube"> 
+        <i class="material-icons header-icon" (mouseenter)="showTooltip($event)" (mouseleave)="hideToolTip($event)" id="youTube"> 
           play_circle_outline 
         </i>
         <div id="tooltipYouTube" class="fadeOut">
@@ -51,17 +51,20 @@
         </div>
         
         <!-- Seleção de Idiomas -->
-        <i class="material-icons" (mouseenter)="showTooltip($event)" (mouseleave)="hideToolTip($event)" id="idiomas">language</i>
+        <i class="material-icons header-icon" (mouseenter)="showTooltip($event)" (mouseleave)="hideToolTip($event)" id="idiomas">language</i>
         <div id="tooltipIdiomas" class="fadeOut">
           <app-tooltip [text]="'Idiomas'"></app-tooltip>
         </div>
 
         <!-- Login-->
         <a routerLink="" class="login" (click)="showLoginModal()" *ngIf="!loginService.isLogged()">Login</a>
-        <a routerLink="" class="login u-border-none" *ngIf="loginService.isLogged()" (mouseenter)="showTooltip($event)" (mouseleave)="hideToolTip($event)" id="usuario"><i class="material-icons user" *ngIf="loginService.isLogged()"> person </i></a>
+        <a routerLink="" [className]="isMenuLoggedOpen ? 'active-menu' : 'inative-menu'" class="login u-border-none" *ngIf="loginService.isLogged()" (mouseenter)="showTooltip($event)" (mouseleave)="hideToolTip($event)" (click)="showLoggedMenu()" id="usuario"><i class="material-icons user" *ngIf="loginService.isLogged()"> person </i></a>
         <div id="tooltipUsuario" class="fadeOut">
           <app-tooltip [text]="'Luã Falcão'"></app-tooltip>
         </div>
+
+        
+
       </div>
     </div>
   </nav>
@@ -118,6 +121,7 @@
     </div>
   </nav>
 
+  <app-menu-logged></app-menu-logged>
   <app-login-modal></app-login-modal>
   <app-search-field></app-search-field>
 

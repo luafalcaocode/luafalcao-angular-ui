@@ -99,20 +99,29 @@ header {
         transition: 0.27s;
       }
 
-      .material-icons {
+      i {
         z-index: 3;
         text-align: right;
-        color: map-get($colors, navbar-link);
         padding-right: 30px;
         margin-top: 7px;
         transition: 0.25 ease-out;
       }
 
-      .material-icons:hover,
+      i:hover,
       .fa-youtube {
-        color: map-get($colors, navbar-link-hovered);
         cursor: pointer;
         transition: 0.24s;
+      }
+
+      .header-icon {
+        transition: .27s;
+        color: var(--silver);
+      }
+
+      .header-icon:hover {
+        transition: .24s;
+        color: var(--white);
+        cursor: hover;
       }
     }
 
@@ -211,15 +220,19 @@ i.user {
   font-size: 36px;
 }
 
-
 .active-menu {
-  color: map-get($colors, navbar-link-hovered) !important;
-  transition: 0.27s !important;
+  color: var(--white) !important;
+  transition: 0.27s;
 }
 
 .inative-menu {
-  color: map-get($colors, navbar-link) !important;
-  transition: 0.25s ease-out !important;
+  color: var(--silver) !important;
+  transition: 0.25s ease-out;
+}
+
+.inative-menu:hover {
+  transition: 0.24s ease-out;
+  color: var(--white) !important;
 }
 
 .lcode {

@@ -18,6 +18,7 @@ export class HeaderComponent implements OnInit {
   public id: string;
   public isMenuServicesOpen: boolean;
   public isMenuProjectsOpen: boolean;
+  public isMenuLoggedOpen: boolean;
   public isSearchTooltipVisible: boolean;
 
   constructor(public mobileMenuService: MobileMenuService, public modalService: ModalService, public menuService: MenuService, public loginService: LoginService) {
@@ -128,4 +129,25 @@ export class HeaderComponent implements OnInit {
         break;
     }
   }
+
+  showLoggedMenu() {
+    this.isMenuLoggedOpen = !this.isMenuLoggedOpen;
+
+    if (this.isMenuLoggedOpen) {
+      document.getElementById('menuLogged').classList.add('fadeIn');
+      document.getElementById('menuLogged').classList.remove('fadeOut');
+    }
+    else {
+      document.getElementById('menuLogged').classList.add('fadeOut');
+      document.getElementById('menuLogged').classList.remove('fadeIn');  
+    }   
+  }
+
+  hideLoggedMenu() {
+    this.isMenuLoggedOpen = false;
+    document.getElementById('menuLogged').classList.add('fadeOut');
+    document.getElementById('menuLogged').classList.remove('fadeIn');
+  }
+
+
 }

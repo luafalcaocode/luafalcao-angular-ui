@@ -8,10 +8,11 @@ import { FormsModule } from '@angular/forms';
 import { ModalModule } from '../modal/modal.module';
 import { MenuComponent } from './header/menu/menu.component';
 import { TooltipComponent } from './tooltip/tooltip.component';
+import { MenuLoggedComponent } from './header/menu-logged/menu-logged.component';
 
 
 @NgModule({
-  declarations: [HeaderComponent, FooterComponent, SearchFieldComponent, MenuComponent, TooltipComponent],
+  declarations: [HeaderComponent, FooterComponent, SearchFieldComponent, MenuComponent, TooltipComponent, MenuLoggedComponent],
   imports: [
     CommonModule,
     FormsModule,
