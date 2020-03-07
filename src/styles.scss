@@ -133,6 +133,9 @@ a {
 }
 
 .article-header {
+  .small-menu-icon {
+    margin-top: -1px !important;
+  }
   .item-menu-principal {
     @media only screen and (max-width: 767px) {
       display: block !important;

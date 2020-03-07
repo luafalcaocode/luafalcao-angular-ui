@@ -1,18 +1,55 @@
 .article-container {
-    margin-left: 400px;
-    margin-right: 400px;
-    text-align: center;
+  @media only screen and (max-width: 1024px) {
+    padding: 0 20px 0px 20px;
+    margin: 0;
+    margin-top: 60px;
+  }
 
-    .thumbnail-container {
-        
-        padding-left: 40px;
+  margin: 70px 400px 0px 400px;
+  text-align: center;
 
-        .thumbnail {
-            border: dashed 2px var(--niceBlue);
-            border-radius: 50%;
-            height: 70px;
-            width: 70px;
-        }
+  .thumbnail-container {
+    .thumbnail {
+      border: dashed 2px var(--niceBlue);
+      border-radius: 50%;
+      height: 70px;
+      width: 70px;
     }
-    
+  }
+
+  h1 {
+    margin-bottom: 20px;
+    text-align: left;
+  }
+
+  .descricao-nome-autor {
+    margin-left: -70px;
+
+    @media (max-width: 767px) {
+      margin-left: -20px;
+    }
+  }
+
+  .data-publicacao {
+    @media (max-width: 767px) {
+      margin-left: 5px;
+    }
+  }
+
+  .container-info-articles {
+    margin-top: 10px;
+  }
+
+  .container-article-info {
+    padding-left: 20px;
+  }
+
+  .article-body {
+    margin-top: 10px;
+
+    p {
+      font-size: 20px;
+      text-align: left;
+    }
+  }
 }

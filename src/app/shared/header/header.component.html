@@ -57,7 +57,7 @@
         </div>
 
         <!-- Login-->
-        <a routerLink="" class="login" (click)="showLoginModal()" *ngIf="!loginService.isLogged()">Login</a>
+        <a class="login" (click)="showLoginModal()" *ngIf="!loginService.isLogged()">Login</a>
         <a routerLink="" [className]="isMenuLoggedOpen ? 'active-menu' : 'inative-menu'" class="login u-border-none" *ngIf="loginService.isLogged()" (mouseenter)="showTooltip($event)" (mouseleave)="hideToolTip($event)" (click)="showLoggedMenu()" id="usuario"><i class="material-icons user" *ngIf="loginService.isLogged()"> person </i></a>
         <div id="tooltipUsuario" class="fadeOut">
           <app-tooltip [text]="'Luã Falcão'"></app-tooltip>
@@ -94,7 +94,7 @@
             </a>
           </li>
           <li>
-            <a routerLink="">Artigos
+            <a routerLink="/articles">Artigos
               <i class="material-icons">keyboard_arrow_right</i>
             </a>
           </li>
