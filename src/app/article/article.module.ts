@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ArticleComponent } from './article.component';
 import { HeaderComponent } from './header/header.component';
 import { SharedModule } from '../shared/shared.module';
+import { ModalModule } from '../modal/modal.module';
 
 
 
@@ -11,7 +12,8 @@ import { SharedModule } from '../shared/shared.module';
   declarations: [ArticleComponent, HeaderComponent],
   imports: [
     CommonModule,
-    SharedModule
+    SharedModule,
+    ModalModule
   ],
   exports: [
     ArticleComponent

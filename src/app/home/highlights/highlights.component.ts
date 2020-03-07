@@ -10,7 +10,7 @@ export class HighlightsComponent implements OnInit {
 
   public slides: SlideViewModel[];
   public slideSelectedContent: SlideViewModel;
-  public assets_path: string = '../../assets/backgrounds/';
+  public assets_path: string = 'assets/backgrounds/';
   public slideInterval: any;
 
   constructor() {

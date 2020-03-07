@@ -1,27 +1,26 @@
 :root {
-    --white: #fff;
-    --blue: #1074e7;
-    --niceGreen: #00e59b;
-    --niceBlue: #66afe9;
-    --green: #00bc6e;
-    --dark: #000;
-    --silver: rgba(255, 255, 255, 0.65);
-    --darkGray: #25292d;
-    --shadow: rgba(0, 0, 0, 0.5);
-    --transparent: rgba(255, 255, 255, 0.5);
-    --darking: #24292E;
-    --darkGray: #696969;
-    --link: #337ab7;
-    --blueFlat: rgb(43, 87, 122);
-    --almostDark: rgba(0, 0, 0, 0.9);
-    --grass: #82C91E;
-    --clearGray: #F3F6F8;
-    --borderGray: #E2E2E2
+  --white: #fff;
+  --blue: #1074e7;
+  --niceGreen: #00e59b;
+  --niceBlue: #66afe9;
+  --green: #00bc6e;
+  --dark: #000;
+  --silver: rgba(255, 255, 255, 0.65);
+  --darkGray: #25292d;
+  --shadow: rgba(0, 0, 0, 0.5);
+  --transparent: rgba(255, 255, 255, 0.5);
+  --darking: #24292e;
+  --darkGray: #696969;
+  --link: #337ab7;
+  --blueFlat: rgb(43, 87, 122);
+  --almostDark: rgba(0, 0, 0, 0.9);
+  --grass: #82c91e;
+  --clearGray: #f3f6f8;
+  --borderGray: #e2e2e2;
 }
 
-
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   overflow-x: hidden;
   height: 100%;
 }
@@ -100,6 +99,9 @@ a {
   padding-left: 0 !important;
 }
 
+.u-marginRight-zero {
+  margin-right: 0 !important;
+}
 
 /* modal */
 .fadeIn {
@@ -118,4 +120,51 @@ a {
   transition: 0.3s linear;
 }
 
+.hide-on-small-only {
+  @media only screen and (max-width: 767px) {
+    display: none;
+  }
+}
 
+/* overrides */
+
+.row {
+  margin-right: 0 !important;
+}
+
+.article-header {
+  .item-menu-principal {
+    @media only screen and (max-width: 767px) {
+      display: block !important;
+    }    
+
+    display: none !important;
+  }
+
+  a.lcode, .sandwich-icon {
+    color: var(--dark) !important;
+  }
+
+  nav {
+    background: var(--white) !important;
+    box-shadow: 3px 3px 3px #f5f5f5;
+    height: 60px !important;
+    padding-top: 14px !important;
+
+    .header-icon {
+      color: var(--dark) !important;
+      font-size: 20px;
+      padding-top: 2px !important;
+    }
+
+    .login {
+      color: var(--dark) !important;
+      margin-right: 0 !important;
+    }
+    a.login {
+      font-size: 16px !important;
+      width: 80px;
+      padding: 6px 20px 5px 15px !important;
+    }
+  }
+}

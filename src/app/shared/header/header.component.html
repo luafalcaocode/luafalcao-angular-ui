@@ -6,7 +6,7 @@
       </div>
       <div class="col-lg-6">
         <ul id="navbarItems">
-          <li (mouseleave)="hideMenu('menuProjetos')">
+          <li (mouseleave)="hideMenu('menuProjetos')" class="item-menu-principal">
             <a routerLink="" (mouseenter)="showMenu('menuProjetos')"
               [className]="isMenuProjectsOpen ? 'active-menu' : 'inative-menu'">Projetos
               <span class="glyphicon glyphicon-menu-down"></span>
@@ -14,7 +14,7 @@
             <app-menu [menu]="menuProjetos" class="fadeOut" id="menuProjetos" (mouseenter)="showMenu('menuProjetos')"
               (mouseleave)="hideMenu('menuProjetos')"></app-menu>
           </li>
-          <li (mouseleave)="hideMenu('menuServicos')">
+          <li (mouseleave)="hideMenu('menuServicos')" class="item-menu-principal">
             <a routerLink="" (mouseenter)="showMenu('menuServicos')"
               [className]="isMenuServicesOpen ? 'active-menu' : 'inative-menu'">Serviços
               <span class="glyphicon glyphicon-menu-down"></span>
@@ -22,13 +22,13 @@
             <app-menu [menu]="menuServicos" class="fadeOut" id="menuServicos" (mouseenter)="showMenu('menuServicos')"
               (mouseleave)="hideMenu('menuServicos')"></app-menu>
           </li>
-          <li>
+          <li class="item-menu-principal">
             <a routerLink="/articles">Artigos</a>
           </li>
-          <li>
+          <li class="item-menu-principal">
             <a routerLink="">Sobre</a>
           </li>
-          <li>
+          <li class="item-menu-principal">
             <a routerLink="">Contato</a>
           </li>
         </ul>
@@ -62,9 +62,6 @@
         <div id="tooltipUsuario" class="fadeOut">
           <app-tooltip [text]="'Luã Falcão'"></app-tooltip>
         </div>
-
-        
-
       </div>
     </div>
   </nav>
@@ -75,10 +72,10 @@
   <nav id="navMobile">
     <div class="row">
       <div class="col-sm-6 column-a">
-        <a routerLink="">Luã Falcão</a>
+        <a class="lcode" routerLink="">Luã Falcão</a>
       </div>
       <div class="col-sm-6 u-right" (click)="mobileMenuService.openCloseMobile()">
-        <i class="material-icons small-menu-icon u-right">
+        <i class="material-icons small-menu-icon u-right sandwich-icon">
           reorder
         </i>
       </div>
