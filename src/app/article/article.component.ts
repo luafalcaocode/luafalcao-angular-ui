@@ -6,10 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./article.component.scss']
 })
 export class ArticleComponent implements OnInit {
-
+ 
   constructor() { }
 
   ngOnInit() {
+    window.scrollTo(0, 0);
+  }
+
+  scrollToElement(id) {
+    document.getElementById(id).scrollIntoView({ behavior: 'smooth'});
   }
 
 }

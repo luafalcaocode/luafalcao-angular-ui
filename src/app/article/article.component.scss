@@ -4,9 +4,10 @@
     margin: 0;
     margin-top: 60px;
   }
+  
 
   margin: 70px 400px 0px 400px;
-  text-align: center;
+
 
   .thumbnail-container {
     .thumbnail {
@@ -23,10 +24,10 @@
   }
 
   .descricao-nome-autor {
-    margin-left: -70px;
+  
 
     @media (max-width: 767px) {
-      margin-left: -20px;
+     margin-left: 0;
     }
   }
 
@@ -52,4 +53,45 @@
       text-align: left;
     }
   }
+}
+
+
+.user-interaction {
+  position: fixed;
+  right: 70px;
+  top: 30%;
+
+  @media only screen and (max-width: 990px) {
+      display: none;
+  }
+}
+
+.user-interaction-actived {
+  color: var(--niceBlue);
+  pointer-events: none;
+  transition: 0.1s;
+}
+
+.user-interaction-actived-on {
+  color: var(--niceBlue);
+  transition: 0.1s;
+}
+
+.user-interaction span:hover {
+  color: var(--niceBlue);
+  transition: 0.1s;
+  cursor: pointer;
+}
+
+.user-interaction span:active {
+  color: var(--dark);
+}
+
+.user-interaction span {
+  transition: 0.1 ease-in-out;
+  margin-bottom: 15px;
+}
+
+.user-interaction-values {
+  vertical-align: 2px;
 }

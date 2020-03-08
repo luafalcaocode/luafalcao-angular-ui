@@ -63,4 +63,18 @@
                 libero. Sed et ex leo.</p>
         </div>
     </div>
+    <div id="scrollToThere"></div>
+    <article-comentary></article-comentary>
 </article>
+
+
+<div class="user-interaction">
+    <div class="list-group-icons">
+        <span id="talesLikeIcon" class="glyphicon glyphicon-thumbs-up" data-toggle="tooltip"
+            title="Curtir"></span>&nbsp; <br />
+        <span id="commentsIcon" (click)="scrollToElement('scrollToThere')" class="glyphicon glyphicon-comment"
+            data-toggle="tooltip" title="Comentar"></span>&nbsp; <br />
+    </div>
+</div>
+
+<app-footer></app-footer>
