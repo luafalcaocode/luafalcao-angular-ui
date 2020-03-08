@@ -1,0 +1,56 @@
+
+.user-interaction {
+    position: fixed;
+    right: 70px;
+    top: 30%;
+  
+    @media only screen and (max-width: 990px) {
+        // display: none;
+        position: static;
+        right: 0;
+    }
+  }
+  
+  .user-interaction-actived {
+    color: var(--niceBlue);
+    pointer-events: none;
+    transition: 0.1s;
+  }
+  
+  .user-interaction-actived-on {
+    color: var(--niceBlue);
+    transition: 0.1s;
+  }
+  
+  .user-interaction span:hover {
+    color: var(--niceBlue);
+    transition: 0.1s;
+    cursor: pointer;
+  }
+  
+  .user-interaction span:active {
+    color: var(--dark);
+  }
+  
+  .user-interaction span {
+    transition: 0.1 ease-in-out;
+    margin-bottom: 15px;
+  }
+  
+  .user-interaction-values {
+    vertical-align: 2px;
+  }
+
+  .user-interaction-icon {
+    @media (max-width: 767px) {
+      display: inline;
+      
+    }
+
+    
+  }
+
+  .interaction-count {
+    vertical-align: 3px;
+    font-size: 12px;
+  }

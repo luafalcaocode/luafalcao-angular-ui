@@ -2,12 +2,10 @@
   @media only screen and (max-width: 1024px) {
     padding: 0 20px 0px 20px;
     margin: 0;
-    margin-top: 60px;
+    margin-top: 10px;
   }
-  
 
-  margin: 70px 400px 0px 400px;
-
+  margin: 20px 400px 0px 400px;
 
   .thumbnail-container {
     .thumbnail {
@@ -15,6 +13,12 @@
       border-radius: 50%;
       height: 70px;
       width: 70px;
+      transition: .5s ease-out;
+    }
+
+    .thumbnail:hover {
+      filter: grayscale(100%);
+      transition: .4s;
     }
   }
 
@@ -24,10 +28,8 @@
   }
 
   .descricao-nome-autor {
-  
-
     @media (max-width: 767px) {
-     margin-left: 0;
+      margin-left: 0;
     }
   }
 
@@ -48,50 +50,7 @@
   .article-body {
     margin-top: 10px;
 
-    p {
-      font-size: 20px;
-      text-align: left;
-    }
+    font-size: 18px;
+    text-align: left;
   }
-}
-
-
-.user-interaction {
-  position: fixed;
-  right: 70px;
-  top: 30%;
-
-  @media only screen and (max-width: 990px) {
-      display: none;
-  }
-}
-
-.user-interaction-actived {
-  color: var(--niceBlue);
-  pointer-events: none;
-  transition: 0.1s;
-}
-
-.user-interaction-actived-on {
-  color: var(--niceBlue);
-  transition: 0.1s;
-}
-
-.user-interaction span:hover {
-  color: var(--niceBlue);
-  transition: 0.1s;
-  cursor: pointer;
-}
-
-.user-interaction span:active {
-  color: var(--dark);
-}
-
-.user-interaction span {
-  transition: 0.1 ease-in-out;
-  margin-bottom: 15px;
-}
-
-.user-interaction-values {
-  vertical-align: 2px;
 }

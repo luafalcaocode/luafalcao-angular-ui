@@ -1,4 +1,4 @@
-<section class="article-commentarys" >
+<section class="article-commentarys" id="scrollToThere">
   <div class="row">
     <div class="col-xs-12">
       <h3 class="caps u-text-left">Comente aqui:</h3>
@@ -6,20 +6,31 @@
   </div>
   
   <div class="row">
-    <div class="col-xs-12 col-lg-6 col-md-12">
+    <div class="col-xs-12 col-lg-6 col-md-12 u-padding-right-zero">
       <div class="form-group form-group-comments">
         <label>Nome:</label> <br />
-        <input [(ngModel)]="modelForm.name" name="name" placeholder="insira seu nome aqui" maxlength="20"
+        <input [(ngModel)]="modelForm.name" name="name" placeholder="Qual é o seu nome?" maxlength="20"
+          class="form-control" type="text">
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-6 col-md-12 u-padding-right-zero">
+      <div class="form-group form-group-comments">
+        <label>E-mail:</label> <br />
+        <input [(ngModel)]="modelForm.email" name="name" placeholder="Se desejar pode inserir seu e-mail aqui" maxlength="20"
           class="form-control" type="text">
       </div>
     </div>
   </div>
   
+  
   <div class="row">
-    <div class="col-xs-12 col-lg-8">
+    <div class="col-xs-12 col-lg-8 u-padding-right-zero">
       <div class="form-group form-group-comments">
         <label>Comentário:</label> <br />
-        <textarea [(ngModel)]="modelForm.content" name="content" placeholder="vamos lá! diga a verdade nua e crua!"
+        <textarea [(ngModel)]="modelForm.content" name="content" placeholder="O que você achou deste artigo?"
           class="form-control" rows="10" maxlength="300"></textarea>
       </div>
     </div>
@@ -42,7 +53,7 @@
     </div>
   
     <div class="row">
-      <div class="col-xs-12 col-lg-8">
+      <div class="col-xs-12 col-lg-8 u-padding-right-zero">
         <div class="panel panel-default" *ngFor="let comment of comments">
           <div class="panel-heading" id={{comment.id}}>{{ comment.name }}</div>
           <div class="panel-body">

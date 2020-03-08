@@ -1,0 +1,18 @@
+export class ArticleMock {
+    id: number;
+    title: string;
+    content: string;
+    publishDate: string;
+    author: string;
+    numberOfLikes: number;
+    numberOfComments: number;
+
+    constructor() {
+        this.title = 'Design Patterns and where to find them ';
+        this.author = 'Luã Falcão';
+        this.publishDate = '08 de março de 2020'
+        this.content = '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut in porttitor sapien. Fusce aliquet dolor at ultrices ullamcorper. Vivamus nec pellentesque massa. Nunc maximus facilisis tristique. Suspendisse consequat congue lorem, id fermentum ante rhoncus a. Cras nisi sem, mollis ac tristique nec, rutrum a est. Vestibulum et cursus magna, id posuere tortor. Pellentesque at tempus nisi, in interdum purus. Cras commodo metus sed risus mollis interdum. Aliquam erat volutpat. Duis fermentum quam vehicula nulla lobortis volutpat. Pellentesque mollis ut magna sed congue.</p> <p>Nulla at dictum neque. Aenean dolor mauris, sagittis eu tempus a, gravida vitae est. Nunc vitae tincidunt quam, quis scelerisque felis. Cras eu posuere quam. Sed pellentesque efficitur venenatis. Nunc ligula metus, commodo ultricies neque a, finibus gravida quam. Praesent tempor accumsan lorem. Praesent accumsan viverra quam, quis hendrerit dui luctus vel. Nulla ultrices sem ac eleifend euismod. Fusce metus mauris, hendrerit et erat in, eleifend bibendum lacus.</p> <p>Aenean feugiat sapien a sem luctus eleifend. Integer euismod eros ligula, efficitur convallis urna maximus sit amet. Quisque sed mauris enim. Nunc fermentum elit vitae egestas eleifend. Suspendisse feugiat, ligula quis feugiat varius, ipsum odio lacinia metus, ut ultricies erat leo eget ante. Pellentesque vel pulvinar mi. Nam at consequat purus. Phasellus varius sodales quam in sodales. Duis lobortis consectetur convallis. Morbi blandit est eget eros malesuada, nec sagittis mi tristique. Quisque scelerisque maximus felis suscipit rhoncus. Ut tempor, sapien quis commodo laoreet, odio enim porta massa, id varius tellus metus a lectus. Cras eu leo ut velit cursus ultricies sed non ex. Nam mollis commodo tellus vitae pharetra. Pellentesque lacinia orci nec nunc ultricies, ac tincidunt dolor feugiat. Aliquam urna lectus, mattis dictum nisl nec, cursus vulputate orci.</p> <p>Mauris eget justo euismod, tempor sapien quis, egestas augue. Proin consectetur non leo et mollis. Aliquam dapibus laoreet nunc, vitae pulvinar mauris ornare id. Cras at mi velit. Fusce ultrices magna quis ligula tincidunt pharetra. Maecenas blandit dolor eu sollicitudin facilisis. Suspendisse at hendrerit erat. Nulla lacinia facilisis dui quis fringilla. Praesent aliquet purus quis odio aliquet sagittis id eget arcu.</p> <p>Curabitur facilisis laoreet urna, at posuere tellus finibus eu. Donec viverra sed tellus vel rhoncus. Quisque metus metus, tristique in turpis quis, pulvinar tristique magna. Aenean sodales ex purus, et efficitur mauris malesuada non. Aliquam non nunc vitae eros finibus vulputate. Integer porta semper felis, nec eleifend est consequat ac. Ut posuere vel libero eu maximus. Aliquam pharetra mi vitae pellentesque vestibulum. Sed interdum porta egestas. Maecenas euismod, elit in ultrices eleifend, nisi velit convallis diam, sed facilisis orci dolor eget justo. Maecenas a faucibus nibh. Morbi in nisi finibus, ullamcorper est sit amet, volutpat libero. Pellentesque consequat dignissim arcu id maximus. Quisque quis lacus sed orci ultricies consectetur rutrum eget purus.</p>' 
+        this.numberOfLikes = 3;
+        this.numberOfComments = 3;
+    }
+}
