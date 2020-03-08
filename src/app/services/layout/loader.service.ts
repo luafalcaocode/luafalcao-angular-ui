@@ -1,0 +1,17 @@
+import { Injectable } from '@angular/core';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class LoaderService {
+
+  constructor() { }
+
+  show() {
+    return true;
+  }
+
+  hide() {
+    return false;
+  }
+}

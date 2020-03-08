@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ArticleViewModel } from '../viewModels/article.viewModel';
 import { ArticleMock } from './mocks/article.mock';
+import { LoaderService } from '../services/layout/loader.service';
+import { CommonService } from '../services/layout/common.service';
 
 @Component({
   selector: 'app-article',
@@ -10,10 +12,12 @@ import { ArticleMock } from './mocks/article.mock';
 export class ArticleComponent implements OnInit {
   article: ArticleMock; 
   comments: any[];
-  constructor() { }
+  isLoading: boolean;
+
+  constructor(public loaderService: LoaderService, public commonService: CommonService) { }
 
   ngOnInit() {
-    window.scrollTo(0, 0);
+    this.commonService.initializePage();
     this.article = new ArticleMock();
     this.comments = [
       {
@@ -45,9 +49,17 @@ export class ArticleComponent implements OnInit {
   }
 
   onComment(event: any) {
+    let thiss = this;
     // chamar api pra adicionar um comentário novo na tela
     // chamar api pra fazer get dos comentários e passar para o componente filho
-    this.comments.unshift(event);
-    this.article.numberOfComments++;
+    this.isLoading = this.loaderService.show();
+  
+    // trocar pelo then quando a API estiver pronta
+    setTimeout( function () {
+      thiss.isLoading = thiss.loaderService.hide();
+      thiss.comments.unshift(event);
+      thiss.article.numberOfComments++;
+      document.getElementById('scrollToAllComments').scrollIntoView({behavior: 'smooth'});
+    }, 2000);
   }
 }

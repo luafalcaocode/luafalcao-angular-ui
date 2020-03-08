@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { ImageViewModel } from '../viewModels/image.viewModel';
+import { CommonService } from '../services/layout/common.service';
 
 @Component({
   selector: 'app-home',
@@ -10,7 +11,7 @@ import { ImageViewModel } from '../viewModels/image.viewModel';
 export class HomeComponent implements OnInit {
   public images: ImageViewModel[];
 
-  constructor() {
+  constructor(public commonService: CommonService) {
 
     this.images = [
       {
@@ -78,6 +79,7 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.commonService.initializePage();
   }
 
 }

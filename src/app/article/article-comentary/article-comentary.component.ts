@@ -1,4 +1,5 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+import { LoaderService } from '../../services/layout/loader.service';
 
 @Component({
   selector: 'article-comentary',
@@ -8,15 +9,15 @@ import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 export class ArticleComentaryComponent implements OnInit {
   modelForm: any;
   numberOfComments: number;
-  @Input() comments: any[];
+  @Input() isLoading: boolean;
 
+  @Input() comments: any[];
   @Output() comment: EventEmitter<any> = new EventEmitter<any>();
 
-  constructor() { }
+  constructor(public loaderService: LoaderService) { }
 
   ngOnInit() {
     this.modelForm = new Object();
-    
   }
 
   onComment() {

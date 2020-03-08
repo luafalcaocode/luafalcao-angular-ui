@@ -19,7 +19,7 @@
     <div class="col-xs-12 col-lg-6 col-md-12 u-padding-right-zero">
       <div class="form-group form-group-comments">
         <label>E-mail:</label> <br />
-        <input [(ngModel)]="modelForm.email" name="name" placeholder="Se desejar pode inserir seu e-mail aqui" maxlength="20"
+        <input [(ngModel)]="modelForm.email" name="name" placeholder="Se quiser pode inserir seu e-mail aqui (outros usuários não verão)" maxlength="20"
           class="form-control" type="text">
       </div>
     </div>
@@ -38,15 +38,18 @@
   
   <div class="row">
     <div class="col-xs-12">
-      <button id="btnSend" type="button" class="btn btn-white-black" (click)="onComment()">
-        <span id="btnSendText">Enviar</span>
+      <button id="btnSend" type="button" class="btn btn-white-black" (click)="onComment()" >
+        <span id="btnSendText">
+          <span *ngIf="!isLoading">Enviar</span>
+          <app-mini-loading *ngIf="isLoading"></app-mini-loading>
+        </span>
         <!-- <app-smallloader id="smallLoader"></app-smallloader> -->
       </button>
     </div>
   </div>
   
   <div class="commentsContainer" id="talesCommentsContainer" [hidden]="numberOfComments <= 0">
-    <div class="row">
+    <div class="row" id="scrollToAllComments">
       <div class="col-xs-12">
         <h3 class="caps">Todos os Comentários</h3>
       </div>
@@ -57,7 +60,7 @@
         <div class="panel panel-default" *ngFor="let comment of comments">
           <div class="panel-heading" id={{comment.id}}>{{ comment.name }}</div>
           <div class="panel-body">
-            <p>{{ comment.content }}</p>
+            <p class="u-break-all">{{ comment.content }}</p>
           </div>
         </div>
       </div>

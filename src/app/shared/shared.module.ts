@@ -10,10 +10,11 @@ import { ModalModule } from '../modal/modal.module';
 import { MenuComponent } from './header/menu/menu.component';
 import { TooltipComponent } from './tooltip/tooltip.component';
 import { MenuLoggedComponent } from './header/menu-logged/menu-logged.component';
+import { MiniLoadingComponent } from './loaders/mini-loading/mini-loading.component';
 
 
 @NgModule({
-  declarations: [HeaderComponent, FooterComponent, SearchFieldComponent, MenuComponent, TooltipComponent, MenuLoggedComponent],
+  declarations: [HeaderComponent, FooterComponent, SearchFieldComponent, MenuComponent, TooltipComponent, MenuLoggedComponent, MiniLoadingComponent],
   imports: [
     CommonModule,
     FormsModule,
@@ -24,7 +25,8 @@ import { MenuLoggedComponent } from './header/menu-logged/menu-logged.component'
     HeaderComponent,
     FooterComponent,
     SearchFieldComponent,
-    TooltipComponent
+    TooltipComponent,
+    MiniLoadingComponent
   ]
 })
 export class SharedModule { }

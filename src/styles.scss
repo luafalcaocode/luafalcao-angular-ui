@@ -40,6 +40,9 @@ a {
 }
 
 /* Helpers */
+.u-break-all {
+  word-break: break-all;
+}
 .u-pointer {
   cursor: pointer;
 }
@@ -192,6 +195,8 @@ a {
   background: var(--white);
   color: var(--dark);
   transition: ease-out .4s;
+  width: 100px;
+  height: 35px;
 }
 
 .btn-white-black:hover {
@@ -201,3 +206,7 @@ a {
   color: var(--white);
   transition: .3s;
 }
+
+.btn-white-black:focus, .btn-white-black:active {
+  outline: none;
+} 
