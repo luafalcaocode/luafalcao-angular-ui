@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 
 @Component({
   selector: 'article-comentary',
@@ -8,25 +8,18 @@ import { Component, OnInit } from '@angular/core';
 export class ArticleComentaryComponent implements OnInit {
   modelForm: any;
   numberOfComments: number;
-  comments: any[];
+  @Input() comments: any[];
+
+  @Output() comment: EventEmitter<any> = new EventEmitter<any>();
 
   constructor() { }
 
   ngOnInit() {
     this.modelForm = new Object();
-    this.comments = [
-      {
-        name: 'Ellen Galven',
-        content: 'Hi! I loved your article! Congratulations!'
-      },
-      {
-        name: 'Cloud Strife',
-        content: 'Muito bom! Parabéns pelo artigo! Adorei a leitura!'
-      },
-      {
-        name: 'Princesa Zelda',
-        content: 'Oi! Você viu o Link por aí? Ele esqueceu a Ocarina do Tempo comigo!'
-      }
-    ];
+    
+  }
+
+  onComment() {
+    this.comment.emit(this.modelForm);
   }
 }

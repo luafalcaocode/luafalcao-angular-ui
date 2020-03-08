@@ -21,7 +21,7 @@
 
     <div class="row">
         <div class="col-xs-12">
-            <article-user-interaction [numberOfLikes]="article.numberOfLikes" [numberOfComments]="article.numberOfComments"></article-user-interaction>
+            <article-user-interaction (like)="onLike($event)"  [numberOfLikes]="article.numberOfLikes" [numberOfComments]="article.numberOfComments"></article-user-interaction>
         </div>
     </div>
 
@@ -34,7 +34,7 @@
     </div>
 
     
-    <article-comentary></article-comentary>
+    <article-comentary (comment)="onComment($event)" [comments]="comments"></article-comentary>
 </article>
 
 

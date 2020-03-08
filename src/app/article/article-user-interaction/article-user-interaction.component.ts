@@ -1,4 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+
 
 @Component({
   selector: 'article-user-interaction',
@@ -10,7 +11,14 @@ export class ArticleUserInteractionComponent implements OnInit {
   @Input() numberOfLikes: number;
   @Input() numberOfComments: number;
 
+  @Output() like : EventEmitter<any> = new EventEmitter<any>();
+
   constructor() { }
+
+  onClick_like() {
+    this.like.emit(this.numberOfLikes + 1);
+  }
+
 
   ngOnInit() {
   }
