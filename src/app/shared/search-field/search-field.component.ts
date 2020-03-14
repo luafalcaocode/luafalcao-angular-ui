@@ -23,4 +23,8 @@ export class SearchFieldComponent implements OnInit {
 
     document.getElementsByTagName('body')[0].style.overflowY = 'auto'; 
   }
+
+  saveSearch(value: string) {
+    this.searchField = value;
+  }
 }
