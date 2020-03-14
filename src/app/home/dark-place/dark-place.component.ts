@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+
 
 @Component({
   selector: 'app-dark-place',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DarkPlaceComponent implements OnInit {
 
+  private modelForm = new Object();
+  @Output() message: EventEmitter<any> = new EventEmitter<any>(); 
+
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  sendMessage() {
+    this.message.emit(this.modelForm);
   }
 
 }

@@ -82,4 +82,9 @@ export class HomeComponent implements OnInit {
     this.commonService.initializePage();
   }
 
+  onMessage(message: any) {
+    // chamar futuramente a API para entregar os dados do formulário para o meu e-mail
+    console.log(message);
+  } 
+
 }

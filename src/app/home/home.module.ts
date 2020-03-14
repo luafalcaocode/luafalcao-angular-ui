@@ -9,6 +9,7 @@ import { ArticlesComponent } from './articles/articles.component';
 import { ChatComponent } from './chat/chat.component';
 import { DarkPlaceComponent } from './dark-place/dark-place.component';
 import { TechnolgiesComponent } from './technolgies/technolgies.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -16,7 +17,8 @@ import { TechnolgiesComponent } from './technolgies/technolgies.component';
   declarations: [HomeComponent, CarouselComponent, HighlightsComponent, JobsComponent, ArticlesComponent, ChatComponent, DarkPlaceComponent, TechnolgiesComponent],
   imports: [
     CommonModule,
-    SharedModule
+    SharedModule,
+    FormsModule
   ],
   exports: [
     HomeComponent  
