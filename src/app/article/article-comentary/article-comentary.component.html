@@ -6,7 +6,7 @@
   </div>
   
   <div class="row">
-    <div class="col-xs-12 col-lg-6 col-md-12 u-padding-right-zero">
+    <div class="col-xs-12 col-md-12 u-padding-right-zero">
       <div class="form-group form-group-comments">
         <label>Nome:</label> <br />
         <input [(ngModel)]="modelForm.name" name="name" placeholder="Qual é o seu nome?" maxlength="20"
@@ -16,7 +16,7 @@
   </div>
 
   <div class="row">
-    <div class="col-xs-12 col-lg-6 col-md-12 u-padding-right-zero">
+    <div class="col-xs-12 col-md-12 u-padding-right-zero">
       <div class="form-group form-group-comments">
         <label>E-mail:</label> <br />
         <input [(ngModel)]="modelForm.email" name="name" placeholder="Se quiser pode inserir seu e-mail aqui (outros usuários não verão)" maxlength="20"
@@ -27,7 +27,7 @@
   
   
   <div class="row">
-    <div class="col-xs-12 col-lg-8 u-padding-right-zero">
+    <div class="col-xs-12 u-padding-right-zero">
       <div class="form-group form-group-comments">
         <label>Comentário:</label> <br />
         <textarea [(ngModel)]="modelForm.content" name="content" placeholder="O que você achou deste artigo?"
@@ -56,7 +56,7 @@
     </div>
   
     <div class="row">
-      <div class="col-xs-12 col-lg-8 u-padding-right-zero">
+      <div class="col-xs-12 u-padding-right-zero">
         <div class="panel panel-default" *ngFor="let comment of comments">
           <div class="panel-heading" id={{comment.id}}>{{ comment.name }}</div>
           <div class="panel-body">
