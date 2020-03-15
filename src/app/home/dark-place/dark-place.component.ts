@@ -8,7 +8,12 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class DarkPlaceComponent implements OnInit {
 
-  private modelForm = new Object();
+  public modelForm = {
+    name: '',
+    email: '',
+    message: ''
+  };
+  
   @Output() message: EventEmitter<any> = new EventEmitter<any>(); 
 
 

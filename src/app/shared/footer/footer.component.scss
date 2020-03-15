@@ -16,14 +16,21 @@ footer {
 
   @media only screen and (max-width: 747px) and (orientation: portrait) {
     min-height: 590px;
+    height: auto;
   }
 
   @media only screen and (max-width: 747px) and (orientation: landscape) {
     min-height: 570px;
+    height: auto;
   }
 
   @media only screen and (max-width: 747px) {
       padding-top: 10px;
+  }
+
+
+  @media only screen and (min-width: 768px) and (max-width: 1024px) {
+    height: auto;
   }
 
   padding: 80px;

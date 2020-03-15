@@ -21,6 +21,7 @@ export class HeaderComponent implements OnInit {
   public isMenuProjectsOpen: boolean;
   public isMenuLoggedOpen: boolean;
   public isSearchTooltipVisible: boolean;
+  public isUserIconsVisibile: boolean = true;
 
   constructor(public mobileMenuService: MobileMenuService, public modalService: ModalService, public menuService: MenuService, public loginService: LoginService, public router: Router) {
 
@@ -41,7 +42,14 @@ export class HeaderComponent implements OnInit {
       new MenuViewModel(3, 'De uma Web API', 'link do projeto pessoal aqui'),
       new MenuViewModel(3, 'De um jogo eletrônico', 'link do projeto pessoal aqui')
     ];
+    this.mobileMenuService.isNavMobileOpen = false;
+
+    const URL = document.URL;
+    if (URL.includes('articles')) {
+      this.isUserIconsVisibile = false;
+    }
   }
+
 
   showLoginModal() {
     this.modalService.show();

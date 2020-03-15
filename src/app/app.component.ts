@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -16,5 +16,10 @@ export class AppComponent {
     else {
       this.isUserUsingInternetExplorer = false;
     }
+  }
+
+  ngOnInit() {
+    console.log('Versão: 2.0');
+    console.log('Data de Publicação: ' + new Date().toLocaleDateString("pt-BR"));
   }
 }
