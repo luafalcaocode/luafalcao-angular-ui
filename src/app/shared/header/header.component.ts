@@ -22,10 +22,12 @@ export class HeaderComponent implements OnInit {
   public isMenuLoggedOpen: boolean;
   public isSearchTooltipVisible: boolean;
   public isUserIconsVisibile: boolean = true;
+  public isArticleMenuVisible: boolean;
 
   constructor(public mobileMenuService: MobileMenuService, public modalService: ModalService, public menuService: MenuService, public loginService: LoginService, public router: Router) {
 
   }
+
 
   ngOnInit() {
     this.menuProjetos = [
@@ -49,7 +51,6 @@ export class HeaderComponent implements OnInit {
       this.isUserIconsVisibile = false;
     }
   }
-
 
   showLoginModal() {
     this.modalService.show();
@@ -148,8 +149,8 @@ export class HeaderComponent implements OnInit {
     }
     else {
       document.getElementById('menuLogged').classList.add('fadeOut');
-      document.getElementById('menuLogged').classList.remove('fadeIn');  
-    }   
+      document.getElementById('menuLogged').classList.remove('fadeIn');
+    }
   }
 
   hideLoggedMenu() {
@@ -163,5 +164,8 @@ export class HeaderComponent implements OnInit {
     window.scrollTo(0, 0);
   }
 
+  toogleArticlesMenu() {
+    this.menuService.toogleArticleMenu();
+  }
 
 }

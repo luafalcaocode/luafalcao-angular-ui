@@ -8,12 +8,13 @@ import { SharedModule } from '../shared/shared.module';
 import { ModalModule } from '../modal/modal.module';
 import { ArticleComentaryComponent } from './article-comentary/article-comentary.component';
 import { ArticleUserInteractionComponent } from './article-user-interaction/article-user-interaction.component';
+import { ArticleAllMenuComponent } from './article-all-menu/article-all-menu.component';
 
 
 
 
 @NgModule({
-  declarations: [ArticleComponent, HeaderComponent, ArticleComentaryComponent, ArticleUserInteractionComponent],
+  declarations: [ArticleComponent, HeaderComponent, ArticleComentaryComponent, ArticleUserInteractionComponent, ArticleAllMenuComponent],
   imports: [
     CommonModule,
     SharedModule,

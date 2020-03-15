@@ -11,6 +11,7 @@ import { CommonService } from '../services/layout/common.service';
 })
 export class ArticleComponent implements OnInit {
   article: ArticleMock; 
+  allArticles: any[];
   comments: any[];
   isLoading: boolean;
 
@@ -35,6 +36,54 @@ export class ArticleComponent implements OnInit {
       {
         name: 'Darmani',
         content: 'Hey! We are brothers!'
+      }
+    ];
+
+    this.allArticles = [
+      {
+        image: 'https://i.picsum.photos/id/237/112/63.jpg',
+        title: 'Lorem ipsum expecto patronoum arania exumai',
+        date: '15/03/2020'
+      },
+      {
+        image: 'https://i.picsum.photos/id/237/112/63.jpg',
+        title: 'Lorem ipsum expecto patronoum arania exumai',
+        date: '15/03/2020'
+      },
+      {
+        image: 'https://i.picsum.photos/id/237/112/63.jpg',
+        title: 'Lorem ipsum expecto patronoum arania exumai',
+        date: '18/02/2020'
+      },
+      {
+        image: 'https://i.picsum.photos/id/237/112/63.jpg',
+        title: 'Lorem ipsum expecto patronoum arania exumai',
+        date: '08/01/2020'
+      },
+      {
+        image: 'https://i.picsum.photos/id/237/112/63.jpg',
+        title: 'Lorem ipsum expecto patronoum arania exumai',
+        date: '24/12/2019'
+      },
+      {
+        image: 'https://i.picsum.photos/id/237/112/63.jpg',
+        title: 'Lorem ipsum expecto patronoum arania exumai',
+        date: '24/12/2019'
+      },
+      {
+        image: 'https://i.picsum.photos/id/237/112/63.jpg',
+        title: 'Lorem ipsum expecto patronoum arania exumai',
+        date: '24/12/2019'
+      },
+      {
+        image: 'https://i.picsum.photos/id/237/112/63.jpg',
+        title: 'Lorem ipsum expecto patronoum arania exumai',
+        date: '24/12/2019'
+      },
+      {
+        image: 'https://i.picsum.photos/id/237/112/63.jpg',
+        title: 'Lorem ipsum expecto patronoum arania exumai',
+        date: '24/12/2019'
       }
     ];
   }

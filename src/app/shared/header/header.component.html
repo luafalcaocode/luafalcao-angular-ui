@@ -70,8 +70,8 @@
           <app-tooltip [text]="'Luã Falcão'"></app-tooltip>
         </div>
 
-        <a class="all-articles-icon" [hidden]="isUserIconsVisibile">
-          <span>ver mais artigos</span>
+        <a class="all-articles-icon" [hidden]="isUserIconsVisibile" (click)="toogleArticlesMenu()">
+          <span [class.btn-article-active]="menuService.isArticleMenuVisible">ver mais artigos</span>
         </a>
       </div>
     </div>

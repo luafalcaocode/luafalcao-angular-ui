@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoginService } from '../../services/login.service';
 import { ModalService } from '../../services/layout/modal.service';
+import { MenuService } from '../../services/layout/menu.service';
 
 @Component({
   selector: 'article-header',
@@ -10,7 +11,10 @@ import { ModalService } from '../../services/layout/modal.service';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(public router: Router,  public loginService: LoginService,  public modalService: ModalService) { }
+  constructor(public router: Router,
+              public loginService: LoginService, 
+              public modalService: ModalService,
+              public menuService: MenuService) { }
 
 
   openContainer() {
@@ -24,5 +28,4 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
     
   }
-
 }

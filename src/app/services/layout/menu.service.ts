@@ -5,6 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class MenuService {
   private menus: string[];
+  isArticleMenuVisible: boolean = false;
   
   constructor() {
     this.menus = [
@@ -32,4 +33,9 @@ export class MenuService {
       menu.classList.add('fadeOut');
     });    
   }
+
+  toogleArticleMenu() {
+    this.isArticleMenuVisible = !this.isArticleMenuVisible;
+  }
+
 }
