@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ArticleViewModel } from '../viewModels/article.viewModel';
 import { ArticleMock } from './mocks/article.mock';
 import { LoaderService } from '../services/layout/loader.service';
 import { CommonService } from '../services/layout/common.service';
+import { MenuService } from '../services/layout/menu.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-article',
@@ -10,12 +12,13 @@ import { CommonService } from '../services/layout/common.service';
   styleUrls: ['./article.component.scss']
 })
 export class ArticleComponent implements OnInit {
-  article: ArticleMock; 
+  @Input() article: ArticleMock; 
   allArticles: any[];
   comments: any[];
   isLoading: boolean;
+  id: number;
 
-  constructor(public loaderService: LoaderService, public commonService: CommonService) { }
+  constructor(public loaderService: LoaderService, public commonService: CommonService, public menuService: MenuService, public router: ActivatedRoute) { }
 
   ngOnInit() {
     this.commonService.initializePage();
@@ -43,49 +46,63 @@ export class ArticleComponent implements OnInit {
       {
         image: 'https://i.picsum.photos/id/237/112/63.jpg',
         title: 'Lorem ipsum expecto patronoum arania exumai',
-        date: '15/03/2020'
+        date: '15/03/2020',
+        id: 1
       },
       {
         image: 'https://i.picsum.photos/id/237/112/63.jpg',
         title: 'Lorem ipsum expecto patronoum arania exumai',
-        date: '15/03/2020'
+        date: '15/03/2020',
+        id: 2
       },
       {
         image: 'https://i.picsum.photos/id/237/112/63.jpg',
         title: 'Lorem ipsum expecto patronoum arania exumai',
-        date: '18/02/2020'
+        date: '18/02/2020',
+        id: 3
       },
       {
         image: 'https://i.picsum.photos/id/237/112/63.jpg',
         title: 'Lorem ipsum expecto patronoum arania exumai',
-        date: '08/01/2020'
+        date: '08/01/2020',
+        id: 4
       },
       {
         image: 'https://i.picsum.photos/id/237/112/63.jpg',
         title: 'Lorem ipsum expecto patronoum arania exumai',
-        date: '24/12/2019'
+        date: '24/12/2019',
+        id: 5
       },
       {
         image: 'https://i.picsum.photos/id/237/112/63.jpg',
         title: 'Lorem ipsum expecto patronoum arania exumai',
-        date: '24/12/2019'
+        date: '24/12/2019',
+        id: 6
       },
       {
         image: 'https://i.picsum.photos/id/237/112/63.jpg',
         title: 'Lorem ipsum expecto patronoum arania exumai',
-        date: '24/12/2019'
+        date: '24/12/2019',
+        id: 7
       },
       {
         image: 'https://i.picsum.photos/id/237/112/63.jpg',
         title: 'Lorem ipsum expecto patronoum arania exumai',
-        date: '24/12/2019'
+        date: '24/12/2019',
+        id: 8
       },
       {
         image: 'https://i.picsum.photos/id/237/112/63.jpg',
         title: 'Lorem ipsum expecto patronoum arania exumai',
-        date: '24/12/2019'
+        date: '24/12/2019',
+        id: 9
       }
     ];
+
+    this.menuService.isArticleMenuVisible = false;
+    // fazer um GET na API por ID (que vem da URL) para pegar o ID do artigo
+    this.router.params.subscribe(params => this.id = params.id);
+    console.log(this.id);
   }
 
   scrollToElement(id) {
@@ -110,5 +127,9 @@ export class ArticleComponent implements OnInit {
       thiss.article.numberOfComments++;
       document.getElementById('scrollToAllComments').scrollIntoView({behavior: 'smooth'});
     }, 2000);
+  }
+
+  onGetById(id) {
+    // chamar API para obter o artigo por id e atribuir ao objeto article 
   }
 }

@@ -1,7 +1,7 @@
 <article-header></article-header>
-<article-all-menu [articles]="allArticles"></article-all-menu>
+<article-all-menu [articles]="allArticles" (getById)="onGetById($event)"></article-all-menu>
 
-<article class="article-container">
+<article class="article-container" (click)="menuService.isArticleMenuVisible = false">
     <div class="row">
         <div class="col-xs-12">
             <h1>{{ article.title }}</h1>

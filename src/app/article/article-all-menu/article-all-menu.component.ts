@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Output, DoCheck, Input, EventEmitter } from '@angular/core';
 import { MenuService } from '../../services/layout/menu.service';
 
 @Component({
@@ -6,18 +6,18 @@ import { MenuService } from '../../services/layout/menu.service';
   templateUrl: './article-all-menu.component.html',
   styleUrls: ['./article-all-menu.component.scss']
 })
-export class ArticleAllMenuComponent implements OnInit {
+export class ArticleAllMenuComponent implements DoCheck {
   isArticleMenuVisible: boolean;
   @Input() articles : any[];
+  @Output() getById = new EventEmitter();
 
   constructor(public menuService: MenuService) { }
 
   ngDoCheck() {
     this.isArticleMenuVisible = this.menuService.isArticleMenuVisible;
-    console.log(this.isArticleMenuVisible);
   }
 
-  ngOnInit() {
+  onClick(id: number) {
+    this.getById.emit(id);
   }
-
 }

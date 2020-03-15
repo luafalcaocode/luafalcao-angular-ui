@@ -15,6 +15,10 @@ const routes: Routes = [
     component: PanelComponent
   },
   {
+    path: 'articles/:id',
+    component: ArticleComponent
+  },
+  {
     path: 'articles',
     component: ArticleComponent
   }

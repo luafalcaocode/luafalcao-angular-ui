@@ -1,6 +1,6 @@
-<div class="container-article-all-menu"  [ngClass]="{ 'fadeIn' : isArticleMenuVisible, 'fadeOut' : !isArticleMenuVisible }">
+<div class="container-article-all-menu" *ngIf="isArticleMenuVisible">
     <ul>
-        <li *ngFor="let article of articles">
+        <li *ngFor="let article of articles" [id]="article.id" (click)="onClick(article.id)">
             <div class="row">
                 <div class="col-xs-3">
                     <img [src]=article.image />
