@@ -8,6 +8,7 @@
   margin: 20px 400px 0px 400px;
 
   .thumbnail-container {
+    min-width: 60px;
     .thumbnail {
       border: dashed 2px var(--niceBlue);
       border-radius: 50%;
