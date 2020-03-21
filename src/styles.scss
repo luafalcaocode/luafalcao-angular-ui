@@ -17,6 +17,7 @@
   --grass: #82c91e;
   --clearGray: #f3f6f8;
   --borderGray: #e2e2e2;
+  --blinkCursor: #1e3fd3;
 }
 
 body {
@@ -161,7 +162,6 @@ a {
     color: var(--dark) !important;
   }
 
-
   nav {
     background: var(--white) !important;
     box-shadow: 3px 3px 3px #f5f5f5;
@@ -189,7 +189,8 @@ a {
     float: none;
 
     i,
-    span, span:active {
+    span,
+    span:active {
       color: var(--dark);
       vertical-align: -2px;
       font-size: 14px;
@@ -199,17 +200,15 @@ a {
       background: var(--white);
       padding-left: 6px;
       padding-right: 6px;
-      transition: ease-out .5s;
+      transition: ease-out 0.5s;
     }
-    span:hover  {
+    span:hover {
       color: var(--white);
       background: var(--dark);
       border: solid 1px var(--dark);
-      transition: .4s;
+      transition: 0.4s;
     }
   }
-
-  
 
   #tooltipPesquisar {
     right: 290px !important;
@@ -255,11 +254,20 @@ a {
   outline: none;
 }
 
-
 .btn-article-active {
   color: var(--white) !important;
   background: var(--dark) !important;
   border: solid 1px var(--dark) !important;
-  transition: .4s;
+  transition: 0.4s;
 }
 
+.render-body-area {
+  min-height: 900px;
+  margin-top: 100px;
+
+  @media only screen and (max-width: 747px) {
+    margin-top: 0;
+    overflow-x: hidden;
+    padding-top: 100px;
+  }
+}
