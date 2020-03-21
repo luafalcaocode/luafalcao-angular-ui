@@ -17,7 +17,7 @@
   --grass: #82c91e;
   --clearGray: #f3f6f8;
   --borderGray: #e2e2e2;
-  --blinkCursor: #1e3fd3;
+  --blinkCursor: #fff;
 }
 
 body {
@@ -129,6 +129,16 @@ a {
 .fadeOut {
   opacity: 0;
   pointer-events: none;
+  transition: 0.3s linear;
+}
+
+.opacityOn {
+  opacity: 0.7;
+  transition: 0.3s linear;
+}
+
+.opactiyOff {
+  opacity: 1;
   transition: 0.3s linear;
 }
 

@@ -1,4 +1,52 @@
+.render-body-area {
+  margin-top: 70px;
+}
+
 .personal-title {
-    padding-top: 20px;
+  padding-top: 80px;
+  background-image: url("../../assets/backgrounds/binary.jpg");
+  background-size: cover;
+  height: 580px;
+  color: var(--white);
+
+  h1 {
+    font-size: 52px;
     padding-left: 130px;
+  }
+
+  .material-icons {
+    margin-top: 280px;
+    font-size: 42px;
+    color: var(--white);
+  }
+
+  .anima-upAndDown {
+    animation-name: upAndDown;
+    animation-duration: 0.8s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;
+    animation-timing-function: linear;
+  }
+
+  @keyframes upAndDown {
+    from {
+      margin-top: 280px;
+    }
+
+    to {
+      margin-top: 300px;
+    }
+  }
+
+  .pause {
+    animation-play-state: pause;
+  }
+}
+
+.timeline-container {
+  min-height: 700px;
+
+  h1 {
+    text-align: center;
+  }
 }

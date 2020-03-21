@@ -1,7 +1,26 @@
 <app-header></app-header>
-<div class="render-body-area">
+<div class="render-body-area" (scroll)="onScroll($event)">
     <section class="personal-title">
-        <h1><span class="u-bold">Luã Falcão</span> {{ nome }}<blink></blink></h1>
+        <h1><span class="u-bold">Luã Falcão</span> </h1>
+        <h1>
+            {{ nome }}<blink></blink>
+        </h1>
+
+     
+        <div class="row">
+            <div class="col-xs-12 u-center">
+                <span class="material-icons anima-upAndDown u-pointer" (click)="scrollInto('timeLineSection')">
+                    keyboard_arrow_down
+                </span>
+            </div>
+        </div>
     </section>
+
+    <span id="timeLineSection"></span>
+    <section class="timeline-container">
+        <h1>Linha do Tempo</h1>
+        
+    </section>
+    
 </div>
 <app-footer></app-footer>

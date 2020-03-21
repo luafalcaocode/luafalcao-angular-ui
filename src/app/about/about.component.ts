@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
+import { CommonService } from '../services/layout/common.service';
 
 @Component({
   selector: 'app-about',
@@ -12,18 +13,33 @@ export class AboutComponent implements OnInit {
   titulos: string[] = [
     ' Engenheiro de Software',
     ' Programador Web Full Stack',
-    ' Analista de Sistemas'   
+    ' Analista de Sistemas'
   ];
+  animating: boolean = true;
 
-  constructor() { }
+  constructor(public commonService: CommonService) { }
 
   ngOnInit() {
-    this.escrever();
+    this.commonService.initializePage();
+    this.write();
   }
 
-  escrever() {
+  @HostListener('window:scroll', ['$event']) onScroll(event) {
+    let header = document.getElementById('header');
+    console.log(window.scrollY);
+    if (window.scrollY > 649 && window.scrollY < 711) {
+      header.classList.remove('opacityOff');
+      header.classList.add('opacityOn');
+    }
+    else {
+      header.classList.remove('opacityOn');
+      header.classList.add('opacityOff');     
+    }
+  }
+
+  write() {
     let i = 0;
-    
+
     let interval = setInterval(() => {
       this.titulo = this.titulos[this.palavra];
       if (i < this.titulo.length) {
@@ -31,13 +47,13 @@ export class AboutComponent implements OnInit {
       }
       else {
         clearInterval(interval);
-        setTimeout(() => this.apagar(), 2000);
-      }    
+        setTimeout(() => this.erase(), 2000);
+      }
 
     }, 100);
   }
 
-  apagar() {
+  erase() {
     let flag = 0;
     let array = this.nome.split('');
     let interval = setInterval(() => {
@@ -49,8 +65,12 @@ export class AboutComponent implements OnInit {
       else {
         clearInterval(interval);
         this.palavra = (this.palavra == this.titulos.length - 1) ? 0 : ++this.palavra;
-        this.escrever();
+        this.write();
       }
     }, 50)
+  }
+
+  scrollInto(id: string) {
+    document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
   }
 }
