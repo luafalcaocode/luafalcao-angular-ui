@@ -6,7 +6,7 @@
   overflow-y: scroll;
   z-index: 2000;
   box-shadow: 4px 2px 2px var(--shadow);
-  border: solid 1px var(--niceBlue);
+  border: solid 1px var(--darking);
   border-left: none;
   background-color: var(--white);
 
@@ -14,7 +14,7 @@
     padding-left: 0;
 
     li:first-child {
-        border-top: solid 3px var(--niceBlue);
+        border-top: solid 3px var(--darking);
     }
 
     li {
@@ -22,7 +22,7 @@
       background: var(--white);
       color: var(--dark);
       padding: 20px;
-      border: solid 1px var(--niceBlue);
+      border: solid 1px var(--darking);
       border-top: none;
       border-right: none;
       transition: ease-out .5s;
@@ -34,7 +34,7 @@
 
     li:hover {
       transition: .4s;
-      background-color: var(--niceBlue);
+      background-color: var(--darking);
       color: var(--white);
       cursor: pointer;
     }
@@ -45,3 +45,17 @@
     }
   }
 }
+
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--darking);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--niceBlue);
+}
+

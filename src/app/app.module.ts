@@ -8,6 +8,7 @@ import { HomeModule } from './home/home.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PanelModule } from './panel/panel.module';
 import { ArticleModule } from './article/article.module';
+import { AboutModule } from './about/about.module';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ArticleModule } from './article/article.module';
     HomeModule,
     BrowserAnimationsModule,
     PanelModule,
-    ArticleModule
+    ArticleModule,
+    AboutModule
   ],
   providers: [],
   bootstrap: [AppComponent]

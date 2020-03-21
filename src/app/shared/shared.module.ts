@@ -11,10 +11,11 @@ import { MenuComponent } from './header/menu/menu.component';
 import { TooltipComponent } from './tooltip/tooltip.component';
 import { MenuLoggedComponent } from './header/menu-logged/menu-logged.component';
 import { MiniLoadingComponent } from './loaders/mini-loading/mini-loading.component';
+import { BlinkComponent } from './blink/blink.component';
 
 
 @NgModule({
-  declarations: [HeaderComponent, FooterComponent, SearchFieldComponent, MenuComponent, TooltipComponent, MenuLoggedComponent, MiniLoadingComponent],
+  declarations: [HeaderComponent, FooterComponent, SearchFieldComponent, MenuComponent, TooltipComponent, MenuLoggedComponent, MiniLoadingComponent, BlinkComponent],
   imports: [
     CommonModule,
     FormsModule,
@@ -26,7 +27,8 @@ import { MiniLoadingComponent } from './loaders/mini-loading/mini-loading.compon
     FooterComponent,
     SearchFieldComponent,
     TooltipComponent,
-    MiniLoadingComponent
+    MiniLoadingComponent,
+    BlinkComponent
   ]
 })
 export class SharedModule { }

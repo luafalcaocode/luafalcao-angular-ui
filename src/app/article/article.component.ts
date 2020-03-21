@@ -35,11 +35,7 @@ export class ArticleComponent implements OnInit {
       {
         name: 'Princesa Zelda',
         content: 'Oi! Você viu o Link por aí? Ele esqueceu a Ocarina do Tempo comigo!'
-      },
-      {
-        name: 'Darmani',
-        content: 'Hey! We are brothers!'
-      }
+      }    
     ];
 
     this.allArticles = [
