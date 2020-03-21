@@ -48,5 +48,24 @@
 
   h1 {
     text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+
+  .nice-border {
+    border-bottom: solid 4px var(--niceGray);
+  }
+
+  .timeline-style-ui {
+      padding-left: 100px;
+      padding-right: 100px;
+      margin-top: 30px;
+  }
+
+  .nice-text-ui {
+      margin-top: -15px;
+      font-weight: bold;
+      text-transform: uppercase;
+      font-size: 20px;
   }
 }
