@@ -8,13 +8,10 @@ import { SharedModule } from '../shared/shared.module';
   declarations: [AboutComponent],
   imports: [
     CommonModule,
-    SharedModuleawesrdtygiokpl´[]
-    ][p-0978654-+
-    ,]  ],
+    SharedModule
+  ],
   exports: [
     AboutComponent
   ]
 })
 export class AboutModule { }
-1-*96000
-=ýbgefvaxZ\
