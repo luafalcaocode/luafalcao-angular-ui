@@ -1,0 +1,14 @@
+<div class="row">
+    <div class="col-xs-4 u-center" [class.u-right]="timeline.align == 'right'">
+        <img [src]="timeline.image" class="image-timeline" />
+        <div class="timeline-descriptions-group">
+            <h4 class="title-timeline">{{ timeline.title }}</h4>
+            <p class="timeline-description">{{ timeline.description }}</p>
+        </div>
+    </div>
+    <div class="col-xs-4 timeline-circle" [class.u-right]="timeline.align == 'right'">
+        <div class="timeline-year-container">
+            <span class="timeline-year">{{ timeline.year }}</span>
+        </div>
+    </div>
+</div>

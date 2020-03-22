@@ -18,14 +18,17 @@
 
     <span id="timeLineSection"></span>
     <section class="timeline-container">
-        <h1>A Evolução da minha carreira</h1>
+        <h1>linha do tempo da minha carreira</h1>
         
         <div class="row timeline-style-ui">
             <div class="col-xs-12 col-lg-4 nice-border"></div>
-            <div class="col-xs-12 col-lg-4 u-center nice-text-ui">Linha do Tempo</div>
+            <div class="col-xs-12 col-lg-4 u-center nice-text-ui">anos</div>
             <div class="col-xs-12 col-lg-4 nice-border"></div>
         </div>
-     
+
+        <div *ngFor="let timeline of timelines">
+            <timeline [timeline]="timeline"></timeline>     
+        </div>
     </section>
     
 </div>

@@ -18,8 +18,9 @@
   --clearGray: #f3f6f8;
   --borderGray: #e2e2e2;
   --blinkCursor: #fff;
-  --azulBolado: #008aff;
+  --blueDev: #008aff;
   --niceGray: #303E4B;
+  --cream: #D0DEE9;
 }
 
 body {
@@ -135,7 +136,7 @@ a {
 }
 
 .opacityOn {
-  opacity: 0.7;
+  opacity: 0;
   transition: 0.3s linear;
 }
 

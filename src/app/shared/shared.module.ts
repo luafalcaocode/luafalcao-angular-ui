@@ -12,10 +12,12 @@ import { TooltipComponent } from './tooltip/tooltip.component';
 import { MenuLoggedComponent } from './header/menu-logged/menu-logged.component';
 import { MiniLoadingComponent } from './loaders/mini-loading/mini-loading.component';
 import { BlinkComponent } from './blink/blink.component';
+import { TimelineComponent } from './timeline/timeline.component';
+
 
 
 @NgModule({
-  declarations: [HeaderComponent, FooterComponent, SearchFieldComponent, MenuComponent, TooltipComponent, MenuLoggedComponent, MiniLoadingComponent, BlinkComponent],
+  declarations: [HeaderComponent, FooterComponent, SearchFieldComponent, MenuComponent, TooltipComponent, MenuLoggedComponent, MiniLoadingComponent, BlinkComponent, TimelineComponent],
   imports: [
     CommonModule,
     FormsModule,
@@ -28,7 +30,8 @@ import { BlinkComponent } from './blink/blink.component';
     SearchFieldComponent,
     TooltipComponent,
     MiniLoadingComponent,
-    BlinkComponent
+    BlinkComponent,
+    TimelineComponent
   ]
 })
 export class SharedModule { }

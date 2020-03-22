@@ -1,5 +1,6 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 import { CommonService } from '../services/layout/common.service';
+import { TimelineViewModel } from '../viewModels/timeline.viewModel';
 
 @Component({
   selector: 'app-about',
@@ -17,6 +18,38 @@ export class AboutComponent implements OnInit {
   ];
   animating: boolean = true;
 
+  timelines: TimelineViewModel = [
+    {
+      align: 'left',
+      description: 'Em 2018 entrei na IBM como Desenvolvedor de Aplicações e ganhei experiência em uma multinacional trabalhando em um projeto no ramo de seguros para o cliente Prudential.',
+      image: 'https://i.ibb.co/QCS0f2Y/ibm.png',
+      title: 'Entrei na IBM',
+      year: '2014'
+    },
+    {
+      align: 'right',
+      description: 'Em 2018 entrei na IBM como Desenvolvedor de Aplicações e ganhei experiência em uma multinacional trabalhando em um projeto no ramo de seguros para o cliente Prudential.',
+      image: 'https://i.ibb.co/QCS0f2Y/ibm.png',
+      title: 'Entrei na IBM',
+      year: '2014'
+    },
+    {
+      align: 'left',
+      description: 'Em 2018 entrei na IBM como Desenvolvedor de Aplicações e ganhei experiência em uma multinacional trabalhando em um projeto no ramo de seguros para o cliente Prudential.',
+      image: 'https://i.ibb.co/QCS0f2Y/ibm.png',
+      title: 'Entrei na IBM',
+      year: '2014'
+    },
+    {
+      align: 'right',
+      description: 'Em 2018 entrei na IBM como Desenvolvedor de Aplicações e ganhei experiência em uma multinacional trabalhando em um projeto no ramo de seguros para o cliente Prudential.',
+      image: 'https://i.ibb.co/QCS0f2Y/ibm.png',
+      title: 'Entrei na IBM',
+      year: '2014'
+    }
+  ];
+
+
   constructor(public commonService: CommonService) { }
 
   ngOnInit() {
@@ -33,7 +66,7 @@ export class AboutComponent implements OnInit {
     }
     else {
       header.classList.remove('opacityOn');
-      header.classList.add('opacityOff');     
+      header.classList.add('opacityOff');
     }
   }
 
