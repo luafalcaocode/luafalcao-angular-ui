@@ -72,7 +72,7 @@ export class AboutComponent implements OnInit {
   @HostListener('window:scroll', ['$event']) onScroll(event) {
     let header = document.getElementById('header');
 
-    if (window.scrollY > 649 && window.scrollY < 711) {
+    if (window.scrollY > 600) {
       header.classList.remove('opacityOff');
       header.classList.add('opacityOn');
     }

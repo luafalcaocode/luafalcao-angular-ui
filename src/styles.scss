@@ -142,7 +142,7 @@ a {
 
 .opactiyOff {
   opacity: 1;
-  transition: 0.3s linear;
+  transition: ease-out 0.5s;
 }
 
 .hide-on-small-only {
