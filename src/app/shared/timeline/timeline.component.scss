@@ -18,13 +18,26 @@
     width: 200px;
     height: 200px;
     border-radius: 50%;
-    border: solid 16px var(--darkGray);
+    border: solid 16px var(--cream);
     text-align: center;
-    border-top: 16px solid var(--cream);
+    border-top: 16px solid var(--blueDev);
     margin: 0 auto;
-    margin-top: 40px;
 }
 
 .timeline-year {
     vertical-align: -40px;
 }
+
+.timeline-scarface {
+    width: 10px;
+    height: 200px;
+    background-color: var(--blueDev);
+    margin: 0 auto;
+}
+
+.image-timeline {
+   
+    height: 90px;
+    width: auto;
+}
+

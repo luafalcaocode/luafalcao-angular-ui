@@ -18,12 +18,12 @@ export class AboutComponent implements OnInit {
   ];
   animating: boolean = true;
 
-  timelines: TimelineViewModel = [
+  timelines: TimelineViewModel[] = [
     {
       align: 'left',
-      description: 'Em 2018 entrei na IBM como Desenvolvedor de Aplicações e ganhei experiência em uma multinacional trabalhando em um projeto no ramo de seguros para o cliente Prudential.',
-      image: 'https://i.ibb.co/QCS0f2Y/ibm.png',
-      title: 'Entrei na IBM',
+      description: 'Em 2014 realizei o meu primeiro estágio na First Decision Tecnologias Inovadoras, uma empresa no ramo de BI, onde fiz parte da equipe de desenvolvimento mobile trabalhando com tecnologias web.',
+      image: '../assets/logos/fd-logo.png',
+      title: 'Primeira experiência',
       year: '2014'
     },
     {
