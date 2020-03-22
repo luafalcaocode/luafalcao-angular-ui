@@ -21,43 +21,43 @@ export class AboutComponent implements OnInit {
   timelines: TimelineViewModel[] = [
     {
       align: 'left',
-      description: 'Em 2014 realizei o meu primeiro estágio na First Decision Tecnologias Inovadoras, uma empresa no ramo de BI, onde fiz parte da equipe de desenvolvimento mobile trabalhando com tecnologias web.',
+      description: 'Em 2014 realizei o meu primeiro estágio na First Decision Tecnologias Inovadoras, uma empresa no ramo de BI, onde fiz parte da equipe de desenvolvimento mobile trabalhando com tecnologias web e a plataforma Apache Cordova para construir apps para Android e iOS.',
       image: '../assets/logos/fd-logo.png',
       imageWidth: '180px',
       title: 'Bem-vindo ao Front-end',
-      year: '2014 - 2015'
+      year: '2014'
     },
     {
       align: 'right',
-      description: 'Em 2015 ingressei na ATSNET Soluções em TI onde melhorei minhas habilidades de front-end e tive contato pela primeira vez com a platatorma .NET e a linguagem de programação C#.',
+      description: 'Em 2015 ingressei na ATSNET Soluções em TI e fiquei alocado em projetos na Junta Comercial do Estado do Rio de Janeiro, onde melhorei minhas habilidades de front-end e tive contato pela primeira vez com a platatorma .NET e a linguagem de programação C#.',
       image: '../assets/logos/svgs/atsnet-logo.svg',
       imageWidth: '180px',
       title: 'Bem-vindo à linguagem C#',
-      year: '2015 - 2017'
+      year: '2015'
     },
     {
       align: 'left',
-      description: 'A Infobase foi uma escola onde aprendi a lidar com o caos e a pressão que existe nas consultorias de TI. Aqui comecei a programar Web APIs em C# com a plataforma .NET, adquiri mais responsabilidades e experiência em diferentes projetos de diferentes clientes no ramo de seguros.',
+      description: 'A Infobase foi uma escola onde aprendi a lidar com a pressão dos prazos de projetos, a entrar em contato com o cliente e a programar Web APIs em C# com a plataforma .NET. Também adquiri mais responsabilidades e experiência em diferentes projetos de diferentes clientes no ramo de seguros.',
       image: '../assets/logos/infobase-logo.png',
       imageWidth: '210px',
-      title: 'Bem-vindo ao Caos',
-      year: '2017 - 2018'
+      title: 'Nasce um Full Stack',
+      year: '2017'
     },
     {
       align: 'right',
-      description: 'Na IBM ganhei experiência como desenvolvedor de aplicações web trabalhando em um projeto no ramo de seguros da multinacional Prudential. Fiz o uso de tecnologias web para construir interfaces de usuário e APIs.',
+      description: 'Na multinacional IBM ganhei experiência como desenvolvedor de aplicações web trabalhando em um projeto no ramo de seguros da multinacional Prudential. Fiz o uso de tecnologias web para construir interfaces de usuário e APIs, além de receber feedback, o que me ajudou a trabalhar para melhorar os meus pontos fracos.',
       image: '../assets/logos/ibm-logo.png',
       imageWidth: '110px',
-      title: 'Entrei na IBM',
-      year: '2018 - 2019'
+      title: 'Entrei em uma multinacional',
+      year: '2018'
     },
     {
       align: 'left',
-      description: 'Retornei para o centro do Rio, agora mais maduro com os erros e aprendizados do passado. Venho trabalhando em projetos do cliente Oi, para fazer a migração tecnológica do seu sistema jurídico, utilizando os frameworks Angular e ASP .NET Core, a linguagem C# e o banco de dados Oracle.',
+      description: 'Retornei para o centro do Rio, para o universo das consultorias de TI, com 5 anos de experiência e como um profissional Full Stack. Na Perlink venho trabalhando alocado em projetos do cliente Oi para fazer a migração tecnológica do seu sistema jurídico e ganhando proficiência com os frameworks Angular e ASP .NET Core. Também recebi treinamentos de uma grande mentora sobre cultura ágil e colaborativa, que me ajudou a expandir os meus horizontes e focar nos objetivos que tracei para a minha carreira profissional.',
       image: '../assets/logos/perlink-logo.png',
       imageWidth: '180px',
-      title: 'Eu o nomeio sir Full Stack',
-      year: '2019 - 2020'
+      title: 'De volta ao Centro da Cidade',
+      year: '2019'
     }
   ];
 
@@ -71,7 +71,7 @@ export class AboutComponent implements OnInit {
 
   @HostListener('window:scroll', ['$event']) onScroll(event) {
     let header = document.getElementById('header');
-    console.log(window.scrollY);
+
     if (window.scrollY > 649 && window.scrollY < 711) {
       header.classList.remove('opacityOff');
       header.classList.add('opacityOn');

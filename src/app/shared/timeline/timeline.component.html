@@ -1,15 +1,27 @@
 <div class="row">
-    <div class="col-xs-4 u-center" [class.u-right]="timeline.align == 'right'">
-        <img [src]="timeline.image" class="image-timeline" [ngStyle]="{'width' : timeline.imageWidth}"  />
-        <div class="timeline-descriptions-group">
-            <h4 class="title-timeline">{{ timeline.title }}</h4>
-            <p class="timeline-description">{{ timeline.description }}</p>
+    <div class="col-xs-12 col-lg-4 u-center" [class.u-right]="timeline.align == 'right'">
+
+        <!-- adptação para a timeline no mobile -->
+        <div class="timeline-year-container show-on-mobile-only">
+            <span class="timeline-year">{{ timeline.year }}</span>
+            <div class="timeline-scarface"></div>
+        </div>
+
+
+        <div class="timeline-info-container">
+            <img [src]="timeline.image" class="image-timeline" [ngStyle]="{'width' : timeline.imageWidth}" />
+            <div class="timeline-descriptions-group">
+                <h4 class="title-timeline">{{ timeline.title }}</h4>
+                <p class="timeline-description">{{ timeline.description }}</p>
+            </div>
         </div>
     </div>
-    <div class="col-xs-4 timeline-circle" [class.u-right]="timeline.align == 'right'" id="circleYear">
+    <div class="col-xs-12 col-lg-4 timeline-circle hide-on-small-only" [class.u-right]="timeline.align == 'right'"
+        id="circleYear">
         <div class="timeline-year-container">
             <span class="timeline-year">{{ timeline.year }}</span>
         </div>
+        <div class="timeline-dots hide-on-small-only" [class.timeline-dots-change]="timeline.align == 'right'"></div>
         <div class="timeline-scarface"></div>
     </div>
 </div>
