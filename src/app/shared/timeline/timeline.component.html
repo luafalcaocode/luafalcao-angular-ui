@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-xs-4 u-center" [class.u-right]="timeline.align == 'right'">
-        <img [src]="timeline.image" class="image-timeline" />
+        <img [src]="timeline.image" class="image-timeline" [ngStyle]="{'width' : timeline.imageWidth}"  />
         <div class="timeline-descriptions-group">
             <h4 class="title-timeline">{{ timeline.title }}</h4>
             <p class="timeline-description">{{ timeline.description }}</p>

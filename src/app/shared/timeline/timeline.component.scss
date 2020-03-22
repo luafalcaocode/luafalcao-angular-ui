@@ -4,7 +4,7 @@
 }
 
 .timeline-description {
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .title-timeline {
@@ -23,21 +23,24 @@
     height: 200px;
     border-radius: 50%;
     border: solid 16px var(--cream);
+    border-right: solid 16px var(--niceGray);
+    border-bottom: solid 16px var(--niceGray);
     text-align: center;
-    border-top: 16px solid var(--blueDev);
+   
     margin: 0 auto;
 }
+
 
 .timeline-year {
     vertical-align: -40px;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 16px;
 }
 
 .timeline-scarface {
     width: 10px;
     height: 200px;
-    background-color: var(--blueDev);
+    background-color: var(--niceGray);
     margin: 0 auto;
 }
 

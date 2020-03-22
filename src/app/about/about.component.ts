@@ -23,29 +23,41 @@ export class AboutComponent implements OnInit {
       align: 'left',
       description: 'Em 2014 realizei o meu primeiro estágio na First Decision Tecnologias Inovadoras, uma empresa no ramo de BI, onde fiz parte da equipe de desenvolvimento mobile trabalhando com tecnologias web.',
       image: '../assets/logos/fd-logo.png',
+      imageWidth: '180px',
       title: 'Bem-vindo ao Front-end',
-      year: '2014'
+      year: '2014 - 2015'
     },
     {
       align: 'right',
       description: 'Em 2015 ingressei na ATSNET Soluções em TI onde melhorei minhas habilidades de front-end e tive contato pela primeira vez com a platatorma .NET e a linguagem de programação C#.',
       image: '../assets/logos/svgs/atsnet-logo.svg',
+      imageWidth: '180px',
       title: 'Bem-vindo à linguagem C#',
-      year: '2015'
+      year: '2015 - 2017'
     },
     {
       align: 'left',
-      description: 'A Infobase foi uma escola onde aprendi a lidar com o caos e a pressão que existe nas consultorias de TI. Aqui comecei a programar Web APIs em C# com a plataforma .NET e adquiri mais responsabilidades, como entrar em contato diretamente com o cliente e ser responsável pelas entregas de projetos e por ajudar o time com a  parte técnica, ralizando treinamentos, configurando o ambiente de desenvolvimento e lidar com novas tecnologias',
+      description: 'A Infobase foi uma escola onde aprendi a lidar com o caos e a pressão que existe nas consultorias de TI. Aqui comecei a programar Web APIs em C# com a plataforma .NET, adquiri mais responsabilidades e experiência em diferentes projetos de diferentes clientes no ramo de seguros.',
       image: '../assets/logos/infobase-logo.png',
+      imageWidth: '210px',
       title: 'Bem-vindo ao Caos',
-      year: '2017'
+      year: '2017 - 2018'
     },
     {
       align: 'right',
-      description: 'Na multinacional IBM ganhei experiência como desenvolvedor de aplicações trabalhando em um projeto no ramo de seguros bastante burocrático que foi desafiador para mim. Trabalhei com tecnologias web para construir UI e Web APIs para o cliente Prudential.',
-      image: '../assets/logos/atsnet-logo.svg',
+      description: 'Na IBM ganhei experiência como desenvolvedor de aplicações web trabalhando em um projeto no ramo de seguros da multinacional Prudential. Fiz o uso de tecnologias web para construir interfaces de usuário e APIs.',
+      image: '../assets/logos/ibm-logo.png',
+      imageWidth: '110px',
       title: 'Entrei na IBM',
-      year: '2018'
+      year: '2018 - 2019'
+    },
+    {
+      align: 'left',
+      description: 'Retornei para o centro do Rio, agora mais maduro com os erros e aprendizados do passado. Venho trabalhando em projetos do cliente Oi, para fazer a migração tecnológica do seu sistema jurídico, utilizando os frameworks Angular e ASP .NET Core, a linguagem C# e o banco de dados Oracle.',
+      image: '../assets/logos/perlink-logo.png',
+      imageWidth: '180px',
+      title: 'Eu o nomeio sir Full Stack',
+      year: '2019 - 2020'
     }
   ];
 
