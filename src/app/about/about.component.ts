@@ -23,29 +23,29 @@ export class AboutComponent implements OnInit {
       align: 'left',
       description: 'Em 2014 realizei o meu primeiro estágio na First Decision Tecnologias Inovadoras, uma empresa no ramo de BI, onde fiz parte da equipe de desenvolvimento mobile trabalhando com tecnologias web.',
       image: '../assets/logos/fd-logo.png',
-      title: 'Primeira experiência',
+      title: 'Bem-vindo ao Front-end',
       year: '2014'
     },
     {
       align: 'right',
-      description: 'Em 2018 entrei na IBM como Desenvolvedor de Aplicações e ganhei experiência em uma multinacional trabalhando em um projeto no ramo de seguros para o cliente Prudential.',
-      image: 'https://i.ibb.co/QCS0f2Y/ibm.png',
-      title: 'Entrei na IBM',
-      year: '2014'
+      description: 'Em 2015 ingressei na ATSNET Soluções em TI onde melhorei minhas habilidades de front-end e tive contato pela primeira vez com a platatorma .NET e a linguagem de programação C#.',
+      image: '../assets/logos/svgs/atsnet-logo.svg',
+      title: 'Bem-vindo à linguagem C#',
+      year: '2015'
     },
     {
       align: 'left',
-      description: 'Em 2018 entrei na IBM como Desenvolvedor de Aplicações e ganhei experiência em uma multinacional trabalhando em um projeto no ramo de seguros para o cliente Prudential.',
-      image: 'https://i.ibb.co/QCS0f2Y/ibm.png',
-      title: 'Entrei na IBM',
-      year: '2014'
+      description: 'A Infobase foi uma escola onde aprendi a lidar com o caos e a pressão que existe nas consultorias de TI. Aqui comecei a programar Web APIs em C# com a plataforma .NET e adquiri mais responsabilidades, como entrar em contato diretamente com o cliente e ser responsável pelas entregas de projetos e por ajudar o time com a  parte técnica, ralizando treinamentos, configurando o ambiente de desenvolvimento e lidar com novas tecnologias',
+      image: '../assets/logos/infobase-logo.png',
+      title: 'Bem-vindo ao Caos',
+      year: '2017'
     },
     {
       align: 'right',
-      description: 'Em 2018 entrei na IBM como Desenvolvedor de Aplicações e ganhei experiência em uma multinacional trabalhando em um projeto no ramo de seguros para o cliente Prudential.',
-      image: 'https://i.ibb.co/QCS0f2Y/ibm.png',
+      description: 'Na multinacional IBM ganhei experiência como desenvolvedor de aplicações trabalhando em um projeto no ramo de seguros bastante burocrático que foi desafiador para mim. Trabalhei com tecnologias web para construir UI e Web APIs para o cliente Prudential.',
+      image: '../assets/logos/atsnet-logo.svg',
       title: 'Entrei na IBM',
-      year: '2014'
+      year: '2018'
     }
   ];
 

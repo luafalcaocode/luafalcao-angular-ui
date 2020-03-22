@@ -3,6 +3,10 @@
     padding-right: 50px;
 }
 
+.timeline-description {
+    font-size: 18px;
+}
+
 .title-timeline {
     font-weight: bold;
     text-transform: uppercase;
@@ -26,6 +30,8 @@
 
 .timeline-year {
     vertical-align: -40px;
+    font-weight: bold;
+    font-size: 20px;
 }
 
 .timeline-scarface {
@@ -36,8 +42,7 @@
 }
 
 .image-timeline {
-   
-    height: 90px;
+    filter: grayscale(100%);
     width: auto;
 }
 
