@@ -195,14 +195,8 @@ a {
       padding-top: 2px !important;
     }
 
-    .login {
-      color: var(--dark) !important;
-      margin-right: 0 !important;
-    }
-    a.login {
-      font-size: 16px !important;
-      width: 80px;
-      padding: 6px 20px 5px 15px !important;
+    #usuario {
+      display: none;
     }
   }
 
@@ -295,4 +289,9 @@ a {
 
 #timelineList li:last-child .timeline-scarface {
   background-color: transparent;
+}
+
+
+.active-white {
+  color: var(--white);
 }

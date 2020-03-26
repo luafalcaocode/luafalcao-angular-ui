@@ -53,9 +53,9 @@
         <!-- Login-->
         <a class="login" (click)="showLoginModal()" *ngIf="!loginService.isLogged()"
           [hidden]="!isUserIconsVisibile">Login</a>
-        <a routerLink="" [className]="isMenuLoggedOpen ? 'active-menu' : 'inative-menu'" class="login u-border-none"
+        <a [className]="isMenuLoggedOpen ? 'active-menu' : 'inative-menu'" class="login u-border-none"
           *ngIf="loginService.isLogged()" (mouseenter)="showTooltip($event)" (mouseleave)="hideToolTip($event)"
-          (click)="showLoggedMenu()" id="usuario"><i class="material-icons user" *ngIf="loginService.isLogged()"> person
+          (click)="showLoggedMenu()" id="usuario"><i class="material-icons user" *ngIf="loginService.isLogged()" [class.active-white]="loginService.isLogged()"> person
           </i></a>
        
         <a class="all-articles-icon" [hidden]="isUserIconsVisibile" (click)="toogleArticlesMenu()">

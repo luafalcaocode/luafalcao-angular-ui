@@ -71,9 +71,17 @@
   background-color: var(--niceGray);
   margin: 0 auto;
 
+  @media only screen and (max-width: 767px) and (orientation: portrait) {
+    height: 460px;
+  }
+
+  @media only screen and (max-width: 767px) and (orientation: landscape) {
+    height: 350px;
+  }
+
   @media only screen and (max-width: 767px) {
     width: 5px;
-    height: 380px;
+    
     background-color: var(--cream);
     z-index: 1;
     position: relative;

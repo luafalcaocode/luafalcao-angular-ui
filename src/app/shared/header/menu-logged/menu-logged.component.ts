@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { LoginService } from '../../../services/login.service';
 
 @Component({
   selector: 'app-menu-logged',
@@ -9,7 +10,7 @@ import { Router } from '@angular/router';
 export class MenuLoggedComponent implements OnInit {
   private isMenuLoggedOpen: boolean;
 
-  constructor(public router: Router) { }
+  constructor(public router: Router, public login: LoginService) { }
 
   ngOnInit() {
   }
@@ -23,6 +24,12 @@ export class MenuLoggedComponent implements OnInit {
   navigateTo(path: string) {
     this.router.navigate(['/' + path]);
     window.scrollTo(0, 0);
+  }
+
+  logout() {
+    this.login.logout();
+    this.hideLoggedMenu();
+    this.router.navigate(['/']);
   }
 
 }

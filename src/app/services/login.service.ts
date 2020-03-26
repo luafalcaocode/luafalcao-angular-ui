@@ -14,4 +14,9 @@ export class LoginService {
   public login() {
     this.logged = true;
   }
+
+  public logout() {
+    // remove token do local storage
+    this.logged = false;
+  }
 }
