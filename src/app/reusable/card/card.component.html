@@ -1,0 +1,40 @@
+<div class="col-lg-4">
+    <section>
+        <div class="row">
+            <div class="col-lg-8">
+                <h3>{{ card.title}}</h3>
+            </div>
+            <div class="col-lg-4">
+                <button class="btn">VER</button>
+            </div>
+        </div>
+
+        <div class="row description-container">
+            <div class="col-lg-12">
+                <p>{{ card.description }}</p>
+            </div>
+        </div>
+
+        <h5>Tecnologias adotas: </h5>
+        <ul>
+            <li *ngFor="let tech of card.techs">
+                <span>{{ tech}}</span>
+            </li>
+        </ul>
+
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="description-category-container">
+                    <span class="description-category">Categoria:</span> &nbsp;&nbsp;
+                    <span>{{ card.category }}</span>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="description-creator-container">
+                    <span class="description-creator">Autor:</span> &nbsp;&nbsp;<span>Luã Falcão</span>
+                </div>
+            </div>
+        </div>
+
+    </section>
+</div>

@@ -21,6 +21,7 @@
   --blueDev: #008aff;
   --niceGray: #303E4B;
   --cream: #D0DEE9;
+  --ice: #ECF0F4;
 }
 
 body {
@@ -117,6 +118,11 @@ a {
 .u-marginRight-zero {
   margin-right: 0 !important;
 }
+
+.u-margin-auto {
+  margin: 0 auto !important;
+}
+
 
 /* modal */
 .fadeIn {
