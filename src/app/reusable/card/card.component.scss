@@ -1,9 +1,10 @@
 section {
   width: 100%;
-  height:auto;
+  height: 380px;
   box-shadow: 5px 5px 5px var(--cream);
   border-top: solid 3px var(--blueFlat);
   padding: 30px;
+  padding-top: 10px;
   background: var(--white);
   margin-top: 50px;
 
@@ -52,9 +53,12 @@ section {
   ul {
     margin-top: 20px;
     padding-left: 0;
+    height: 100px; 
+
     li {
       list-style-type: none;
     }
+    overflow-y: auto;
   }
 
   .description-category-container {
@@ -81,3 +85,18 @@ section {
 .col-right-empty {
   padding-right: 0 !important;
 }
+
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--cream);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--blueFlat);
+}
+
+

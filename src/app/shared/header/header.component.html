@@ -12,7 +12,7 @@
               <span class="glyphicon glyphicon-menu-down"></span>
             </a>
             <app-menu [menu]="menuProjetos" class="fadeOut" id="menuProjetos" (mouseenter)="showMenu('menuProjetos')"
-              (mouseleave)="hideMenu('menuProjetos')"></app-menu>
+              (mouseleave)="hideMenu('menuProjetos')" (selectItem)="onSelectItem($event)"></app-menu>
           </li>
           <li (mouseleave)="hideMenu('menuServicos')" class="item-menu-principal">
             <a routerLink="" (mouseenter)="showMenu('menuServicos')"
@@ -20,7 +20,7 @@
               <span class="glyphicon glyphicon-menu-down"></span>
             </a>
             <app-menu [menu]="menuServicos" class="fadeOut" id="menuServicos" (mouseenter)="showMenu('menuServicos')"
-              (mouseleave)="hideMenu('menuServicos')"></app-menu>
+              (mouseleave)="hideMenu('menuServicos')"  (selectItem)="onSelectItem($event)"></app-menu>
           </li>
           <li class="item-menu-principal">
             <a routerLink="/articles">Artigos</a>

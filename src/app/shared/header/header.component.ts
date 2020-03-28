@@ -31,10 +31,10 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
     this.menuProjetos = [
-      new MenuViewModel(1, 'Projetos de TI Empresariais', '/projetos/corporativos'),
-      new MenuViewModel(2, 'Projetos de TI Pessoais', '/projetos/pessoais'),
-      new MenuViewModel(3, 'Projetos de Contos Literários', 'link do projeto pessoal aqui'),
-      new MenuViewModel(4, 'Redator de Conteúdo para Web', 'link do projeto pessoal aqui')
+      new MenuViewModel(1, 'Projetos Empresariais', '/projetos/corporativos'),
+      new MenuViewModel(2, 'Projetos Pessoais', '/projetos/pessoais')//,
+      // new MenuViewModel(3, 'Projetos de Contos Literários', 'link do projeto pessoal aqui'),
+      // new MenuViewModel(4, 'Redator de Conteúdo para Web', 'link do projeto pessoal aqui')
 
     ];
 
@@ -168,4 +168,7 @@ export class HeaderComponent implements OnInit {
     this.menuService.toogleArticleMenu();
   }
 
+  onSelectItem(event) {
+    this.hideMenu(event);
+  }
 }

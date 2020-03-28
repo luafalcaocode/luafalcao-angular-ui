@@ -42,6 +42,10 @@ a:hover {
   color: var(--blueFlat);
 }
 
+a:visited, a:active, a:focus {
+  text-decoration: none;
+}
+
 h4 {
   padding-left: 30px;
   padding-bottom: 10px;
