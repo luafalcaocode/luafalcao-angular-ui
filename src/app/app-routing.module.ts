@@ -29,7 +29,7 @@ const routes: Routes = [
     component: AboutComponent
   },
   {
-    path: 'projetos',
+    path: 'projetos/:screen',
     component: ProjectComponent
   }
 ];

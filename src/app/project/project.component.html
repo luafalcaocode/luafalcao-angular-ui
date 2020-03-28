@@ -1,3 +1,11 @@
-<div class="row u-margin-auto">
-    <card *ngFor="let card of cards" [card]="card"></card>
-</div>
+<app-header></app-header>
+<section id="project">
+    <video class="highlight" id="video" preload="auto" loop muted onloadedmetadata="this.muted = true" oncanplay="this.play()">
+        <source [src]="video" type="video/mp4">
+    </video>
+   
+    <div class="row project-card-container">
+        <card *ngFor="let card of cards" [card]="card"></card>
+    </div>
+</section>
+<app-footer></app-footer>

@@ -25,7 +25,8 @@ import { ReusableModule } from './reusable/reusable.module';
     PanelModule,
     ArticleModule,
     AboutModule,
-    ReusableModule
+    ReusableModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]

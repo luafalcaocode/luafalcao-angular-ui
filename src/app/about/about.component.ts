@@ -105,15 +105,33 @@ export class AboutComponent implements OnInit {
       if (flag < this.titulo.length) {
         array.pop();
         this.nome = array.join('');
-        flag++;
+        flag++
       }
       else {
         clearInterval(interval);
         this.palavra = (this.palavra == this.titulos.length - 1) ? 0 : ++this.palavra;
         this.write();
       }
-    }, 50)
+    }, 50);
   }
+
+  
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
 
   scrollInto(id: string) {
     document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
