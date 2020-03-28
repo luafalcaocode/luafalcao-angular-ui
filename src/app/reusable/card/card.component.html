@@ -5,7 +5,7 @@
                 <h3>{{ card.title}}</h3>
             </div>
             <div class="col-lg-4 col-right-empty">
-                <button class="btn u-right">VER</button>
+                <button class="btn u-right" (click)="navigate(card.link)">VER</button>
             </div>
         </div>
 
@@ -25,7 +25,7 @@
         <div class="row">
             <div class="col-lg-6 col-xs-12">
                 <div class="description-category-container">
-                    <span class="description-category">Categoria:</span> &nbsp;&nbsp;
+                    <span class="description-category">Categoria:</span> &nbsp; &nbsp;
                     <span>{{ card.category }}</span>
                 </div>
             </div>
@@ -35,6 +35,5 @@
                 </div>
             </div>
         </div>
-
     </section>
 </div>

@@ -1,6 +1,7 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 import { CardViewModel } from '../viewModels/card.viewModel';
 import { ActivatedRoute } from '@angular/router';
+import { ProjectService } from '../services/pages/project.service';
 
 @Component({
   selector: 'app-project',
@@ -12,71 +13,19 @@ export class ProjectComponent implements OnInit {
   video: string;
   screen: string;
 
-  constructor(public router: ActivatedRoute) {
-    this.router.params.subscribe(params => this.screen = params.screen);
+  constructor(public router: ActivatedRoute, public service: ProjectService) {
+ 
   }
 
   ngOnInit() {
-    debugger;
-   
-    switch (this.screen) {
-      case 'pessoais':
-        this.video = '../../assets/video/code.mp4';
-        break;
-      case 'corporativos':
-        break;
-    }
-    this.cards = [
-      {
-        title: 'Projeto 1',
-        description: 'A descrição do projeto vai entrar aqui quando a API estiver pronta!',
-        category: 'Web App',
-        link: 'some link here',
-        techs: ['Angular', 'HTML5', 'CSS3', 'JavaScript']
-      },
-      {
-        title: 'Projeto  2',
-        description: 'A descrição do projeto vai entrar aqui quando a API estiver pronta!',
-        category: 'Web App',
-        link: 'some link here',
-        techs: ['C#', 'ASP .NET CORE', 'SQL Server', 'GIT']
-      },
-      {
-        title: 'Projeto  3',
-        description: 'A descrição do projeto vai entrar aqui quando a API estiver pronta!',
-        category: 'Web App',
-        link: 'some link here',
-        techs: ['IIS', 'Azure', 'C#', 'ASP .NET Signal AR']
-      },
-      {
-        title: 'Projeto  4',
-        description: 'A descrição do projeto vai entrar aqui quando a API estiver pronta!',
-        category: 'Web App',
-        link: 'some link here',
-        techs: ['Angular', 'HTML5', 'CSS3', 'JavaScript']
-      },
-      {
-        title: 'Projeto  5',
-        description: 'A descrição do projeto vai entrar aqui quando a API estiver pronta!',
-        category: 'Web App',
-        link: 'some link here',
-        techs: ['Angular', 'HTML5', 'CSS3', 'JavaScript']
-      },
-      {
-        title: 'Projeto  6',
-        description: 'A descrição do projeto vai entrar aqui quando a API estiver pronta!',
-        category: 'Web App',
-        link: 'some link here',
-        techs: ['Angular', 'HTML5', 'CSS3', 'JavaScript']
-      },
-      {
-        title: 'Projeto  7',
-        description: 'A descrição do projeto vai entrar aqui quando a API estiver pronta!',
-        category: 'Web App',
-        link: 'some link here',
-        techs: ['Angular', 'HTML5', 'CSS3', 'JavaScript']
-      }
-    ]
+    this.router.params.subscribe(params => {
+      this.screen = params.screen;
+      this.service.initializePage(this.screen);
+      this.cards = this.service.cards;
+      this.video = this.service.video;
+      
+      let video = (<HTMLVideoElement>document.getElementById('video'));
+      video.load();
+    });
   }
-
 }
