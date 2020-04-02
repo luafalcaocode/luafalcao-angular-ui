@@ -1,5 +1,23 @@
 #service {
     min-height: 900px;
-    padding-top: 100px;
-    padding-left: 130px;
+    
+    .primary-highlight {
+        background-image: url('../../assets/backgrounds/grid.jpg');
+        background-size: cover;
+        min-height: 800px;
+
+        padding-top: 200px;
+        color: var(--white);
+        font-weight: bold;
+        padding-left: 130px;
+
+        h1 {
+            font-weight: bold;
+            font-size: 44px;
+        }
+    }
+
+    .secondary-services {
+        min-height: 500px;
+    }
 }
