@@ -4,13 +4,27 @@
   background-size: cover;
   padding: 100px;
   padding-left: 130px;
-  color: var(--white);
+  color: var(--cream);
+  
 
-  @media only screen and (max-width: 747px) {
+  @media only screen and (max-width: 767px) {
     padding: 30px;
     padding-top: 0;
     min-height: 500px;
+    background-position: center top !important;
   }
+
+  h1, h3 {
+    transition: .5s ease-out;
+  }
+}
+
+.highlight:hover {
+  cursor: pointer;
+  h1, h3 {
+    color: var(--white);
+    transition: .8s;
+  } 
 }
 
 .hightlight-slide {

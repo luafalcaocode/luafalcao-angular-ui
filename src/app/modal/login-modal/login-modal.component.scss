@@ -9,7 +9,7 @@
 
   .centered-modal-content {
     background-image: url("../../../assets/backgrounds/moria.png");
-    background-position: center bottom;
+    background-position: -150px top;
     background-size: cover;
     width: 40%;
     height: auto;
@@ -19,6 +19,7 @@
     left: 31%;
     padding: 70px;
     padding-top: 50px;
+    padding-right: 50px;
     box-shadow: 2px 2px 9px var(--dark);
 
     transition: 0.4 ease-in-out;

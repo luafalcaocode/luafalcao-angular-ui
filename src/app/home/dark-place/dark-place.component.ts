@@ -1,4 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { LoadingService } from '../../services/layout/loading.service';
 
 
 @Component({
@@ -13,17 +14,35 @@ export class DarkPlaceComponent implements OnInit {
     email: '',
     message: ''
   };
-  
-  @Output() message: EventEmitter<any> = new EventEmitter<any>(); 
+
+  isLoading: boolean;
+  isCompleted: boolean;
+  isSendTextVisible: boolean;
+
+  @Output() message: EventEmitter<any> = new EventEmitter<any>();
 
 
-  constructor() { }
+  constructor(public loadingService: LoadingService) { }
 
   ngOnInit() {
+    this.isSendTextVisible = true;
   }
 
   sendMessage() {
-    this.message.emit(this.modelForm);
-  }
+    this.isSendTextVisible = false;
+    this.isLoading = true;
 
+    this.message.emit(this.modelForm);
+
+    setTimeout(() => {
+      this.isLoading = false;
+      this.isCompleted = true;
+
+      setTimeout(() => {
+        this.isCompleted = false;
+        this.isSendTextVisible = true;
+        this.modelForm = { name: '', email: '', message: '' };
+      }, 1000);
+    }, 2000);
+  }
 }

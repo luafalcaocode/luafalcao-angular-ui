@@ -7,6 +7,7 @@ section {
   padding-top: 10px;
   background: var(--white);
   margin-top: 50px;
+  overflow-y: auto;
 
   h3,
   h5 {
@@ -28,6 +29,11 @@ section {
     border: solid 1px var(--blueFlat);
     color: var(--white);
     transition: 0.5s ease-out;
+    float: right;
+
+    @media (max-width: 1024px) {
+      float: left;
+    }
   }
 
   button:focus {
@@ -96,7 +102,7 @@ section {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--blueFlat);
+  background: var(--shadow);
 }
 
 

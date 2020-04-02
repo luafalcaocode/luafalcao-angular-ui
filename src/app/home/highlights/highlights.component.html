@@ -1,5 +1,5 @@
 <section class="highlight" [ngClass]="{'u-hide' : !slide.isActive}"
-    [ngStyle]="{'background-image' : 'url(' + assets_path + slide.image + ')'}" *ngFor="let slide of slides">
+    [ngStyle]="{'background-image' : 'url(' + assets_path + slide.image + ')', 'background-position' : slide.style}" *ngFor="let slide of slides">
     <div class="row hightlight-slide">
         <div class="col-md-7 col-xs-12">
             <h1 class="u-normal">{{ slide.title }}</h1>

@@ -66,6 +66,7 @@ export class AboutComponent implements OnInit {
 
   ngOnInit() {
     this.commonService.initializePage();
+    this.commonService.hideLoading();
     this.write();
   }
 

@@ -99,6 +99,7 @@ export class ArticleComponent implements OnInit {
     // fazer um GET na API por ID (que vem da URL) para pegar o ID do artigo
     this.router.params.subscribe(params => this.id = params.id);
     console.log(this.id);
+    this.commonService.hideLoading();
   }
 
   scrollToElement(id) {
@@ -127,5 +128,9 @@ export class ArticleComponent implements OnInit {
 
   onGetById(id) {
     // chamar API para obter o artigo por id e atribuir ao objeto article 
+  }
+
+  open(url: string) {
+    window.open(url);
   }
 }

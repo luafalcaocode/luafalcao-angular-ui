@@ -9,13 +9,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PanelModule } from './panel/panel.module';
 import { ArticleModule } from './article/article.module';
 import { AboutModule } from './about/about.module';
-import { ProjectComponent } from './project/project.component';
+import { ProjectModule } from './project/project.module';
 import { ReusableModule } from './reusable/reusable.module';
+import { ServiceComponent } from './service/service.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ProjectComponent    
+    ServiceComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +27,8 @@ import { ReusableModule } from './reusable/reusable.module';
     ArticleModule,
     AboutModule,
     ReusableModule,
-    SharedModule
+    SharedModule,
+    ProjectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

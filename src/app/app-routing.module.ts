@@ -5,6 +5,7 @@ import { HomeComponent } from './home/home.component';
 import { ArticleComponent } from './article/article.component';
 import { AboutComponent } from './about/about.component';
 import { ProjectComponent } from './project/project.component';
+import { ServiceComponent} from './service/service.component';
 
 
 const routes: Routes = [
@@ -31,6 +32,10 @@ const routes: Routes = [
   {
     path: 'projetos/:screen',
     component: ProjectComponent
+  },
+  {
+    path: 'servicos/:screen',
+    component: ServiceComponent
   }
 ];
 

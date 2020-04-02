@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LoadingService } from './services/layout/loading.service';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +10,7 @@ export class AppComponent {
   title = 'luafalcao';
   public isUserUsingInternetExplorer: boolean;
 
-  constructor() {
+  constructor(public loading: LoadingService) {
     if (navigator.userAgent.indexOf('Trident/') > - 1 || navigator.userAgent.indexOf('Edge/') > - 1) {
       this.isUserUsingInternetExplorer = true;
     }   
@@ -21,5 +22,9 @@ export class AppComponent {
   ngOnInit() {
     console.log('Versão: 2.0');
     console.log('Data de Publicação: ' + new Date().toLocaleDateString("pt-BR"));
+  }
+
+  ngAfterViewInit() {
+    this.loading.hide();
   }
 }

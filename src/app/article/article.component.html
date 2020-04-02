@@ -10,30 +10,36 @@
 
     <div class="row">
         <div class="col-xs-2 col-lg-1 thumbnail-container">
-            <a href="https://linkedin.com/in/luafalcao" target="_blank"><img src="assets/eu.png" class="thumbnail"  /></a>
+            <a href="https://linkedin.com/in/luafalcao" target="_blank"><img src="assets/eu.png"
+                    class="thumbnail" /></a>
         </div>
-        <div class="col-xs-9 col-lg-9 u-left container-info-articles">
+        <div class="col-xs-9 col-lg-6 u-left container-info-articles">
             <div class="container-article-info u-left">
                 <span class="descricao-nome-autor">{{ article.author }}</span> <br />
                 <span class="data-publicacao">{{ article.publishDate }}</span>
             </div>
         </div>
+        <div class="col-lg-3 article-social-icon-container">
+            <button class="btn"><i class="fas fa-envelope article-social-icon"></i></button>
+            <button class="btn" (click)="open('https://linkedin.com/in/luafalcao')"><i class="fab fa-linkedin-in article-social-icon"></i></button>
+        </div>
     </div>
 
     <div class="row">
         <div class="col-xs-12">
-            <article-user-interaction (like)="onLike($event)"  [numberOfLikes]="article.numberOfLikes" [numberOfComments]="article.numberOfComments"></article-user-interaction>
+            <article-user-interaction (like)="onLike($event)" [numberOfLikes]="article.numberOfLikes"
+                [numberOfComments]="article.numberOfComments"></article-user-interaction>
         </div>
     </div>
 
     <div class="row article-body">
         <div class="col-xs-12">
-        <div [innerHTML]="article.content">
+            <div [innerHTML]="article.content">
 
-        </div>
+            </div>
         </div>
     </div>
-    <div  id="scrollToThere"></div>    
+    <div id="scrollToThere"></div>
     <article-comentary (comment)="onComment($event)" [comments]="comments" [isLoading]="isLoading"></article-comentary>
 </article>
 

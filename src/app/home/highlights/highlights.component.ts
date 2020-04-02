@@ -15,9 +15,9 @@ export class HighlightsComponent implements OnInit {
 
   constructor() {
     this.slides = [
-      new SlideViewModel(`Design Patterns #5: Abstract Factory`, `Neste artigo, mostro como você pode usar o Abstract Factory para oferecer portabilidade à sua aplicação.`, `highlight_1.png`, 0),
-      new SlideViewModel(`Crazy & Mad Girls`, 'Confira o jogo eletrônico que desenvolvi para PC com a ferramenta Blitz 3D ', 'gradient.jpg', 1),
-      new SlideViewModel(`Usando o GIT via linha de comando`, 'Neste tutorial, mostro como executar os comandos básicos do GIT via linha de comando.', 'moria.png', 2)
+      new SlideViewModel(`Tutorial: criando componentes com o Angular 8`, 'Neste tutorial iremos aprender como criar componentes reutilizáveis com o framework Angular', '/banner/banner_2.png', 0, '400px -60px'),
+      new SlideViewModel(`Padrões de Projeto e onde habitam`, `Por que os padrões de projetos são importantes? Como utilizá-los em uma aplicação?`, `/banner/banner_1.png`, 1, ''),
+      new SlideViewModel(`Resident Evil: Acompanhe a evolução da série`, 'Tudo começou com um incidente na cidade de Raccoon City e evoluiu para um evento de escala mundial', '/banner/banner_3.png', 2, '0 -100px')
     ];
 
 
@@ -53,7 +53,7 @@ export class HighlightsComponent implements OnInit {
       if (atual == this.slides.length) {
         atual = 0;
       }
-    }, 5000);
+    }, 3000);
   }
 
   stopAutoPlay() {

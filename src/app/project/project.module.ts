@@ -10,6 +10,9 @@ import { SharedModule } from '../shared/shared.module';
     CommonModule,
     ReusableModule,
     SharedModule
+  ],
+  exports :[
+    ProjectComponent
   ]
 })
 export class ProjectModule { }

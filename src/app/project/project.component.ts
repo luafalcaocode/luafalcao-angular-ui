@@ -2,6 +2,8 @@ import { Component, OnInit, HostListener } from '@angular/core';
 import { CardViewModel } from '../viewModels/card.viewModel';
 import { ActivatedRoute } from '@angular/router';
 import { ProjectService } from '../services/pages/project.service';
+import { CommonService } from '../services/layout/common.service';
+
 
 @Component({
   selector: 'app-project',
@@ -13,11 +15,12 @@ export class ProjectComponent implements OnInit {
   video: string;
   screen: string;
 
-  constructor(public router: ActivatedRoute, public service: ProjectService) {
+  constructor(public router: ActivatedRoute, public service: ProjectService, public commonService: CommonService) {
  
   }
 
   ngOnInit() {
+    this.commonService.initializePage();
     this.router.params.subscribe(params => {
       this.screen = params.screen;
       this.service.initializePage(this.screen);
@@ -25,7 +28,12 @@ export class ProjectComponent implements OnInit {
       this.video = this.service.video;
       
       let video = (<HTMLVideoElement>document.getElementById('video'));
-      video.load();
+      video.load();         
     });
   }
+
+  ngAfterViewChecked() {
+    this.commonService.hideLoading();
+  }
+
 }

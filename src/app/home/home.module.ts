@@ -10,6 +10,7 @@ import { ChatComponent } from './chat/chat.component';
 import { DarkPlaceComponent } from './dark-place/dark-place.component';
 import { TechnolgiesComponent } from './technolgies/technolgies.component';
 import { FormsModule } from '@angular/forms';
+import { ReusableModule } from '../reusable/reusable.module';
 
 
 
@@ -18,7 +19,8 @@ import { FormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     SharedModule,
-    FormsModule
+    FormsModule,
+    ReusableModule
   ],
   exports: [
     HomeComponent  

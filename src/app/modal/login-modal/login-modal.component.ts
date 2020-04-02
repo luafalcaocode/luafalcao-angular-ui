@@ -9,6 +9,10 @@ import { LoginService } from '../../services/login.service';
   styleUrls: ['./login-modal.component.scss']
 })
 export class LoginModalComponent implements OnInit {
+  user: any = {
+    login : '',
+    password: ''
+  };
 
   constructor(public modalService: ModalService, public loginService: LoginService) { }
 
@@ -21,7 +25,10 @@ export class LoginModalComponent implements OnInit {
   }
 
   login() {
-    this.loginService.login();
-    this.hide();
+    // em uma aplicação real NUNCA FAÇA ISSO! É apenas uma gambiarra usada para testes durante o desenvolvimento (don't do this ever!!!)
+    if (this.user.login == 'luafalcao' && this.user.password == 'laraCroft!') {
+      this.loginService.login();
+      this.hide();
+    }    
   }
 }

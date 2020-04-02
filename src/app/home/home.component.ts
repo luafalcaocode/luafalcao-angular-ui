@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 
 import { ImageViewModel } from '../viewModels/image.viewModel';
 import { CommonService } from '../services/layout/common.service';
+import { LoadingService } from '../services/layout/loading.service';
 
 @Component({
   selector: 'app-home',
@@ -11,7 +12,7 @@ import { CommonService } from '../services/layout/common.service';
 export class HomeComponent implements OnInit {
   public images: ImageViewModel[];
 
-  constructor(public commonService: CommonService) {
+  constructor(public commonService: CommonService, public loadinService: LoadingService) {
 
     this.images = [
       {
@@ -80,11 +81,11 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.commonService.initializePage();
+    this.commonService.hideLoading();
   }
 
   onMessage(message: any) {
     // chamar futuramente a API para entregar os dados do formulário para o meu e-mail
-    console.log(message);
+    
   } 
-
 }
