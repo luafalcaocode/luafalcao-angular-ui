@@ -1,5 +1,10 @@
 .nice-gallery-container {
-    height: 400px;
+    height: 420px;
+
+    @media only screen and (max-width: 1279px) {
+        height: 370px;
+    }
+
     position: relative;
     z-index: 2;
     text-align: center;
@@ -11,10 +16,17 @@ div.lightbox {
     top: 0;
     z-index: 4;
     text-align: center;
-    height: 400px;
+    height: 420px;
+
+    @media only screen and (max-width: 1279px) {
+        height: 370px;
+    }
+
+
     padding-top: 150px;
     transition: 0.5s ease-out;
     background-color: rgba(0, 0, 0, 0.1);
+    left: 0px;
 
     p {
         color: var(--white);
@@ -48,12 +60,20 @@ div.lightbox:hover {
     position: relative;
     z-index: 5;
     top: -400px;
-    height: 400px;
+
+    height: 430px;
     padding-top: 40px;
     color: var(--dark);
     background-color: var(--white);
     cursor: default;
-    left: 15px;
+    left: 0px;
+
+    
+    @media only screen and (max-width: 1279px) { 
+        padding-top: 20px;
+        height: 370px;
+    }
+
 
     .reveal-icons {
         width: 100px;
@@ -64,6 +84,10 @@ div.lightbox:hover {
         padding: 60px;
         padding-top: 20px;
         padding-bottom: 10px;
+
+        @media only screen and (max-width: 1279px) {
+            font-size: 13px;
+        }
     }
 
     .reveal-btn {
@@ -71,12 +95,11 @@ div.lightbox:hover {
         color: var(--dark);
         border: solid 1px var(--dark);
         border-radius: 4px;
-        transition: .4s  ease-out;
+        transition: 0.4s ease-out;
         animation-name: hint;
         animation-direction: normal;
         animation-iteration-count: infinite;
         animation-duration: 0.7s;
-      
 
         @keyframes hint {
             0% {
@@ -96,10 +119,10 @@ div.lightbox:hover {
     .reveal-btn:hover {
         background-color: var(--dark);
         color: var(--white);
-        transition: .3s;
+        transition: 0.3s;
     }
 
-    .reveal-btn:focus{
+    .reveal-btn:focus {
         outline: none;
     }
 }
@@ -108,12 +131,17 @@ div.lightbox:hover {
     opacity: 0;
     pointer-events: none;
     transition: 0.1s linear;
-    top: -70px;
+    top: 170px;
 }
 
 .revealOn {
     pointer-events: visible;
     opacity: 1;
     transition: 0.2s linear;
-    top: -400px;
+    // top: -400px;
+
+    // @media only screen and (max-width: 1279px) {
+    position: absolute;
+    top: 0;
+    // }
 }

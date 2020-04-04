@@ -10,27 +10,29 @@ footer {
   width: 100%;
   height: 310px;
 
-  @media (max-width: 747px) {
+  @media (max-width: 1279px) {
     padding-left: 30px;
     padding-bottom: 0;
+    z-index: 0;
+    position: relative !important
   }
 
-  @media only screen and (max-width: 747px) and (orientation: portrait) {
+  @media only screen and (max-width: 1279px) and (orientation: portrait) {
     min-height: 590px;
     height: auto;
   }
 
-  @media only screen and (max-width: 747px) and (orientation: landscape) {
+  @media only screen and (max-width: 1279px) and (orientation: landscape) {
     min-height: 570px;
     height: auto;
   }
 
-  @media only screen and (max-width: 747px) {
+  @media only screen and (max-width: 1279px) {
       padding-top: 10px;
   }
 
 
-  @media only screen and (min-width: 768px) and (max-width: 1024px) {
+  @media only screen and (min-width: 1279px) and (max-width: 1024px) {
     height: auto;
   }
 

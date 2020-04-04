@@ -19,7 +19,7 @@ export class ServiceService {
             background: 'assets/backgrounds/highlight_1.png',
             reveal: {
               icon: 'fas fa-cogs reveal-icons',
-              text: 'Com o framework ASP .NET Core podemos construir aplicações distribuídas com acesso a banco de dados para oferecer diferentes tipos de serviços para sua aplicação, como chats, e-mails, autenticação de usuários, cadastro de formulários, notícias e muito mais, disponível para para o Windows, MAC OS ou Linux.'
+              text: 'Com o framework ASP .NET Core podemos construir aplicações distribuídas com acesso a banco de dados para oferecer diferentes tipos de serviços para sua aplicação, disponível para para o Windows, MAC OS ou Linux.'
             }
           },
           {

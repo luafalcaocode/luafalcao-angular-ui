@@ -1,19 +1,41 @@
 #service {
     min-height: 900px;
+    height: auto;
+    //overflow-x: hidden;
+   
     
     .primary-highlight {
         background-image: url('../../assets/backgrounds/grid.jpg');
         background-size: cover;
-        min-height: 800px;
+        height: 800px;
 
         padding-top: 200px;
         color: var(--white);
         font-weight: bold;
         padding-left: 130px;
 
+        @media only screen and (max-width: 1279px) {
+            padding-left: 30px;
+            padding-top: 100px;
+            position: relative;
+            height: auto;
+            min-height: 500px;
+            z-index: 1;
+        }
+
         h1 {
             font-weight: bold;
             font-size: 44px;
+
+            @media only screen and (max-width: 1279px) {
+                font-size: 28px;
+            }
+        }
+
+        h2 {
+            @media only screen and (max-width: 1279px) {
+                font-size: 24px;
+            }
         }
     }
 
