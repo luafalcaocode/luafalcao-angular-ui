@@ -5,18 +5,17 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 import { HomeModule } from './home/home.module';
+import { ServiceModule } from './service/service.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PanelModule } from './panel/panel.module';
 import { ArticleModule } from './article/article.module';
 import { AboutModule } from './about/about.module';
 import { ProjectModule } from './project/project.module';
 import { ReusableModule } from './reusable/reusable.module';
-import { ServiceComponent } from './service/service.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    ServiceComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +27,8 @@ import { ServiceComponent } from './service/service.component';
     AboutModule,
     ReusableModule,
     SharedModule,
-    ProjectModule
+    ProjectModule,
+    ServiceModule
   ],
   providers: [],
   bootstrap: [AppComponent]

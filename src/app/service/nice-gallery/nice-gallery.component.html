@@ -1,1 +1,21 @@
-<p>nice-gallery works!</p>
+<div class="nice-gallery-row row">
+    <div class="col-xs-12 col-lg-4 nice-gallery-container" *ngFor="let item of itens; let i = index"
+        [ngStyle]="{'background-image' : 'url(' + item.background + ')'}">
+        <div class="row" (click)="onClick_Reveal('reveal_' +  i )">
+            <div class="lightbox col-xs-12 col-lg-12">
+                <p>{{ item.title }}</p>
+                <h2>{{ item.description }}</h2>
+            </div>
+            <div class="row" id="{{ 'reveal_' + i }}" #reveal >
+                <div class="revealOff col-lg-12 all-shall-be-reveal" [class.revealOn]="revealed && id == reveal.id">
+                    <i class="reveal-icons {{ item.reveal.icon }}"></i>
+                    <p>
+                        {{ item.reveal.text }}
+                    </p>
+
+                    <button class="btn reveal-btn">Eu quero</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -8,11 +8,13 @@ import { CommonService } from '../services/layout/common.service';
   styleUrls: ['./service.component.scss']
 })
 export class ServiceComponent implements OnInit {
+  services: any[];
 
   constructor(public service: ServiceService, public commonService: CommonService) { }
 
   ngOnInit() {
     this.service.initializePage('para-o-cliente');
+    this.services = this.service.services;
     this.commonService.hideLoading();
   }
 }
