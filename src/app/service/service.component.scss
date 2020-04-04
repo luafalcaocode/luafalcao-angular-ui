@@ -49,4 +49,12 @@
             padding-bottom: 30px;
         }
     }
+
+    .third-services {
+        min-height: 500px;
+        position: relative;
+        z-index: 5;
+        top: -100px;
+        background: blue;
+    }
 }
