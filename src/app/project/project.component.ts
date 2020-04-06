@@ -14,6 +14,8 @@ export class ProjectComponent implements OnInit {
   cards: CardViewModel[];
   video: string;
   screen: string;
+  titulosCarregando: string[];
+  titulosProjetos: string[]
 
   constructor(public router: ActivatedRoute, public service: ProjectService, public commonService: CommonService) {
  
@@ -25,7 +27,9 @@ export class ProjectComponent implements OnInit {
       this.screen = params.screen;
       this.service.initializePage(this.screen);
       this.cards = this.service.cards;
-      this.video = this.service.video;
+     this.video = this.service.video;
+      this.titulosProjetos = this.service.titulosProjetos;
+      this.titulosCarregando = this.service.titulosCarregando;
       
       let video = (<HTMLVideoElement>document.getElementById('video'));
       video.load();         
