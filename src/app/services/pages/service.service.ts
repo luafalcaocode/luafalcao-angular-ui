@@ -6,6 +6,7 @@ import { CommonService } from '../../services/layout/common.service';
 })
 export class ServiceService {
   services: any[];
+  counts: any[];
 
   constructor(public commonService: CommonService) { }
 
@@ -19,7 +20,7 @@ export class ServiceService {
             background: 'assets/backgrounds/highlight_1.png',
             reveal: {
               icon: 'fas fa-cogs reveal-icons',
-              text: 'Com o framework ASP .NET Core podemos construir aplicações distribuídas com acesso a banco de dados para oferecer diferentes tipos de serviços para sua aplicação, disponível para para o Windows, MAC OS ou Linux.'
+              text: 'Com o framework ASP .NET Core posso construir aplicações distribuídas com acesso a banco de dados para oferecer diferentes tipos de serviços para sua aplicação, disponível para para o Windows, MAC OS ou Linux. '
             }
           },
           {
@@ -28,7 +29,7 @@ export class ServiceService {
             background: 'assets/backgrounds/highlight_2.png',
             reveal: {
               icon: 'fas fa-quidditch',
-              text: 'Se você precisa de um pacote de telas com design responsivo e adaptável para dispositivos móveis ou tradicionais e quiser me enviar o layout ou se precisar que eu projete um para a sua aplicação, eu posso te ajudar com isso.'
+              text: 'Com tecnologias como HTML5, CSS3 e JavaScript consigo criar interfaces de usuário ricas com animações e transições de tela para diferentes resoluções de dispositivos.'
             }
           },
           {
@@ -46,7 +47,7 @@ export class ServiceService {
             background: 'assets/backgrounds/grid.jpg',
             reveal: {
               icon: 'fab fa-firefox',
-              text: 'Com experiência na construção e manutenção de Portais Web para companhias de seguro e admnistração, posso projetar e construir um sistema completo que seja robusto o suficiente para atender as necessidades do seu negócio.'
+              text: 'Com experiência na construção e manutenção de Portais Web para companhias no ramo de seguro e admnistração, posso projetar e construir um sistema completo que seja robusto e possibilite fazer a gestão do seu conteúdo.'
             }
           },
           {
@@ -55,7 +56,7 @@ export class ServiceService {
             background: 'assets/backgrounds/binary.jpg',
             reveal: {
               icon: 'fab fa-windows',
-              text: 'Precisa migrar um sistema legado para uma tecnologia mais moderna voltado para o Windows? Tenho experiência com migração de sistemas de grande porte escritos em VB .NET para C# .NET e Web Forms para ASP .NET MVC.'
+              text: 'Precisa migrar um sistema legado para uma tecnologia mais moderna? Tenho experiência com migração de sistemas de grande porte escritos em VB .NET para C# .NET e Web Forms para ASP .NET MVC.'
             }
           },
           {
@@ -67,8 +68,16 @@ export class ServiceService {
               text: 'Precisa de um novo banco de dados para o seu sistema? Podemos fazer um projeto, iniciando pela modelagem conceitual, partindo para a lógica e finalizando com o modelo físico escrito na linguagem T-SQL.'
             }
           }
-        ]
+        ];
+
+        this.counts =  [
+          6,
+          7,
+          5,
+          7
+        ];
         break;
+      
       default:
         break;
     }

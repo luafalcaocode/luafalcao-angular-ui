@@ -9,12 +9,14 @@ import { CommonService } from '../services/layout/common.service';
 })
 export class ServiceComponent implements OnInit {
   services: any[];
+  counts: any[];
 
   constructor(public service: ServiceService, public commonService: CommonService) { }
 
   ngOnInit() {
     this.service.initializePage('para-o-cliente');
     this.services = this.service.services;
+    this.counts = this.service.counts;
     this.commonService.hideLoading();
   }
 }

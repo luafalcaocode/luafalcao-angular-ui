@@ -1,0 +1,22 @@
+.count-container {
+    text-align: center;
+
+    svg {
+        font-size: 48px; 
+        color: var(--violet);
+    }
+
+    .count {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        font-size: 28px;
+    }
+
+    .count-description {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        font-size: 18px;
+        color: var(--violet);
+
+    }
+}

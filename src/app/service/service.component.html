@@ -2,16 +2,38 @@
 <section id="service">
     <section class="primary-highlight">
         <h1>Encontre aqui uma solução tecnológica</h1>
-        <h2>Para a sua necessidade de negócio</h2>
+        <h2>Para a sua necessidade</h2>
+    </section>
+
+    <section class="third-services">
+        <count [counts]="counts"></count>
     </section>
 
     <section class="secondary-services">
         <!-- <h1>Serviços</h1> -->
-        <nice-gallery [itens]="services"></nice-gallery> 
+        <nice-gallery [itens]="services"></nice-gallery>
     </section>
 
-    <section class="third-services">
-        Section 3 
+    <section class="fourth-services">
+        <div class="row">
+            <div class="col-lg-12 u-center">
+                <img src="assets/scrum.png" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12 u-center">
+                <h1>Scrum como metodologia de trabalho</h1>
+                <p>Com o uso do Scrum você obtém transparência e visibilidade de tudo o que está acontecendo no seu
+                    projeto,
+                    recebe entregas de software a cada ciclo de 2-4 semanas, antecipa os riscos e reduz os custos
+                    de 30 a 40% do lançamento do seu produto no mercado.
+                </p>
+
+                <br />
+                <button class="btn reveal-btn btn-large">SAIBA COMO</button>
+            </div>
+        </div>
     </section>
 </section>
 <app-footer></app-footer>
