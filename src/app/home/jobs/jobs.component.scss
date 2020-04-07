@@ -16,7 +16,7 @@ section {
 
       
         font-weight: normal;
-        text-transform: uppercase;
+        
         font-size: 30px;
     }    
 
@@ -37,6 +37,11 @@ section {
         transform: scale(1.2);
     }
 
+    .xsmall-image {
+        width: 60px;
+        margin-top: -20px;
+    }
+
     .small-image {
         width: 80px;
     }       
@@ -44,6 +49,7 @@ section {
     .medium-image {
         width: 160px;
     }
+    
 }
 
 .infobase-logo {

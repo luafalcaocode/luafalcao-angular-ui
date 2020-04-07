@@ -75,6 +75,12 @@ export class HomeComponent implements OnInit {
         src: 'assets/logos/perlink-logo.png',
         link: 'http://www.perlink.com.br/',
         specialClass: 'perlink-logo'
+      },
+      {
+        id: 11,
+        src: 'assets/logos/oi-logo.png',
+        link: 'http://www.oi.com.br/',
+        specialClass: 'xsmall-image'
       }
     ]
   }

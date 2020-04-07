@@ -17,7 +17,7 @@ export class HighlightsComponent implements OnInit {
     this.slides = [
       new SlideViewModel(`Tutorial: criando componentes com o Angular 8`, 'Neste tutorial iremos aprender como criar componentes reutilizáveis com o framework Angular', '/banner/banner_2.png', 0, '400px -60px'),
       new SlideViewModel(`Padrões de Projeto e onde habitam`, `Por que os padrões de projetos são importantes? Como utilizá-los em uma aplicação?`, `/banner/banner_1.png`, 1, ''),
-      new SlideViewModel(`Resident Evil: Acompanhe a evolução da série`, 'Tudo começou com um incidente na cidade de Raccoon City e evoluiu para um evento de escala mundial', '/banner/banner_3.png', 2, '0 -100px')
+      new SlideViewModel(`Podcast #3: Engenharia de Software`, 'Nesse podcast falamos sobre uma abordagem prática profissional adotada nos últimos anos para construir sistemas de computador', '/banner/banner_3.jpg', 2, '0 -100px')
     ];
 
 

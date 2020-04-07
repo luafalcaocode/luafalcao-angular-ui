@@ -1,5 +1,6 @@
 .nice-gallery-container {
     height: 420px;
+    background-size: cover;
 
     @media only screen and (max-width: 1279px) {
         height: 370px;
@@ -22,20 +23,19 @@ div.lightbox {
         height: 370px;
     }
 
-
     padding-top: 150px;
     transition: 0.5s ease-out;
     background-color: rgba(0, 0, 0, 0.1);
-    
 
     p {
         color: var(--white);
-        font-weight: lighter;
+        font-size: 18px;
+        text-shadow: 1px 1px var(--dark);
     }
 
     h2 {
         color: var(--white);
-        font-weight: bold;
+        font-size: 32px;
     }
 
     p,
@@ -68,12 +68,10 @@ div.lightbox:hover {
     cursor: default;
     left: 0px;
 
-    
-    @media only screen and (max-width: 1279px) { 
+    @media only screen and (max-width: 1279px) {
         padding-top: 20px;
         height: 370px;
     }
-
 
     .reveal-icons {
         width: 100px;
@@ -84,9 +82,10 @@ div.lightbox:hover {
         padding: 60px;
         padding-top: 20px;
         padding-bottom: 10px;
+        font-size: 16px;
 
         @media only screen and (max-width: 1279px) {
-            font-size: 13px;
+            font-size: 14px;
         }
     }
 
@@ -141,5 +140,4 @@ div.lightbox:hover {
     transition: 0.2s linear;
     position: absolute;
     top: 0;
-  
 }

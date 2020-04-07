@@ -53,6 +53,10 @@ a {
   word-break: break-all;
 }
 
+.u-pointer {
+  cursor: pointer !important;
+}
+
 .u-no-click {
   pointer-events: none;
 }

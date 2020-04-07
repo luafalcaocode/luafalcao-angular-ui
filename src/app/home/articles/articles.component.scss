@@ -99,7 +99,8 @@ a.articles-read-more:link {
 .articles-side-group:hover {
     cursor: pointer;
     transition: .3s;
-    transform: scale(1.1);
+    // transform: scale(1.1);
+    margin-left: 30px;
 }
 
 
@@ -114,7 +115,7 @@ a.articles-read-more:link {
 }
 
 .articles-side-container {
-    padding-left: 50px;
+    padding-left: 30px;
 
     @media (max-width: 1024px) {
         padding-left: 15px;

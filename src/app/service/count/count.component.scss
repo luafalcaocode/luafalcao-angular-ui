@@ -1,15 +1,17 @@
 .count-container {
     text-align: center;
+   
 
     svg {
-        font-size: 48px; 
+        font-size: 60px; 
         color: var(--violet);
     }
 
     .count {
         margin-top: 10px;
         margin-bottom: 10px;
-        font-size: 28px;
+        font-size: 30px;
+        
     }
 
     .count-description {
@@ -17,6 +19,7 @@
         margin-bottom: 10px;
         font-size: 18px;
         color: var(--violet);
+        font-weight: lighter;
 
     }
 }

@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent implements OnInit {
+  currentYear;
   email: string;
   telefone: string;
   constructor() {
@@ -15,6 +16,7 @@ export class FooterComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.currentYear = new Date().getFullYear();
   }
 
   showWhatsAppInfo() {
