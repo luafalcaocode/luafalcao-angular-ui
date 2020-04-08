@@ -11,7 +11,8 @@ import { LoadingService } from '../services/layout/loading.service';
 })
 export class HomeComponent implements OnInit {
   public images: ImageViewModel[];
-
+  public currentYear = new Date().getFullYear();
+  public titulos: any[] = ['Desenvolvimento de Software', 'WEB APIs', 'Portais e Blogs', 'Migração de Sistemas .NET', 'Single Page Applications', 'Projeto de Banco de Dados']
   constructor(public commonService: CommonService, public loadinService: LoadingService) {
 
     this.images = [

@@ -1,10 +1,21 @@
 <app-header></app-header>
-<section id="home" class="render-body-area">
-  <app-highlights></app-highlights>
-  <app-chat></app-chat>
-  <app-dark-place (message)="onMessage($event)"></app-dark-place>
-  <app-articles></app-articles>
-  <app-techs></app-techs>
-  <app-jobs [images]="images"></app-jobs>
-  </section>
-<app-footer></app-footer>
+<section id="home">
+  <div class="row">
+    <div class="col-xs-12">
+      <h2 class="u-center u-uppercase u-white">Serviços</h2>
+      <div class="writer-container">
+        <writer color='white' [titulos]="titulos" fontSize='46px'></writer>
+      </div>
+    </div>
+  </div>
+  <video loop muted onloadedmetadata="this.muted = true" oncanplay="this.play()">
+    <source src="assets/video/video.mp4" type="video/mp4">
+  </video>
+</section>
+<footer class="footer">
+  <div class="row">
+    <div class="col-xs-12">
+      <span class="u-white u-right">&copy;  {{ currentYear }}  Todos os direitos reservados - Luã Falcão</span>
+    </div>
+  </div>
+</footer>

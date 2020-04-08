@@ -1,5 +1,7 @@
 .writer {
     text-align: center;
     color: var(--white);
+    position: relative;
+    z-index: 100;
 }
 

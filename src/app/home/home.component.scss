@@ -1,0 +1,25 @@
+section {
+    width: 100%;
+
+    h2 {
+        z-index: 6;
+        font-size: 28px;
+        position: relative;
+        top: 150px;
+    }
+
+    .writer-container {
+        position: relative;
+        top: 170px;
+    }
+
+    video {
+        width: 100%;
+        height: auto;
+        position: fixed;
+        z-index: 5;
+        top: 0;
+    }
+
+    
+}
