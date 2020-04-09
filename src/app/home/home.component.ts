@@ -12,87 +12,39 @@ import { LoadingService } from '../services/layout/loading.service';
 export class HomeComponent implements OnInit {
   public images: ImageViewModel[];
   public currentYear = new Date().getFullYear();
-  public titulos: any[] = ['Desenvolvimento de Software', 'WEB APIs', 'Portais e Blogs', 'Migração de Sistemas .NET', 'Single Page Applications', 'Projeto de Banco de Dados']
+  public titulos: any[] = ['Desenvolvimento de Software', 'WEB API', 'Portais e Blogs', 'Migração de Sistemas .NET', 'Single Page Applications', 'Projeto de Banco de Dados']
+  public colorWriter: string;
+  public h1Size: string;
+  public h2Size: string;
+
   constructor(public commonService: CommonService, public loadinService: LoadingService) {
-
-    this.images = [
-      {
-        id: 1,
-        src: 'assets/logos/ibm-logo.png',
-        link: 'https://www.ibm.com',
-        specialClass: 'small-image'
-
-      },
-      {
-        id: 2,
-        src: 'assets/logos/jucerja-logo.png',
-        link: 'https://www.jucerja.rj.gov.br',
-        specialClass: ''
-      },
-      {
-        id: 3,
-        src: 'assets/logos/svgs/atsnet-logo.svg',
-        link: 'http://www.atsnetsolucoes.com',
-        specialClass: ''
-      },
-      {
-        id: 4,
-        src: 'assets/logos/braslight-logo.png',
-        link: 'https://www.braslight.com.br/v2/',
-        specialClass: ''
-      },
-      {
-        id: 5,
-        src: 'assets/logos/prudential-logo.png',
-        link: 'https://www.prudentialdobrasil.com.br/',
-        specialClass: ''
-      },
-      {
-        id: 6,
-        src: 'assets/logos/eletros-logo.png',
-        link: 'https://www.eletros.com.br',
-        specialClass: 'medium-image'
-      },
-      {
-        id: 7,
-        src: 'assets/logos/capemisa-logo.png',
-        link: 'http://www.capemisa.com.br',
-        specialClass: ''
-      },
-      {
-        id: 8,
-        src: 'assets/logos/infobase-logo.png',
-        link: 'http://infobase.com.br',
-        specialClass: 'medium-image infobase-logo'
-      },
-      {
-        id: 9,
-        src: 'assets/logos/fd-logo.png',
-        link: 'http://www.firstdecision.com.br/',
-        specialClass: 'first-logo'
-      },
-      {
-        id: 10,
-        src: 'assets/logos/perlink-logo.png',
-        link: 'http://www.perlink.com.br/',
-        specialClass: 'perlink-logo'
-      },
-      {
-        id: 11,
-        src: 'assets/logos/oi-logo.png',
-        link: 'http://www.oi.com.br/',
-        specialClass: 'xsmall-image'
-      }
-    ]
   }
 
   ngOnInit() {
-    this.commonService.initializePage();
-    this.commonService.hideLoading();
+    this.setStyles();
   }
 
-  onMessage(message: any) {
-    // chamar futuramente a API para entregar os dados do formulário para o meu e-mail
-    
-  } 
+  @HostListener('window:resize', [])
+  onResize() {
+   this.setStyles();
+  }
+  
+  setStyles() {
+    if (window.innerWidth <= 1279) {
+      this.h1Size = '20px';
+      this.h2Size = '24px';
+
+    }
+    else {
+      this.h1Size = '38px';
+      this.h2Size = '30px';
+    }
+
+    document.getElementsByTagName('body')[0].style.overflowY = 'hidden'; 
+  }
+
+  open(url) {
+    window.open(url);
+  }
+
 }

@@ -9,6 +9,7 @@
   padding-top: 20px;
   position: fixed;
   right: 20px;
+  z-index: 91;
 }
 
 h4 {
@@ -39,7 +40,7 @@ ul {
   li:hover {
     cursor: pointer;
     color: var(--white);
-    background-color: var(--blueFlat);
+    background-color: var(--niceGreen);
     transition: 0.3s;
   }
 }
@@ -49,5 +50,6 @@ ul {
   font-size: 13px;
   margin-top: 120px;
   position: relative;
-  color: var(--blueFlat);
+  color: var(--niceGreen);
 }
+

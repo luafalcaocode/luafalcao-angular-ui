@@ -1,25 +1,61 @@
 section {
     width: 100%;
+    cursor: pointer;
 
     h2 {
         z-index: 6;
         font-size: 28px;
         position: relative;
         top: 150px;
+
+        @media only screen and (max-width: 1279px) and (orientation: portrait) {
+            top: 80px;
+        }
+        color: var(--white);
+
+        @media only screen and (max-width: 1279px) and (orientation: landscape) {
+            top: 20px;
+        }
+
+        // animation-name: anima;
+        // animation-duration: 1s;
+        // animation-iteration-count: infinite;
+
+        // @keyframes anima {
+        //     0% {
+        //         transform: scale(1.2);
+        //     }
+
+        //     50% {
+        //         transform: scale(1);
+        //     }
+
+        //     100% {
+        //         transform: scale(1.2);
+        //     }
+        // }
     }
 
     .writer-container {
         position: relative;
         top: 170px;
+
+        @media only screen and (max-width: 1279px) and (orientation: landscape) {
+            position: relative;
+            top: 30px;
+        }
+
+        @media only screen and (max-width: 1279px) and (orientation: portrait) {
+            top: 90px;
+        }
     }
 
     video {
         width: 100%;
-        height: auto;
+        height: 100%;
+        object-fit: cover;
         position: fixed;
         z-index: 5;
         top: 0;
     }
-
-    
 }

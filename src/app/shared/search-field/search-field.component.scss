@@ -31,7 +31,7 @@
         transition: .3s;
         font-size: 38px;
         cursor: pointer;
-        color: var(--blueFlat);
+        color: var(--green);
     }
 
     .seach-field-close-icon:active {
@@ -42,11 +42,14 @@
       background: none;
       height: 60px;
       border-radius: 0;
-      border-color: var(--blueFlat);
+      border: solid 1px var(--niceGreen);
       font-size: 24px;
       color: var(--white);
       font-weight: bold;
-      
+    }
+
+    input:focus {
+      border-color: var(--green);
     }
 
     button {
@@ -56,18 +59,18 @@
       margin-right: 10px;
       border: none;
       background: none;
-      color: var(--blueFlat);
+      color: var(--white);
       font-size: 12px;
       transition: .25s ease-out;
     }
 
     button:hover {
         transition: .27;
-        color: var(--white);
+        color: var(--green);
     }
 
     button:active {
-        color: var(--blueFlat);
+        color: var(--white);
         transition: .27;
     }
 

@@ -1,10 +1,10 @@
 <app-header></app-header>
 <section id="home">
-  <div class="row">
+  <div class="row hidden-candidated">
     <div class="col-xs-12">
-      <h2 class="u-center u-uppercase u-white">Serviços</h2>
+      <h2 class="u-center u-uppercase" [ngStyle]="{'font-size' : h2Size}">Serviços</h2>
       <div class="writer-container">
-        <writer color='white' [titulos]="titulos" fontSize='46px'></writer>
+        <writer [color]='colorWriter' [titulos]="titulos" [fontSize]="h1Size"></writer>
       </div>
     </div>
   </div>
@@ -12,10 +12,11 @@
     <source src="assets/video/video.mp4" type="video/mp4">
   </video>
 </section>
-<footer class="footer">
+<footer class="footer hidden-candidated">
   <div class="row">
     <div class="col-xs-12">
-      <span class="u-white u-right">&copy;  {{ currentYear }}  Todos os direitos reservados - Luã Falcão</span>
+      <span  (click)="open('https://www.linkedin.com/in/luafalcao/')" class="u-white"><i class="fab fa-linkedin-in icon"></i></span>
+      <!-- <span class="u-white">&copy;  {{ currentYear }}  Todos os direitos reservados - Luã Falcão</span> -->
     </div>
   </div>
 </footer>

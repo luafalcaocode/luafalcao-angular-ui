@@ -8,7 +8,7 @@ import { LoginService } from '../../../services/login.service';
   styleUrls: ['./menu-logged.component.scss']
 })
 export class MenuLoggedComponent implements OnInit {
-  private isMenuLoggedOpen: boolean;
+  public isMenuLoggedOpen: boolean;
 
   constructor(public router: Router, public login: LoginService) { }
 

@@ -10,33 +10,38 @@ import { ServiceComponent} from './service/service.component';
 
 const routes: Routes = [
   {
-    path: '',
+    path: '**',
     component: HomeComponent
   },
+
   {
-    path: 'panel',
-    component: PanelComponent
-  },
-  {
-    path: 'articles/:id',
-    component: ArticleComponent
-  },
-  {
-    path: 'articles',
-    component: ArticleComponent
-  },
-  {
-    path: 'about',
-    component: AboutComponent
-  },
-  {
-    path: 'projetos/:screen',
-    component: ProjectComponent
-  },
-  {
-    path: 'servicos/:screen',
-    component: ServiceComponent
-  }
+    path: '',
+    component: HomeComponent
+  }//,
+  // {
+  //   path: 'panel',
+  //   component: PanelComponent
+  // },
+  // {
+  //   path: 'articles/:id',
+  //   component: ArticleComponent
+  // },
+  // {
+  //   path: 'articles',
+  //   component: ArticleComponent
+  // },
+  // {
+  //   path: 'about',
+  //   component: AboutComponent
+  // },
+  // {
+  //   path: 'projetos/:screen',
+  //   component: ProjectComponent
+  // },
+  // {
+  //   path: 'servicos/:screen',
+  //   component: ServiceComponent
+  // }
 ];
 
 @NgModule({

@@ -30,7 +30,7 @@ export class WriterComponent implements OnInit {
       }
       else {
         clearInterval(interval);
-        setTimeout(() => this.erase(), 4000);
+        setTimeout(() => this.erase(), 1500);
       }
 
     }, 100);

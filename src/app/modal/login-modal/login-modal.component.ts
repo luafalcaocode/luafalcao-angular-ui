@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 
 import { ModalService } from '../../services/layout/modal.service';
 import { LoginService } from '../../services/login.service';
+import { throws } from 'assert';
 
 @Component({
   selector: 'app-login-modal',
@@ -17,7 +18,7 @@ export class LoginModalComponent implements OnInit {
   constructor(public modalService: ModalService, public loginService: LoginService) { }
 
   ngOnInit() {
-    
+   
   }
 
   hide() {
@@ -26,7 +27,9 @@ export class LoginModalComponent implements OnInit {
 
   login() {
     // em uma aplicação real NUNCA FAÇA ISSO! É apenas uma gambiarra usada para testes durante o desenvolvimento (don't do this ever!!!)
-    if (this.user.login == 'luafalcao' && this.user.password == 'laraCroft!') {
+    if (this.user.login == 'tron' && this.user.password == '123') {
+      this.user.login = '';
+      this.user.password = '';
       this.loginService.login();
       this.hide();
     }    

@@ -157,14 +157,21 @@ header {
     }
 
     .nav-mobile-items {
-      background: var(--dark);
-      width: 380px;
+      background: transparent;
+      width: 100%;
+      
+
+      @media only screen and (orientation: landscape) {
+        width: 100%;
+       
+      }
+    
       position: fixed;
-      right: -500px;
+      right: -785px;
       z-index: 4;
       top: 0;
       height: 100%;
-      transition: 0.4s;
+      transition: 0.4s ease-in ;
       overflow-y: auto;
 
       ul {
@@ -191,7 +198,6 @@ header {
         li:hover,
         li:active {
           cursor: pointer;
-          background-color: var(--niceBlue);
           color: map-get($colors, _white);
           a {
             color: map-get($colors, navbar-link-hovered);
@@ -206,7 +212,7 @@ header {
 }
 
 a.login {
-  border: solid 1px white;
+  border: solid 1px var(--silver);
   padding: 5px 20px 5px 20px;
   border-radius: 4px;
   margin-top: -1px !important;

@@ -14,19 +14,31 @@ export class MobileMenuService {
   openCloseMobile() {
     const navMobile = document.getElementById('navMobileItems');
     const body = document.getElementsByTagName('body')[0];
-   
+
     if (this.isNavMobileOpen) {
-      navMobile.style.right = '-500px';
+      navMobile.style.right = '-785px';
       body.style.overflowY = 'auto';
-      
+
+      let hiddenCandidated = document.getElementsByClassName('hidden-candidated');
+      for (var i = 0; i < hiddenCandidated.length; i++) {
+        hiddenCandidated[i].classList.remove('fadeOut');
+        hiddenCandidated[i].classList.add('fadeIn');
+      }
     }
     else {
       navMobile.style.right = '0';
       body.style.overflowY = 'hidden';
       this.isNavMobileOpen = false;
+
+      let hiddenCandidated = document.getElementsByClassName('hidden-candidated');
+      for (var i = 0; i < hiddenCandidated.length; i++) {
+        hiddenCandidated[i].classList.remove('fadein');
+        hiddenCandidated[i].classList.add('fadeOut');
+      }
     }
 
     this.isNavMobileOpen = !this.isNavMobileOpen;
-  
+
+
   }
 }
