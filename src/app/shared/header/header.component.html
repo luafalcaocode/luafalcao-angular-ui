@@ -22,8 +22,13 @@
             <app-menu [menu]="menuServicos" class="fadeOut" id="menuServicos" (mouseenter)="showMenu('menuServicos')"
               (mouseleave)="hideMenu('menuServicos')"  (selectItem)="onSelectItem($event)"></app-menu>
           </li>
-          <li class="item-menu-principal">
-            <a routerLink="/articles" class="u-no-click">Artigos</a>
+          <li (mouseleave)="hideMenu('menuBlogs')" class="item-menu-principal">
+            <a routerLink="" (mouseenter)="showMenu('menuBlogs')"
+              [className]="isMenuBlogsOpen ? 'active-menu' : 'inative-menu'">Blogs
+              <span class="glyphicon glyphicon-menu-down"></span>
+            </a>
+            <app-menu [menu]="menuBlogs" class="fadeOut" id="menuBlogs" (mouseenter)="showMenu('menuBlogs')"
+              (mouseleave)="hideMenu('menuBlogs')" (selectItem)="onSelectItem($event)"></app-menu>
           </li>
           <li class="item-menu-principal">
             <a routerLink="/about" class="u-no-click">Sobre</a>
@@ -35,26 +40,25 @@
       </div>
       <div class="col-lg-4 column-b">
         <!-- Pesquisar -->
-        <i class="material-icons header-icon" (click)="openContainer()" (mouseenter)="showTooltip($event)"
-          (mouseleave)="hideToolTip($event)" id="pesquisar">
+        <i class="material-icons header-icon" (click)="openContainer()"  id="pesquisar">
           search
         </i>
         
         <!-- Canal do YouTube -->
-        <i class="material-icons header-icon" (mouseenter)="showTooltip($event)" (mouseleave)="hideToolTip($event)"
+        <i class="material-icons header-icon" 
           id="youTube">
           play_circle_outline
         </i>
        
         <!-- Seleção de Idiomas -->
-        <i class="material-icons header-icon" (mouseenter)="showTooltip($event)" (mouseleave)="hideToolTip($event)"
+        <i class="material-icons header-icon"
           id="idiomas">language</i>
        
         <!-- Login-->
         <a class="login" (click)="showLoginModal()" *ngIf="!loginService.isLogged()"
           [hidden]="!isUserIconsVisibile">Login</a>
         <a [className]="isMenuLoggedOpen ? 'active-menu' : 'inative-menu'" class="login u-border-none"
-          *ngIf="loginService.isLogged()" (mouseenter)="showTooltip($event)" (mouseleave)="hideToolTip($event)"
+          *ngIf="loginService.isLogged()" 
           (click)="showLoggedMenu()" id="usuario"><i class="material-icons user" *ngIf="loginService.isLogged()" [class.active-white]="loginService.isLogged()"> person
           </i></a>
        
@@ -93,7 +97,7 @@
             </a>
           </li>
           <li (click)="mobileMenuService.openCloseMobile()">
-            <a routerLink="/articles" class="u-no-click">Artigos
+            <a routerLink="/artigos" class="u-no-click">Artigos
               <i class="material-icons">keyboard_arrow_right</i>
             </a>
           </li>

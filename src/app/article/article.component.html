@@ -1,47 +1,41 @@
 <article-header></article-header>
 <article-all-menu [articles]="allArticles" (getById)="onGetById($event)"></article-all-menu>
 
-<article class="article-container" (click)="menuService.isArticleMenuVisible = false">
-    <div class="row">
-        <div class="col-xs-12">
-            <h1>{{ article.title }}</h1>
-        </div>
-    </div>
 
-    <div class="row">
-        <div class="col-xs-2 col-lg-1 thumbnail-container">
-            <a href="https://linkedin.com/in/luafalcao" target="_blank"><img src="assets/eu.png"
-                    class="thumbnail" /></a>
-        </div>
-        <div class="col-xs-9 col-lg-6 u-left container-info-articles">
-            <div class="container-article-info u-left">
-                <span class="descricao-nome-autor">{{ article.author }}</span> <br />
-                <span class="data-publicacao">{{ article.publishDate }}</span>
+<section id="articles">
+    
+    <h1>Diário de um Engenheiro de Software </h1>
+    <h5>...</h5>
+
+    <!-- Último Artigo Publicado na seção de destaque-->
+    <div class="row container-articles">
+        <div class="col-md-7 col-xs-12 u-padding-left-zero">
+            <div>
+                <img [src]="articles[0].image" class="articles-feature" /> <br />
+                <div class="articles-text-group">
+                    <span class="articles-title">{{ selectedArticle.title }}</span> <br />
+                        <span class="articles-info">{{ selectedArticle.author }} &nbsp; | &nbsp; {{ selectedArticle.publishedDate }} </span> <br />
+                    <p class="articles-preview">
+                        {{ selectedArticle.preview }}
+                    </p>
+                    <a href="" class="articles-read-more">LEIA MAIS</a>
+                </div>
             </div>
         </div>
-        <div class="col-lg-3 article-social-icon-container">
-            <button class="btn"><i class="fas fa-envelope article-social-icon"></i></button>
-            <button class="btn" (click)="open('https://linkedin.com/in/luafalcao')"><i class="fab fa-linkedin-in article-social-icon"></i></button>
-        </div>
-    </div>
 
-    <div class="row">
-        <div class="col-xs-12">
-            <article-user-interaction (like)="onLike($event)" [numberOfLikes]="article.numberOfLikes"
-                [numberOfComments]="article.numberOfComments"></article-user-interaction>
-        </div>
-    </div>
-
-    <div class="row article-body">
-        <div class="col-xs-12">
-            <div [innerHTML]="article.content">
-
+        <!-- Lista de Artigos Laterais -->
+        <div class="col-md-5 col-xs-12 articles-side-container">
+            <div *ngFor="let article of articles">
+                <div class="row articles-side-group" (click)="navigate('/blogs/diario-de-um-engenheiro-software/' + article.id)">
+                    <div class="col-xs-12 articles-side-group-col">
+                        <span class="articles-side-title">{{ article.title }} </span> <br />
+                        <span class="articles-side-info">{{ article.author }} &nbsp; | &nbsp; {{ article.publishedDate }} </span> <br />
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    <div id="scrollToThere"></div>
-    <article-comentary (comment)="onComment($event)" [comments]="comments" [isLoading]="isLoading"></article-comentary>
-</article>
+</section>
 
 
-<app-footer></app-footer>
+<!-- <app-footer></app-footer> -->

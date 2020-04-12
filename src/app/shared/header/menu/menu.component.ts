@@ -10,12 +10,31 @@ import { MenuViewModel } from 'src/app/viewModels/menu.viewModel';
 export class MenuComponent implements OnInit {
   @Input() menu: MenuViewModel[];
   @Input() id: string;
+  title: string;
   
   @Output() selectItem : EventEmitter<any> = new EventEmitter<any>();
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  ngOnChanges() {
+    this.setTitle();
+  }
+
+  setTitle() {
+    switch(this.id) {
+      case 'menuProjetos': 
+        this.title = 'Meus trabalhos';
+      break;
+      case 'menuServicos':
+        this.title = 'O que você procura?';
+      break;
+      case 'menuBlogs': 
+        this.title = 'Todos os blogs'
+      break;
+    }
   }
 
   onClick() {

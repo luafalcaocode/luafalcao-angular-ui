@@ -1,14 +1,14 @@
 <app-header></app-header>
 <section id="home">
   <div class="row hidden-candidated">
-    <div class="col-xs-12">
+    <div class="col-xs-12 servicos">
       <h2 class="u-center u-uppercase" [ngStyle]="{'font-size' : h2Size}">Serviços</h2>
       <div class="writer-container">
         <writer [color]='colorWriter' [titulos]="titulos" [fontSize]="h1Size"></writer>
       </div>
     </div>
   </div>
-  <video loop muted onloadedmetadata="this.muted = true" oncanplay="this.play()">
+  <video loop muted onloadedmetadata="this.muted = true" oncanplay="this.play()"  id="video" (mouseover)="onMouseOver()">
     <source src="assets/video/video.mp4" type="video/mp4">
   </video>
 </section>

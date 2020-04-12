@@ -20,11 +20,11 @@ export class AppComponent {
   }
 
   ngOnInit() {
-    console.log('Versão: 2.0');
+    console.log('Versão: 3.0');
     console.log('Data de Publicação: ' + new Date().toLocaleDateString("pt-BR"));
   }
 
   ngAfterViewInit() {
-    this.loading.hide();
+    
   }
 }

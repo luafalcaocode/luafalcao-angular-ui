@@ -21,14 +21,23 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.commonService.initializePage();
     this.setStyles();
+    this.commonService.hideLoading();
   }
 
   @HostListener('window:resize', [])
   onResize() {
    this.setStyles();
   }
-  
+
+  onMouseOver() {
+    console.log('mouseOver()');
+    const video = (<HTMLVideoElement>document.getElementById('video'));
+    
+    video.play();
+  }
+
   setStyles() {
     if (window.innerWidth <= 1279) {
       this.h1Size = '20px';

@@ -1,94 +1,25 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ArticleViewModel } from '../viewModels/article.viewModel';
-import { ArticleMock } from './mocks/article.mock';
-import { LoaderService } from '../services/layout/loader.service';
-import { CommonService } from '../services/layout/common.service';
-import { MenuService } from '../services/layout/menu.service';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ArticleViewModel } from '../../viewModels/article.viewModel';
+import { ArticleMock } from '..//mocks/article.mock';
+import { LoaderService } from '../../services/layout/loader.service';
+import { CommonService } from '../../services/layout/common.service';
+import { MenuService } from '../../services/layout/menu.service';
+import { ActivatedRoute } from '@angular/router';
+
 
 @Component({
-  selector: 'app-article',
-  templateUrl: './article.component.html',
-  styleUrls: ['./article.component.scss']
+  selector: 'article-detail',
+  templateUrl: './article-detail.component.html',
+  styleUrls: ['./article-detail.component.scss']
 })
-export class ArticleComponent implements OnInit {
+export class ArticleDetailComponent implements OnInit {
   @Input() article: ArticleMock;
   allArticles: any[];
   comments: any[];
   isLoading: boolean;
   id: number;
 
-  public articles: ArticleViewModel[];
-  public selectedArticle: ArticleViewModel;
-
-  constructor(public loaderService: LoaderService, public commonService: CommonService, public menuService: MenuService, public router: ActivatedRoute, public navigator: Router) {
-    this.selectedArticle =
-      new ArticleViewModel(1,
-        'https://i.picsum.photos/id/237/700/400.jpg',
-        'Luã Falcão',
-        '28/12/2019',
-        'Design Patterns #5: Abstract Factory',
-        'Continuando a série sobre padrões de projeto, onde abordamos soluções reutilizáveis e testáveis para problemas frequentes do dia a dia do programador, hoje falaremos sobre o Abstract Factory, um dos cinco padrões criacionais catalogados pela Gang of Four em seu livro Design Patterns: Elements of Reusable Object-Oriented Software.');
-
-    this.articles = [
-      new ArticleViewModel(1,
-        'https://i.picsum.photos/id/237/700/400.jpg',
-        'Luã Falcão',
-        '28/12/2019',
-        'Design Patterns #4: State',
-        'O padrão de projetos State permite que mudemos o comportamento de um objeto baseado na mudança do seu estado, representando cada estado como uma classe, o que reduz a necessidade de usarmos lógica condicional para verificar, por exemplo, o valor do status de um usuário no sistema.'),
-
-      new ArticleViewModel(2,
-        'https://i.picsum.photos/id/237/700/400.jpg',
-        'Luã Falcão',
-        '21/12/2019',
-        'Criando componentes no Angular',
-        ''),
-
-      new ArticleViewModel(3,
-        'https://i.picsum.photos/id/237/700/400.jpg',
-        'Luã Falcão',
-        '07/11/2019',
-        'Autenticação JWT com .NET Core',
-        ''),
-      new ArticleViewModel(4,
-        '',
-        'Luã Falcão',
-        '07/11/2019',
-        'Lorem Ipsum'),
-      new ArticleViewModel(5,
-        '',
-        'Luã Falcão',
-        '07/11/2019',
-        'Aqui entrará um título qualquer'),
-      new ArticleViewModel(6,
-        '',
-        'Luã Falcão',
-        '07/11/2019',
-        'Aqui entrará um título qualquer'),
-      new ArticleViewModel(7,
-        '',
-        'Luã Falcão',
-        '07/11/2019',
-        'Aqui entrará um título qualquer'),
-      new ArticleViewModel(8,
-        '',
-        'Luã Falcão',
-        '07/11/2019',
-        'Aqui entrará um título qualquer'),
-      new ArticleViewModel(9,
-        '',
-        'Luã Falcão',
-        '07/11/2019',
-        'Aqui entrará um título qualquer'),
-      new ArticleViewModel(10,
-        '',
-        'Luã Falcão',
-        '07/11/2019',
-        'Aqui entrará um título qualquer'),
-    ];
-
-  }
+  constructor(public loaderService: LoaderService, public commonService: CommonService, public menuService: MenuService, public router: ActivatedRoute) {}
 
   ngOnInit() {
     this.commonService.initializePage();
@@ -204,7 +135,4 @@ export class ArticleComponent implements OnInit {
     window.open(url);
   }
 
-  navigate(url) {
-    this.navigator.navigate([url]);
-  }
 }

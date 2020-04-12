@@ -21,6 +21,6 @@ export class LoadingService {
     let loading = document.getElementById('pageLoading');
     setTimeout(() => {
       loading.style.display = 'none';
-    }, 1500);
+    }, 1300);
   }
 }

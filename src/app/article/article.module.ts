@@ -9,12 +9,13 @@ import { ModalModule } from '../modal/modal.module';
 import { ArticleComentaryComponent } from './article-comentary/article-comentary.component';
 import { ArticleUserInteractionComponent } from './article-user-interaction/article-user-interaction.component';
 import { ArticleAllMenuComponent } from './article-all-menu/article-all-menu.component';
+import { ArticleDetailComponent } from './article-detail/article-detail.component';
 
 
 
 
 @NgModule({
-  declarations: [ArticleComponent, HeaderComponent, ArticleComentaryComponent, ArticleUserInteractionComponent, ArticleAllMenuComponent],
+  declarations: [ArticleComponent, HeaderComponent, ArticleComentaryComponent, ArticleUserInteractionComponent, ArticleAllMenuComponent, ArticleDetailComponent],
   imports: [
     CommonModule,
     SharedModule,

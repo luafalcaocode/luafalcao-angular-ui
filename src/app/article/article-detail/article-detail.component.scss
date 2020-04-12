@@ -1,0 +1,100 @@
+#page-container {
+    background: var(--white);
+  }
+  
+  .article-container {
+    @media only screen and (max-width: 1024px) {
+      padding: 0 20px 0px 20px;
+      margin: 0;
+      margin-top: 80px;
+    }
+  
+    margin: 80px 400px 0px 400px;
+  
+    .thumbnail-container {
+      min-width: 60px;
+      .thumbnail {
+        border: dashed 2px var(--niceBlue);
+        border-radius: 50%;
+        height: 70px;
+        width: 70px;
+        transition: 0.5s ease-out;
+      }
+  
+      .thumbnail:hover {
+        filter: grayscale(100%);
+        transition: 0.4s;
+      }
+    }
+  
+    h1 {
+      margin-bottom: 20px;
+      text-align: left;
+    }
+  
+    .article-social-icon-container {
+      text-align: right;
+      padding-top: 10px;
+      height: auto;
+  
+      @media (max-width: 1024px) {
+        padding-top: 0;
+        padding-right: 0;
+      }
+      
+  
+      button {
+        border-radius: 50%;
+        padding: 7px;
+        background: white;
+        transition: 0.4s ease-out;
+  
+        @media (max-width: 1024px) {
+          margin-top: -50px;
+        }  
+      }
+  
+      button:hover {
+        cursor: pointer;
+        transform: scale(1.3);
+        transition: 0.3s;
+      }
+  
+      button:focus {
+        outline: none;
+      }
+  
+      .article-social-icon {
+        height: 18px;
+        width: 18px;
+      }
+    }
+  
+    .descricao-nome-autor {
+      @media (max-width: 767px) {
+        margin-left: 0;
+      }
+    }
+  
+    .data-publicacao {
+      @media (max-width: 767px) {
+        margin-left: 5px;
+      }
+    }
+  
+    .container-info-articles {
+      margin-top: 10px;
+    }
+  
+    .container-article-info {
+      padding-left: 20px;
+    }
+  
+    .article-body {
+      margin-top: 10px;
+  
+      font-size: 18px;
+      text-align: left;
+    }
+  }
+  

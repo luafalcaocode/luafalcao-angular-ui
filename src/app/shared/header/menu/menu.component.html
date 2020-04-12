@@ -1,5 +1,5 @@
 <div class="lua-menu" [id]="id">
-    <h4>{{ id == 'menuProjetos' ? 'Meus Trabalhos' : 'O que procura?'}}</h4>
+    <h4>{{ title }}</h4>
     <ul id="{{id + '_menu'}}">
         <li *ngFor="let item of menu" (click)="onClick()">
            <a routerLink={{item.url}} [id]="item.id" [class.u-no-click]="item.disabled">{{ item.name }}</a>

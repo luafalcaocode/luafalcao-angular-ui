@@ -16,9 +16,11 @@ import { MenuViewModel } from '../../viewModels/menu.viewModel';
 export class HeaderComponent implements OnInit {
   public menuProjetos: MenuViewModel[];
   public menuServicos: MenuViewModel[];
+  public menuBlogs: MenuViewModel[];
   public id: string;
   public isMenuServicesOpen: boolean;
   public isMenuProjectsOpen: boolean;
+  public isMenuBlogsOpen: boolean;
   public isMenuLoggedOpen: boolean;
   public isSearchTooltipVisible: boolean;
   public isUserIconsVisibile: boolean = true;
@@ -44,6 +46,13 @@ export class HeaderComponent implements OnInit {
       new MenuViewModel(3, 'Para outras aplicações', 'link do projeto pessoal aqui', true)//,
       // new MenuViewModel(3, 'De um jogo eletrônico', 'link do projeto pessoal aqui', true)
     ];
+
+    this.menuBlogs = [
+      new MenuViewModel(1, 'Diário de um engenheiro de software', '/blogs/diario-de-um-engenheiro-software', false),
+      new MenuViewModel(2, 'Padrões de Projeto e onde habitam', '/blogs/padroes-projetos-onde-habitam', true),
+      new MenuViewModel(2, 'Histórias Não Extraordinárias', '/blogs/hne', true),
+    ];
+
     this.mobileMenuService.isNavMobileOpen = false;
 
     const URL = document.URL;
@@ -68,10 +77,18 @@ export class HeaderComponent implements OnInit {
     if (id.toLowerCase().includes('projetos')) {
       this.isMenuProjectsOpen = true;
       this.isMenuServicesOpen = false;
+      this.isMenuBlogsOpen = false;
     }
 
     if (id.toLowerCase().includes('servicos')) {
       this.isMenuServicesOpen = true;
+      this.isMenuProjectsOpen = false;
+      this.isMenuBlogsOpen = false;
+    }
+
+    if (id.toLowerCase().includes('blogs')) {
+      this.isMenuBlogsOpen = true;
+      this.isMenuProjectsOpen = false;
       this.isMenuProjectsOpen = false;
     }
 
@@ -85,6 +102,10 @@ export class HeaderComponent implements OnInit {
 
     if (id.toLowerCase().includes('servicos')) {
       this.isMenuServicesOpen = false;
+    }
+
+    if (id.toLowerCase().includes('blogs')) {
+      this.isMenuBlogsOpen = false;
     }
     this.menuService.hideMenu(id);
   }
