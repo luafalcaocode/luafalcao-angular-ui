@@ -1,6 +1,7 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 import { CommonService } from '../services/layout/common.service';
 import { TimelineViewModel } from '../viewModels/timeline.viewModel';
+import { LoadingService } from '../services/layout/loading.service';
 
 @Component({
   selector: 'app-about',
@@ -62,12 +63,13 @@ export class AboutComponent implements OnInit {
   ];
 
 
-  constructor(public commonService: CommonService) { }
+  constructor(public commonService: CommonService, public loading: LoadingService) { }
 
   ngOnInit() {
+    this.loading.show();
     this.commonService.initializePage();
-    this.commonService.hideLoading();
     this.write();
+    this.loading.hide();
   }
 
   @HostListener('window:scroll', ['$event']) onScroll(event) {

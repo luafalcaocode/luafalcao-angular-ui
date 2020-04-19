@@ -9,8 +9,8 @@ export class CommonService {
   constructor(public loading: LoadingService, public router: Router) { }
 
   initializePage() {
-    this.loading.show();
-    document.getElementsByTagName('body')[0].style.overflow = 'auto';
+    // this.loading.show();
+    // document.getElementsByTagName('body')[0].style.overflow = 'auto';
     window.scrollTo(0, 0);
   }
 

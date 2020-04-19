@@ -8,23 +8,25 @@
 }
 
 .personal-title {
-  padding-top: 80px;
+  top: -161px;
+  position: relative;
+  padding-top: 123px;
   background-image: url("../../assets/backgrounds/binary.jpg");
   background-size: cover;
-  height: 580px;
+  height: 701px;
   color: var(--white);
 
-  @media only screen and (max-width: 767px) {
-    padding-top: 40px;
+  @media only screen and (max-width: 1279px) {
+    padding-top: 180px;
   }
 
   h1 {
     font-size: 52px;
     padding-left: 130px;
 
-    @media only screen and (max-width: 767px) {
-      padding-left: 25px;
-      font-size: 42px;
+    @media only screen and (max-width: 279px) {
+      padding-left: 25px !important;
+      font-size: 37px;
     }
   }
 
@@ -32,33 +34,35 @@
     font-size: 52px;
     padding-left: 130px;
 
-    @media only screen and (max-width: 767px) {
-      padding-left: 25px;
-      font-size: 36px;
+    @media only screen and (max-width: 279px) {
+      padding-left: 25px !important;
+      font-size: 23px;
     }
   }
 
   .material-icons {
-    margin-top: 280px;
+    position: relative;
+    top: 150px;
     font-size: 42px;
     color: var(--white);
   }
 
   .anima-upAndDown {
     animation-name: upAndDown;
-    animation-duration: 0.8s;
+    animation-duration: 0.7s;
     animation-iteration-count: infinite;
     animation-fill-mode: both;
-    animation-timing-function: linear;
+    animation-timing-function: ease-out;
+    
   }
 
   @keyframes upAndDown {
     from {
-      margin-top: 280px;
+      top: 130px;
     }
 
     to {
-      margin-top: 300px;
+      margin-top: 150px;
     }
   }
 
@@ -70,6 +74,8 @@
 .timeline-container {
   min-height: 700px;
   padding-bottom: 60px;
+  position: relative;
+  top: -100px;
 
   h1 {
     text-align: center;
@@ -79,7 +85,6 @@
     @media only screen and (max-width: 767px) {
       padding: 15px;
       font-size: 22px;
-
     }
   }
 
@@ -123,7 +128,7 @@
 
   @media only screen and (max-width: 767px) {
     width: 100%;
-   }
+  }
 }
 
 .btn-download:hover {

@@ -8,6 +8,8 @@ import { Component, OnInit, Input } from '@angular/core';
 export class WriterComponent implements OnInit {
   @Input() color;
   @Input() fontSize;
+  @Input() align = 'center';
+  @Input() strongness = 'bold';
   
   palavra: number = 0;
   nome: string = ' ';

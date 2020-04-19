@@ -26,10 +26,10 @@ const routes: Routes = [
     path: 'blogs/diario-de-um-engenheiro-software',
     component: ArticleComponent
   },
-  // {
-  //   path: 'about',
-  //   component: AboutComponent
-  // },
+  {
+    path: 'sobre',
+    component: AboutComponent
+  },
   // {
   //   path: 'projetos/:screen',
   //   component: ProjectComponent

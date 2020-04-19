@@ -21,9 +21,10 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.loadinService.show();
     this.commonService.initializePage();
     this.setStyles();
-    this.commonService.hideLoading();
+    this.loadinService.hide();
   }
 
   @HostListener('window:resize', [])
@@ -31,25 +32,17 @@ export class HomeComponent implements OnInit {
    this.setStyles();
   }
 
-  onMouseOver() {
-    console.log('mouseOver()');
-    const video = (<HTMLVideoElement>document.getElementById('video'));
-    
-    video.play();
-  }
-
   setStyles() {
     if (window.innerWidth <= 1279) {
       this.h1Size = '20px';
       this.h2Size = '24px';
-
     }
     else {
       this.h1Size = '38px';
-      this.h2Size = '30px';
+      this.h2Size = '42px';
     }
 
-    document.getElementsByTagName('body')[0].style.overflowY = 'hidden'; 
+    //document.getElementsByTagName('body')[0].style.overflowY = 'hidden'; 
   }
 
   open(url) {
