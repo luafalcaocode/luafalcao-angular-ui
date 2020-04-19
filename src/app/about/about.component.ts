@@ -46,7 +46,7 @@ export class AboutComponent implements OnInit {
     },
     {
       align: 'right',
-      description: 'Na multinacional IBM ganhei experiência como desenvolvedor de aplicações web trabalhando em um projeto no ramo de seguros da multinacional Prudential. Fiz o uso de tecnologias web para construir interfaces de usuário e APIs, além de receber feedback, o que me ajudou a trabalhar para melhorar os meus pontos fracos.',
+      description: 'Na multinacional IBM ganhei experiência como desenvolvedor de aplicações web trabalhando em um projeto no ramo de seguros da multinacional Prudential. Fiz o uso de tecnologias web para construir interfaces de usuário e APIs, além de receber feedback, o que me ajudou a trabalhar para melhorar a minha comunicação interpessoal.',
       image: '../assets/logos/ibm-logo.png',
       imageWidth: '110px',
       title: 'Entrei em uma multinacional',
@@ -54,7 +54,7 @@ export class AboutComponent implements OnInit {
     },
     {
       align: 'left',
-      description: 'Retornei para o centro do Rio, para o universo das consultorias de TI, com 5 anos de experiência e como um profissional Full Stack. Na Perlink venho trabalhando alocado em projetos do cliente Oi para fazer a migração tecnológica do seu sistema jurídico e ganhando proficiência com os frameworks Angular e ASP .NET Core. Também recebi treinamentos de uma grande mentora sobre cultura ágil e colaborativa, que me ajudou a expandir os meus horizontes e focar nos objetivos que tracei para a minha carreira profissional.',
+      description: 'Retornei para o centro do Rio, para o universo das consultorias de TI, com 5 anos de experiência e como um profissional Full Stack. Na Perlink venho trabalhando alocado em projetos do cliente Oi para fazer a migração tecnológica do seu sistema jurídico e ganhando proficiência com os frameworks Angular e ASP .NET Core. Também recebi treinamentos de uma grande mentora sobre SCRUM, cultura ágil e colaborativa, que me ajudou a expandir os meus horizontes e focar nos objetivos que tracei para a minha carreira profissional.',
       image: '../assets/logos/perlink-logo.png',
       imageWidth: '180px',
       title: 'De volta ao Centro da Cidade',

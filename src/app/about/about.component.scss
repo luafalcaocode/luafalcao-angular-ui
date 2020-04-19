@@ -118,8 +118,7 @@
 .btn-download {
   height: 50px;
   width: 370px;
-  border-radius: 22px;
-  background: var(--white);
+  background: transparent;
   border: solid thin var(--dark);
   transition: 0.4s ease-out;
   box-shadow: 3px 3px 3px var(--shadow);

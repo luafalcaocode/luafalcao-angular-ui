@@ -6,7 +6,7 @@ import { ArticleComponent } from './article/article.component';
 import { ArticleDetailComponent } from './article/article-detail/article-detail.component';
 import { AboutComponent } from './about/about.component';
 import { ProjectComponent } from './project/project.component';
-import { ServiceComponent} from './service/service.component';
+import { ServiceComponent } from './service/service.component';
 
 
 const routes: Routes = [
@@ -34,10 +34,10 @@ const routes: Routes = [
   //   path: 'projetos/:screen',
   //   component: ProjectComponent
   // },
-  // {
-  //   path: 'servicos/:screen',
-  //   component: ServiceComponent
-  // }
+  {
+    path: 'servicos/:screen',
+    component: ServiceComponent
+  }
 ];
 
 @NgModule({

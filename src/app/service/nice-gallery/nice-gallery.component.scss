@@ -63,8 +63,8 @@ div.lightbox:hover {
 
     height: 430px;
     padding-top: 40px;
-    color: var(--dark);
-    background-color: var(--white);
+    color: var(--white);
+    background-color: var(--violet);
     cursor: default;
     left: 0px;
 
@@ -90,9 +90,9 @@ div.lightbox:hover {
     }
 
     .reveal-btn {
-        background-color: var(--white);
-        color: var(--dark);
-        border: solid 1px var(--dark);
+        background-color: transparent;
+        color: var(--white);
+        border: solid 1px var(--white);
         border-radius: 4px;
         transition: 0.4s ease-out;
         animation-name: hint;
@@ -116,8 +116,8 @@ div.lightbox:hover {
     }
 
     .reveal-btn:hover {
-        background-color: var(--dark);
-        color: var(--white);
+        background-color: var(--white);
+        color: var(--dark);
         transition: 0.3s;
     }
 

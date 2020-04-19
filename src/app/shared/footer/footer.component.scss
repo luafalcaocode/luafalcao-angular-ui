@@ -1,7 +1,6 @@
 footer {
   height: auto;
-  background-color: var(--dark);
-  background-image: url('../../../assets/backgrounds/gradient.jpg');
+  background-color: var(--violet);
   background-position: top center;
   background-repeat: no-repeat;
   color: var(--silver);
@@ -14,7 +13,7 @@ footer {
     padding-left: 30px;
     padding-bottom: 0;
     z-index: 0;
-    position: relative !important
+    position: relative !important;
   }
 
   @media only screen and (max-width: 1279px) and (orientation: portrait) {
@@ -28,9 +27,8 @@ footer {
   }
 
   @media only screen and (max-width: 1279px) {
-      padding-top: 10px;
+    padding-top: 10px;
   }
-
 
   @media only screen and (min-width: 1279px) and (max-width: 1024px) {
     height: auto;
@@ -64,12 +62,12 @@ h4 {
   ul {
     li {
       margin-bottom: 10px;
-      transition: .4s ease-out;
+      transition: 0.4s ease-out;
     }
 
     li:hover {
       color: var(--white);
-      transition: .3s;
+      transition: 0.3s;
     }
   }
 }
@@ -87,7 +85,6 @@ i {
 
 .social-icon:hover {
   cursor: pointer;
-  
 }
 
 .copyright-container {
@@ -101,13 +98,19 @@ i {
 }
 
 .fa-whatsapp {
-  color: var(--grass);
+  color: var(--white);
   font-size: 24px;
   vertical-align: middle;
 }
 
 .fa-envelope {
-  color: var(--blueFlat);
+  color: var(--white);
   font-size: 24px;
   vertical-align: middle;
+}
+
+img.pagamento {
+  width: 44px;
+  height: auto;
+  margin-top: -10px;
 }

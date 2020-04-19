@@ -38,7 +38,7 @@
   border-radius: 50%;
   border: solid 10px var(--cream);
   text-align: center;
-  background-image: linear-gradient(to bottom right, var(--dark), var(--niceBlue));
+  background-image: linear-gradient(to bottom right, var(--blue), var(--violet));
   color: var(--white);
 
   margin: 0 auto;
@@ -72,7 +72,7 @@
 .timeline-scarface {
   width: 10px;
   height: 200px;
-  background-color: var(--niceGray);
+  background-color: var(--violet);
   margin: 0 auto;
 
   @media only screen and (max-width: 767px) and (orientation: portrait) {
@@ -94,7 +94,7 @@
 }
 
 .image-timeline {
-  filter: grayscale(100%);
+  filter: grayscale(0%);
   width: auto;
   position: relative;
   z-index: 3;
