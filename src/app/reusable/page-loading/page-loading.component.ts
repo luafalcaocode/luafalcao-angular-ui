@@ -12,4 +12,13 @@ export class PageLoadingComponent implements OnInit {
   ngOnInit() {
   }
 
+  initializePage() {
+    console.log('initializePage()');
+    const video = (<HTMLVideoElement>document.getElementById('video'));
+    console.log('video: ' + video);
+    if (video) {
+      video.play();
+    }    
+  }
+
 }

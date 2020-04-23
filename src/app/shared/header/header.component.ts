@@ -41,14 +41,14 @@ export class HeaderComponent implements OnInit {
     ];
 
     this.menuServicos = [
-      new MenuViewModel(1, 'Para você', '/servicos/para-voce', false),
+      new MenuViewModel(1, 'Para você', '/servicos/para-voce', true),
       new MenuViewModel(2, 'Para a comunidade', 'link do projeto pessoal aqui', true),
       new MenuViewModel(3, 'Para outras aplicações', 'link do projeto pessoal aqui', true)//,
       // new MenuViewModel(3, 'De um jogo eletrônico', 'link do projeto pessoal aqui', true)
     ];
 
     this.menuBlogs = [
-      new MenuViewModel(1, 'Diário de um engenheiro de software', '/blogs/diario-de-um-engenheiro-software', false),
+      new MenuViewModel(1, 'Diário de um engenheiro de software', '/blogs/diario-de-um-engenheiro-software', true),
       new MenuViewModel(2, 'Padrões de Projeto e onde habitam', '/blogs/padroes-projetos-onde-habitam', true),
       new MenuViewModel(2, 'Histórias Não Extraordinárias', '/blogs/hne', true),
     ];

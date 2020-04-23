@@ -9,13 +9,16 @@ import { LoadingService } from '../services/layout/loading.service';
   styleUrls: ['./about.component.scss']
 })
 export class AboutComponent implements OnInit {
+  footerBackgroundColor: string = '#000';
   palavra: number = 0;
   nome: string = ' ';
   titulo: string;
   titulos: string[] = [
     ' Engenheiro de Software',
     ' Programador Web Full Stack',
-    ' Analista de Sistemas'
+    ' Analista de Sistemas',
+    ' Desenvolvedor C# .NET',
+    ' '
   ];
   animating: boolean = true;
 
@@ -54,10 +57,10 @@ export class AboutComponent implements OnInit {
     },
     {
       align: 'left',
-      description: 'Retornei para o centro do Rio, para o universo das consultorias de TI, com 5 anos de experiência e como um profissional Full Stack. Na Perlink venho trabalhando alocado em projetos do cliente Oi para fazer a migração tecnológica do seu sistema jurídico e ganhando proficiência com os frameworks Angular e ASP .NET Core. Também recebi treinamentos de uma grande mentora sobre SCRUM, cultura ágil e colaborativa, que me ajudou a expandir os meus horizontes e focar nos objetivos que tracei para a minha carreira profissional.',
+      description: 'De volta ao centro do Rio, como um profissional Full Stack com 5 anos de experiência, na Perlink estive alocado em projetos da Oi para fazer a migração tecnológica do seu sistema jurídico, trabalhando em Sprints com releases a cada 2 semanas. Venho adotando tecnologias como os frameworks ANGULAR e ASP .NET Core e o DBMS Oracle, além de HTML5, CSS3 e JavaScript.',
       image: '../assets/logos/perlink-logo.png',
       imageWidth: '180px',
-      title: 'De volta ao Centro da Cidade',
+      title: 'De volta ao Centro',
       year: '2019'
     }
   ];
