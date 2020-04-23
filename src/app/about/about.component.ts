@@ -10,6 +10,8 @@ import { LoadingService } from '../services/layout/loading.service';
 })
 export class AboutComponent implements OnInit {
   footerBackgroundColor: string = '#000';
+  colorWriter: string = '#fff';
+  h1Size: string;
   palavra: number = 0;
   nome: string = ' ';
   titulo: string;
