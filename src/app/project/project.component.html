@@ -1,7 +1,6 @@
-<app-header></app-header>
+<app-header [backgroundColor]="backgroundHeader" [backgroundColorMobile]="backgroundMobile" [backgroundMobileContainer]="backgroundMobileContainer"></app-header>
 <section id="project">
-    <writer color='white' class="writer-projetos" [titulos]="titulosProjetos"></writer>
-    <video class="highlight" id="video" loop muted onloadedmetadata="this.muted = true" oncanplay="this.play()">
+    <video class="highlight" loop muted>
         <source [src]="video" type="video/mp4">
     </video>
    
@@ -9,4 +8,4 @@
         <card *ngFor="let card of cards" [card]="card"></card>
     </div>
 </section>
-<app-footer></app-footer>
+<app-footer backgroundColor="black"></app-footer>

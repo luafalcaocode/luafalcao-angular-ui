@@ -13,31 +13,31 @@ const routes: Routes = [
   {
     path: '',
     component: HomeComponent
-  },//,
+  }//,
   // {
   //   path: 'panel',
   //   component: PanelComponent
   // },
-  {
-    path: 'blogs/diario-de-um-engenheiro-software/:id',
-    component: ArticleDetailComponent
-  },
-  {
-    path: 'blogs/diario-de-um-engenheiro-software',
-    component: ArticleComponent
-  },
-  {
-    path: 'sobre',
-    component: AboutComponent
-  },
+  // {
+  //   path: 'blogs/diario-de-um-engenheiro-software/:id',
+  //   component: ArticleDetailComponent
+  // },
+  // {
+  //   path: 'blogs/diario-de-um-engenheiro-software',
+  //   component: ArticleComponent
+  // },
+  // {
+  //   path: 'sobre',
+  //   component: AboutComponent
+  // },
   // {
   //   path: 'projetos/:screen',
   //   component: ProjectComponent
   // },
-  {
-    path: 'servicos/:screen',
-    component: ServiceComponent
-  }
+  // {
+  //   path: 'servicos/:screen',
+  //   component: ServiceComponent
+  // }
 ];
 
 @NgModule({

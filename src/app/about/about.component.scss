@@ -13,7 +13,10 @@
   padding-top: 123px;
   background-image: url("../../assets/backgrounds/kratos.jpg");
   background-size: cover;
-  height: 701px;
+  height: 700px;
+  @media (max-width: 1279px) {
+    height: 717px;
+  }
   color: var(--white);
 
   @media only screen and (max-width: 1279px) {
@@ -24,7 +27,7 @@
     font-size: 52px;
     padding-left: 130px;
 
-    @media only screen and (max-width: 279px) {
+    @media (max-width: 1279px) {
       padding-left: 25px !important;
       font-size: 37px;
     }
@@ -34,7 +37,7 @@
     font-size: 52px;
     padding-left: 130px;
 
-    @media only screen and (max-width: 279px) {
+    @media only screen and (max-width: 1279px) {
       padding-left: 25px !important;
       font-size: 23px;
     }

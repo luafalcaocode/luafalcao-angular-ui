@@ -23,6 +23,8 @@ export class AboutComponent implements OnInit {
     ' '
   ];
   animating: boolean = true;
+  backgroundMobile: string = 'black';
+  backgroundMobileContainer: string = 'rgba(0,0,0,0.8)';
 
   timelines: TimelineViewModel[] = [
     {

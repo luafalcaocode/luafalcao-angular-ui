@@ -4,14 +4,14 @@ section {
 
     .servicos {
         padding-top: 140px;
-        @media only screen and (max-width: 1279px) and (orientation: portrait){
+        @media only screen and (max-width: 1279px) and (orientation: portrait) {
             padding-top: 156px;
         }
 
-        @media only screen and (max-width: 767px) and (orientation: landscape){
+        @media only screen and (max-width: 767px) and (orientation: landscape) {
             padding-top: 109px;
         }
-        
+
         h2 {
             z-index: 6;
             font-size: 28px;
@@ -34,3 +34,56 @@ section {
         top: 0;
     }
 }
+
+.fa-cog {
+    animation-name: spinner;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-duration: 4s;
+    font-size: 42px;
+}
+
+#fa-cog-1 {
+    font-size: 48px;    
+   
+}
+
+#fa-cog-2 {
+    font-size: 34px;
+} 
+
+#fa-cog-3 {
+    font-size: 32px;
+    position: relative;
+    top: -37px;
+    left: -32px;
+    animation-name: spinnerReverse;
+    animation-iteration-count: infinite;
+    animation-direction: reverse;
+    animation-timing-function: linear;
+    animation-duration: 4s;
+}
+
+
+@keyframes spinner {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes spinnerReverse {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+
+
+

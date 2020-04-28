@@ -26,7 +26,7 @@ export class MenuComponent implements OnInit {
   setTitle() {
     switch(this.id) {
       case 'menuProjetos': 
-        this.title = 'Meus trabalhos';
+        this.title = 'Meus Projetos';
       break;
       case 'menuServicos':
         this.title = 'O que você procura?';

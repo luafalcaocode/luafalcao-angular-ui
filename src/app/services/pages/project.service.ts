@@ -75,7 +75,7 @@ export class ProjectService {
         this.titulosCarregando = ['Carregando', 'Aguarde só um pouco, por favor.', 'Obrigado pela visita!', ':)'];
         this.titulosProjetos = ['PROJETOS PESSOAIS'];
         break;
-      case 'corporativos':
+      case 'empresariais':
         this.video = '';
         this.cards = [
           {

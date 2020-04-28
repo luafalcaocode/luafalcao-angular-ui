@@ -1,5 +1,5 @@
 <header id="header">
-  <nav class="show-on-large-only" id="navDesktop">
+  <nav class="show-on-large-only" id="navDesktop"  [ngStyle]="{'background-color' : backgroundColor }">
     <div class="row">
       <div class="col-lg-2 column-a">
         <a routerLink="/" class="lcode">Luã Falcão</a>
@@ -72,7 +72,7 @@
 
 
 
-  <nav id="navMobile">
+  <nav id="navMobile" [ngStyle]="{'background-color' : backgroundColorMobile}">
     <div class="row">
       <div class="col-sm-6 column-a hidden-candidated">
         <a class="lcode" routerLink="">Luã Falcão</a>
@@ -83,7 +83,7 @@
         </i>
       </div>
     </div>
-    <div class="nav-mobile-items" id="navMobileItems">
+    <div class="nav-mobile-items" id="navMobileItems" [ngStyle]="{'background-color' : backgroundMobileContainer}">
       <div>
         <ul>
           <li>

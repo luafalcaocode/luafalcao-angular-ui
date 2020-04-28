@@ -1,17 +1,12 @@
-<app-header class="service-header"></app-header>
+<app-header class="service-header" [backgroundColor]="backgroundHeader" [backgroundColorMobile]="backgroundMobile" [backgroundMobileContainer]="backgroundMobileContainer"></app-header>
 <section id="service">
-    <section class="primary-highlight">
-        <h1>Encontre aqui uma solução tecnológica</h1>
-        <h2>Para a sua necessidade</h2>
-    </section>
 
-    <section class="third-services">
+    <!-- <section class="third-services">
         <count [counts]="counts"></count>
-    </section>
+    </section> -->
 
     <section class="secondary-services">
-        <!-- <h1>Serviços</h1> -->
-        <nice-gallery [itens]="services"></nice-gallery>
+        <nice-gallery [itens]="services" (active)="onActiveReveal($event)"></nice-gallery>
     </section>
 
     <section class="fourth-services">
@@ -40,4 +35,4 @@
 
     </section>
 </section>
-<app-footer></app-footer>
+<app-footer backgroundColor="black"></app-footer>

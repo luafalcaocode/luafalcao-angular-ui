@@ -1,18 +1,20 @@
 import { Injectable } from '@angular/core';
 import { CommonService } from '../../services/layout/common.service';
 
+
 @Injectable({
   providedIn: 'root'
 })
 export class ServiceService {
   services: any[];
   counts: any[];
+  reveal: any;
 
   constructor(public commonService: CommonService) { }
 
   initializePage(screen: string) {
     switch (screen) {
-      case 'para-o-cliente':
+      case 'para-voce':
         this.services = [
           {
             title: 'Construção de',
@@ -70,18 +72,47 @@ export class ServiceService {
           }
         ];
 
-        this.counts =  [
+        this.counts = [
           6,
           7,
           5,
           7
         ];
         break;
-      
-      default:
+      case 'para-a-comunidade':
+        this.services = [
+          {
+            title: 'Construção de',
+            description: 'Componentes em Angular',
+            background: 'assets/backgrounds/nice-gallery/api.jpg',
+            reveal: {
+              icon: 'fas fa-cogs reveal-icons',
+              text: 'Usando como base HTML5, CSS3 e JS consigo construir componentes baseados no framework Angular para a comunidade adicionar em seus projetos Angular reduzindo o tempo de desenvolvimento na criação do novo componente.'
+            }
+          },
+          {
+            title: 'Publicação de ',
+            description: 'Artigos de TI',
+            background: 'assets/backgrounds/nice-gallery/api.jpg',
+            reveal: {
+              icon: 'fas fa-pencil-alt reveal-icons',
+              text: 'Baseado na minha experiência profissional publico artigos de tecnologia sobre diferentes temas com a intenção de ajudar a solucionar problemas técnicos de uma maneira efetiva.'
+            }
+          },
+          {
+            title: 'Constribuição em ',
+            description: 'Projetos Open-Source',
+            background: 'assets/backgrounds/nice-gallery/api.jpg',
+            reveal: {
+              icon: 'fas fa-folder-open reveal-icons',
+              text: 'Disponibilidade para ajudar com projetos open-source cujo objetivo é construir soluções de valor sem fins lucrativos.'
+            },
+          }
+        ]
         break;
     }
 
     this.commonService.initializePage();
   }
+
 }

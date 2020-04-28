@@ -35,7 +35,7 @@ div.lightbox {
 
     h2 {
         color: var(--white);
-        font-size: 32px;
+        font-size: 28px;
     }
 
     p,
@@ -64,7 +64,8 @@ div.lightbox:hover {
     height: 430px;
     padding-top: 40px;
     color: var(--white);
-    background-color: var(--violet);
+    background-color: var(--dark);
+    background-image: linear-gradient(to bottom right, var(--green), var(--niceGreen));
     cursor: default;
     left: 0px;
 

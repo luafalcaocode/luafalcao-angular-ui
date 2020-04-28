@@ -3,13 +3,15 @@
     height: auto;
     overflow-x: hidden;
     background-color: var(--ice);
+    position: relative;
+    top: -11px;
 
     .primary-highlight {
-        background-image: url("../../assets/backgrounds/grid.jpg");
+        background-image: url("../../assets/backgrounds/kratos.jpg");
         background-size: cover;
         height: 820px;
 
-        padding-top: 200px;
+        padding-top: 180px;
         color: var(--white);
         font-weight: bold;
         padding-left: 130px;
@@ -51,12 +53,12 @@
     }
 
     .third-services {
-        background-color: white;
+        background-color: var(--white);
         min-height: 200px;
         padding-top: 90px;
         padding-bottom: 90px;
         position: relative;
-        border-bottom: solid 2px var(--white);
+        border-bottom: solid 2px var(--dark);
         
 
         z-index: 5;
@@ -64,7 +66,7 @@
         position: relative;
 
         p, svg {
-            color: var(--white);
+            color: var(--dark);
         }
     }
 
@@ -73,7 +75,7 @@
         position: relative;
         min-height: 740px;
         height: auto;
-        background-color: var(--violet);
+        background-color: var(--white);
       
         padding-top: 86px;
         padding-bottom: 116px;
@@ -82,6 +84,7 @@
 
         svg {
             font-size: 121px !important;
+            color: var(--dark);
         }
 
         img {
@@ -96,7 +99,7 @@
         h1 {
             font-weight: bold;
             text-transform: uppercase;
-            color: var(--white);
+            color: var(--dark);
             font-size: 32px;
 
             @media only screen and (max-width: 1279px) {
@@ -106,7 +109,7 @@
 
         h4 {
             margin-top: 30px;
-            color: var(--white);
+            color: var(--dark);
         }
 
         p {
@@ -114,7 +117,7 @@
             padding-left: 300px;
             padding-right: 300px;
             margin-top: 40px;
-            color: var(--white);
+            color: var(--dark);
 
             @media only screen and (max-width: 1279px) {
                 padding-left: 30px;
@@ -135,15 +138,15 @@
 }
 
 .reveal-btn {
-    color: var(--white);
-    border: solid 1px var(--white);
+    color: var(--dark);
+    border: solid 1px var(--dark);
     transition: 0.4s ease-out;
     background: transparent;
    
 }
 
 .reveal-btn:hover {
-    color: var(--white);
+    color: var(--dark);
     transition: 0.3s;
     font-weight: bold;
 }

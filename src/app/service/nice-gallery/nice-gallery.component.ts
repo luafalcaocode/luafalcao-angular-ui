@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'nice-gallery',
@@ -6,17 +6,24 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./nice-gallery.component.scss']
 })
 export class NiceGalleryComponent implements OnInit {
-  @Input() itens: any[];
-  revealed: boolean = false;
+  revealed: boolean;
   id: string = '';
+  @Input() itens: any[];
+  @Output() active: EventEmitter<any> = new EventEmitter<any>();
 
   constructor() { }
 
   ngOnInit() {
+
   }
 
   onClick_Reveal(id: string) {
     this.revealed = true;
     this.id = id;
+    this.active.emit(this);
+  }
+
+  ngOnDestroy() {
+    this.revealed = false;
   }
 }

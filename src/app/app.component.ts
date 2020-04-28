@@ -22,7 +22,6 @@ export class AppComponent {
   ngOnInit() {
     console.log('Versão: 3.0');
     console.log('Data de Publicação: ' + new Date().toLocaleDateString("pt-BR"));
-    this.loading.hide();
   }
 
   ngAfterViewInit() {

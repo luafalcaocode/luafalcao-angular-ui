@@ -16,9 +16,13 @@ header {
   left: 0;
   z-index: 9000;
 
+  @media screen and (max-width: 1279px) {
+    height: auto !important;
+  }
+
   nav {
     height: 80px;
-    background: transparent;
+    // background: transparent;
     padding-top: 26px;
     padding-left: 100px;
     padding-right: 100px;
@@ -152,12 +156,14 @@ header {
   }
 
   #navMobile {
+    position: relative;
+    width: 100%;
     @media (min-width: 1200px) {
       display: none;
     }
 
     .nav-mobile-items {
-      background: transparent;
+      //background: transparent;
       width: 100%;
       
 
