@@ -1,26 +1,24 @@
-import { Injectable, ElementRef } from '@angular/core';
+import { Injectable, ElementRef, Renderer2 } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoadingService {
   isLoading: boolean;
-
+  element: any;
   constructor() { }
 
   toogle() {
     return this.isLoading = !this.isLoading;
   }
 
-  show() {
-    let loading = document.getElementById('pageLoading');
+  show(loading?: any) {
     loading.style.display = 'block';
   }
 
-  hide() {
-    let loading = document.getElementById('pageLoading');
+  hide(loading?: any) {
     setTimeout(() => {
       loading.style.display = 'none';
-    }, 1300);
+    }, 1100);
   }
 }

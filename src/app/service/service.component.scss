@@ -1,7 +1,7 @@
 #service {
     min-height: 900px;
     height: auto;
-    overflow-x: hidden;
+    
     background-color: var(--ice);
     position: relative;
     top: -11px;
@@ -73,7 +73,7 @@
     .fourth-services {
         z-index: 5;
         position: relative;
-        min-height: 740px;
+        // min-height: 740px;
         height: auto;
         background-color: var(--white);
       
@@ -82,10 +82,6 @@
         margin-top: -100px;
        
 
-        svg {
-            font-size: 121px !important;
-            color: var(--dark);
-        }
 
         img {
             height: 450px;
@@ -97,7 +93,7 @@
         }
 
         h1 {
-            font-weight: bold;
+            font-weight: normal;
             text-transform: uppercase;
             color: var(--dark);
             font-size: 32px;
@@ -138,18 +134,21 @@
 }
 
 .reveal-btn {
-    color: var(--dark);
-    border: solid 1px var(--dark);
+    color: var(--white);
     transition: 0.4s ease-out;
-    background: transparent;
+    background: var(--niceGreen);
+    box-shadow: 2px 5px 5px #999;
+    font-size: 16px;
    
 }
 
 .reveal-btn:hover {
-    color: var(--dark);
+    color: var(--green);
     transition: 0.3s;
-    font-weight: bold;
 }
+
+
+
 
 .reveal-btn:focus {
     outline: none;
@@ -163,3 +162,51 @@
         height: 40px;
     }
 }
+
+.fa-cog {
+    animation-name: spinner;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-duration: 4s;
+    font-size: 42px;
+    color: var(--niceGreen);
+}
+
+#fa-cog-1 {
+    font-size: 58px;    
+}
+
+#fa-cog-2 {
+    font-size: 44px;
+} 
+
+#fa-cog-3 {
+    font-size: 42px;
+    position: relative;
+    top: -43px;
+    left: -32px;
+    animation-name: spinnerReverse;
+    animation-iteration-count: infinite;
+    animation-direction: reverse;
+    animation-timing-function: linear;
+    animation-duration: 4s;
+}
+
+@keyframes spinner {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes spinnerReverse {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+

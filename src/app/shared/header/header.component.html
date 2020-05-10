@@ -2,11 +2,11 @@
   <nav class="show-on-large-only" id="navDesktop"  [ngStyle]="{'background-color' : backgroundColor }">
     <div class="row">
       <div class="col-lg-2 column-a">
-        <a routerLink="/" class="lcode">Luã Falcão</a>
+        <a routerLink="/" class="lcode u-bold">Luã Falcão</a>
       </div>
       <div class="col-lg-6">
         <ul id="navbarItems">
-          <li (mouseleave)="hideMenu('menuProjetos')" class="item-menu-principal">
+          <li (mouseleave)="hideMenu('menuProjetos')" class="item-menu-principal u-hidden">
             <a routerLink="" (mouseenter)="showMenu('menuProjetos')"
               [className]="isMenuProjectsOpen ? 'active-menu' : 'inative-menu'">Projetos
               <span class="glyphicon glyphicon-menu-down"></span>
@@ -22,7 +22,7 @@
             <app-menu [menu]="menuServicos" class="fadeOut" id="menuServicos" (mouseenter)="showMenu('menuServicos')"
               (mouseleave)="hideMenu('menuServicos')"  (selectItem)="onSelectItem($event)"></app-menu>
           </li>
-          <li (mouseleave)="hideMenu('menuBlogs')" class="item-menu-principal">
+          <li (mouseleave)="hideMenu('menuBlogs')" class="item-menu-principal u-hidden">
             <a routerLink="" (mouseenter)="showMenu('menuBlogs')"
               [className]="isMenuBlogsOpen ? 'active-menu' : 'inative-menu'">Blogs
               <span class="glyphicon glyphicon-menu-down"></span>
@@ -31,10 +31,10 @@
               (mouseleave)="hideMenu('menuBlogs')" (selectItem)="onSelectItem($event)"></app-menu>
           </li>
           <li class="item-menu-principal">
-            <a routerLink="/sobre">Sobre</a>
+            <a routerLink="/sobre" class="">Sobre</a>
           </li>
           <li class="item-menu-principal">
-            <a routerLink="" class="u-no-click">Contato</a>
+            <a routerLink="" class="u-hidden">Contato</a>
           </li>
         </ul>
       </div>
@@ -45,13 +45,13 @@
         </i>
         
         <!-- Canal do YouTube -->
-        <i class="material-icons header-icon" 
+        <i class="material-icons header-icon u-hide" 
           id="youTube">
           play_circle_outline
         </i>
        
         <!-- Seleção de Idiomas -->
-        <i class="material-icons header-icon"
+        <i class="material-icons header-icon u-hide"
           id="idiomas">language</i>
        
         <!-- Login-->
@@ -75,7 +75,7 @@
   <nav id="navMobile" [ngStyle]="{'background-color' : backgroundColorMobile}">
     <div class="row">
       <div class="col-sm-6 column-a hidden-candidated">
-        <a class="lcode" routerLink="">Luã Falcão</a>
+        <a class="lcode" routerLink="" class="u-bold">Luã Falcão</a>
       </div>
       <div class="col-sm-6 u-right hidden-candidated" (click)="mobileMenuService.openCloseMobile()">
         <i class="material-icons small-menu-icon u-right sandwich-icon">
@@ -87,7 +87,7 @@
       <div>
         <ul>
           <li>
-            <a routerLink="/projetos/pessoais" class="u-no-click">Projetos
+            <a routerLink="/projetos/pessoais" class="u-hidden">Projetos
               <i class="material-icons">keyboard_arrow_right</i>
             </a>
           </li>
@@ -97,17 +97,17 @@
             </a>
           </li>
           <li (click)="mobileMenuService.openCloseMobile()">
-            <a routerLink="/artigos" class="u-no-click">Artigos
+            <a routerLink="/artigos" class="u-hidden">Artigos
               <i class="material-icons">keyboard_arrow_right</i>
             </a>
           </li>
           <li>
-            <a routerLink="/sobre" class="u-no-click">Sobre
+            <a routerLink="/sobre" class="">Sobre
               <i class="material-icons">keyboard_arrow_right</i>
             </a>
           </li>
           <li>
-            <a routerLink="" class="u-no-click">Contato
+            <a routerLink="" class="u-hidden">Contato
               <i class="material-icons">keyboard_arrow_right</i>
             </a>
           </li>

@@ -23,7 +23,8 @@ ul {
   margin-left: -10px;
 
   li {
-    font-size: 14px;
+    font-size: 16px;
+    
     transition: 0.3s linear;
     height: 30px;
     margin-right: 25px;
@@ -32,14 +33,13 @@ ul {
   li:hover {
     cursor: pointer;
     transition: 0.4s;
-    color: var(--blue);
-    font-size: 16px;
+    font-size: 18px;
   }
 }
 
 a:hover {
   text-decoration: none;
-  color: var(--blueFlat);
+  color: var(--green);;
 }
 
 a:visited, a:active, a:focus {
@@ -50,6 +50,7 @@ h4 {
   padding-left: 30px;
   padding-bottom: 10px;
   font-weight: bold;
+  font-size: 22px;
 }
 
 .material-icons {

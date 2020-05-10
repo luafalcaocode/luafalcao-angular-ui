@@ -36,7 +36,7 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
     this.menuProjetos = [
-      new MenuViewModel(1, 'Projetos Pessoais', '/projetos/pessoais', false),
+      new MenuViewModel(1, 'Projetos Pessoais', '/projetos/pessoais', true),
       new MenuViewModel(2, 'Projetos Empresariais', '/projetos/empresariais', true)
     ];
 

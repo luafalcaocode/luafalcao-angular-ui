@@ -1,0 +1,104 @@
+#order {
+    position: fixed;
+    z-index: 10000;
+    height: 100%;
+    width: 100%;
+    background: rgba(0,0,0, 0.93);
+    top: 800px;
+    left: 0;
+    color: var(--white);
+    padding: 20px 100px 20px 200px;
+    overflow-y: auto;
+    min-height: 670px;
+    transition: 0.3s linear;
+
+    h2 {
+        margin-bottom: 40px;
+    }
+
+    form {
+        margin-bottom: 40px;
+    }
+
+    label {
+        display: block;
+        font-weight: normal;;
+    }
+    input,
+    select,
+    option,
+    textarea {
+        background: transparent;
+        border-radius: 0;
+        border: solid 1px var(--niceGreen);
+        font-size: 18px;
+        color: var(--green);
+        
+       
+    }
+
+    select,
+    input {
+        height: 43px;
+    }
+
+    input:focus,
+    select:focus {
+        border-color: var(--green);
+    }
+
+
+    textarea {
+        height: 230px;
+    }
+
+
+
+    button {
+        height: 50px;
+        width: 370px;
+        color: var(--white);
+        transition: 0.4s ease-out;
+        background: var(--niceGreen);
+        padding-top: 12px;
+        font-size: 18px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+
+        @media only screen and (max-width: 767px) {
+            width: 100%;
+        }
+    }
+
+    button:hover {
+        color: var(--green);
+        transition: 0.3s;
+    }
+
+    button:focus {
+        outline: none;
+    }
+}
+
+::placeholder {
+    color: var(--green);
+    font-weight: normal;
+}
+
+.animando {
+    top: 0 !important;   
+    position: fixed;
+    transition: .5s;
+}
+
+.close-icon {
+    font-size: 31px;
+    transition: .3s ease-out;
+    float: right;
+}
+
+.close-icon:hover {
+    transition: .2s;
+    font-size: 38px;
+    color: var(--green);
+}

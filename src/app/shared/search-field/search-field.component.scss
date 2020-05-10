@@ -1,7 +1,7 @@
 #searchFieldContainer {
   position: fixed;
   z-index: 1000;
-  background: rgba(0,0,0,0.7);
+  background: rgba(0,0,0,0.9);
   width: 100%;
   padding: 200px;
   padding-top: 240px;
@@ -44,7 +44,7 @@
       border-radius: 0;
       border: solid 1px var(--niceGreen);
       font-size: 24px;
-      color: var(--white);
+      color: var(--green);
       font-weight: bold;
     }
 

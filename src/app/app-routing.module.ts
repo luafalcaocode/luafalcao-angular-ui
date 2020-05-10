@@ -13,7 +13,7 @@ const routes: Routes = [
   {
     path: '',
     component: HomeComponent
-  }//,
+  }
   // {
   //   path: 'panel',
   //   component: PanelComponent
@@ -25,19 +25,21 @@ const routes: Routes = [
   // {
   //   path: 'blogs/diario-de-um-engenheiro-software',
   //   component: ArticleComponent
-  // },
+  //  },
+  ,
+  {
+    path: 'sobre',
+    component: AboutComponent
+  },
   // {
-  //   path: 'sobre',
-  //   component: AboutComponent
-  // },
-  // {
-  //   path: 'projetos/:screen',
-  //   component: ProjectComponent
-  // },
-  // {
-  //   path: 'servicos/:screen',
-  //   component: ServiceComponent
-  // }
+  // //   path: 'projetos/:screen',
+  // //   component: ProjectComponent
+  // // },
+  
+  {
+    path: 'servicos/:screen',
+    component: ServiceComponent
+  }
 ];
 
 @NgModule({

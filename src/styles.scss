@@ -30,7 +30,7 @@
 }
 
 body {
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Baloo 2', cursive;
   overflow-x: hidden !important;
   height: 100%;
 
@@ -192,14 +192,14 @@ a {
 }
 
 /* página de serviços */
-.service-header {
-  header {
-    position: absolute !important;
-    nav {
-      background: rgba(0, 0, 0, 0) !important;
-    }
-  }
-}
+// .service-header {
+//   header {
+//     position: absolute !important;
+//     nav {
+//       background: rgba(0, 0, 0, 0) !important;
+//     }
+//   }
+// }
 /* página de artigos */
 .article-header {
   .small-menu-icon {

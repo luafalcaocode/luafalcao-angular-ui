@@ -10,16 +10,26 @@ export class WriterComponent implements OnInit {
   @Input() fontSize;
   @Input() align;
   @Input() strongness;
-  
+  @Input() titulos: string[] = [];
+
   palavra: number = 0;
   nome: string = ' ';
   titulo: string;
-  @Input() titulos: string[] = ['Projetos Pessoais'];
+  
 
   constructor() { }
 
   ngOnInit() {
+    // this.color = 'white';
+    // this.fontSize = '32px';
+    // this.align = 'center';
+    // this.strongness = 'normal';
+    // this.titulos = ['Change Detection Test'];
     this.write();
+  }
+
+  ngOnChanges() {
+
   }
 
   write() {

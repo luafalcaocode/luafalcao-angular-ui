@@ -121,12 +121,12 @@
 .btn-download {
   height: 50px;
   width: 370px;
-  background: transparent;
-  border: solid thin var(--dark);
+  color: var(--white);
   transition: 0.4s ease-out;
-  box-shadow: 3px 3px 3px var(--shadow);
-  text-transform: uppercase;
-  padding-top: 15px;
+  background: var(--niceGreen);
+  box-shadow: 2px 5px 5px #999;
+  padding-top: 12px;
+  font-size: 18px;
 
   @media only screen and (max-width: 767px) {
     width: 100%;
@@ -134,10 +134,8 @@
 }
 
 .btn-download:hover {
-  background: var(--dark);
-  border: solid thin var(--dark);
-  transition: 0.4s ease-out;
-  color: var(--white);
+  color: var(--green);
+  transition: 0.3s;
 }
 
 .btn-download:focus {

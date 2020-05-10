@@ -27,7 +27,7 @@ export class MobileMenuService {
     }
     else {
       navMobile.style.right = '0';
-      body.style.overflowY = 'hidden';
+    //  body.style.overflowY = 'hidden';
       this.isNavMobileOpen = false;
 
       let hiddenCandidated = document.getElementsByClassName('hidden-candidated');
