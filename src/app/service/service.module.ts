@@ -1,3 +1,4 @@
+import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReusableModule } from '../reusable/reusable.module';
@@ -9,12 +10,14 @@ import { OrderComponent } from './order/order.component';
 
 
 
+
 @NgModule({
   declarations: [ServiceComponent, NiceGalleryComponent, CountComponent, OrderComponent],
   imports: [
     CommonModule,
     ReusableModule,
-    SharedModule
+    SharedModule,
+    FormsModule
   ],
   exports: [
     ServiceComponent,

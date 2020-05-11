@@ -18,8 +18,8 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="telefone">Telefone:</label>
-                    <input type="tel" pattern="" class="form-control" placeholder="Inclua um telefone para contato" />
+                    <label for="telefone">Celular:</label>
+                    <input type="text" (keypress)="onKeyPress($event)" maxlength="16" class="form-control" placeholder="(dd) x xxxx-xxxx" name="phone" (input)="addPhoneMask(phoneField)" [(ngModel)]="form.phone" #phoneField />
                 </div>
 
 

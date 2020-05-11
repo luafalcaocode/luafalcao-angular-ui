@@ -8,5 +8,8 @@ export const EXTENSIONS: string[] = [
     '.cs',
     '.c',
     '.cpp',
-    '.zip'
+    '.zip',
+    '.msi',
+    '.tar.gz',
+    '.deb'
 ];

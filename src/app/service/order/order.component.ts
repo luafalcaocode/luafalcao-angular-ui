@@ -11,12 +11,15 @@ export class OrderComponent implements OnInit {
 
   files: File[];
   selectedFiles: number = 0;
-  validationFileMessage: string; 
+  validationFileMessage: string;
+  form: any;
+  verificouCelular: boolean = false;
 
   constructor(private elementRef: ElementRef) { }
 
   ngOnInit() {
     this.files = [];
+    this.form = {};
   }
 
   onClickAttachment(field) {
@@ -51,16 +54,36 @@ export class OrderComponent implements OnInit {
 
   validateFile(name: string) {
     let extension = name.lastIndexOf('.');
-    let extension_name = name.substring(extension);
+    let extension_name = name.substring(extension).toLowerCase();
     if (EXTENSIONS.includes(extension_name)) {
       throw { message: `não é possível fazer upload de arquivos com a extensão ${extension_name}` };
     }
 
-    for(const prop in this.files) {
+    for (const prop in this.files) {
       if (this.files[prop].name.includes(name)) {
-        throw { message: `já existe um anexo com o nome ${name}`};
+        throw { message: `já foi inserido um anexo com o nome ${name}` };
       }
     }
+  }
+
+  onKeyPress(event) {
+    return event.charCode >= 48 && event.charCode <= 57
+  }
+
+  addPhoneMask() {
+    if (this.form.phone.length == 1)
+      this.form.phone = '(' + this.form.phone;
+
+    if (this.form.phone.length == 3)
+      this.form.phone = this.form.phone + ') ';
+
+    if (this.form.phone.includes('(21)') && this.form.phone[5] == '9' && !this.verificouCelular) {
+      this.form.phone = this.form.phone + ' ';
+      this.verificouCelular = true;
+    }
+
+    if (this.form.phone.length == 10)
+      this.form.phone = this.form.phone + '-';
   }
 
   inactive() {
