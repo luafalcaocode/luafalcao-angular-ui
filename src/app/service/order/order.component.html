@@ -10,7 +10,6 @@
     </div>
     <form>
         <div class="row">
-           
             <div class="col-lg-6">
 
                 <div class="form-group">
@@ -60,7 +59,7 @@
 
                             <ul>
                                 <li *ngFor="let file of files">
-                                    {{ file.name }}
+                                    {{ file.name.length > 36 ? file.name.substring(0, 35) + '...' : file.name }}
                                     <i class="material-icons icon-close-remove"
                                         (click)="onClickRemoveFile(file.name)">clear
                                     </i>
@@ -74,23 +73,22 @@
                             <!-- <span class="remove-file-container"><i class="far fa-trash-alt remove-file-icon"></i></span> -->
                         </div>
                     </div>
-
-
+                    <div class="row validation-file-container"
+                        [ngClass]="{'fadeIn' : validationFileMessage, 'fadeOut' : !validationFileMessage}">
+                        <div class="col-lg-12">
+                            <span>{{validationFileMessage}}</span>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-
-
         </div>
-
-        
 
         <div class="row">
             <div class="col-lg-12">
                 <div class="form-group">
                     <label for="">Observações:</label>
-                    <textarea class="form-control"
-                        placeholder="Conte o que motivou você a solicitar um projeto e que tipo de problema gostaria de resolver. Quais são suas expectativas e necessidades. Conversaremos mais futuramente."></textarea>
+                    <textarea class="form-control" placeholder="Alguma observação que gostaria de fazer? Não se preocupe! Conversaremos mais futuramente!"></textarea>
                 </div>
             </div>
         </div>

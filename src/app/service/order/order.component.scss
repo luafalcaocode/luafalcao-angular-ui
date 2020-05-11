@@ -3,11 +3,11 @@
     z-index: 10000;
     height: 100%;
     width: 100%;
-    background: rgba(0, 0, 0, 0.93);
+    background: rgba(0, 0, 0, 0.9);
     top: 800px;
     left: 0;
     color: var(--white);
-    padding: 20px 100px 20px 200px;
+    padding: 20px 150px 20px 150px;
     overflow-y: auto;
     min-height: 670px;
     transition: 0.3s linear;
@@ -28,79 +28,82 @@
 
     form {
         margin-bottom: 40px;
-    }
-
-    label {
-        display: block;
-        font-weight: normal;
-    }
-    input,
-    select,
-    option,
-    textarea {
-        background: transparent;
-        border-radius: 0;
-        border: solid 1px var(--niceGreen);
-        font-size: 18px;
-        color: var(--green);
-    }
-
-    select,
-    input {
-        height: 43px;
-    }
-
-    input:focus,
-    select:focus {
-        border-color: var(--green);
-    }
-
-    textarea {
-        height: 230px;
-    }
-
-    button {
-        height: 50px;
-        width: 370px;
-        color: var(--white);
-        transition: 0.4s ease-out;
-        background: var(--niceGreen);
-        padding-top: 12px;
-        font-size: 18px;
-        margin-top: 20px;
-        margin-bottom: 20px;
-
-        @media only screen and (max-width: 767px) {
-            width: 100%;
-            margin-bottom: 120px;
+        label {
+            display: block;
+            font-weight: normal;
         }
-    }
+        input,
+        select,
+        option,
+        textarea {
+            background: transparent;
+            border-radius: 0;
+            border: solid 1px var(--niceGreen);
+            font-size: 16px;
+            color: var(--green);
+        }
 
-    button:hover {
-        color: var(--green);
-        transition: 0.3s;
-    }
+        select,
+        input {
+            height: 43px;
+        }
 
-    button:focus {
-        outline: none;
+        input:focus,
+        select:focus {
+            border-color: var(--green);
+        }
+
+        textarea {
+            height: 230px;
+        }
+
+        button {
+            height: 50px;
+            width: 370px;
+            color: var(--white);
+            transition: 0.4s ease-out;
+            background: var(--niceGreen);
+            padding-top: 12px;
+            font-size: 18px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+
+            @media only screen and (max-width: 767px) {
+                width: 100%;
+                margin-bottom: 120px;
+            }
+        }
+
+        button:hover {
+            color: var(--green);
+            transition: 0.3s;
+        }
+
+        button:focus {
+            outline: none;
+        }
     }
 
     ul {
         list-style-type: none;
         margin-top: -26px;
-        height: 100px;
+        height: 76px;
         overflow: auto;
         padding-left: 0;
 
         li {
             color: var(--green);
             font-weight: 500;
-           
+            width: 300px;
             background-color: var(--niceGreen);
             margin: 4px 0px 4px 0px;
             border-radius: 7px;
             padding-left: 10px;
             padding-right: 10px;
+
+            @media (max-width: 767px) {
+                width: 100%;
+            }
         }
     }
 }
@@ -200,4 +203,21 @@ a:hover {
 .icon-close-remove:hover {
     color: var(--green);
     transition: 0.4s;
+}
+
+.validation-file-container {
+    position: absolute;
+    margin-top: -5px;
+    left: 230px;
+
+    span {
+        color: red;
+    }
+
+    @media (max-width: 767px) {
+        float: right;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        position: static;
+    }
 }

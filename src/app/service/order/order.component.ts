@@ -1,5 +1,7 @@
 import { Component, OnInit, ElementRef } from '@angular/core';
 
+import { EXTENSIONS } from '../../constants/extensions.const';
+
 @Component({
   selector: 'order',
   templateUrl: './order.component.html',
@@ -9,6 +11,7 @@ export class OrderComponent implements OnInit {
 
   files: File[];
   selectedFiles: number = 0;
+  validationFileMessage: string; 
 
   constructor(private elementRef: ElementRef) { }
 
@@ -26,16 +29,15 @@ export class OrderComponent implements OnInit {
         if (field.files[prop].size) {
           this.validateFile(field.files[prop].name);
           this.files.push(field.files[prop]);
+          this.selectedFiles = this.files.length;
+          this.validationFileMessage = '';
         }
       }
 
       field.value = '';
-      this.selectedFiles = this.files.length;
-      console.log(this.files);
     }
     catch (err) {
-      console.log('extensão inválida de arquivo');
-      console.log(err.message);
+      this.validationFileMessage = err.message;
     }
   }
 
@@ -50,8 +52,14 @@ export class OrderComponent implements OnInit {
   validateFile(name: string) {
     let extension = name.lastIndexOf('.');
     let extension_name = name.substring(extension);
-    if (extension_name.includes('.exe')) {
-      throw Error;
+    if (EXTENSIONS.includes(extension_name)) {
+      throw { message: `não é possível fazer upload de arquivos com a extensão ${extension_name}` };
+    }
+
+    for(const prop in this.files) {
+      if (this.files[prop].name.includes(name)) {
+        throw { message: `já existe um anexo com o nome ${name}`};
+      }
     }
   }
 
