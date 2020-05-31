@@ -1,3 +1,8 @@
 # luafalcao.com
 
-Este projeto mantém uma aplicação ANGULAR que servirá para expor o portfólio do meu trabaho quando estiver concluída incluindo páginas de artigos, solicitação de serviços, contato, currículo e projetos que participei.
+This project is my personal web site built in ANGULAR and Node.js that is hosted at Firebase.
+
+# Setting de Project
+
+- run npm install
+- run ng serve and navigate to http://localhost:4200
