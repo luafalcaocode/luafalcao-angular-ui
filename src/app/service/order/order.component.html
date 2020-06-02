@@ -8,24 +8,18 @@
             <i class="material-icons close-icon" (click)="inactive()">clear </i>
         </div>
     </div>
-    <form>
+    <form (ngSubmit)="onSubmit()">
         <div class="row">
             <div class="col-lg-6">
 
                 <div class="form-group">
                     <label for="solicitante">Solicitante:</label>
-                    <input type="text" class="form-control" placeholder="Quem será o dono do produto?" />
+                    <input type="text" class="form-control" placeholder="Quem será o dono do produto?" name="solicitante" [(ngModel)]="this.form.solicitante" />
                 </div>
-
-                <div class="form-group">
-                    <label for="telefone">Celular:</label>
-                    <input type="text" (keypress)="onKeyPress($event)" maxlength="16" class="form-control" placeholder="(dd) x xxxx-xxxx" name="phone" (input)="addPhoneMask(phoneField)" [(ngModel)]="form.phone" #phoneField />
-                </div>
-
 
                 <div class="form-group">
                     <label for="email">E-mail:</label>
-                    <input type="email" class="form-control" placeholder="Informe um endereço de e-mail" />
+                    <input type="email" class="form-control" placeholder="Informe um endereço de e-mail" name="email" [(ngModel)]="this.form.email" />
                 </div>
 
             </div>
@@ -33,14 +27,8 @@
             <div class="col-lg-6">
                 <div class="form-group">
                     <label for="tipo">Tipos de projeto: </label>
-                    <select class="form-control">
-                        <option>Selecione o tipo de projeto que deseja</option>
-                        <option>Web API</option>
-                        <option>Interfaces de Usuário</option>
-                        <option>Single Page Application</option>
-                        <option>Portais Web</option>
-                        <option>Migração de Sistemas para .NET</option>
-                        <option>Banco de Dados</option>
+                    <select class="form-control" (change)="onSelectTipoDeProjeto($event)">
+                        <option *ngFor="let tipo of this.form.tiposDeProjeto" [value]="tipo.id" [selected]="tipo.selecionado"> {{ tipo.nome }} </option>
                     </select>
                 </div>
 
@@ -88,16 +76,19 @@
             <div class="col-lg-12">
                 <div class="form-group">
                     <label for="">Observações:</label>
-                    <textarea class="form-control" placeholder="Alguma observação que gostaria de fazer? Não se preocupe! Conversaremos mais futuramente!"></textarea>
+                    <textarea class="form-control" placeholder="Alguma observação que gostaria de fazer? Não se preocupe! Conversaremos mais futuramente!" name="observacoes" [(ngModel)]="this.form.observacoes"></textarea>
                 </div>
             </div>
         </div>
 
         <div class=" row">
             <div class="col-xs-12 u-center">
-                <button class="btn" type="button">enviar</button>
+                <button class="btn">
+                    <span *ngIf="!isLoading && !completing">enviar</span>
+                    <app-mini-loading *ngIf="isLoading && !completing"></app-mini-loading>
+                    <span *ngIf="!isLoading && completing"><i class="fas fa-check"></i></span>
+                </button>
             </div>
         </div>
-
     </form>
 </section>

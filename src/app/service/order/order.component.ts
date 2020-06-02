@@ -1,6 +1,10 @@
-import { Component, OnInit, ElementRef } from '@angular/core';
+import { Component, OnInit, ElementRef, Input } from '@angular/core';
+import { HttpHeaders } from '@angular/common/http';
 
 import { EXTENSIONS } from '../../constants/extensions.const';
+import { RequestService } from '../../services/request.service';
+import { LoaderService } from '../../services/layout/loader.service';
+
 
 @Component({
   selector: 'order',
@@ -14,12 +18,54 @@ export class OrderComponent implements OnInit {
   validationFileMessage: string;
   form: any;
   verificouCelular: boolean = false;
+  formData: FormData = new FormData();
+  @Input() isLoading: boolean;
+  completing: boolean;
 
-  constructor(private elementRef: ElementRef) { }
+  constructor(private elementRef: ElementRef, private requestService: RequestService, private loaderService: LoaderService) { }
 
   ngOnInit() {
     this.files = [];
     this.form = {};
+    this.form.tiposDeProjeto = [
+      {
+        nome: 'Selecione um projeto',
+        id: 0,
+        selecionado: true,
+      },
+      {
+        nome: 'Web API',
+        id: 1,
+        selecionado: false
+      },
+      {
+        nome: 'Interfaces de Usuário',
+        id: 2,
+        selecionado: false
+      },
+      {
+        nome: 'Single Page Application',
+        id: 3,
+        selecionado: false
+      },
+      {
+        nome: 'Portais Web',
+        id: 4,
+        selecionado: false
+      },
+      {
+        nome: 'Migração de Sistemas para .NET',
+        id: 5,
+        selecionado: false
+      },
+      {
+        nome: 'Banco de Dados',
+        id: 6,
+        selecionado: false
+      }
+    ];
+
+    this.form.anexos = [];
   }
 
   onClickAttachment(field) {
@@ -66,25 +112,43 @@ export class OrderComponent implements OnInit {
     }
   }
 
-  onKeyPress(event) {
-    return event.charCode >= 48 && event.charCode <= 57
+  onSelectTipoDeProjeto(event) {
+    debugger;
+    console.log(this.form.tiposDeProjeto.find(item => item.id == event.target.value).nome);
+    this.formData.append('tipoDeProjeto', this.form.tiposDeProjeto.find(item => item.id == event.target.value).nome);
   }
 
-  addPhoneMask() {
-    if (this.form.phone.length == 1)
-      this.form.phone = '(' + this.form.phone;
+  onSubmit() {
+    const thiss = this;
+    this.isLoading = this.loaderService.show();
+    this.completing = false; 
+    this.formData.append('solicitante', this.form.solicitante);
+    this.formData.append('email', this.form.email);
+    this.formData.append('observacoes', this.form.observacoes);
 
-    if (this.form.phone.length == 3)
-      this.form.phone = this.form.phone + ') ';
+    this.files.forEach(file => {
+      this.formData.append("file", file, file.name);
+    });
 
-    if (this.form.phone.includes('(21)') && this.form.phone[5] == '9' && !this.verificouCelular) {
-      this.form.phone = this.form.phone + ' ';
-      this.verificouCelular = true;
-    }
+    const headers = new HttpHeaders();
+    headers.append('Content-Type', 'multipart/form-data');
+    headers.append('Accept', 'application/json');
 
-    if (this.form.phone.length == 10)
-      this.form.phone = this.form.phone + '-';
+    this.requestService.post('/servicos/solicitacao', this.formData, { headers: headers })
+      .toPromise()
+      .then((response) => {
+        thiss.isLoading = thiss.loaderService.hide();
+        thiss.completing = true;
+        setTimeout(() => {
+          thiss.completing = false;
+          thiss.isLoading = false;
+        }, 1000);
+      }).catch(reason => {
+        console.log(reason);
+      });
   }
+
+
 
   inactive() {
     const orderForm = this.elementRef.nativeElement.querySelector('#order');

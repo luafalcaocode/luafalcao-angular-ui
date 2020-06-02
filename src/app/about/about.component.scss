@@ -14,7 +14,7 @@
   background-image: url("../../assets/backgrounds/kratos.jpg");
   background-size: cover;
   height: 700px;
-  @media (max-width: 1279px) {
+  @media (max-width: 1281px) {
     height: 717px;
   }
   color: var(--white);
@@ -27,7 +27,7 @@
     font-size: 52px;
     padding-left: 130px;
 
-    @media (max-width: 1279px) {
+    @media (max-width: 1024px) {
       padding-left: 25px !important;
       font-size: 37px;
     }
@@ -37,7 +37,7 @@
     font-size: 52px;
     padding-left: 130px;
 
-    @media only screen and (max-width: 1279px) {
+    @media only screen and (max-width: 1024px) {
       padding-left: 25px !important;
       font-size: 23px;
     }

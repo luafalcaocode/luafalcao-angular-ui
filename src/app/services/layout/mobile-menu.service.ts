@@ -16,7 +16,7 @@ export class MobileMenuService {
     const body = document.getElementsByTagName('body')[0];
 
     if (this.isNavMobileOpen) {
-      navMobile.style.right = '-785px';
+      navMobile.style.right = '-1200px';
       body.style.overflowY = 'auto';
 
       let hiddenCandidated = document.getElementsByClassName('hidden-candidated');

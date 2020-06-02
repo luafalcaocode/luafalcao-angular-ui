@@ -1,3 +1,6 @@
 export const environment = {
-  production: true
+  production: true,
+  endpoint: {
+    url: 'http://localhost:4000/api'
+  }
 };
