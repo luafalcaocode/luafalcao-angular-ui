@@ -121,7 +121,7 @@ export class OrderComponent implements OnInit {
   onSubmit() {
     const thiss = this;
     this.isLoading = this.loaderService.show();
-    this.completing = false; 
+    this.completing = false;
     this.formData.append('solicitante', this.form.solicitante);
     this.formData.append('email', this.form.email);
     this.formData.append('observacoes', this.form.observacoes);
@@ -136,19 +136,28 @@ export class OrderComponent implements OnInit {
 
     this.requestService.post('/servicos/solicitacao', this.formData, { headers: headers })
       .toPromise()
-      .then((response) => {
-        thiss.isLoading = thiss.loaderService.hide();
-        thiss.completing = true;
-        setTimeout(() => {
-          thiss.completing = false;
-          thiss.isLoading = false;
-        }, 1000);
-      }).catch(reason => {
-        console.log(reason);
-      });
+      .then((response: any) => {
+        if (response.success) {
+          this.files = [];
+          (<HTMLFormElement>document.getElementById('formOrderService')).reset();
+          this.selectedFiles = 0;
+        }
+          thiss.isLoading = thiss.loaderService.hide();
+          thiss.completing = true;
+          setTimeout(() => {
+            thiss.completing = false;
+            thiss.isLoading = false;
+          }, 1000);
+        }).catch(reason => {
+          thiss.isLoading = thiss.loaderService.hide();
+          thiss.completing = true;
+
+          setTimeout(() => {
+            thiss.completing = false;
+            thiss.isLoading = false;
+          }, 1000);
+        });
   }
-
-
 
   inactive() {
     const orderForm = this.elementRef.nativeElement.querySelector('#order');

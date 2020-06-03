@@ -8,18 +8,18 @@
             <i class="material-icons close-icon" (click)="inactive()">clear </i>
         </div>
     </div>
-    <form (ngSubmit)="onSubmit()">
+    <form (ngSubmit)="onSubmit()" id="formOrderService">
         <div class="row">
             <div class="col-lg-6">
 
                 <div class="form-group">
                     <label for="solicitante">Solicitante:</label>
-                    <input type="text" class="form-control" placeholder="Quem será o dono do produto?" name="solicitante" [(ngModel)]="this.form.solicitante" />
+                    <input type="text" class="form-control" placeholder="Quem será o dono do produto?" name="solicitante" [(ngModel)]="form.solicitante" />
                 </div>
 
                 <div class="form-group">
                     <label for="email">E-mail:</label>
-                    <input type="email" class="form-control" placeholder="Informe um endereço de e-mail" name="email" [(ngModel)]="this.form.email" />
+                    <input type="email" class="form-control" placeholder="Informe um endereço de e-mail" name="email" [(ngModel)]="form.email" />
                 </div>
 
             </div>
@@ -76,7 +76,7 @@
             <div class="col-lg-12">
                 <div class="form-group">
                     <label for="">Observações:</label>
-                    <textarea class="form-control" placeholder="Alguma observação que gostaria de fazer? Não se preocupe! Conversaremos mais futuramente!" name="observacoes" [(ngModel)]="this.form.observacoes"></textarea>
+                    <textarea class="form-control" placeholder="Alguma observação que gostaria de fazer? Não se preocupe! Conversaremos mais futuramente!" name="observacoes" [(ngModel)]="form.observacoes"></textarea>
                 </div>
             </div>
         </div>

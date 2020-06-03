@@ -1,6 +1,6 @@
 export const environment = {
   production: true,
   endpoint: {
-    url: 'http://localhost:4000/api'
+    url: 'https://d1d727637b2b.ngrok.io/api'
   }
 };
