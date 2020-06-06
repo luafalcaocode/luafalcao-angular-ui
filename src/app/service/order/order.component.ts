@@ -20,51 +20,21 @@ export class OrderComponent implements OnInit {
   verificouCelular: boolean = false;
   formData: FormData = new FormData();
   @Input() isLoading: boolean;
+  @Input() tiposDeProjeto;
   completing: boolean;
 
-  constructor(private elementRef: ElementRef, private requestService: RequestService, private loaderService: LoaderService) { }
+  constructor(private elementRef: ElementRef, private requestService: RequestService, private loaderService: LoaderService) {
+    this.form = {};
+   }
+
+  ngOnChanges() {
+    console.log('onCHanges');
+    this.form.tiposDeProjeto = this.tiposDeProjeto;
+  }
 
   ngOnInit() {
+    console.log('onInit');
     this.files = [];
-    this.form = {};
-    this.form.tiposDeProjeto = [
-      {
-        nome: 'Selecione um projeto',
-        id: 0,
-        selecionado: true,
-      },
-      {
-        nome: 'Web API',
-        id: 1,
-        selecionado: false
-      },
-      {
-        nome: 'Interfaces de Usuário',
-        id: 2,
-        selecionado: false
-      },
-      {
-        nome: 'Single Page Application',
-        id: 3,
-        selecionado: false
-      },
-      {
-        nome: 'Portais Web',
-        id: 4,
-        selecionado: false
-      },
-      {
-        nome: 'Migração de Sistemas para .NET',
-        id: 5,
-        selecionado: false
-      },
-      {
-        nome: 'Banco de Dados',
-        id: 6,
-        selecionado: false
-      }
-    ];
-
     this.form.anexos = [];
   }
 

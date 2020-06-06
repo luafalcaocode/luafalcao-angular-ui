@@ -22,6 +22,7 @@ export class ServiceComponent implements OnInit {
   backgroundMobileContainer: string = 'rgba(0, 0, 0, 0.9)';
   loading: any;
   active: boolean;
+  tiposDeProjeto: any[];
 
   constructor(public service: ServiceService, public commonService: CommonService, public loadingService: LoadingService, public router: ActivatedRoute, public elementRef: ElementRef) {
 
@@ -43,6 +44,7 @@ export class ServiceComponent implements OnInit {
       this.screen = param.screen;
       this.service.initializePage(this.screen);
       this.services = this.service.services;
+      this.tiposDeProjeto = this.service.tiposDeProjeto;
       this.counts = this.service.counts;
 
       if (this.component) {
@@ -54,13 +56,13 @@ export class ServiceComponent implements OnInit {
   }
 
   ngAfterViewInit() {
-   
-  } 
+
+  }
 
   onClickOrder() {
     const orderForm = this.elementRef.nativeElement.querySelector('#order');
     orderForm.style.top = '0';
 
-    document.getElementsByTagName('body')[0].style.overflowY = 'hidden'; 
+    document.getElementsByTagName('body')[0].style.overflowY = 'hidden';
   }
 }

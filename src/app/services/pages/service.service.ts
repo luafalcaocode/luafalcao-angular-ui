@@ -9,6 +9,7 @@ export class ServiceService {
   services: any[];
   counts: any[];
   reveal: any;
+  tiposDeProjeto: any[];
 
   constructor(public commonService: CommonService) { }
 
@@ -78,6 +79,43 @@ export class ServiceService {
           5,
           7
         ];
+        this.tiposDeProjeto = [
+          {
+            nome: 'Selecione um projeto',
+            id: 0,
+            selecionado: true,
+          },
+          {
+            nome: 'API',
+            id: 1,
+            selecionado: false,
+          },
+          {
+            nome: 'Interfaces de Usuário',
+            id: 2,
+            selecionado: false,
+          },
+          {
+            nome: 'SPA',
+            id: 3,
+            selecionado: false,
+          },
+          {
+            nome: 'Portais Web',
+            id: 4,
+            selecionado: false,
+          },
+          {
+            nome: 'Migração de Sistemas Para .NET',
+            id: 5,
+            selecionado: false,
+          },
+          {
+            nome: 'Projeto de Banco de Dados',
+            id: 6,
+            selecionado: false,
+          },
+        ];
         break;
       case 'para-a-comunidade':
         this.services = [
@@ -108,7 +146,29 @@ export class ServiceService {
               text: 'Disponibilidade para ajudar com projetos open-source cujo objetivo é construir soluções de valor para a comunidade sem fins lucrativos.'
             },
           }
-        ]
+        ];
+        this.tiposDeProjeto = [
+          {
+            nome: 'Selecione um projeto',
+            id: 0,
+            selecionado: true,
+          },
+          {
+            nome: 'Componentes ANGULAR',
+            id: 1,
+            selecionado: false,
+          },
+          {
+            nome: 'Artigos de TI',
+            id: 2,
+            selecionado: false,
+          },
+          {
+            nome: 'Projetos Open-Souce',
+            id: 3,
+            selecionado: false,
+          },
+        ];
         break;
     }
 
