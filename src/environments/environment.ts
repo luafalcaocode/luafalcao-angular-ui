@@ -6,7 +6,7 @@ export const environment = {
   production: false,
   endpoint: {
     //  url: 'https://localhost:9999/api'
-    url: 'https://d1d727637b2b.ngrok.io/api'
+    url: 'https://b8afdaeaaaa6.ngrok.io/api'
   }
 };
 

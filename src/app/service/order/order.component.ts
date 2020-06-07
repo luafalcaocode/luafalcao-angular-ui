@@ -22,6 +22,7 @@ export class OrderComponent implements OnInit {
   @Input() isLoading: boolean;
   @Input() tiposDeProjeto;
   completing: boolean;
+  enviandoDados: boolean = false;
 
   constructor(private elementRef: ElementRef, private requestService: RequestService, private loaderService: LoaderService) {
     this.form = {};
@@ -90,6 +91,7 @@ export class OrderComponent implements OnInit {
 
   onSubmit() {
     const thiss = this;
+    thiss.enviandoDados = true;
     this.isLoading = this.loaderService.show();
     this.completing = false;
     this.formData.append('solicitante', this.form.solicitante);
@@ -109,7 +111,9 @@ export class OrderComponent implements OnInit {
       .then((response: any) => {
         if (response.success) {
           this.files = [];
+          this.enviandoDados = false;
           (<HTMLFormElement>document.getElementById('formOrderService')).reset();
+          this.formData = new FormData();
           this.selectedFiles = 0;
         }
           thiss.isLoading = thiss.loaderService.hide();
@@ -117,7 +121,7 @@ export class OrderComponent implements OnInit {
           setTimeout(() => {
             thiss.completing = false;
             thiss.isLoading = false;
-          }, 1000);
+          }, 3000);
         }).catch(reason => {
           thiss.isLoading = thiss.loaderService.hide();
           thiss.completing = true;

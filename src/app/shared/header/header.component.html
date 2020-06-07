@@ -9,7 +9,9 @@
           <li (mouseleave)="hideMenu('menuProjetos')" class="item-menu-principal u-hidden">
             <a routerLink="" (mouseenter)="showMenu('menuProjetos')"
               [className]="isMenuProjectsOpen ? 'active-menu' : 'inative-menu'">Projetos
-              <span class="glyphicon glyphicon-menu-down"></span>
+              <span class="material-icons">
+                keyboard_arrow_down
+                </span>
             </a>
             <app-menu [menu]="menuProjetos" class="fadeOut" id="menuProjetos" (mouseenter)="showMenu('menuProjetos')"
               (mouseleave)="hideMenu('menuProjetos')" (selectItem)="onSelectItem($event)"></app-menu>
@@ -17,7 +19,9 @@
           <li (mouseleave)="hideMenu('menuServicos')" class="item-menu-principal">
             <a routerLink="" (mouseenter)="showMenu('menuServicos')"
               [className]="isMenuServicesOpen ? 'active-menu' : 'inative-menu'">Serviços
-              <span class="glyphicon glyphicon-menu-down"></span>
+              <span class="material-icons">
+                keyboard_arrow_down
+                </span>
             </a>
             <app-menu [menu]="menuServicos" class="fadeOut" id="menuServicos" (mouseenter)="showMenu('menuServicos')"
               (mouseleave)="hideMenu('menuServicos')"  (selectItem)="onSelectItem($event)"></app-menu>
@@ -25,7 +29,9 @@
           <li (mouseleave)="hideMenu('menuBlogs')" class="item-menu-principal u-hidden">
             <a routerLink="" (mouseenter)="showMenu('menuBlogs')"
               [className]="isMenuBlogsOpen ? 'active-menu' : 'inative-menu'">Blogs
-              <span class="glyphicon glyphicon-menu-down"></span>
+              <span class="material-icons">
+                keyboard_arrow_down
+                </span>
             </a>
             <app-menu [menu]="menuBlogs" class="fadeOut" id="menuBlogs" (mouseenter)="showMenu('menuBlogs')"
               (mouseleave)="hideMenu('menuBlogs')" (selectItem)="onSelectItem($event)"></app-menu>
@@ -43,25 +49,25 @@
         <i class="material-icons header-icon" (click)="openContainer()"  id="pesquisar">
           search
         </i>
-        
+
         <!-- Canal do YouTube -->
-        <i class="material-icons header-icon u-hide" 
+        <i class="material-icons header-icon u-hide"
           id="youTube">
           play_circle_outline
         </i>
-       
+
         <!-- Seleção de Idiomas -->
         <i class="material-icons header-icon u-hide"
           id="idiomas">language</i>
-       
+
         <!-- Login-->
         <a class="login" (click)="showLoginModal()" *ngIf="!loginService.isLogged()"
           [hidden]="!isUserIconsVisibile">Login</a>
         <a [className]="isMenuLoggedOpen ? 'active-menu' : 'inative-menu'" class="login u-border-none"
-          *ngIf="loginService.isLogged()" 
+          *ngIf="loginService.isLogged()"
           (click)="showLoggedMenu()" id="usuario"><i class="material-icons user" *ngIf="loginService.isLogged()" [class.active-white]="loginService.isLogged()"> person
           </i></a>
-       
+
         <a class="all-articles-icon" [hidden]="isUserIconsVisibile" (click)="toogleArticlesMenu()">
           <span [class.btn-article-active]="menuService.isArticleMenuVisible">ver mais artigos</span>
         </a>

@@ -222,3 +222,17 @@ a:hover {
         position: static;
     }
 }
+
+.descricao-upload {
+  vertical-align: 3px;
+}
+
+.blocked {
+  pointer-events: none;
+}
+
+input[disabled]{
+  cursor: not-allowed !important;
+}
+
+

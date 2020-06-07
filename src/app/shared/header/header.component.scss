@@ -33,7 +33,7 @@ header {
 
     ul {
       list-style-type: none;
-      margin-top: 4px;
+      // margin-top: 4px;
 
       li {
         display: inline;
@@ -49,8 +49,9 @@ header {
           transition: 0.25s ease-out;
           text-decoration: none;
 
-          .glyphicon {
-            font-size: 10px;
+          .material-icons {
+            font-size: 21px;
+            vertical-align: -6px;
           }
         }
         a:hover {
@@ -164,13 +165,13 @@ header {
     .nav-mobile-items {
       //background: transparent;
       width: 100%;
-      
+
 
       @media only screen and (orientation: landscape) {
         width: 100%;
-       
+
       }
-    
+
       position: fixed;
       right: -1200px;
       z-index: 4;
