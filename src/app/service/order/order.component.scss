@@ -212,7 +212,7 @@ a:hover {
     left: 230px;
 
     span {
-        color: red;
+        color: var(--red);
     }
 
     @media (max-width: 767px) {
@@ -233,6 +233,16 @@ a:hover {
 
 input[disabled]{
   cursor: not-allowed !important;
+}
+
+.not-validated {
+  border: solid 1px var(--red) !important;
+  transition: .4s;
+}
+
+.not-validated::placeholder {
+  color: var(--red) !important;
+  transition:.4s;
 }
 
 
