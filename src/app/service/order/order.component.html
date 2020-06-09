@@ -60,8 +60,6 @@
             <div class="col-lg-4">
               <span class="u-no-click attachments-qtd">({{ selectedFiles }} anexos
                 selecionados)</span>
-
-              <!-- <span class="remove-file-container"><i class="far fa-trash-alt remove-file-icon"></i></span> -->
             </div>
           </div>
           <div class="row validation-file-container"
@@ -94,7 +92,7 @@
 
     <div class=" row">
       <div class="col-xs-12 u-center">
-        <button class="btn" [disabled]="enviandoDados">
+        <button class="btn" [disabled]="btnSendDisabled">
           <span *ngIf="!isLoading && !completing">enviar</span>
           <app-mini-loading *ngIf="isLoading && !completing"></app-mini-loading>
           <span *ngIf="(files.length > 0) && (isLoading && !completing)" class="descricao-upload">Fazendo upload dos
