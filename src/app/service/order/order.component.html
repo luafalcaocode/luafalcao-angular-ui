@@ -92,7 +92,7 @@
 
     <div class=" row">
       <div class="col-xs-12 u-center">
-        <button class="btn" [disabled]="btnSendDisabled">
+        <button class="btn" [disabled]="enviandoDados">
           <span *ngIf="!isLoading && !completing">enviar</span>
           <app-mini-loading *ngIf="isLoading && !completing"></app-mini-loading>
           <span *ngIf="(files.length > 0) && (isLoading && !completing)" class="descricao-upload">Fazendo upload dos

@@ -48,6 +48,9 @@ export class OrderComponent implements OnInit {
   }
 
   onSelectedFiles(field) {
+    this.invalid.clear();
+
+    this.validationFileMessage = '';
 
     for (let prop in field.files) {
       if (field.files[prop].size) {
@@ -56,10 +59,6 @@ export class OrderComponent implements OnInit {
           this.files.push(field.files[prop]);
           this.selectedFiles = this.files.length;
           this.btnSendDisabled = true;
-          // habilitar o botão enviar quando o formulário estiver válido
-          // adicionar as css no campo de seleção
-          // melhorar o efeito de ocultar a validação do anexo e add transição nos demais
-
         }
         catch (err) {
           this.validatedAttachments = true;
@@ -67,11 +66,13 @@ export class OrderComponent implements OnInit {
           if (!this.validationFileMessage.includes(err.message)) {
             this.validationFileMessage = `${err.message} ${err.dynamicText}`;
           }
-          else if (!this.validationFileMessage.includes(err.dynamicText)){
+          else if (!this.validationFileMessage.includes(err.dynamicText)) {
             if (+prop == field.files.length - 1) {
-              this.validationFileMessage += `e ${err.dynamicText}.`;
+              this.validationFileMessage += ` e ${err.dynamicText}.`;
             }
-            this.validationFileMessage += `, ${err.dynamicText}`
+            else {
+              this.validationFileMessage += `, ${err.dynamicText}`
+            }
           }
 
         }
@@ -88,6 +89,11 @@ export class OrderComponent implements OnInit {
         this.files.splice(index, 1);
       this.selectedFiles = this.files.length;
     });
+
+
+    if (this.selectedFiles == 0) {
+      this.validationFileMessage = '';
+    }
   }
 
   onSelectTipoDeProjeto(event) {
@@ -110,7 +116,7 @@ export class OrderComponent implements OnInit {
       thiss.validateForm();
       this.validation = '';
       this.enviandoDados = true;
-      thiss.btnSendDisabled = true;
+      // thiss.btnSendDisabled = true;
       this.isLoading = this.loaderService.show();
       this.completing = false;
 
@@ -131,7 +137,7 @@ export class OrderComponent implements OnInit {
         .then((response: any) => {
           if (response.success) {
             thiss.files = [];
-            thiss.btnSendDisabled = false;
+            // thiss.btnSendDisabled = false;
             this.enviandoDados = false;
             (<HTMLFormElement>document.getElementById('formOrderService')).reset();
             thiss.formData = new FormData();
@@ -167,6 +173,8 @@ export class OrderComponent implements OnInit {
   }
 
   validateForm() {
+    this.invalid.clear();
+
     if (!this.form.solicitante)
       this.invalid.set('solicitante', true);
     else
@@ -201,39 +209,47 @@ export class OrderComponent implements OnInit {
     let extension = name.lastIndexOf('.');
     let extension_name = name.substring(extension).toLowerCase();
 
-    if (EXTENSIONS.includes(extension_name)) {
-      this.invalid.set(name, true);
-      typeOfValidation = 'extension_file'
-    }
-    else {
-      this.invalid.set(name, false);
-    }
-
-    for (const prop in this.files) {
-      if (this.files[prop].name.includes(name)) {
+    let exists = this.invalid.get(name);
+    if (!exists) {
+      if (EXTENSIONS.includes(extension_name)) {
         this.invalid.set(name, true);
-        typeOfValidation = 'duplicated_file'
+        typeOfValidation = 'extension_file'
       }
       else {
         this.invalid.set(name, false);
       }
-    }
 
-    this.invalid.forEach((key, value) => {
-      if (value) {
-        switch(typeOfValidation) {
-          case 'extension_file':
-            throw { error_type: 'extension_file', message: 'não é possível fazer upload de arquivos com a extensão ', dynamicText: extension_name };
-          case 'duplicated_file':
-            throw { error_type: 'duplicated_file', message: `já foi inserido um anexo com o nome `, dynamicText: name };
+      for (const prop in this.files) {
+        if (this.files[prop].name.includes(name)) {
+          this.invalid.set(name, true);
+          typeOfValidation = 'duplicated_file'
+        }
+        else {
+          this.invalid.set(name, false);
         }
       }
-    });
+
+      this.invalid.forEach((key, value) => {
+        if (value) {
+          switch (typeOfValidation) {
+            case 'extension_file':
+              throw { error_type: 'extension_file', message: 'não é possível fazer upload de arquivos com a extensão ', dynamicText: extension_name };
+            case 'duplicated_file':
+              throw { error_type: 'duplicated_file', message: `já foi inserido um anexo com o nome `, dynamicText: name };
+          }
+        }
+      });
+    }
   }
 
   validateField(chave: string) {
     if (chave)
       this.invalid.set(chave, false);
+
+    if (this.validation) {
+      this.validateForm();
+      this.validation = '';
+    }
   }
 
   showValidationFileMessage() {
