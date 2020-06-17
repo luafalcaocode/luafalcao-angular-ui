@@ -60,9 +60,19 @@ export class ServiceComponent implements OnInit {
   }
 
   onClickOrder() {
+    const cogs = this.elementRef.nativeElement.querySelectorAll('.fa-cog');
+    for(const prop in cogs) {
+      try {
+        cogs[prop].style.animationDuration = '2s';
+      }
+      catch(err) {
+        console.log(err);
+      }
+    }
+
     const orderForm = this.elementRef.nativeElement.querySelector('#order');
     orderForm.style.top = '0';
-
     document.getElementsByTagName('body')[0].style.overflowY = 'hidden';
+
   }
 }

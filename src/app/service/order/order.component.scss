@@ -244,6 +244,10 @@ input[disabled]{
   transition: .4s;
 }
 
+select.not-validated {
+  color: var(--red) !important;
+}
+
 .not-validated::placeholder {
   color: var(--red) !important;
   transition:.4s;

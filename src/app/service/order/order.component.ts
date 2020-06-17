@@ -41,6 +41,7 @@ export class OrderComponent implements OnInit {
     console.log('onInit');
     this.files = [];
     this.form.anexos = [];
+    this.formWasSubmittedOnce = false;
   }
 
   onClickAttachment(field) {
@@ -109,14 +110,17 @@ export class OrderComponent implements OnInit {
       this.form.tiposDeProjeto[0].selecionado = true;
     }
 
-    this.validateForm();
+    if (this.formWasSubmittedOnce) {
+      this.validateForm();
+    }
   }
 
   onSubmit() {
     const thiss = this;
+    const isValid = this.validateForm();
 
     this.formWasSubmittedOnce = true;
-    const isValid = this.validateForm();
+
     if (isValid) {
       this.validation = '';
       this.enviandoDados = true;
@@ -145,6 +149,7 @@ export class OrderComponent implements OnInit {
           setTimeout(() => {
             thiss.completing = false;
             thiss.isLoading = false;
+            thiss.inactive();
           }, 3000);
         }).catch(reason => {
           thiss.resetForm();
@@ -169,11 +174,14 @@ export class OrderComponent implements OnInit {
   }
 
   inactive() {
+
     const orderForm = this.elementRef.nativeElement.querySelector('#order');
     orderForm.style.top = '800px';
+
     setTimeout(() => {
       document.getElementsByTagName('body')[0].style.overflowY = 'auto';
     }, 400);
+
   }
 
   validateForm(): boolean {
