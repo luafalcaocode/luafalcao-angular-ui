@@ -14,14 +14,14 @@
 
         <div class="form-group">
           <label for="solicitante">Solicitante:</label>
-          <input (input)="validateField('solicitante')" [class.not-validated]="invalid.get('solicitante')" [disabled]="enviandoDados" type="text"
+          <input (input)="validateField()" [class.not-validated]="invalid.get('solicitante')" [disabled]="enviandoDados" type="text"
             class="form-control" placeholder="Quem será o dono do produto?" name="solicitante"
             [(ngModel)]="form.solicitante" />
         </div>
 
         <div class="form-group">
           <label for="email">E-mail:</label>
-          <input (input)="validateField('email')" [class.not-validated]="invalid.get('email')" [disabled]="enviandoDados" type="email"
+          <input (input)="validateField()" [class.not-validated]="invalid.get('email')" [disabled]="enviandoDados" type="text" maxlength="25"
             class="form-control" placeholder="Informe um endereço de e-mail" name="email" [(ngModel)]="form.email" />
         </div>
 
@@ -83,7 +83,7 @@
       <div class="col-lg-12">
         <div class="form-group">
           <label for="">Observações:</label>
-          <textarea (input)="validateField('observacoes')" [class.not-validated]="invalid.get('observacoes')" [disabled]="enviandoDados" class="form-control"
+          <textarea [disabled]="enviandoDados" class="form-control"
             placeholder="Alguma observação que gostaria de fazer? Não se preocupe! Conversaremos mais futuramente!"
             name="observacoes" [(ngModel)]="form.observacoes"></textarea>
         </div>

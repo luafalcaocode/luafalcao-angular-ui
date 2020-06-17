@@ -52,6 +52,10 @@
         select:focus {
             border-color: var(--green);
         }
+        select * {
+          background: var(--niceGreen) !important;
+          font-size: 14px;
+        }
 
         textarea {
             height: 230px;
@@ -245,5 +249,3 @@ input[disabled]{
   transition:.4s;
 }
 
-// verificar pq a classe não está adicionando borda no campo no firebase
-// ajustar o layout da tabela de e-mail

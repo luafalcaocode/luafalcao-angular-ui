@@ -27,13 +27,13 @@ export class OrderComponent implements OnInit {
   completing: boolean;
   btnSendDisabled: boolean = false;
   enviandoDados: boolean = false;
+  formWasSubmittedOnce: boolean;
 
   constructor(private elementRef: ElementRef, private requestService: RequestService, private loaderService: LoaderService) {
     this.form = {};
   }
 
   ngOnChanges() {
-    console.log('onCHanges');
     this.form.tiposDeProjeto = this.tiposDeProjeto;
   }
 
@@ -78,9 +78,6 @@ export class OrderComponent implements OnInit {
         }
       }
     }
-
-    //field.value = '';
-
   }
 
   onClickRemoveFile(name) {
@@ -97,26 +94,32 @@ export class OrderComponent implements OnInit {
   }
 
   onSelectTipoDeProjeto(event) {
-    const itemSelecionado = this.form.tiposDeProjeto.find(item => item.id == event.target.value);
-    itemSelecionado.selecionado = true;
-    this.invalid.set('tiposDeProjeto', false);
-    this.form.tiposDeProjeto.forEach(item => {
-      if (item.id != itemSelecionado.id) {
-        item.selecionado = false;
-      }
-    });
+    const selecionado = this.form.tiposDeProjeto.find(item => item.id == event.target.value);
 
-    this.formData.append('tipoDeProjeto', itemSelecionado.nome);
+    if (selecionado.id != 0) { // != de selecione um projeto
+      this.form.tiposDeProjeto[0].selecionado = false;
+      this.form.tiposDeProjeto.forEach(item => {
+        if (item.id == selecionado.id) {
+          item.selecionado = true;
+          this.formData.append('tipoDeProjeto', selecionado.nome);
+        }
+      });
+    }
+    else {
+      this.form.tiposDeProjeto[0].selecionado = true;
+    }
+
+    this.validateForm();
   }
 
   onSubmit() {
     const thiss = this;
 
-    try {
-      thiss.validateForm();
+    this.formWasSubmittedOnce = true;
+    const isValid = this.validateForm();
+    if (isValid) {
       this.validation = '';
       this.enviandoDados = true;
-      // thiss.btnSendDisabled = true;
       this.isLoading = this.loaderService.show();
       this.completing = false;
 
@@ -136,32 +139,33 @@ export class OrderComponent implements OnInit {
         .toPromise()
         .then((response: any) => {
           if (response.success) {
-            thiss.files = [];
-            // thiss.btnSendDisabled = false;
-            this.enviandoDados = false;
-            (<HTMLFormElement>document.getElementById('formOrderService')).reset();
-            thiss.formData = new FormData();
-            thiss.selectedFiles = 0;
+            thiss.resetForm();
           }
           thiss.isLoading = thiss.loaderService.hide();
-          thiss.completing = true;
           setTimeout(() => {
             thiss.completing = false;
             thiss.isLoading = false;
           }, 3000);
         }).catch(reason => {
-          thiss.isLoading = thiss.loaderService.hide();
-          thiss.completing = true;
-
+          thiss.resetForm();
           setTimeout(() => {
             thiss.completing = false;
             thiss.isLoading = false;
           }, 1000);
         });
     }
-    catch (err) {
-      this.validation = err;
+    else {
+      this.btnSendDisabled = true;
     }
+  }
+
+  resetForm() {
+    this.formData = new FormData();
+    this.files = [];
+    this.enviandoDados = false;
+    this.selectedFiles = 0;
+    this.completing = true;
+    (<HTMLFormElement>document.getElementById('formOrderService')).reset();
   }
 
   inactive() {
@@ -172,36 +176,50 @@ export class OrderComponent implements OnInit {
     }, 400);
   }
 
-  validateForm() {
+  validateForm(): boolean {
+    const regExpEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     this.invalid.clear();
 
-    if (!this.form.solicitante)
-      this.invalid.set('solicitante', true);
-    else
-      this.invalid.set('solicitante', false);
+    try {
+      if (!this.form.solicitante)
+        this.invalid.set('solicitante', true);
+      else
+        this.invalid.set('solicitante', false);
 
-    if (!this.form.email)
-      this.invalid.set('email', true);
-    else
-      this.invalid.set('email', false);
-
-    if (!this.form.observacoes)
-      this.invalid.set('observacoes', true);
-    else
-      this.invalid.set('observacoes', false);
-
-    const selecionado = this.form.tiposDeProjeto.find(item => item.selecionado).id;
-    if (selecionado == 0)
-      this.invalid.set('tiposDeProjeto', true);
-    else
-      this.invalid.set('tiposDeProjeto', false);
-
-    this.invalid.forEach((key, value) => {
-      if (key) {
-        this.btnSendDisabled = true;
-        throw 'Por favor, preencha os campos em vermelho.';
+      if (!this.form.email || !this.form.email.match(regExpEmail)) {
+        this.invalid.set('email', true);
       }
-    });
+      else {
+        this.invalid.set('email', false);
+      }
+
+      const selecionado = this.form.tiposDeProjeto.find(item => item.selecionado).id;
+      if (selecionado == 0)
+        this.invalid.set('tiposDeProjeto', true);
+      else
+        this.invalid.set('tiposDeProjeto', false);
+
+      this.invalid.forEach((value, key) => {
+        if (value) {
+          throw 'Por favor, preencha os campos em vermelho corretamente.';
+        }
+      });
+
+      this.validation = '';
+
+      return true;
+    }
+    catch (err) {
+      this.validation = err;
+
+      return false;
+    }
+  }
+
+  validateField() {
+    if (this.formWasSubmittedOnce) {
+      this.validateForm();
+    }
   }
 
   validateAttachments(name: any) {
@@ -242,15 +260,6 @@ export class OrderComponent implements OnInit {
     }
   }
 
-  validateField(chave: string) {
-    if (chave)
-      this.invalid.set(chave, false);
-
-    if (this.validation) {
-      this.validateForm();
-      this.validation = '';
-    }
-  }
 
   showValidationFileMessage() {
     return (this.invalid.get('duplicated_file') || this.invalid.get('extension_file'));
