@@ -97,8 +97,8 @@
           <app-mini-loading *ngIf="isLoading && !completing"></app-mini-loading>
           <span *ngIf="(files.length > 0) && (isLoading && !completing)" class="descricao-upload">Fazendo upload dos
             arquivos...</span>
-          <span *ngIf="!isLoading && completing"><span>solicitação de serviço enviada </span> &nbsp; <i
-              class="fas fa-check"></i></span>
+          <span *ngIf="!isLoading && completing"><span> {{ message_status_request }} </span> &nbsp; <i
+              class="fas" [ngClass]="{ 'fa-check' : code_status_request != 500, 'fa-exclamation-triangle' : code_status_request == 500 }"></i></span>
         </button>
       </div>
     </div>

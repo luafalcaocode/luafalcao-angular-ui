@@ -28,6 +28,8 @@ export class OrderComponent implements OnInit {
   btnSendDisabled: boolean = false;
   enviandoDados: boolean = false;
   formWasSubmittedOnce: boolean;
+  message_status_request: string;
+  code_status_request: number;
 
   constructor(private elementRef: ElementRef, private requestService: RequestService, private loaderService: LoaderService) {
     this.form = {};
@@ -42,6 +44,11 @@ export class OrderComponent implements OnInit {
     this.files = [];
     this.form.anexos = [];
     this.formWasSubmittedOnce = false;
+
+    this.form.solicitante = '';
+    this.form.email  = '';
+    this.form.tipoDeProjeto = '';
+    this.form.observacoes = '';
   }
 
   onClickAttachment(field) {
@@ -143,20 +150,23 @@ export class OrderComponent implements OnInit {
         .toPromise()
         .then((response: any) => {
           if (response.success) {
-            thiss.resetForm();
+            thiss.resetForm(true);
+            this.message_status_request = 'solicitação de serviço enviada'
+            this.code_status_request = 200;
           }
           thiss.isLoading = thiss.loaderService.hide();
           setTimeout(() => {
-            thiss.completing = false;
             thiss.isLoading = false;
+            thiss.completing = false;
             thiss.inactive();
           }, 3000);
         }).catch(reason => {
-          thiss.resetForm();
           setTimeout(() => {
-            thiss.completing = false;
             thiss.isLoading = false;
-          }, 1000);
+            this.resetForm(false);
+            this.code_status_request = 500;
+            this.message_status_request = 'ops! ocorreu um erro'
+          }, 3000);
         });
     }
     else {
@@ -164,13 +174,20 @@ export class OrderComponent implements OnInit {
     }
   }
 
-  resetForm() {
-    this.formData = new FormData();
+  resetForm(flagClearFields?: boolean) {
+
+    if (flagClearFields) {
+      (<HTMLFormElement>document.getElementById('formOrderService')).reset();
+      this.formData = new FormData();
+    }
+
+
     this.files = [];
     this.enviandoDados = false;
     this.selectedFiles = 0;
     this.completing = true;
-    (<HTMLFormElement>document.getElementById('formOrderService')).reset();
+
+
   }
 
   inactive() {

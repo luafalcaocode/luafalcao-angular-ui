@@ -11,5 +11,8 @@ export const EXTENSIONS: string[] = [
     '.zip',
     '.msi',
     '.tar.gz',
-    '.deb'
+    '.deb',
+    '.dll',
+    '.config',
+    '.pug'
 ];
