@@ -5,8 +5,8 @@
 export const environment = {
   production: false,
   endpoint: {
-   // url: 'http://localhost:8093/api'
-   url: 'https://localhost:8094/api'
+    url: 'http://localhost:5515/api'
+  // url: 'https://localhost:8094/api'
   }
 };
 

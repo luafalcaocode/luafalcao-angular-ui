@@ -13,23 +13,28 @@ import { LoaderService } from '../../services/layout/loader.service';
 })
 export class OrderComponent implements OnInit {
 
-  files: File[];
-  selectedFiles: number = 0;
-  validationFileMessage: string = '';
-  validatedAttachments: boolean;
-  validation: string;
-  invalid: Map<string, boolean> = new Map<string, boolean>();
-  form: any;
-  verificouCelular: boolean = false;
-  formData: FormData = new FormData();
   @Input() isLoading: boolean;
   @Input() tiposDeProjeto;
+
+  files: File[];
+  formData: FormData = new FormData();
+  invalid: Map<string, boolean> = new Map<string, boolean>();
+
+  selectedFiles: number = 0;
+  code_status_request: number;
+
+  validationFileMessage: string = '';
+  validation: string = '';
+  message_status_request: string = '';
+
+  form: any;
+
+  validatedAttachments: boolean;
+  verificouCelular: boolean = false;
   completing: boolean;
   btnSendDisabled: boolean = false;
   enviandoDados: boolean = false;
   formWasSubmittedOnce: boolean;
-  message_status_request: string;
-  code_status_request: number;
 
   constructor(private elementRef: ElementRef, private requestService: RequestService, private loaderService: LoaderService) {
     this.form = {};
@@ -40,14 +45,14 @@ export class OrderComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log('onInit');
     this.files = [];
     this.form.anexos = [];
-    this.formWasSubmittedOnce = false;
 
-    this.form.solicitante = '';
-    this.form.email  = '';
+    this.formWasSubmittedOnce = false;
     this.form.tipoDeProjeto = '';
+    this.form.solicitante = '';
+    this.form.email = '';
+
     this.form.observacoes = '';
   }
 
@@ -71,6 +76,7 @@ export class OrderComponent implements OnInit {
         catch (err) {
           this.validatedAttachments = true;
           this.btnSendDisabled = true;
+
           if (!this.validationFileMessage.includes(err.message)) {
             this.validationFileMessage = `${err.message} ${err.dynamicText}`;
           }
@@ -82,7 +88,6 @@ export class OrderComponent implements OnInit {
               this.validationFileMessage += `, ${err.dynamicText}`
             }
           }
-
         }
       }
     }
@@ -95,13 +100,13 @@ export class OrderComponent implements OnInit {
       this.selectedFiles = this.files.length;
     });
 
-
     if (this.selectedFiles == 0) {
       this.validationFileMessage = '';
     }
   }
 
   onSelectTipoDeProjeto(event) {
+    debugger;
     const selecionado = this.form.tiposDeProjeto.find(item => item.id == event.target.value);
 
     if (selecionado.id != 0) { // != de selecione um projeto
@@ -125,6 +130,7 @@ export class OrderComponent implements OnInit {
   onSubmit() {
     const thiss = this;
     const isValid = this.validateForm();
+    const headers = new HttpHeaders();
 
     this.formWasSubmittedOnce = true;
 
@@ -137,12 +143,10 @@ export class OrderComponent implements OnInit {
       this.formData.append('solicitante', this.form.solicitante);
       this.formData.append('email', this.form.email);
       this.formData.append('observacoes', this.form.observacoes);
-
       this.files.forEach(file => {
         this.formData.append("file", file, file.name);
       });
 
-      const headers = new HttpHeaders();
       headers.append('Content-Type', 'multipart/form-data');
       headers.append('Accept', 'application/json');
 
@@ -175,30 +179,24 @@ export class OrderComponent implements OnInit {
   }
 
   resetForm(flagClearFields?: boolean) {
-
     if (flagClearFields) {
       (<HTMLFormElement>document.getElementById('formOrderService')).reset();
       this.formData = new FormData();
     }
 
-
     this.files = [];
     this.enviandoDados = false;
     this.selectedFiles = 0;
     this.completing = true;
-
-
   }
 
   inactive() {
-
     const orderForm = this.elementRef.nativeElement.querySelector('#order');
     orderForm.style.top = '800px';
 
     setTimeout(() => {
       document.getElementsByTagName('body')[0].style.overflowY = 'auto';
     }, 400);
-
   }
 
   validateForm(): boolean {
@@ -231,12 +229,10 @@ export class OrderComponent implements OnInit {
       });
 
       this.validation = '';
-
       return true;
     }
     catch (err) {
       this.validation = err;
-
       return false;
     }
   }
@@ -251,8 +247,8 @@ export class OrderComponent implements OnInit {
     let typeOfValidation: string;
     let extension = name.lastIndexOf('.');
     let extension_name = name.substring(extension).toLowerCase();
-
     let exists = this.invalid.get(name);
+
     if (!exists) {
       if (EXTENSIONS.includes(extension_name)) {
         this.invalid.set(name, true);
