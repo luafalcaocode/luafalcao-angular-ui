@@ -182,9 +182,9 @@ export class OrderComponent implements OnInit {
     if (flagClearFields) {
       (<HTMLFormElement>document.getElementById('formOrderService')).reset();
       this.formData = new FormData();
+      this.files = [];
     }
 
-    this.files = [];
     this.enviandoDados = false;
     this.selectedFiles = 0;
     this.completing = true;
