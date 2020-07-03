@@ -155,7 +155,7 @@ export class ServiceService {
             selecionado: true,
           },
           {
-            nome: 'Componentes ANGULAR',
+            nome: 'Realização de Workshopss',
             id: 1,
             selecionado: false,
           },

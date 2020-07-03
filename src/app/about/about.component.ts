@@ -23,8 +23,9 @@ export class AboutComponent implements OnInit {
     ' '
   ];
   animating: boolean = true;
+  backgroundHeader: string = 'black';
   backgroundMobile: string = 'black';
-  backgroundMobileContainer: string = 'rgba(0,0,0,0.8)';
+  backgroundMobileContainer: string = 'rgba(0, 0, 0, 0.9)';
   loading: any;
 
   timelines: TimelineViewModel[] = [
@@ -75,6 +76,7 @@ export class AboutComponent implements OnInit {
   constructor(public commonService: CommonService, public loadingService: LoadingService, public elementRef: ElementRef) { }
 
   ngOnInit() {
+    (<HTMLInputElement>document.getElementById('navDesktop')).style.backgroundColor = 'transparent';
     this.loading = this.elementRef.nativeElement.querySelector('.page-loading');
     this.commonService.initializePage();
     this.write();

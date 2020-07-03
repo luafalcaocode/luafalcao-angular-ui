@@ -1,39 +1,38 @@
-<app-header [backgroundColorMobile]="backgroundMobile" [backgroundMobileContainer]="backgroundMobileContainer"></app-header>
 <div class="render-body-area" (scroll)="onScroll($event)">
-    <section class="personal-title">
-        <h1><span>Luã Falcão</span> </h1>
-        <h2>
-            <writer [color]='colorWriter' [titulos]="titulos" [fontSize]="h1Size" align="left"></writer>
-        </h2>
-        <div class="row">
-            <div class="col-xs-12 u-center">
-                <span class="material-icons anima-upAndDown u-pointer u-inline" (click)="scrollInto('timeLineSection')">
-                    keyboard_arrow_down
-                </span>
-            </div>
-        </div>
-    </section>
-    <section id="timeLineSection" class="timeline-container">
-        <h1>linha do tempo da minha carreira</h1>
+  <section class="personal-title">
+    <h1><span>Luã Falcão</span> </h1>
+    <h2>
+      <writer [color]='colorWriter' [titulos]="titulos" [fontSize]="h1Size" align="left"></writer>
+    </h2>
+    <div class="row">
+      <div class="col-xs-12 u-center">
+        <span class="material-icons anima-upAndDown u-pointer u-inline" (click)="scrollInto('timeLineSection')">
+          keyboard_arrow_down
+        </span>
+      </div>
+    </div>
+  </section>
+  <section id="timeLineSection" class="timeline-container">
+    <h1>linha do tempo da minha carreira</h1>
 
-        <div class="row timeline-style-ui hide-on-small-only ">
-            <div class="col-xs-12 col-lg-4 nice-border"></div>
-            <div class="col-xs-12 col-lg-4 u-center nice-text-ui"></div>
-            <div class="col-xs-12 col-lg-4 nice-border"></div>
-        </div>
+    <div class="row timeline-style-ui hide-on-small-only ">
+      <div class="col-xs-12 col-lg-4 nice-border"></div>
+      <div class="col-xs-12 col-lg-4 u-center nice-text-ui"></div>
+      <div class="col-xs-12 col-lg-4 nice-border"></div>
+    </div>
 
-        <ul id="timelineList">
-            <li *ngFor="let timeline of timelines">
-                <timeline [timeline]="timeline"></timeline>
-            </li>
-        </ul>
+    <ul id="timelineList">
+      <li *ngFor="let timeline of timelines">
+        <timeline [timeline]="timeline"></timeline>
+      </li>
+    </ul>
 
-        <div class="row">
-            <div class="col-xs-12 u-center download-container">
-                <a href="../../assets/pdf/Luã Falcão - Resume.pdf" download class="btn btn-download">ver currículo</a>
-            </div>
-        </div>
-    </section>
+    <div class="row">
+      <div class="col-xs-12 u-center download-container">
+        <a href="../../assets/pdf/Luã Falcão - Resume.pdf" download class="btn btn-download">ver currículo</a>
+      </div>
+    </div>
+  </section>
 
 </div>
 <app-footer [backgroundColor]="footerBackgroundColor"></app-footer>

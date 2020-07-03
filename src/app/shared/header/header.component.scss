@@ -6,29 +6,27 @@ $colors: (
   navbar-search-background: #1e1e23,
   navbar-search-border: #535659,
   _green: #00bc6e,
-  _dark: #232326
+  _dark: #232326,
 );
 
 header {
   position: relative;
-  top: 0;
+  top: 0px;
   width: 100%;
   left: 0;
   z-index: 9000;
 
-  @media screen and (max-width: 1279px) {
-    height: auto !important;
-  }
-
   nav {
     height: 80px;
-    // background: transparent;
     padding-top: 26px;
     padding-left: 100px;
 
-    @media only screen and (max-width: 1024px) {
+    @media only screen and (max-width: 1279px) {
+      height: 65px;
       padding-left: 0;
       padding-right: 0;
+      padding-top: 17px !important;
+      padding-bottom: 8px;
     }
 
     ul {
@@ -117,12 +115,12 @@ header {
       }
 
       .header-icon {
-        transition: .27s;
+        transition: 0.27s;
         color: var(--silver);
       }
 
       .header-icon:hover {
-        transition: .24s;
+        transition: 0.24s;
         color: var(--white);
         cursor: hover;
       }
@@ -166,10 +164,8 @@ header {
       //background: transparent;
       width: 100%;
 
-
       @media only screen and (orientation: landscape) {
         width: 100%;
-
       }
 
       position: fixed;
@@ -177,7 +173,7 @@ header {
       z-index: 4;
       top: 0;
       height: 100%;
-      transition: 0.4s ease-in ;
+      transition: 0.4s ease-in;
       overflow-y: auto;
 
       ul {
@@ -252,9 +248,8 @@ i.user {
   text-transform: normal;
   margin-top: -10px;
   font-size: 30px;
-  width: 200px;;
+  width: 200px;
 }
-
 
 #tooltipPesquisar {
   right: 330px;
@@ -274,9 +269,16 @@ i.user {
   position: absolute;
 }
 
-
 #tooltipUsuario {
   right: 140px;
   top: 70px;
   position: absolute;
+}
+
+.item-menu-principal span {
+  cursor: pointer;
+
+  .material-icons {
+    vertical-align: -7px;
+  }
 }

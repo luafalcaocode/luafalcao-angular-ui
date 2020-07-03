@@ -1,4 +1,4 @@
-import { Component, OnInit, HostListener, ElementRef, ChangeDetectorRef, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, HostListener, ElementRef, ChangeDetectorRef } from '@angular/core';
 
 import { ImageViewModel } from '../viewModels/image.viewModel';
 import { CommonService } from '../services/layout/common.service';
@@ -10,7 +10,6 @@ import { LoadingService } from '../services/layout/loading.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-
   public images: ImageViewModel[];
   public currentYear = new Date().getFullYear();
   public titulos: any[] = ['Projeto em construção', 'Isto é uma aplicação ANGULAR', 'Obrigado pela visita!', '#fiqueEmCasa :)']
@@ -27,25 +26,23 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
+    (<HTMLInputElement>document.getElementById('navDesktop')).style.backgroundColor = 'transparent';
     this.loading = this.elementRef.nativeElement.querySelector('.page-loading');
     let video = this.elementRef.nativeElement.querySelector('video');
     video.muted = true;
     video.loop = true;
     video.play();
-    this.setStyles();    
+    this.setStyles();
     this.loadingService.hide(this.loading);
   }
 
-
-
   ngOnChanges() {
-   
+
   }
 
   ngDoCheck() {
     console.log('ngDoCheck');
   }
-
 
   @HostListener('window:resize', [])
   onResize() {
@@ -61,11 +58,9 @@ export class HomeComponent implements OnInit {
       this.h1Size = '42px';
       this.h2Size = '38px';
     }
-
   }
 
   open(url) {
     window.open(url);
   }
-
 }

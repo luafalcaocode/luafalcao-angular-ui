@@ -17,12 +17,12 @@
               (mouseleave)="hideMenu('menuProjetos')" (selectItem)="onSelectItem($event)"></app-menu>
           </li>
           <li (mouseleave)="hideMenu('menuServicos')" class="item-menu-principal">
-            <a routerLink="" (mouseenter)="showMenu('menuServicos')"
+            <span (mouseenter)="showMenu('menuServicos')"
               [className]="isMenuServicesOpen ? 'active-menu' : 'inative-menu'">Serviços
               <span class="material-icons">
                 keyboard_arrow_down
                 </span>
-            </a>
+              </span>
             <app-menu [menu]="menuServicos" class="fadeOut" id="menuServicos" (mouseenter)="showMenu('menuServicos')"
               (mouseleave)="hideMenu('menuServicos')"  (selectItem)="onSelectItem($event)"></app-menu>
           </li>
@@ -92,31 +92,31 @@
     <div class="nav-mobile-items" id="navMobileItems" [ngStyle]="{'background-color' : backgroundMobileContainer}">
       <div>
         <ul>
-          <li>
+          <!-- <li>
             <a routerLink="/projetos/pessoais" class="u-hidden">Projetos
               <i class="material-icons">keyboard_arrow_right</i>
             </a>
-          </li>
+          </li> -->
           <li>
             <a routerLink="/servicos/para-voce">Serviços
               <i class="material-icons">keyboard_arrow_right</i>
             </a>
           </li>
-          <li (click)="mobileMenuService.openCloseMobile()">
+          <!-- <li (click)="mobileMenuService.openCloseMobile()">
             <a routerLink="/artigos" class="u-hidden">Artigos
               <i class="material-icons">keyboard_arrow_right</i>
             </a>
-          </li>
+          </li> -->
           <li>
             <a routerLink="/sobre" class="">Sobre
               <i class="material-icons">keyboard_arrow_right</i>
             </a>
           </li>
-          <li>
+          <!-- <li>
             <a routerLink="" class="u-hidden">Contato
               <i class="material-icons">keyboard_arrow_right</i>
             </a>
-          </li>
+          </li> -->
           <li (click)="mobileMenuService.openCloseMobile()">
             <a>Voltar
               <i class="material-icons">keyboard_arrow_right</i>
