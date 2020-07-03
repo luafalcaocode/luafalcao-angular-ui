@@ -14,15 +14,16 @@
 
         <div class="form-group">
           <label for="solicitante">Solicitante:</label>
-          <input (input)="validateField()" [class.not-validated]="invalid.get('solicitante')" [disabled]="enviandoDados" type="text"
-            class="form-control" placeholder="Quem será o dono do produto?" name="solicitante"
-            [(ngModel)]="form.solicitante" />
+          <input (input)="validateField()" [class.not-validated]="invalid.get('solicitante')" [disabled]="enviandoDados"
+            type="text" class="form-control" placeholder="Quem será o dono do produto?" name="solicitante"
+            [(ngModel)]="form.solicitante" maxlength="50" />
         </div>
 
         <div class="form-group">
           <label for="email">E-mail:</label>
-          <input (input)="validateField()" [class.not-validated]="invalid.get('email')" [disabled]="enviandoDados" type="text" maxlength="25"
-            class="form-control" placeholder="Informe um endereço de e-mail" name="email" [(ngModel)]="form.email" />
+          <input (input)="validateField()" [class.not-validated]="invalid.get('email')" [disabled]="enviandoDados"
+            type="text" maxlength="25" class="form-control" placeholder="Informe um endereço de e-mail" name="email"
+            [(ngModel)]="form.email" />
         </div>
 
       </div>
@@ -38,7 +39,7 @@
         </div>
 
 
-        <div class="form-group">
+        <div class="form-group" [class.u-not-allowed]="enviandoDados">
           <label for="prazo">Anexos:</label>
           <div class="row">
             <div class="col-lg-8" [class.blocked]="enviandoDados">
@@ -47,7 +48,7 @@
                   clique aqui para anexar arquivos
                 </span>
               </a>
-              <input type="file" class="u-hidden" id="attachment" #field (change)="onSelectedFiles(field)" multiple />
+              <input type="file" class="u-hidden" id="attachment" #field (input)="onSelectedFiles(field)" multiple />
 
               <ul>
                 <li *ngFor="let file of files">
@@ -58,8 +59,7 @@
               </ul>
             </div>
             <div class="col-lg-4">
-              <span class="u-no-click attachments-qtd">({{ selectedFiles }} anexos
-                selecionados)</span>
+              <span class="u-no-click attachments-qtd">{{ selectedFiles }} anexos selecionados</span>
             </div>
           </div>
           <div class="row validation-file-container"
@@ -69,10 +69,9 @@
             </div>
           </div>
           <br />
-          <div class="row validation-file-container"
-            [ngClass]="{'fadeIn' : validation, 'fadeOut' : !validation}">
+          <div class="row validation-file-container" [ngClass]="{'fadeIn' : validation, 'fadeOut' : !validation}">
             <div class="col-lg-12">
-              <span>{{validation}}</span> <br />
+              <span [innerHTML]="validation"></span> <br />
             </div>
           </div>
         </div>
@@ -84,8 +83,8 @@
         <div class="form-group">
           <label for="">Observações:</label>
           <textarea [disabled]="enviandoDados" class="form-control"
-            placeholder="Alguma observação que gostaria de fazer? Não se preocupe! Conversaremos mais futuramente!"
-            name="observacoes" [(ngModel)]="form.observacoes"></textarea>
+            placeholder="Use este espaço para incluir alguma descrição do seu problema."
+            name="observacoes" [(ngModel)]="form.observacoes" maxlength="300"></textarea>
         </div>
       </div>
     </div>
@@ -97,8 +96,8 @@
           <app-mini-loading *ngIf="isLoading && !completing"></app-mini-loading>
           <span *ngIf="(files.length > 0) && (isLoading && !completing)" class="descricao-upload">Fazendo upload dos
             arquivos...</span>
-          <span *ngIf="!isLoading && completing"><span> {{ message_status_request }} </span> &nbsp; <i
-              class="fas" [ngClass]="{ 'fa-check' : code_status_request != 500, 'fa-exclamation-triangle' : code_status_request == 500 }"></i></span>
+          <span *ngIf="!isLoading && completing"><span> {{ message_status_request }} </span> &nbsp; <i class="fas"
+              [ngClass]="{ 'fa-check' : code_status_request != 500, 'fa-exclamation-triangle' : code_status_request == 500 }"></i></span>
         </button>
       </div>
     </div>

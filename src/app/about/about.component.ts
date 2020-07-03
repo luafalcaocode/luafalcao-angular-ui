@@ -38,7 +38,7 @@ export class AboutComponent implements OnInit {
     },
     {
       align: 'right',
-      description: 'Em 2015 ingressei na ATSNET Soluções em TI e fiquei alocado em projetos na Junta Comercial do Estado do Rio de Janeiro, onde melhorei minhas habilidades de front-end e tive contato pela primeira vez com a platatorma .NET e a linguagem de programação C#. Desenvolvi interfaces de usuário do Novo Portal Web da JUCERJA.',
+      description: 'Em 2015 ingressei na ATSNET Soluções em TI e fiquei alocado em projetos na Junta Comercial do Estado do Rio de Janeiro, onde melhorei minhas habilidades de front-end e tive contato pela primeira vez com a platatorma .NET e a linguagem de programação C#. Desenvolvi interfaces de usuário para o Novo Portal Web da JUCERJA.',
       image: '../assets/logos/svgs/atsnet-logo.svg',
       imageWidth: '180px',
       title: 'Bem-vindo à linguagem C#',
@@ -69,7 +69,7 @@ export class AboutComponent implements OnInit {
       year: '2020'
     }
   ];
-  
+
 
 
   constructor(public commonService: CommonService, public loadingService: LoadingService, public elementRef: ElementRef) { }

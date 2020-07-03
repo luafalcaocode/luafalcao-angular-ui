@@ -239,10 +239,10 @@ a:hover {
 }
 
 .validation-file-container {
-  position: absolute;
   margin-top: -5px;
-  left: 230px;
-  transition: .4s ease-out;
+  transition: 0.4s ease-out;
+  height: auto;
+  display: block;
 
   span {
     color: var(--red);

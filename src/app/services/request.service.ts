@@ -10,7 +10,7 @@ export class RequestService {
 
   constructor(private httpClient: HttpClient) { }
 
-  post(path: string, body: any, headers?: any) {
-    return this.httpClient.post(`${environment.endpoint.url}${path}`,  body, { headers: headers });
+  post(path: string, body: any, requestHeaders?: any) {
+    return this.httpClient.post(`${environment.endpoint.url}${path}`,  body, { headers: requestHeaders});
   }
 }

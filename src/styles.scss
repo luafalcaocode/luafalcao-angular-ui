@@ -62,6 +62,9 @@ a {
 }
 
 /* Helpers */
+.u-not-allowed {
+  cursor: not-allowed !important;
+}
 .u-break-all {
   word-break: break-all;
 }

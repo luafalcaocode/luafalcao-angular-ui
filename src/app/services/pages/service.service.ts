@@ -23,7 +23,8 @@ export class ServiceService {
             background: 'assets/backgrounds/nice-gallery/api.jpg',
             reveal: {
               icon: 'fas fa-server reveal-icons',
-              text: 'Com o framework ASP .NET Core podemos construir aplicações distribuídas com acesso a bancos de dados diversos para oferecer diferentes tipos de funcionalidades para sua aplicação, disponíveis para web e plataformas móveis.'
+              // text: 'Com o framework ASP .NET Core podemos construir aplicações distribuídas com acesso a bancos de dados diversos para oferecer diferentes tipos de funcionalidades para sua aplicação, disponíveis para web e plataformas móveis.'
+              text: 'Um conjunto de funcionalidades para a sua aplicação para fazer o upload de arquivos, autenticação e cadastro de usuários, envio de e-mails, automação de processos de negócio e geração de relatórios construídas com os frameworks ASP .NET Core ou Express.js.'
             }
           },
           {
@@ -32,7 +33,7 @@ export class ServiceService {
             background: 'assets/backgrounds/nice-gallery/ui.jpeg',
             reveal: {
               icon: 'fas fa-quidditch',
-              text: 'Com tecnologias como HTML5, CSS3 e JavaScript criamos interfaces de usuário ricas com design responsivo, animações e transições de tela para diferentes resoluções de dispositivos, para que sua aplicação fique com um excelente visual.'
+              text: 'Com tecnologias como HTML5, CSS3 e JavaScript sua aplicação pode contar com uma rica interface de usuário com design responsivo, animações e transições de tela para diferentes resoluções de dispositivos, ganhando um excelente visual.'
             }
           },
           {
@@ -50,7 +51,7 @@ export class ServiceService {
             background: 'assets/backgrounds/nice-gallery/portais.jpg',
             reveal: {
               icon: 'fab fa-firefox',
-              text: 'Com experiência na construção e manutenção de Portais Web para companhias no ramo de seguro e admnistração, podemos projetar e construir um sistema completo que seja robusto e possibilite fazer a gestão do seu conteúdo.'
+              text: 'Com experiência na construção e manutenção de Portais Web para companhias no ramo de seguro e admnistração, fica fácil projetar e construir um sistema completo que seja robusto e possibilite fazer a gestão do seu conteúdo.'
             }
           },
           {
@@ -59,7 +60,7 @@ export class ServiceService {
             background: 'assets/backgrounds/nice-gallery/migracao.jpg',
             reveal: {
               icon: 'fab fa-windows',
-              text: 'Precisa migrar um sistema legado para uma tecnologia mais moderna e ainda continuar suportando navegadores descontinuados como o Internet Explorer? Podemos construir uma solução customizada balanceando performance e as necessidades do seu negócio.'
+              text: 'Migração de sistemas para tecnologias mais modernas com o objetivo de facilitar a manutenção de suas funções de negócio e garantir a extensão de funcionalidades de maneira mais veloz.'
             }
           },
           {
@@ -68,7 +69,7 @@ export class ServiceService {
             background: 'assets/backgrounds/nice-gallery/modelagem.jpg',
             reveal: {
               icon: 'fas fa-database',
-              text: 'Precisa de um novo banco de dados para o seu sistema? Podemos fazer um projeto, iniciando pela modelagem conceitual, partindo para a lógica e finalizando com o modelo físico escrito na linguagem SQL.'
+              text: 'Precisa de um novo banco de dados para o seu sistema? Podemos fazer um projeto, iniciando pela modelagem conceitual, partindo para a lógica e finalizando com o modelo físico escrito na linguagem SQL ou algum de seus dialetos.'
             }
           }
         ];
@@ -120,12 +121,12 @@ export class ServiceService {
       case 'para-a-comunidade':
         this.services = [
           {
-            title: 'Coleção de',
-            description: 'Componentes ANGULAR',
+            title: 'Realização de',
+            description: 'Workshops',
             background: 'assets/backgrounds/nice-gallery/spa.jpg',
             reveal: {
               icon: 'fas fa-cogs reveal-icons',
-              text: 'Usando como base tecnologias como HTML5, CSS3 e JavaScript estou passando a disponibilizar no GitHub coleções de componentes reutilizáveis baseados no framework ANGULAR para ser utilizado em projetos.'
+              text: 'Precisa de ajuda para aprender sobre Design Patterns, APIs, front-end ou algum outro assunto da área de tecnologia? Com a realização de workshops podemos trocar conhecimento e adquirir habilidades em diferentes ferramentas.'
             }
           },
           {

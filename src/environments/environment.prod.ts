@@ -1,7 +1,7 @@
 export const environment = {
   production: true,
   endpoint: {
-    url: 'https://9b13b4bec39c.ngrok.io/api'
+    url: 'https://c66013548cc9.ngrok.io/api'
   }
 };
 

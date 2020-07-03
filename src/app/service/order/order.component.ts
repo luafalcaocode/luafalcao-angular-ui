@@ -17,6 +17,7 @@ export class OrderComponent implements OnInit {
   @Input() tiposDeProjeto;
 
   files: File[];
+  fileList: FileList;
   formData: FormData = new FormData();
   invalid: Map<string, boolean> = new Map<string, boolean>();
 
@@ -35,6 +36,7 @@ export class OrderComponent implements OnInit {
   btnSendDisabled: boolean = false;
   enviandoDados: boolean = false;
   formWasSubmittedOnce: boolean;
+  component: object = this;
 
   constructor(private elementRef: ElementRef, private requestService: RequestService, private loaderService: LoaderService) {
     this.form = {};
@@ -61,6 +63,7 @@ export class OrderComponent implements OnInit {
   }
 
   onSelectedFiles(field) {
+    this.fileList = field.files;
     this.invalid.clear();
 
     this.validationFileMessage = '';
@@ -100,13 +103,20 @@ export class OrderComponent implements OnInit {
       this.selectedFiles = this.files.length;
     });
 
+    const tempFileList = Array.from(this.fileList);
+    tempFileList.forEach((item, index) => {
+      if (item.name.includes(name))
+        tempFileList.splice(index, 1);
+    });
+
     if (this.selectedFiles == 0) {
       this.validationFileMessage = '';
     }
+
+    (<HTMLInputElement>document.getElementById('attachment')).value = '';
   }
 
   onSelectTipoDeProjeto(event) {
-    debugger;
     const selecionado = this.form.tiposDeProjeto.find(item => item.id == event.target.value);
 
     if (selecionado.id != 0) { // != de selecione um projeto
@@ -128,18 +138,15 @@ export class OrderComponent implements OnInit {
   }
 
   onSubmit() {
-    const thiss = this;
-    const isValid = this.validateForm();
-    const headers = new HttpHeaders();
-
+    const component = this;
+    let headers = new HttpHeaders();
     this.formWasSubmittedOnce = true;
 
-    if (isValid) {
+    if (this.validateForm()) {
       this.validation = '';
       this.enviandoDados = true;
       this.isLoading = this.loaderService.show();
       this.completing = false;
-
       this.formData.append('solicitante', this.form.solicitante);
       this.formData.append('email', this.form.email);
       this.formData.append('observacoes', this.form.observacoes);
@@ -147,30 +154,35 @@ export class OrderComponent implements OnInit {
         this.formData.append("file", file, file.name);
       });
 
-      headers.append('Content-Type', 'multipart/form-data');
-      headers.append('Accept', 'application/json');
+      headers = headers.append('Custom-Request-Id', new Date().toLocaleString('pt-BR'));
 
-      this.requestService.post('/servicos/solicitacao', this.formData, { headers: headers })
+      this.requestService.post('/servicos/solicitacao', this.formData, headers)
         .toPromise()
-        .then((response: any) => {
-          if (response.success) {
-            thiss.resetForm(true);
-            this.message_status_request = 'solicitação de serviço enviada'
-            this.code_status_request = 200;
-          }
-          thiss.isLoading = thiss.loaderService.hide();
-          setTimeout(() => {
-            thiss.isLoading = false;
-            thiss.completing = false;
-            thiss.inactive();
-          }, 3000);
-        }).catch(reason => {
-          setTimeout(() => {
-            thiss.isLoading = false;
-            this.resetForm(false);
-            this.code_status_request = 500;
-            this.message_status_request = 'ops! ocorreu um erro'
-          }, 3000);
+          .then((response: any) => {
+            if (response.success) {
+              component.resetForm(true);
+              this.message_status_request = 'solicitação de serviço enviada'
+              this.code_status_request = 200;
+            }
+
+            component.isLoading = component.loaderService.hide();
+            setTimeout(() => {
+              component.isLoading = false;
+              component.completing = false;
+              component.inactive();
+            }, 3000);
+          }).catch(reason => {
+            setTimeout(() => {
+              component.isLoading = false;
+              this.resetForm(false);
+              this.code_status_request = 500;
+              this.message_status_request = 'ops! ocorreu um erro'
+
+              if (reason.error.message.includes('maxFileSize')) {
+                this.validationFileMessage = 'Os anexos devem possuir no máximo 5 Megabytes.';
+                this.formData.delete('file');
+              }
+            }, 3000);
         });
     }
     else {
@@ -201,10 +213,12 @@ export class OrderComponent implements OnInit {
 
   validateForm(): boolean {
     const regExpEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    const regExpLetters = /^[a-zA-Z\-]+$/;
+
     this.invalid.clear();
 
     try {
-      if (!this.form.solicitante)
+      if (!this.form.solicitante || !this.form.solicitante.match(regExpLetters))
         this.invalid.set('solicitante', true);
       else
         this.invalid.set('solicitante', false);
@@ -222,9 +236,16 @@ export class OrderComponent implements OnInit {
       else
         this.invalid.set('tiposDeProjeto', false);
 
+      let err = 'Parece que um ou mais campos não foram preenchidos corretamente!';
       this.invalid.forEach((value, key) => {
         if (value) {
-          throw 'Por favor, preencha os campos em vermelho corretamente.';
+          // if (key.includes('solicitante'))
+          //   err += '<br />(o campo solicitante não aceita números e precisa ser preenchido)';
+          // if (key.includes('e-mail'))
+          //   err += '<br />(o campo e-mail precisa ser preenchido com um e-mail válido)';
+          // if (key.includes('tiposDeProjeto'))
+          //   err += '<br /> o tipo de projeto precisa ser selecionado';
+          throw err;
         }
       });
 
@@ -272,9 +293,9 @@ export class OrderComponent implements OnInit {
         if (value) {
           switch (typeOfValidation) {
             case 'extension_file':
-              throw { error_type: 'extension_file', message: 'não é possível fazer upload de arquivos com a extensão ', dynamicText: extension_name };
+              throw { error_type: 'extension_file', message: 'Não é possível fazer upload de arquivos com a extensão ', dynamicText: extension_name };
             case 'duplicated_file':
-              throw { error_type: 'duplicated_file', message: `já foi inserido um anexo com o nome `, dynamicText: name };
+              throw { error_type: 'duplicated_file', message: `Já selecionado: `, dynamicText: name };
           }
         }
       });
