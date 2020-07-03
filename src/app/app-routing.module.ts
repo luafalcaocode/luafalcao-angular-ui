@@ -13,19 +13,19 @@ const routes: Routes = [
   {
     path: '',
     component: HomeComponent
-  }
+  },
   // {
   //   path: 'panel',
   //   component: PanelComponent
   // },
-  // {
-  //   path: 'blogs/diario-de-um-engenheiro-software/:id',
-  //   component: ArticleDetailComponent
-  // },
-  // {
-  //   path: 'blogs/diario-de-um-engenheiro-software',
-  //   component: ArticleComponent
-  //  },
+  {
+    path: 'blogs/diario-de-um-engenheiro-software/:id',
+    component: ArticleDetailComponent
+  },
+  {
+    path: 'blogs/diario-de-um-engenheiro-software',
+    component: ArticleComponent
+   }
   ,
   {
     path: 'sobre',
@@ -35,7 +35,7 @@ const routes: Routes = [
   // //   path: 'projetos/:screen',
   // //   component: ProjectComponent
   // // },
-  
+
   {
     path: 'servicos/:screen',
     component: ServiceComponent

@@ -48,9 +48,8 @@ export class HeaderComponent implements OnInit {
     ];
 
     this.menuBlogs = [
-      new MenuViewModel(1, 'Diário de um engenheiro de software', '/blogs/diario-de-um-engenheiro-software', true),
-      new MenuViewModel(2, 'Padrões de Projeto e onde habitam', '/blogs/padroes-projetos-onde-habitam', true),
-      new MenuViewModel(2, 'Histórias Não Extraordinárias', '/blogs/hne', true),
+      new MenuViewModel(1, 'Diário de um engenheiro de software', '/blogs/diario-de-um-engenheiro-software', false),
+      new MenuViewModel(2, 'Padrões de Projeto e onde habitam', '/blogs/padroes-projetos-onde-habitam', false)
     ];
 
     this.mobileMenuService.isNavMobileOpen = false;

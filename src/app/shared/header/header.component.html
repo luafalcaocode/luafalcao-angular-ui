@@ -26,7 +26,7 @@
             <app-menu [menu]="menuServicos" class="fadeOut" id="menuServicos" (mouseenter)="showMenu('menuServicos')"
               (mouseleave)="hideMenu('menuServicos')"  (selectItem)="onSelectItem($event)"></app-menu>
           </li>
-          <li (mouseleave)="hideMenu('menuBlogs')" class="item-menu-principal u-hidden">
+          <li (mouseleave)="hideMenu('menuBlogs')" class="item-menu-principal">
             <a routerLink="" (mouseenter)="showMenu('menuBlogs')"
               [className]="isMenuBlogsOpen ? 'active-menu' : 'inative-menu'">Blogs
               <span class="material-icons">
