@@ -15,7 +15,7 @@ export class ServiceService {
 
   initializePage(screen: string) {
     switch (screen) {
-      case 'para-voce':
+      case 'para-sua-empresa':
         this.services = [
           {
             title: 'Construção de',
@@ -46,17 +46,17 @@ export class ServiceService {
             }
           },
           {
-            title: 'Construção de',
+            title: 'Projeto de',
             description: 'Portais Web',
             background: 'assets/backgrounds/nice-gallery/portais.jpg',
             reveal: {
               icon: 'fab fa-firefox',
-              text: 'Com experiência na construção e manutenção de Portais Web para companhias no ramo de seguro e admnistração, fica fácil projetar e construir um sistema completo que seja robusto e possibilite fazer a gestão do seu conteúdo.'
+              text: 'Com experiência na construção e manutenção de Portais Web para companhias no ramo de seguro e admnistração é possível projetar e construir um sistema completo que seja robusto e possibilite fazer a gestão do seu conteúdo.'
             }
           },
           {
-            title: 'Migração de Sistemas',
-            description: 'Para .NET',
+            title: 'Projeto de ',
+            description: 'Migração de sistemas',
             background: 'assets/backgrounds/nice-gallery/migracao.jpg',
             reveal: {
               icon: 'fab fa-windows',
@@ -107,7 +107,7 @@ export class ServiceService {
             selecionado: false,
           },
           {
-            nome: 'Migração de Sistemas Para .NET',
+            nome: 'Projeto de Sistemas Para .NET',
             id: 5,
             selecionado: false,
           },

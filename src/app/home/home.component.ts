@@ -27,6 +27,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     (<HTMLInputElement>document.getElementById('navDesktop')).style.backgroundColor = 'transparent';
+    (<HTMLInputElement>document.getElementById('navMobile')).style.backgroundColor = 'transparent';
     this.loading = this.elementRef.nativeElement.querySelector('.page-loading');
     let video = this.elementRef.nativeElement.querySelector('video');
     video.muted = true;

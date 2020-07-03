@@ -13,7 +13,7 @@ export class FooterComponent implements OnInit {
   @Input() backgroundColor: string;
   constructor() {
     this.email = 'lpjfalcao@gmail.com';
-    this.telefone = '+55 (21) 97322-1432'
+    this.telefone = '+55 (21) 99023-8300'
   }
 
   ngOnInit() {
@@ -23,5 +23,5 @@ export class FooterComponent implements OnInit {
   showWhatsAppInfo() {
 
   }
-  
+
 }

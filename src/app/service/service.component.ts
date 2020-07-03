@@ -39,6 +39,7 @@ export class ServiceComponent implements OnInit {
 
   ngOnInit() {
     (<HTMLInputElement>document.getElementById('navDesktop')).style.backgroundColor = 'black';
+    (<HTMLInputElement>document.getElementById('navMobile')).style.backgroundColor = 'black';
     this.loading = this.elementRef.nativeElement.querySelector('.page-loading');
     this.router.params.subscribe(param => {
       this.loadingService.show(this.loading);

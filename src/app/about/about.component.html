@@ -1,20 +1,22 @@
 <div class="render-body-area" (scroll)="onScroll($event)">
   <section class="personal-title">
-    <h1><span>Luã Falcão</span> </h1>
-    <h2>
-      <writer [color]='colorWriter' [titulos]="titulos" [fontSize]="h1Size" align="left"></writer>
-    </h2>
-    <div class="row">
-      <div class="col-xs-12 u-center">
-        <span class="material-icons anima-upAndDown u-pointer u-inline" (click)="scrollInto('timeLineSection')">
-          keyboard_arrow_down
-        </span>
+    <div class="row personal-title-headers">
+      <div class="col-xs-12">
+        <h1><span>Luã Falcão</span> </h1>
+        <h2>
+          <writer [color]='colorWriter' [titulos]="titulos" [fontSize]="h1Size" align="left"></writer>
+        </h2>
       </div>
     </div>
+    <!-- <div class="row">
+      <div class="col-xs-12 u-center"> -->
+        <div class="material-icons anima-upAndDown u-pointer u-inline" (click)="scrollInto('timeLineSection')">
+          keyboard_arrow_down
+        </div>
+      <!-- </div>
+    </div> -->
   </section>
   <section id="timeLineSection" class="timeline-container">
-    <h1>linha do tempo da minha carreira</h1>
-
     <div class="row timeline-style-ui hide-on-small-only ">
       <div class="col-xs-12 col-lg-4 nice-border"></div>
       <div class="col-xs-12 col-lg-4 u-center nice-text-ui"></div>
@@ -29,7 +31,7 @@
 
     <div class="row">
       <div class="col-xs-12 u-center download-container">
-        <a href="../../assets/pdf/Luã Falcão - Resume.pdf" download class="btn btn-download">ver currículo</a>
+        <a href="../../assets/pdf/Luã Falcão - Resumo.pdf" download class="btn btn-download">ver currículo</a>
       </div>
     </div>
   </section>

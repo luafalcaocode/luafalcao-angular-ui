@@ -14,24 +14,13 @@ footer {
     padding-bottom: 0;
     z-index: 0;
     position: relative !important;
+    padding-right: 0 !important;
+    max-height: 366px;
   }
 
-  @media only screen and (max-width: 1279px) and (orientation: portrait) {
-    min-height: 590px;
-    height: auto;
-  }
-
-  @media only screen and (max-width: 1279px) and (orientation: landscape) {
-    min-height: 570px;
-    height: auto;
-  }
 
   @media only screen and (max-width: 1279px) {
     padding-top: 10px;
-  }
-
-  @media only screen and (min-width: 1279px) and (max-width: 1024px) {
-    height: auto;
   }
 
   padding: 80px;
@@ -92,7 +81,7 @@ i {
   text-align: right;
 
   @media (max-width: 767px) {
-    text-align: left;
+    text-align: right;
     font-size: 12px;
   }
 }

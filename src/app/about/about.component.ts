@@ -23,9 +23,6 @@ export class AboutComponent implements OnInit {
     ' '
   ];
   animating: boolean = true;
-  backgroundHeader: string = 'black';
-  backgroundMobile: string = 'black';
-  backgroundMobileContainer: string = 'rgba(0, 0, 0, 0.9)';
   loading: any;
 
   timelines: TimelineViewModel[] = [
@@ -34,23 +31,23 @@ export class AboutComponent implements OnInit {
       description: 'Em 2014 realizei o meu primeiro estágio na First Decision Tecnologias Inovadoras, uma empresa no ramo de BI, onde fiz parte da equipe de desenvolvimento mobile trabalhando com tecnologias web e a plataforma Apache Cordova para construir apps e protótipos para Android e iOS. Realizei trabalhos para órgãos como PROCON e PRODERJ.',
       image: '../assets/logos/fd-logo.png',
       imageWidth: '180px',
-      title: 'Bem-vindo ao Front-end',
+      title: 'Front-end',
       year: '2014'
     },
     {
       align: 'right',
-      description: 'Em 2015 ingressei na ATSNET Soluções em TI e fiquei alocado em projetos na Junta Comercial do Estado do Rio de Janeiro, onde melhorei minhas habilidades de front-end e tive contato pela primeira vez com a platatorma .NET e a linguagem de programação C#. Desenvolvi interfaces de usuário para o Novo Portal Web da JUCERJA.',
+      description: 'Em 2015 ingressei na ATSNET Soluções em TI e fiquei alocado em projetos na Junta Comercial do Estado do Rio de Janeiro, onde melhorei minhas habilidades de front-end e tive contato pela primeira vez com a platatorma .NET e a linguagem de programação C#.',
       image: '../assets/logos/svgs/atsnet-logo.svg',
       imageWidth: '180px',
-      title: 'Bem-vindo à linguagem C#',
+      title: 'C# / .NET',
       year: '2015'
     },
     {
       align: 'left',
-      description: 'A Infobase foi uma escola onde aprendi a lidar com a pressão dos prazos de projetos, a entrar em contato com o cliente e a programar Web APIs em C# com a plataforma .NET. Ajudei a entregar soluções de software para clientes como Braslight, Capemisa e Eletros escritas em Angular JS e C# .NET',
+      description: 'A Infobase foi uma escola onde aprendi a lidar com a pressão dos prazos de projetos, a entrar em contato com o cliente e a programar Web APIs em C# com a plataforma .NET. Ajudei a entregar soluções de software para clientes como Braslight, Capemisa, Generali, Eletros e Vivo Auto escritas em Angular JS, C# e ASP .NET MVC',
       image: '../assets/logos/infobase-logo.png',
       imageWidth: '210px',
-      title: 'Nasce um Full Stack',
+      title: 'Full-Stack',
       year: '2017'
     },
     {
@@ -58,15 +55,15 @@ export class AboutComponent implements OnInit {
       description: 'Na IBM adquiri experiência fazendo parte de uma empresa de escala global com pessoas oriundas de diferentes países. Fiz parte do time de desenvolvimento da área Global Business Services programando interfaces de usuário e Web APIs para um software no ramo de seguros da multinacional Prudential do Brasil.',
       image: '../assets/logos/ibm-logo.png',
       imageWidth: '110px',
-      title: 'Entrei em uma multinacional',
+      title: 'Full-Stack',
       year: '2018'
     },
     {
       align: 'left',
-      description: 'Na Perlink venho trabalhando com o desenvolvimento de aplicações web construídas com Angular 8, ASP .NET Core, Oracle e GIT e estive alocado em projetos do cliente Oi para fazer a migração de seu Sistema Jurídico para uma tecnologia mais moderna. Também recebi treinamentos sobre cultura ágil e SCRUM passando a ajudar o time na realização de plannings, dailys, reviews e retrospectivas.',
+      description: 'Na Perlink estive trabalhando com o desenvolvimento de aplicações web construídas com Angular 8, ASP .NET Core, Oracle e GIT e estive alocado em projetos do cliente Oi para fazer a migração de seu Sistema Jurídico para uma tecnologia mais moderna. Também recebi treinamentos sobre cultura ágil e SCRUM passando a ajudar o time na realização de plannings, dailys, reviews e retrospectivas.',
       image: '../assets/logos/perlink-logo.png',
       imageWidth: '180px',
-      title: 'Full Stack e Agile',
+      title: 'Full-Stack',
       year: '2020'
     }
   ];
@@ -77,6 +74,8 @@ export class AboutComponent implements OnInit {
 
   ngOnInit() {
     (<HTMLInputElement>document.getElementById('navDesktop')).style.backgroundColor = 'transparent';
+    (<HTMLInputElement>document.getElementById('navMobile')).style.backgroundColor = 'transparent';
+
     this.loading = this.elementRef.nativeElement.querySelector('.page-loading');
     this.commonService.initializePage();
     this.write();

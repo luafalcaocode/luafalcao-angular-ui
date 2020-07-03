@@ -41,7 +41,7 @@ export class HeaderComponent implements OnInit {
     ];
 
     this.menuServicos = [
-      new MenuViewModel(1, 'Para a sua empresa', '/servicos/para-voce', false),
+      new MenuViewModel(1, 'Para a sua empresa', '/servicos/para-sua-empresa', false),
       new MenuViewModel(2, 'Para a comunidade', '/servicos/para-a-comunidade', false)
       //new MenuViewModel(3, 'Para outras aplicações', 'link do projeto pessoal aqui', true)//,
       // new MenuViewModel(3, 'De um jogo eletrônico', 'link do projeto pessoal aqui', true)

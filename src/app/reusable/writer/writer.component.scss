@@ -3,11 +3,11 @@
     color: var(--white);
     position: relative;
     z-index: 100;
-    height: 250px;
+    height: 170px;
 
     @media only screen and (max-width: 1279px) {
       h1 {
-        font-size: 25px !important;
+        font-size: 22px !important;
       }
     }
 }

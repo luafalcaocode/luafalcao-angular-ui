@@ -23,7 +23,7 @@ div.lightbox {
         height: 370px;
     }
 
-    padding-top: 150px;
+    padding-top: 120px;
     transition: 0.5s ease-out;
     background-color: rgba(0, 0, 0, 0.1);
 
@@ -41,6 +41,8 @@ div.lightbox {
     p,
     h2 {
         transition: 0.4s ease-out;
+        margin-right: 10px;
+        margin-left: 10px;
     }
 }
 
@@ -53,6 +55,9 @@ div.lightbox:hover {
     h2 {
         transform: scale(1.2);
         transition: 0.3s;
+        @media only screen and (max-width: 1279px) {
+          transform: none;
+        }
     }
 }
 

@@ -76,8 +76,6 @@
   </nav>
 
 
-
-
   <nav id="navMobile" [ngStyle]="{'background-color' : backgroundColorMobile}">
     <div class="row">
       <div class="col-sm-6 column-a hidden-candidated">
@@ -97,8 +95,8 @@
               <i class="material-icons">keyboard_arrow_right</i>
             </a>
           </li> -->
-          <li>
-            <a routerLink="/servicos/para-voce">Serviços
+          <li (click)="mobileMenuService.openCloseMobile()">
+            <a routerLink="/servicos/para-sua-empresa">Serviços
               <i class="material-icons">keyboard_arrow_right</i>
             </a>
           </li>
@@ -107,7 +105,7 @@
               <i class="material-icons">keyboard_arrow_right</i>
             </a>
           </li> -->
-          <li>
+          <li (click)="mobileMenuService.openCloseMobile()">
             <a routerLink="/sobre" class="">Sobre
               <i class="material-icons">keyboard_arrow_right</i>
             </a>
