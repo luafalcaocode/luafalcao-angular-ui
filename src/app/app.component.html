@@ -1,23 +1,19 @@
-<div id="page-container" *ngIf="!isUserUsingInternetExplorer">
-  <div id="page-content">
-    <app-header class="service-header" [backgroundColor]="backgroundHeader" [backgroundColorMobile]="backgroundMobile"
-      [backgroundMobileContainer]="backgroundMobileContainer"></app-header>
-    <router-outlet></router-outlet>
-  </div>
-</div>
+<section *ngIf="!isUserUsingInternetExplorer">
+  <app-header class="service-header" [backgroundColor]="backgroundHeader" [backgroundColorMobile]="backgroundMobile"
+    [backgroundMobileContainer]="backgroundMobileContainer"></app-header>
+  <router-outlet></router-outlet>
+  <app-footer backgroundColor="black"></app-footer>
+</section>
 
-<div class="row" *ngIf="isUserUsingInternetExplorer">
+<section class="row" *ngIf="isUserUsingInternetExplorer">
   <div class="col-xs-12">
-    <section class="internet-explorer-friendly-message">
+    <div class="internet-explorer-friendly-message">
       <img src="assets/backgrounds/gandalf.png"><br />
-
       <div class="friendly-message-container">
         <strong>Este navegador não é permitido! </strong>
         <p>Melon! Por favor, use o <span class="u-bold">Google Chrome</span>, <span class="u-bold">Opera</span> ou <span
             class="u-bold">Mozila Firefox</span> para navegar nestes domínios. Obrigado!</p>
       </div>
-    </section>
+    </div>
   </div>
-</div>
-
-<!-- <page-loading id="pageLoading"></page-loading> -->
+</section>

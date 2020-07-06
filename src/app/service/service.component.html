@@ -1,36 +1,27 @@
-<section id="service">
-    <!-- <section class="third-services">
-        <count [counts]="counts"></count>
-    </section> -->
+<section class="main-section" id="service">
+  <div class="gallery-container">
+    <nice-gallery [itens]="services" (active)="onActiveReveal($event)"></nice-gallery>
+  </div>
+  <div class="order-container">
+    <div class="row">
+      <div class="col-lg-12 u-center">
+        <p class="u-center u-uppercase">
+          <i class="fas fa-cog" id="fa-cog-1"></i>
+          <i class="fas fa-cog" id="fa-cog-2"></i>
+          <i class="fas fa-cog" id="fa-cog-3"></i>
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12 u-center">
+        <h1>Solicitar um serviço</h1>
 
-    <section class="secondary-services">
-        <nice-gallery [itens]="services" (active)="onActiveReveal($event)"></nice-gallery>
-    </section>
-
-    <section class="fourth-services">
-        <div class="row">
-            <div class="col-lg-12 u-center">
-                <p class="u-center u-uppercase">
-                    <i class="fas fa-cog" id="fa-cog-1"></i>
-                    <i class="fas fa-cog" id="fa-cog-2"></i>
-                    <i class="fas fa-cog" id="fa-cog-3"></i>
-                </p>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-lg-12 u-center">
-                <h1>Solicitar um serviço</h1>
-
-                <br />
-                <button class="btn reveal-btn btn-large" (click)="onClickOrder()">solicitar</button>
-            </div>
-        </div>
-
-
-
-    </section>
+        <br />
+        <button class="btn reveal-btn btn-large" (click)="onClickOrder()">solicitar</button>
+      </div>
+    </div>
+  </div>
 </section>
-<app-footer backgroundColor="black"></app-footer>
+
 <page-loading class="page-loading"></page-loading>
 <order [tiposDeProjeto]="tiposDeProjeto"></order>

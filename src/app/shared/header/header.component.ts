@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, HostListener } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { MobileMenuService } from '../../services/layout/mobile-menu.service';
@@ -7,6 +7,7 @@ import { MenuService } from '../../services/layout/menu.service';
 import { LoginService } from '../../services/login.service';
 
 import { MenuViewModel } from '../../viewModels/menu.viewModel';
+
 
 @Component({
   selector: 'app-header',
@@ -25,6 +26,8 @@ export class HeaderComponent implements OnInit {
   public isSearchTooltipVisible: boolean;
   public isUserIconsVisibile: boolean = true;
   public isArticleMenuVisible: boolean;
+  public scrollMax: any = 0;
+
   @Input() backgroundColor: string;
   @Input() backgroundColorMobile: string;
   @Input() backgroundMobileContainer: string;
@@ -53,11 +56,6 @@ export class HeaderComponent implements OnInit {
     ];
 
     this.mobileMenuService.isNavMobileOpen = false;
-
-    const URL = document.URL;
-    if (URL.includes('articles')) {
-      this.isUserIconsVisibile = false;
-    }
   }
 
   showLoginModal() {
@@ -109,57 +107,6 @@ export class HeaderComponent implements OnInit {
     this.menuService.hideMenu(id);
   }
 
-  showTooltip(event) {
-    switch (event.target.id) {
-      case 'pesquisar':
-        document.getElementById('tooltipPesquisar').classList.add('fadeIn');
-        document.getElementById('tooltipPesquisar').classList.remove('fadeOut');
-        this.isSearchTooltipVisible = true;
-        break;
-
-      case 'youTube':
-        document.getElementById('tooltipYouTube').classList.add('fadeIn');
-        document.getElementById('tooltipYouTube').classList.remove('fadeOut');
-        this.isSearchTooltipVisible = true;
-        break;
-
-      case 'idiomas':
-        document.getElementById('tooltipIdiomas').classList.add('fadeIn');
-        document.getElementById('tooltipIdiomas').classList.remove('fadeOut');
-        this.isSearchTooltipVisible = true;
-        break;
-      case 'usuario':
-        document.getElementById('tooltipUsuario').classList.add('fadeIn');
-        document.getElementById('tooltipUsuario').classList.remove('fadeOut');
-        this.isSearchTooltipVisible = true;
-        break;
-    }
-  }
-
-  hideToolTip(event) {
-    switch (event.target.id) {
-      case 'pesquisar':
-        document.getElementById('tooltipPesquisar').classList.add('fadeOut');
-        document.getElementById('tooltipPesquisar').classList.remove('fadeIn');
-        break;
-
-      case 'youTube':
-        document.getElementById('tooltipYouTube').classList.add('fadeOut');
-        document.getElementById('tooltipYouTube').classList.remove('fadeIn');
-        break;
-
-      case 'idiomas':
-        document.getElementById('tooltipIdiomas').classList.add('fadeOut');
-        document.getElementById('tooltipIdiomas').classList.remove('fadeIn');
-        break;
-
-      case 'usuario':
-        document.getElementById('tooltipUsuario').classList.add('fadeOut');
-        document.getElementById('tooltipUsuario').classList.remove('fadeIn');
-        break;
-    }
-  }
-
   showLoggedMenu() {
     this.isMenuLoggedOpen = !this.isMenuLoggedOpen;
 
@@ -184,11 +131,22 @@ export class HeaderComponent implements OnInit {
     window.scrollTo(0, 0);
   }
 
-  toogleArticlesMenu() {
-    this.menuService.toogleArticleMenu();
-  }
-
   onSelectItem(event) {
     this.hideMenu(event);
   }
+
+  // @HostListener('window:scroll', ['$event'])
+  // onScroll(event) {
+  //   const header = document.querySelector('header');
+  //   if (window.scrollY > this.scrollMax) {
+  //     header.style.position = 'relative';
+  //     header.style.top = '-100px';
+  //   }
+  //   else {
+  //     header.style.position = 'fixed';
+  //     header.style.top = '0px';
+  //   }
+
+  //   this.scrollMax = window.scrollY;
+  // }
 }

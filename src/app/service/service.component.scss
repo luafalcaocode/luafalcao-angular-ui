@@ -1,4 +1,4 @@
-#service {
+.main-section {
   min-height: 900px;
   height: auto;
 
@@ -6,129 +6,84 @@
   position: relative;
   top: -11px;
 
-  .primary-highlight {
-    background-image: url("../../assets/backgrounds/kratos.jpg");
-    background-size: cover;
-    height: 820px;
-
-    padding-top: 180px;
-    color: var(--white);
+  h1 {
     font-weight: bold;
-    padding-left: 130px;
+    font-size: 48px;
+
+    @media only screen and (max-width: 1279px) {
+      font-size: 32px;
+    }
+  }
+
+  h2 {
+    @media only screen and (max-width: 1279px) {
+      font-size: 24px;
+    }
+  }
+}
+
+.gallery-container {
+  min-height: 500px;
+  padding-bottom: 100px;
+
+  h1 {
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+}
+
+.order-container {
+  z-index: 5;
+  position: relative;
+  height: auto;
+  background-color: var(--white);
+
+  padding-top: 86px;
+  padding-bottom: 116px;
+  margin-top: -100px;
+
+  @media only screen and (max-width: 1279px) {
+    padding-top: 35px;
+    padding-bottom: 65px;
+  }
+
+  img {
+    height: 450px;
+
+    @media only screen and (max-width: 1279px) {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  h1 {
+    font-weight: normal;
+    text-transform: uppercase;
+    color: var(--dark);
+    font-size: 32px;
+
+    @media only screen and (max-width: 1279px) {
+      font-size: 22px;
+    }
+  }
+
+  h4 {
+    margin-top: 30px;
+    color: var(--dark);
+  }
+
+  p {
+    font-size: 20px;
+    padding-left: 300px;
+    padding-right: 300px;
+    margin-top: 40px;
+    color: var(--dark);
 
     @media only screen and (max-width: 1279px) {
       padding-left: 30px;
-      padding-top: 100px;
-      position: relative;
-      height: auto;
-      min-height: 500px;
-      z-index: 1;
-    }
-
-    h1 {
-      font-weight: bold;
-      font-size: 48px;
-
-      @media only screen and (max-width: 1279px) {
-        font-size: 32px;
-      }
-    }
-
-    h2 {
-      @media only screen and (max-width: 1279px) {
-        font-size: 24px;
-      }
-    }
-  }
-
-  .secondary-services {
-    min-height: 500px;
-    padding-bottom: 100px;
-
-    h1 {
-      text-align: center;
-      padding-top: 30px;
-      padding-bottom: 30px;
-    }
-  }
-
-  .third-services {
-    background-color: var(--white);
-    min-height: 200px;
-    padding-top: 90px;
-    padding-bottom: 90px;
-    position: relative;
-    border-bottom: solid 2px var(--dark);
-
-    z-index: 5;
-    // top: -100px;
-    position: relative;
-
-    p,
-    svg {
-      color: var(--dark);
-    }
-  }
-
-  .fourth-services {
-    z-index: 5;
-    position: relative;
-    // min-height: 740px;
-    height: auto;
-    background-color: var(--white);
-
-    padding-top: 86px;
-    padding-bottom: 116px;
-    margin-top: -100px;
-
-    @media only screen and (max-width: 1279px) {
-      padding-top: 35px;
-      padding-bottom: 65px;
-    }
-
-    img {
-      height: 450px;
-
-      @media only screen and (max-width: 1279px) {
-        width: 100%;
-        height: auto;
-      }
-    }
-
-    h1 {
-      font-weight: normal;
-      text-transform: uppercase;
-      color: var(--dark);
-      font-size: 32px;
-
-      @media only screen and (max-width: 1279px) {
-        font-size: 22px;
-      }
-    }
-
-    h4 {
-      margin-top: 30px;
-      color: var(--dark);
-    }
-
-    p {
-      font-size: 20px;
-      padding-left: 300px;
-      padding-right: 300px;
-      margin-top: 40px;
-      color: var(--dark);
-
-      @media only screen and (max-width: 1279px) {
-        padding-left: 30px;
-        padding-right: 30px;
-        font-size: 16px;
-      }
-    }
-
-    .pagamento-container {
-      text-align: right;
-      margin-top: 100px;
       padding-right: 30px;
+      font-size: 16px;
     }
   }
 }
@@ -140,16 +95,13 @@
   box-shadow: 2px 5px 5px #999;
   font-size: 16px;
 }
-
 .reveal-btn:hover {
   color: var(--green);
   transition: 0.3s;
 }
-
 .reveal-btn:focus {
   outline: none;
 }
-
 .btn-large {
   width: 200px;
   height: 50px;
@@ -168,15 +120,12 @@
   color: var(--niceGreen);
   transition: ease-out 5s;
 }
-
 #fa-cog-1 {
   font-size: 58px;
 }
-
 #fa-cog-2 {
   font-size: 44px;
 }
-
 #fa-cog-3 {
   font-size: 42px;
   position: relative;

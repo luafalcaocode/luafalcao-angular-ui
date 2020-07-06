@@ -25,7 +25,6 @@ export class ServiceComponent implements OnInit {
   tiposDeProjeto: any[];
 
   constructor(public service: ServiceService, public commonService: CommonService, public loadingService: LoadingService, public router: ActivatedRoute, public elementRef: ElementRef) {
-
   }
 
   onActiveReveal(event) {
@@ -38,6 +37,7 @@ export class ServiceComponent implements OnInit {
   }
 
   ngOnInit() {
+
     (<HTMLInputElement>document.getElementById('navDesktop')).style.backgroundColor = 'black';
     (<HTMLInputElement>document.getElementById('navMobile')).style.backgroundColor = 'black';
     this.loading = this.elementRef.nativeElement.querySelector('.page-loading');

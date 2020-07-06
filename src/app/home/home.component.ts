@@ -12,7 +12,7 @@ import { LoadingService } from '../services/layout/loading.service';
 export class HomeComponent implements OnInit {
   public images: ImageViewModel[];
   public currentYear = new Date().getFullYear();
-  public titulos: any[] = ['Projeto em construção', 'Isto é uma aplicação ANGULAR', 'Obrigado pela visita!', '#fiqueEmCasa :)']
+  public titulos: any[] = ['How can a man die better?', 'Than facing fearful odds', 'for the ashes of his fathers', 'and the temple of these gods', '- Horatius']
   public colorWriter: string;
   public h1Size: string;
   public h2Size: string;
