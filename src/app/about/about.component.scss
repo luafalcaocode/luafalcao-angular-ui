@@ -1,14 +1,11 @@
-#header {
-  @media only screen and (max-width: 1279px) {
-    nav {
-      height: 65px !important;
-    }
-  }
-}
 
-.render-body-area {
+.main-section {
+  min-height: 900px;
+  height: auto;
   margin-top: 70px;
   background-color: var(--ice);
+  position: relative;
+  top: -11px;
 
   @media only screen and (max-width: 1279px) {
     padding-top: 0;

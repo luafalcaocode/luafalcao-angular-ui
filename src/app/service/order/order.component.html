@@ -89,7 +89,7 @@
 
 
     <div class="row">
-      <div class="col-lg-12">
+      <div class="col-lg-12 u-padding-right-zero">
         <div class="form-group">
           <label for="">Observações:</label>
           <textarea [disabled]="enviandoDados" class="form-control"
@@ -100,7 +100,7 @@
     </div>
 
     <div class=" row">
-      <div class="col-xs-12 u-center">
+      <div class="col-xs-12 u-center u-padding-right-zero">
         <button class="btn" [disabled]="enviandoDados">
           <span *ngIf="!isLoading && !completing">enviar</span>
           <app-mini-loading *ngIf="isLoading && !completing"></app-mini-loading>

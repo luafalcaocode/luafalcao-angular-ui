@@ -1,4 +1,4 @@
-<div class="render-body-area" (scroll)="onScroll($event)">
+<div class="main-section" (scroll)="onScroll($event)">
   <section class="personal-title">
     <div class="row personal-title-headers">
       <div class="col-xs-12">
@@ -8,13 +8,10 @@
         </h2>
       </div>
     </div>
-    <!-- <div class="row">
-      <div class="col-xs-12 u-center"> -->
-        <div class="material-icons anima-upAndDown u-pointer u-inline" (click)="scrollInto('timeLineSection')">
-          keyboard_arrow_down
-        </div>
-      <!-- </div>
-    </div> -->
+
+    <div class="material-icons anima-upAndDown u-pointer u-inline" (click)="scrollInto('timeLineSection')">
+      keyboard_arrow_down
+    </div>
   </section>
   <section id="timeLineSection" class="timeline-container">
     <div class="row timeline-style-ui hide-on-small-only ">
@@ -35,7 +32,5 @@
       </div>
     </div>
   </section>
-
 </div>
-<app-footer [backgroundColor]="footerBackgroundColor"></app-footer>
 <page-loading class="page-loading"></page-loading>

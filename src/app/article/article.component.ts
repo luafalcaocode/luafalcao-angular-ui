@@ -1,6 +1,5 @@
-import { Component, OnInit, Input, ɵLocaleDataIndex, ElementRef } from '@angular/core';
+import { Component, OnInit, Input, ElementRef } from '@angular/core';
 import { ArticleViewModel } from '../viewModels/article.viewModel';
-import { ArticleMock } from './mocks/article.mock';
 import { LoaderService } from '../services/layout/loader.service';
 import { LoadingService } from '../services/layout/loading.service';
 import { CommonService } from '../services/layout/common.service';
@@ -13,7 +12,6 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./article.component.scss']
 })
 export class ArticleComponent implements OnInit {
-  @Input() article: ArticleMock;
   allArticles: any[];
   comments: any[];
   isLoading: boolean;
