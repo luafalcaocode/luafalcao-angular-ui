@@ -4,20 +4,66 @@
   </div>
   <div class="order-container">
     <div class="row">
-      <div class="col-lg-12 u-center">
-        <p class="u-center u-uppercase">
-          <i class="fas fa-cog" id="fa-cog-1"></i>
-          <i class="fas fa-cog" id="fa-cog-2"></i>
-          <i class="fas fa-cog" id="fa-cog-3"></i>
-        </p>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-lg-12 u-center">
-        <h1>Solicitar um serviço</h1>
+      <div class="col-lg-6">
+        <section class="container-solicite-um-servico">
+          <h1 class="container-como-funciona">Como funciona <i class="fas fa-question-circle"></i> </h1>
+          <p>É bem simples!</p>
+          <button class="btn reveal-btn btn-large" (click)="onClickOrder()">
+            solicite um serviço
+            <i class="fas fa-arrow-right"></i>
+          </button>
+          <div class="col-lg-6 hide-on-large-only u-padding-left-zero-mobile">
+            <ul class="order-list">
+              <li *ngFor="let item of howWorks" class="order-list-item" [innerHTML]="item" [ngStyle]="{'font-size' : howWorks.length > 1 ? '26px' : '43px' }"></li>
+            </ul>
+          </div>
 
-        <br />
-        <button class="btn reveal-btn btn-large" (click)="onClickOrder()">solicitar</button>
+        </section>
+        <section>
+          <p class="u-bold">Stack adotada nas soluções:</p>
+          <div class="row tech-logo-container logo-first">
+            <div class="col-xs-12 col-lg-3">
+              <img src="../../assets/icons/angular.png" class="tech-logo" (click)="openUrl('https://angular.io/')" />
+            </div>
+               <div class="col-xs-12 col-lg-3">
+              <img src="../../assets/icons/js.png" class="tech-logo" (click)="openUrl('https://developer.mozilla.org/en-US/docs/Web/JavaScript')" />
+            </div>
+            <div class="col-xs-12 col-lg-3">
+              <img src="../../assets/icons/html5.png" class="tech-logo" (click)="openUrl('https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5')" />
+            </div>
+            <div class="col-xs-12 col-lg-3">
+              <img src="../../assets/icons/css3.png" class="tech-logo"  (click)="openUrl('https://developer.mozilla.org/en-US/docs/Archive/CSS3')" />
+            </div>
+
+          </div>
+
+          <div class="row tech-logo-container logo-second">
+            <div class="col-xs-12 col-lg-4">
+              <img src="../../assets/icons/net_core.png" class="tech-logo" (click)="openUrl('https://dotnet.microsoft.com/')" />
+            </div>
+            <div class="col-xs-12 col-lg-4">
+              <img src="../../assets/icons/node.png" class="tech-logo" (click)="openUrl('https://nodejs.org/en/')" />
+            </div>
+            <div class="col-xs-12 col-lg-4">
+              <img src="../../assets/icons/sql.png" class="tech-logo" />
+            </div>
+          </div>
+
+          <div class="row tech-logo-container logo-third">
+            <div class="col-xs-12 col-lg-4">
+              <img src="../../assets/icons/ngrok.png" class="tech-logo" (click)="openUrl('https://ngrok.com/')" />
+            </div>
+            <div class="col-xs-12 col-lg-4">
+              <img src="../../assets/icons/iis.png" class="tech-logo" (click)="openUrl('https://www.iis.net/')" />
+            </div>
+          </div>
+
+        </section>
+      </div>
+      <div class="col-lg-6 hide-on-small-only">
+        <ul class="order-list">
+          <li *ngFor="let item of howWorks" class="order-list-item" [innerHTML]="item" [ngStyle]="{'font-size' : howWorks.length > 1 ? '26px' : '43px' }"></li>
+        </ul>
       </div>
     </div>
   </div>

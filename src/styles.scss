@@ -134,6 +134,11 @@ a {
 .u-padding-left-zero {
   padding-left: 0 !important;
 }
+.u-padding-left-zero-mobile {
+  @media only screen and (max-width: 1279px) {
+    padding-left: 0 !important;
+  }
+}
 .u-padding-right-zero {
   padding-right: 0 !important;
 }
@@ -142,6 +147,9 @@ a {
 }
 .u-margin-auto {
   margin: 0 auto !important;
+}
+.u-underline {
+  text-decoration: underline;
 }
 
 /* modal */
@@ -172,6 +180,13 @@ a {
     display: none;
   }
 }
+
+.hide-on-large-only {
+  @media only screen and (min-width: 1024px) {
+    display: none;
+  }
+}
+
 .show-on-mobile-only {
   @media only screen and (max-width: 767px) {
     display: block;

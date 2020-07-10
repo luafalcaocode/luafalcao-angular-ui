@@ -11,14 +11,13 @@ $colors: (
 
 header {
   position: relative;
-  top: 0px;
+  top: 1px;
   width: 100%;
   left: 0;
   z-index: 9000;
   transition: 0.6s ease-out;
 
   nav {
-    height: 80px;
     padding-top: 26px;
     padding-left: 100px;
 

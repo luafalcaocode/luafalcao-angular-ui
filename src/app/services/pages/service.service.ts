@@ -10,6 +10,7 @@ export class ServiceService {
   counts: any[];
   reveal: any;
   tiposDeProjeto: any[];
+  howWorks: string[];
 
   constructor(public commonService: CommonService) { }
 
@@ -117,6 +118,14 @@ export class ServiceService {
             selecionado: false,
           },
         ];
+        this.howWorks = [
+          '01. Envie sua solicitação, e eu entrarei em contato.',
+          '02. Fazemos o entendimento do seu problema e <span class="u-underline">juntos</span> encontraremos uma solução adequada.',
+          '03. Seguimos com a construção da sua aplicação.',
+          '04. Você recebe algo de valor a cada 2-4 semanas e fornece <span class="u-underline">feedback.</span>',
+          '05. Se tudo estiver OK, efetue o pagamento da entrega.',
+          '06. Repetimos o fluxo acima do passo 03 em diante até a conclusão do projeto.'
+        ];
         break;
       case 'para-a-comunidade':
         this.services = [
@@ -169,6 +178,9 @@ export class ServiceService {
             id: 3,
             selecionado: false,
           },
+        ];
+        this.howWorks = [
+          'Envie sua solicitação, e eu entrarei em contato.'
         ];
         break;
     }

@@ -1,4 +1,4 @@
-import { Component, OnInit, ElementRef } from '@angular/core';
+import { Component, OnInit, ElementRef, Input } from '@angular/core';
 import { ServiceService } from '../services/pages/service.service';
 import { CommonService } from '../services/layout/common.service';
 import { LoadingService } from '../services/layout/loading.service';
@@ -23,6 +23,7 @@ export class ServiceComponent implements OnInit {
   loading: any;
   active: boolean;
   tiposDeProjeto: any[];
+  howWorks: string [];
 
   constructor(public service: ServiceService, public commonService: CommonService, public loadingService: LoadingService, public router: ActivatedRoute, public elementRef: ElementRef) {
   }
@@ -46,6 +47,7 @@ export class ServiceComponent implements OnInit {
       this.screen = param.screen;
       this.service.initializePage(this.screen);
       this.services = this.service.services;
+      this.howWorks = this.service.howWorks;
       this.tiposDeProjeto = this.service.tiposDeProjeto;
       this.counts = this.service.counts;
 
@@ -66,5 +68,9 @@ export class ServiceComponent implements OnInit {
     orderForm.style.top = '0';
     document.getElementsByTagName('body')[0].style.overflowY = 'hidden';
 
+  }
+
+  openUrl(url) {
+    window.open(url)
   }
 }
