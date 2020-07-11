@@ -37,14 +37,6 @@ body {
   background: var(--white) !important;
 }
 
-#header {
-  @media only screen and (max-width: 1279px) {
-    height: 100%;
-    nav {
-      padding-top: 20px;
-    }
-  }
-}
 
 a:hover,
 button:hover,
