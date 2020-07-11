@@ -12,11 +12,10 @@
       height: 508px;
     }
     div {
-      font-family: spartan;
       top: 296px;
       color: var(--white);
       text-align: center;
-      font-weight: 900;
+
 
       @media only screen and (max-width: 1279px) {
         top: 140px;
@@ -26,6 +25,7 @@
       h1 {
         font-size: 54px;
         margin-bottom: 40px;
+        font-weight: bold;
 
         @media only screen and (max-width: 1279px) {
           font-size: 36px;
