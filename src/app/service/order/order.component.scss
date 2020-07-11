@@ -4,10 +4,10 @@
   z-index: 10000;
   height: 100%;
   width: 100%;
-  background: rgba(0, 0, 0, 0.9);
+  background: var(--white);
   top: 800px;
   left: 0;
-  color: var(--white);
+  color: var(--dark);
   padding: 20px 150px 20px 150px;
   overflow-y: auto;
   min-height: 670px;
@@ -44,7 +44,12 @@
       color: var(--green);
     }
 
-    select,
+    input {
+      color: var(--niceGreen);
+    }
+
+
+   select,
     input {
       height: 43px;
     }
@@ -126,7 +131,7 @@
     padding-left: 0;
 
     li {
-      color: var(--green);
+      color: var(--white);
       font-weight: 500;
       width: 300px;
       background-color: var(--niceGreen);
@@ -200,7 +205,7 @@
 
 .attachment:hover {
   transition: 0.4s;
-  color: var(--white);
+  color: var(--niceGreen);
 }
 
 .attachment:active {

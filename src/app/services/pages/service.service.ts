@@ -119,12 +119,17 @@ export class ServiceService {
           },
         ];
         this.howWorks = [
-          '01. Envie sua solicitação, e eu entrarei em contato.',
+          '01. Ao fazer uma solicitação será criado um login de usuário e você terá acesso ao Painel.',
           '02. Fazemos o entendimento do seu problema e <span class="u-underline">juntos</span> encontraremos uma solução adequada.',
-          '03. Seguimos com a construção da sua aplicação.',
-          '04. Você recebe algo de valor a cada 2-4 semanas e fornece <span class="u-underline">feedback.</span>',
-          '05. Se tudo estiver OK, efetue o pagamento da entrega.',
-          '06. Repetimos o fluxo acima do passo 03 em diante até a conclusão do projeto.'
+          '03. É feito um planejamento para o desenvolvimento e a entrega das funcionalidades',
+          '04. Seguimos com o projeto e construção da sua aplicação.',
+          '05. Você recebe algo de valor a cada 2-4 semanas e fornece <span class="u-underline">feedback.</span>',
+          '06. Se tudo estiver OK, efetue o pagamento da entrega.',
+          '07. Repetimos o fluxo acima do passo 03 em diante até a conclusão do projeto.',
+          '',
+          '',
+          '<span class="u-color-green u-normal">Você poderá acompanhar o progresso do seu projeto pelo painel do site! :)</span>'
+
         ];
         break;
       case 'para-a-comunidade':

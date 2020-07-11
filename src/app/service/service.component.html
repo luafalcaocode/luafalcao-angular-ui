@@ -20,7 +20,7 @@
 
         </section>
         <section>
-          <p class="u-bold">Stack adotada nas soluções:</p>
+          <p class="u-bold">Tecnologias adotada nas soluções:</p>
           <div class="row tech-logo-container logo-first">
             <div class="col-xs-12 col-lg-3">
               <img src="../../assets/icons/angular.png" class="tech-logo" (click)="openUrl('https://angular.io/')" />
@@ -54,7 +54,10 @@
               <img src="../../assets/icons/ngrok.png" class="tech-logo" (click)="openUrl('https://ngrok.com/')" />
             </div>
             <div class="col-xs-12 col-lg-4">
-              <img src="../../assets/icons/iis.png" class="tech-logo" (click)="openUrl('https://www.iis.net/')" />
+              <img src="../../assets/icons/iis.png" class="tech-logo" (click)="openUrl('https://www.iis.net/')" style="margin-left: -40px" />
+            </div>
+            <div class="col-xs-12 col-lg-4">
+              <img src="../../assets/icons/git.png" class="tech-logo" (click)="openUrl('https://www.iis.net/')" style="height: 70px; margin-top: 20px" />
             </div>
           </div>
 
@@ -62,7 +65,7 @@
       </div>
       <div class="col-lg-6 hide-on-small-only">
         <ul class="order-list">
-          <li *ngFor="let item of howWorks" class="order-list-item" [innerHTML]="item" [ngStyle]="{'font-size' : howWorks.length > 1 ? '26px' : '43px' }"></li>
+          <li *ngFor="let item of howWorks" class="order-list-item" [innerHTML]="item" [ngStyle]="{'font-size' : howWorks.length > 1 ? '24px' : '43px' }"></li>
         </ul>
       </div>
     </div>

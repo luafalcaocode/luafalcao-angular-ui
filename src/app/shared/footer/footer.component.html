@@ -1,51 +1,58 @@
 <footer [ngStyle]="{'background-color' : backgroundColor}">
-    <div class="row footer-headers">
-        <div class="col-md-12">
-            <div class="row">
-                <div class="col-md-4 col-xs-12">
-                    <h2 class="u-normal u-white">Luã Falcão</h2>
-                    <p>Serviços de desenvolvimento de software para você e sua empresa.</p>
-                </div>
-                <div class="col-md-4 col-xs-12 footer-sections">
-                    <h4 class="u-white">Contato:</h4>
-                    <ul class="u-padding-zero">
-                        <li><i class="far fa-envelope"></i>&nbsp; {{ email }}</li>
-                        <li><i class="fab fa-whatsapp"></i>&nbsp; {{ telefone }}</li>
-                    </ul>
-                </div>
-                <div class="col-md-4 col-xs-12 footer-sections hide-on-small-only">
-                    <h4 class="u-white">Veja Também:</h4>
-                    <div class="row">
-                        <div class="col-md-6 col-xs-12">
-                            <ul class="u-padding-zero u-pointer links-rodape">
-                                <li>Projetos</li>
-                                <li>Tutoriais</li>
-                                <li>Canal no You Tube</li>
-                            </ul>
-                        </div>
-                        <div class="col-md-6 col-xs-12">
-                            <ul class="u-padding-zero u-pointer">
-                                <li>Dicas de Programação</li>
-                                <li>Sobre</li>
-                                <li>Currículo</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+  <div class="row ">
+    <div class="col-lg-12 bb footer-container-links">
+      <div class="row">
+        <div class="col-lg-2 footer-luafalcao">
+          <span>Luã Falcão</span>
+          <div class="footer-luafalcao-socialIcons">
+            <button type="button" (click)="openUrl('https://github.com/luafalcaocode')"><i class="fab fa-github-square"></i></button>
+            <button type="button" (click)="openUrl('https://linkedin.com/in/luafalcao')"><i class="fab fa-linkedin"></i></button>
+          </div>
+        </div>
+        <div class="col-lg-10 bb">
+          <div class="row">
+            <div class="col-lg-3">
+              <p>Serviços</p>
+              <ul>
+                <li *ngFor="let link of link.servicos">
+                  <a [routerLink]="link.url">{{ link.description }}</a>
+                </li>
+              </ul>
             </div>
+            <div class="col-lg-3">
+              <p>Artigos</p>
+              <ul>
+                <li></li>
+              </ul>
+            </div>
+            <div class="col-lg-3">
+              <p>Projetos</p>
+              <ul>
+                <li></li>
+              </ul>
+            </div>
+            <div class="col-lg-3">
+              <p>Sobre</p>
+              <ul>
+                <li *ngFor="let link of link.sobre">
+                  <a [routerLink]="link.url">{{ link.description }}</a>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
 
-    <div class="row social-icon-container">
-        <div class="col-md-12 col-lg-4">
-            <a href="https://linkedin.com/in/luafalcao" target="_blank"><i
-                    class="fab fa-linkedin social-icon"></i></a>&nbsp;&nbsp;&nbsp;
-        </div>
+  <!-- <div class="row footer-container-pagamentos">
+    <div class="col-lg-12">
+      <div class="footer-pagamentos">
+        <p>Formas de pagamento:</p>
+      <i class="fab fa-paypal"></i>
+      </div>
     </div>
+  </div> -->
 
-    <div class="row copyright-container">
-        <div class="col-md-12">
-            <p class="u-white">Luã Falcão - Engenheiro de Software</p>
-        </div>
-    </div>
+
 </footer>
