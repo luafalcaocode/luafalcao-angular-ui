@@ -1,0 +1,27 @@
+<div class="row" [ngStyle]="{'margin-bottom' : '100px'}">
+  <div class="col-lg-12">
+    <div class="row">
+      <div class="col-lg-8 articles-container">
+        <ul>
+          <li *ngFor="let post of posts">
+            <div class="col-lg-6" [id]="post.id" [ngStyle]="{'margin-top' : '30px'}">
+              <img [src]="post.image" />
+              <h5>{{ post.title }}</h5>
+              <span><strong>Publicado por:</strong> Luã Falcão</span>
+              <span class="u-right"><strong>{{ post.publishedDate }}</strong></span>
+              <p>{{ post.description }}</p>
+              <button type="button" (click)="openUrl('/blogs/diario-de-um-engenheiro-software/post.id')">Leia mais
+              <i class="fas fa-chevron-right"></i>
+              </button>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <!-- <div class="col-lg-4">
+        <aside>
+          some stuff here!!!
+        </aside>
+      </div> -->
+    </div>
+  </div>
+</div>

@@ -5,6 +5,8 @@ import { LoadingService } from '../services/layout/loading.service';
 import { CommonService } from '../services/layout/common.service';
 import { MenuService } from '../services/layout/menu.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ArticleService } from '../services/pages/article.service';
+
 
 @Component({
   selector: 'app-article',
@@ -17,6 +19,8 @@ export class ArticleComponent implements OnInit {
   isLoading: boolean;
   public loading: any;
   id: number;
+  posts: ArticleViewModel[];
+  blogName: string;
 
   defaultStyle: any;
 
@@ -24,11 +28,21 @@ export class ArticleComponent implements OnInit {
   public articles: ArticleViewModel[];
   public selectedArticle: ArticleViewModel;
 
-  constructor(public loaderService: LoaderService, public commonService: CommonService, public menuService: MenuService, public router: ActivatedRoute, public navigator: Router, public loadingService: LoadingService, public elementRef: ElementRef) {
+  constructor(public loaderService: LoaderService,
+              public commonService: CommonService,
+              public menuService: MenuService,
+              public router: ActivatedRoute,
+              public navigator: Router,
+              public loadingService: LoadingService,
+              public elementRef: ElementRef,
+              public articleService: ArticleService) {
     this.defaultStyle = {};
   }
 
   ngOnInit() {
+
+    this.loading = this.elementRef.nativeElement.querySelector('.page-loading');
+
     const nav = (<HTMLElement>document.getElementById('navDesktop'));
     const logo = (<HTMLElement>document.querySelector('a.lcode'));
     const links = document.querySelectorAll('li.item-menu-principal');
@@ -51,8 +65,13 @@ export class ArticleComponent implements OnInit {
       item.style.fontSize = '17px';
     });
 
-    this.loading = this.elementRef.nativeElement.querySelector('.page-loading');
-    this.loadingService.hide(this.loading);
+
+    this.router.params.subscribe(param => {
+      this.articleService.initialize(param.screen);
+      this.posts = this.articleService.posts;
+      this.blogName = this.articleService.blogName;
+      this.loadingService.hide(this.loading);
+    });
   }
 
   ngOnDestroy() {
@@ -66,4 +85,6 @@ export class ArticleComponent implements OnInit {
     nav.style.paddingLeft = this.defaultStyle.paddingLeft;
     nav.style.marginTop = this.defaultStyle.marginTop;
   }
+
+
 }

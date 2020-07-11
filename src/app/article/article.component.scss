@@ -1,0 +1,58 @@
+.main-section {
+  min-height: 800px;
+
+  header {
+    pointer-events: none;
+    background-image: url('../../assets/backgrounds/blogs/paisagem-3.jpeg');
+    background-size: cover;
+    height: 720px;
+    font-weight: bold;
+
+    @media only screen and (max-width: 1279px) {
+      height: 508px;
+    }
+    div {
+      font-family: spartan;
+      top: 296px;
+      color: var(--white);
+      text-align: center;
+      font-weight: 900;
+
+      @media only screen and (max-width: 1279px) {
+        top: 140px;
+
+      }
+
+      h1 {
+        font-size: 54px;
+        margin-bottom: 40px;
+
+        @media only screen and (max-width: 1279px) {
+          font-size: 36px;
+          margin-bottom: 60px;
+        }
+      }
+
+      svg {
+        font-size: 52px;
+        @media only screen and (max-width: 1279px) {
+          font-size: 34px;
+        }
+      }
+    }
+
+  }
+}
+
+h6 {
+  margin-top: 60px;
+  padding-left: 120px;
+  font-size: 13px;
+  font-weight: bold;
+  text-transform: uppercase;
+
+  @media only screen and (max-width: 1279px) {
+    padding-left: 17px;
+    margin-top: 27px;
+  }
+}

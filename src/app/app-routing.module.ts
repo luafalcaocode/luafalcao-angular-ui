@@ -23,7 +23,7 @@ const routes: Routes = [
     component: ArticleDetailComponent
   },
   {
-    path: 'blogs/diario-de-um-engenheiro-software',
+    path: 'blogs/:screen',
     component: ArticleComponent
    }
   ,
