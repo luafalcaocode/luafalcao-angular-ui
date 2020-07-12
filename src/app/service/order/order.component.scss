@@ -1,10 +1,11 @@
 #order {
+  background-image: url('../../../assets/backgrounds/order/order-wallpaper.jpg');
+  background-position-y: center;
   position: fixed;
   overflow-x: hidden;
   z-index: 10000;
   height: 100%;
   width: 100%;
-  background: var(--white);
   top: 800px;
   left: 0;
   color: var(--dark);
