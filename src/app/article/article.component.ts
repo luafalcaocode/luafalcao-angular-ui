@@ -21,7 +21,7 @@ export class ArticleComponent implements OnInit {
   posts: ArticleViewModel[];
   blogName: string;
   defaultStyle: any;
-
+  paginations:  ArticleViewModel[];
   public loading: any;
   public articles: ArticleViewModel[];
   public selectedArticle: ArticleViewModel;
@@ -46,6 +46,7 @@ export class ArticleComponent implements OnInit {
       this.posts = this.articleService.posts;
       this.featuredArticles = this.articleService.featuredArticles;
       this.blogName = this.articleService.blogName;
+      this.paginations = this.articleService.paginations;
       this.loadingService.hide(this.loading);
     });
   }

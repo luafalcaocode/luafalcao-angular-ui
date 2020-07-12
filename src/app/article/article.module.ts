@@ -7,9 +7,10 @@ import { ArticleComponent } from './article.component';
 import { ArticleDetailComponent } from './article-detail/article-detail.component';
 import { ReusableModule } from '../reusable/reusable.module';
 import { ArticlePostComponent } from './article-post/article-post.component';
+import { ArticlePaginationComponent } from './article-pagination/article-pagination.component';
 
 @NgModule({
-  declarations: [ArticleComponent, ArticleDetailComponent, ArticlePostComponent],
+  declarations: [ArticleComponent, ArticleDetailComponent, ArticlePostComponent, ArticlePaginationComponent],
   imports: [
     CommonModule,
     SharedModule,

@@ -8,6 +8,7 @@ export class ArticleService {
   posts: ArticleViewModel[];
   featuredArticles: ArticleViewModel[];
   blogName: string;
+  paginations:  ArticleViewModel[];
 
   constructor() { }
 
@@ -67,10 +68,8 @@ export class ArticleService {
         ];
         this.blogName = 'Diário de um Engenheiro de Software';
         this.featuredArticles = this.posts.slice(0, 4);
+        this.paginations = this.posts;
         break;
-
-
-
       }
   }
 }

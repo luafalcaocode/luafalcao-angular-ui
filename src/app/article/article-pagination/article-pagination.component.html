@@ -1,0 +1,7 @@
+<div class="row article-pagination-container">
+  <div class="col-lg-6">
+    <ul>
+      <li *ngFor="let item of posts; let i = index" [id]="'elemento_' + item.id" (click)="activePage(elem.id)" #elem>{{ i }}</li>
+    </ul>
+  </div>
+</div>
