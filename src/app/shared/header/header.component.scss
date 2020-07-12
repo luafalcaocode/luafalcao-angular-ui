@@ -25,7 +25,7 @@ header {
       height: 65px;
       padding-left: 0;
       padding-right: 0;
-      padding-top: 17px !important;
+      padding-top: 11px !important;
       padding-bottom: 8px;
     }
 
@@ -131,6 +131,10 @@ header {
       margin-top: -2px;
       margin-right: 10px;
       color: map-get($colors, navbar-link-hovered);
+
+      @media only screen and (max-width: 1279px) {
+        margin-top: -3px;
+      }
     }
   }
 
@@ -282,3 +286,5 @@ i.user {
     vertical-align: -7px;
   }
 }
+
+

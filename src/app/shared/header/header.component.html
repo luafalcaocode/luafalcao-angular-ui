@@ -68,7 +68,7 @@
           (click)="showLoggedMenu()" id="usuario"><i class="material-icons user" *ngIf="loginService.isLogged()" [class.active-white]="loginService.isLogged()"> person
           </i></a>
 
-        <a class="all-articles-icon" [hidden]="isUserIconsVisibile" (click)="toogleArticlesMenu()">
+        <a class="all-articles-icon" [hidden]="isUserIconsVisibile">
           <span [class.btn-article-active]="menuService.isArticleMenuVisible">ver mais artigos</span>
         </a>
       </div>

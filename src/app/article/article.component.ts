@@ -17,14 +17,15 @@ export class ArticleComponent implements OnInit {
   allArticles: any[];
   comments: any[];
   isLoading: boolean;
-  public loading: any;
   id: number;
   posts: ArticleViewModel[];
   blogName: string;
-
   defaultStyle: any;
+
+  public loading: any;
   public articles: ArticleViewModel[];
   public selectedArticle: ArticleViewModel;
+  public featuredArticles: ArticleViewModel[];
 
   constructor(public loaderService: LoaderService,
               public commonService: CommonService,
@@ -38,51 +39,18 @@ export class ArticleComponent implements OnInit {
   }
 
   ngOnInit() {
-
     this.loading = this.elementRef.nativeElement.querySelector('.page-loading');
-
-    const nav = (<HTMLElement>document.getElementById('navDesktop'));
-    const logo = (<HTMLElement>document.querySelector('a.lcode'));
-    const links = document.querySelectorAll('li.item-menu-principal');
-
-    (<HTMLInputElement>document.getElementById('navMobile')).style.backgroundColor = 'black';
-
-    this.defaultStyle.backgroundColor = nav.style.backgroundColor;
-    this.defaultStyle.height = nav.style.height;
-    this.defaultStyle.paddingTop = nav.style.paddingTop;
-    this.defaultStyle.paddingLeft = nav.style.paddingLeft;
-    this.defaultStyle.marginTop = nav.style.marginTop;
-
-    nav.style.backgroundColor = 'transparent';
-    nav.style.height = '58px';
-    nav.style.paddingTop = '15px';
-    nav.style.paddingLeft = '100px';
-    logo.style.marginTop = '-8px';
-
-    Array.from(links).forEach((item: HTMLElement) => {
-      item.style.fontSize = '17px';
-    });
-
-
+    this.commonService.setLayout();
     this.router.params.subscribe(param => {
       this.articleService.initialize(param.screen);
       this.posts = this.articleService.posts;
+      this.featuredArticles = this.articleService.featuredArticles;
       this.blogName = this.articleService.blogName;
       this.loadingService.hide(this.loading);
     });
   }
 
   ngOnDestroy() {
-    const nav = (<HTMLElement>document.getElementById('navDesktop'));
-    const logo = (<HTMLElement>document.querySelector('a.lcode'));
-    const links = document.querySelectorAll('li.item-menu-principal');
-
-    nav.style.backgroundColor =  this.defaultStyle.backgroundColor;
-    nav.style.height = this.defaultStyle.height;
-    nav.style.paddingTop =  this.defaultStyle.paddingTop;
-    nav.style.paddingLeft = this.defaultStyle.paddingLeft;
-    nav.style.marginTop = this.defaultStyle.marginTop;
+   this.commonService.unsetLayout();
   }
-
-
 }

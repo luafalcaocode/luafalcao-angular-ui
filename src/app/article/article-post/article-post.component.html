@@ -1,27 +1,54 @@
 <div class="row" [ngStyle]="{'margin-bottom' : '100px'}">
-  <div class="col-lg-12">
+  <div class="col-lg-12 col-xs-12">
     <div class="row">
-      <div class="col-lg-8 articles-container">
+      <div class="col-lg-9 col-xs-12 articles-container">
         <ul>
           <li *ngFor="let post of posts">
-            <div class="col-lg-6" [id]="post.id" [ngStyle]="{'margin-top' : '30px'}">
+            <div class="col-lg-6 col-xs-12" [id]="post.id" [ngStyle]="{'margin-top' : '30px'}">
               <img [src]="post.image" />
               <h5>{{ post.title }}</h5>
               <span><strong>Publicado por:</strong> Luã Falcão</span>
               <span class="u-right"><strong>{{ post.publishedDate }}</strong></span>
               <p>{{ post.description.length > 100 ? post.description.substring(0, 99) + '...' : post.description }}</p>
               <button type="button" (click)="openUrl('/blogs/diario-de-um-engenheiro-software/post.id')">Leia mais
-              <i class="fas fa-chevron-right"></i>
+                <i class="fas fa-chevron-right"></i>
               </button>
             </div>
           </li>
         </ul>
       </div>
-      <!-- <div class="col-lg-4">
+      <div class="col-lg-3 aside-container hide-on-small-only ">
         <aside>
-          some stuff here!!!
+          <div class="aside-category">
+            <h5 class="u-uppercase">Em destaque</h5>
+            <ul>
+              <li *ngFor="let article of featuredArticles"
+                (click)="openUrl('/blogs/diario-de-um-engenheiro-de-software/' + article.id)">
+                <span>{{ article.title}}</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="aside-category">
+            <h5 class="u-uppercase">Categorias</h5>
+            <ul>
+              <li>Design Patterns</li>
+              <li>Carreira</li>
+              <li>Tutoriais</li>
+              <li>Dicionário de Problemas</li>
+            </ul>
+          </div>
+
+          <div class="aside-category">
+            <h5 class="u-uppercase">Newsletter</h5>
+            <h6>Saiba quando um novo artigo for publicado: </h6>
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="insira seu e-mail aqui"  />
+              <button type="button">Enviar</button>
+            </div>
+          </div>
         </aside>
-      </div> -->
+      </div>
     </div>
   </div>
 </div>

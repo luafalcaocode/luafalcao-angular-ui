@@ -9,6 +9,7 @@ import { ArticleViewModel } from '../../viewModels/article.viewModel';
 })
 export class ArticlePostComponent implements OnInit {
   @Input() posts: ArticleViewModel[];
+  @Input() featuredArticles: ArticleViewModel[];
 
   constructor() { }
 
