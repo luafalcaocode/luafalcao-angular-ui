@@ -119,16 +119,24 @@ export class ServiceService {
           },
         ];
         this.howWorks = [
-          '01. Ao fazer uma solicitação será criado um login de usuário e você terá acesso ao Painel.',
-          '02. Fazemos o entendimento do seu problema e <span class="u-underline">juntos</span> encontraremos uma solução adequada.',
-          '03. É feito um planejamento para o desenvolvimento e a entrega das funcionalidades',
+          '01. Clique na opção ao lado e preencha o formulário com a solicitação.',
+          '02. Farei o entendimento do seu problema e encontraremos uma solução adequada.',
+          '03. Será feito um planejamento para o desenvolvimento e a entrega das funcionalidades',
           '04. Seguimos com o projeto e construção da sua aplicação.',
           '05. Você recebe algo de valor a cada 2-4 semanas e fornece <span class="u-underline">feedback.</span>',
           '06. Se tudo estiver OK, efetue o pagamento da entrega.',
-          '07. Repetimos o fluxo acima do passo 03 em diante até a conclusão do projeto.',
-          '',
-          '',
-          '<span class="u-color-green u-normal">Você poderá acompanhar o progresso do seu projeto pelo painel do site! :)</span>'
+          '07. Repetimos o fluxo acima do passo 03 em diante até a conclusão do projeto.'
+
+          // '01. Ao fazer uma solicitação será criado um login de usuário e você terá acesso ao Painel.',
+          // '02. Fazemos o entendimento do seu problema e <span class="u-underline">juntos</span> encontraremos uma solução adequada.',
+          // '03. É feito um planejamento para o desenvolvimento e a entrega das funcionalidades',
+          // '04. Seguimos com o projeto e construção da sua aplicação.',
+          // '05. Você recebe algo de valor a cada 2-4 semanas e fornece <span class="u-underline">feedback.</span>',
+          // '06. Se tudo estiver OK, efetue o pagamento da entrega.',
+          // '07. Repetimos o fluxo acima do passo 03 em diante até a conclusão do projeto.',
+          // '',
+          // '',
+          // '<span class="u-color-green u-normal">Você poderá acompanhar o progresso do seu projeto pelo painel do site! :)</span>'
 
         ];
         break;

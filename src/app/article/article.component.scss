@@ -2,7 +2,6 @@
   min-height: 800px;
 
   header {
-    pointer-events: none;
     background-image: url('../../assets/backgrounds/blogs/paisagem-3.jpeg');
     background-size: cover;
     height: 720px;
@@ -39,9 +38,15 @@
 
       svg {
         font-size: 52px;
+        transition: .6s ease-out;
         @media only screen and (max-width: 1279px) {
           font-size: 34px;
         }
+      }
+
+      svg:hover {
+        transition: .5s;
+        transform: scale(1.2);
       }
     }
 

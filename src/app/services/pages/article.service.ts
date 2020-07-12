@@ -16,49 +16,49 @@ export class ArticleService {
         this.posts = [
           {
             id: 0,
-            title: 'Design Pattern #1: Strategy',
+            title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed',
             description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus lectus ac ante dictum, quis vehicula nibh auctor. Morbi mattis varius leo in rhoncus. ',
             publishedDate: '10/10/2020',
             image: 'https://picsum.photos/seed/picsum/200/300'
           },
           {
             id: 1,
-            title: 'Design Patterns and where to find them',
+            title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed',
             description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus lectus ac ante dictum, quis vehicula nibh auctor. Morbi mattis varius leo in rhoncus. ',
             publishedDate: '11/10/2020',
             image: 'https://picsum.photos/seed/picsum/200/300'
           },
           {
             id: 2,
-            title: 'How to get girls on Silicon Valley',
+            title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed',
             description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus lectus ac ante dictum, quis vehicula nibh auctor. Morbi mattis varius leo in rhoncus. ',
             publishedDate: '10/09/2020',
             image: 'https://picsum.photos/seed/picsum/200/300'
           },
           {
             id: 3,
-            title: 'How to get girls on Silicon Valley',
+            title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed',
             description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus lectus ac ante dictum, quis vehicula nibh auctor. Morbi mattis varius leo in rhoncus. .',
             publishedDate: '10/09/2020',
             image: 'https://picsum.photos/seed/picsum/200/300'
           },
           {
             id: 4,
-            title: 'How to get girls on Silicon Valley',
+            title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed',
             description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus lectus ac ante dictum, quis vehicula nibh auctor. Morbi mattis varius leo in rhoncus. ',
             publishedDate: '10/09/2020',
             image: 'https://picsum.photos/seed/picsum/200/300'
           },
           {
             id: 5,
-            title: 'How to get girls on Silicon Valley',
+            title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed',
             description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus lectus ac ante dictum, quis vehicula nibh auctor. Morbi mattis varius leo in rhoncus. .',
             publishedDate: '10/09/2020',
             image: 'https://picsum.photos/seed/picsum/200/300'
           },
           {
             id: 6,
-            title: 'How to get girls on Silicon Valley',
+            title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed',
             description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus lectus ac ante dictum, quis vehicula nibh auctor. Morbi mattis varius leo in rhoncus. .',
             publishedDate: '10/09/2020',
             image: 'https://picsum.photos/seed/picsum/200/300'

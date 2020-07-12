@@ -9,7 +9,7 @@
               <h5>{{ post.title }}</h5>
               <span><strong>Publicado por:</strong> Luã Falcão</span>
               <span class="u-right"><strong>{{ post.publishedDate }}</strong></span>
-              <p>{{ post.description }}</p>
+              <p>{{ post.description.length > 100 ? post.description.substring(0, 99) + '...' : post.description }}</p>
               <button type="button" (click)="openUrl('/blogs/diario-de-um-engenheiro-software/post.id')">Leia mais
               <i class="fas fa-chevron-right"></i>
               </button>

@@ -39,6 +39,7 @@
         font-size: 26px;
         font-weight: bold;
         height: auto;
+        min-height: 60px;
       }
       span {
         font-size: 16px;
@@ -56,7 +57,7 @@
         border: none;
         border-radius: 3px;
         padding-left: 0px;
-        color: var(--green);
+        color: var(--dark);
         transition: 0.6s ease-out;
         font-weight: bold;
         font-size: 16px;
@@ -64,7 +65,7 @@
 
       button:hover {
         transition: 0.5s;
-        transform: scale(1.2);
+        color: var(--green);
       }
 
       button:focus {
