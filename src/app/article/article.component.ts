@@ -23,8 +23,6 @@ export class ArticleComponent implements OnInit {
   blogName: string;
 
   defaultStyle: any;
-
-
   public articles: ArticleViewModel[];
   public selectedArticle: ArticleViewModel;
 
@@ -55,7 +53,7 @@ export class ArticleComponent implements OnInit {
     this.defaultStyle.paddingLeft = nav.style.paddingLeft;
     this.defaultStyle.marginTop = nav.style.marginTop;
 
-    nav.style.backgroundColor = '#000';
+    nav.style.backgroundColor = 'transparent';
     nav.style.height = '58px';
     nav.style.paddingTop = '15px';
     nav.style.paddingLeft = '100px';

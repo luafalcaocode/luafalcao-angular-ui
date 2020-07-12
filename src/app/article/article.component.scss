@@ -7,12 +7,16 @@
     background-size: cover;
     height: 720px;
     font-weight: bold;
+    height: 500px;
+    background-position-y: -300px;
 
     @media only screen and (max-width: 1279px) {
       height: 508px;
+      background-position-y: -300px;
+      background-position: center;
     }
     div {
-      top: 296px;
+      top: 185px;
       color: var(--white);
       text-align: center;
 
@@ -47,7 +51,7 @@
 h6 {
   margin-top: 60px;
   padding-left: 120px;
-  font-size: 13px;
+  font-size: 18px;
   font-weight: bold;
   text-transform: uppercase;
 

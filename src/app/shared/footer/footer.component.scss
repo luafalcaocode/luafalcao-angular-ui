@@ -5,17 +5,15 @@ footer {
   background-position: top center;
   background-repeat: no-repeat;
   color: var(--silver);
-  bottom: 0;
+
   position: relative;
   width: 100%;
 
   @media (max-width: 1279px) {
     padding-left: 30px;
-    padding-bottom: 0;
     z-index: 0;
     position: relative !important;
     padding-right: 0 !important;
-    max-height: 366px;
   }
 
   @media only screen and (max-width: 1279px) {
