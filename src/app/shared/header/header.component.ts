@@ -51,8 +51,8 @@ export class HeaderComponent implements OnInit {
     ];
 
     this.menuBlogs = [
-      new MenuViewModel(1, 'Diário de um engenheiro de software', '/blogs/diario-de-um-engenheiro-software', false),
-      new MenuViewModel(2, 'Padrões de Projeto e onde habitam', '/blogs/padroes-projetos-onde-habitam', false)
+      new MenuViewModel(1, 'Diário de um engenheiro de software', '/blogs/diario-de-um-engenheiro-software', false)
+
     ];
 
     this.mobileMenuService.isNavMobileOpen = false;

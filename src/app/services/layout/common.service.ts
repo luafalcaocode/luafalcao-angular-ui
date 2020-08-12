@@ -26,7 +26,7 @@ export class CommonService {
     window.open(url);
   }
 
-  setLayout(isBlack?: boolean) {
+  setLayout(isBlack?: boolean, transparencyOnFooter?: boolean) {
     const nav = (<HTMLElement>document.getElementById('navDesktop'));
     const logo = (<HTMLElement>document.querySelector('a.lcode'));
     const links = document.querySelectorAll('li.item-menu-principal');
@@ -55,10 +55,18 @@ export class CommonService {
 
   unsetLayout() {
     const nav = (<HTMLElement>document.getElementById('navDesktop'));
-    nav.style.backgroundColor =  this.defaultStyle.backgroundColor;
+    nav.style.backgroundColor = this.defaultStyle.backgroundColor;
     nav.style.height = this.defaultStyle.height;
-    nav.style.paddingTop =  this.defaultStyle.paddingTop;
+    nav.style.paddingTop = this.defaultStyle.paddingTop;
     nav.style.paddingLeft = this.defaultStyle.paddingLeft;
     nav.style.marginTop = this.defaultStyle.marginTop;
+  }
+
+  navigateTo(url) {
+    window.open(url);
+  }
+
+  gotoTop() {
+    window.scrollTo(0, 0);
   }
 }

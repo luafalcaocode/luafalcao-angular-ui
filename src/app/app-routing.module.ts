@@ -19,14 +19,18 @@ const routes: Routes = [
   //   component: PanelComponent
   // },
   {
-    path: 'blogs/diario-de-um-engenheiro-software/:id',
+    path: 'blogs/diario-de-um-engenheiro-software/post/:id',
     component: ArticleDetailComponent
   },
   {
-    path: 'blogs/:screen',
-    component: ArticleComponent
+    path: 'blogs/:nome/pagina/:pagina',
+    component: ArticleComponent,
    }
   ,
+  {
+    path: 'blogs/:nome',
+    redirectTo: 'blogs/:nome/pagina/1'
+   },
   {
     path: 'sobre',
     component: AboutComponent

@@ -77,28 +77,7 @@ export class AboutComponent implements OnInit {
 
 
   ngOnInit() {
-    const nav = (<HTMLElement>document.getElementById('navDesktop'));
-    const logo = (<HTMLElement>document.querySelector('a.lcode'));
-    const links = document.querySelectorAll('li.item-menu-principal');
-
-    (<HTMLInputElement>document.getElementById('navMobile')).style.backgroundColor = 'black';
-
-    this.defaultStyle.backgroundColor = nav.style.backgroundColor;
-    this.defaultStyle.height = nav.style.height;
-    this.defaultStyle.paddingTop = nav.style.paddingTop;
-    this.defaultStyle.paddingLeft = nav.style.paddingLeft;
-    this.defaultStyle.marginTop = nav.style.marginTop;
-
-    nav.style.backgroundColor = 'transparent';
-    nav.style.height = '58px';
-    nav.style.paddingTop = '15px';
-    nav.style.paddingLeft = '100px';
-    logo.style.marginTop = '-8px';
-
-    Array.from(links).forEach((item: HTMLElement) => {
-      item.style.fontSize = '17px';
-    });
-
+    this.commonService.setLayout(false, true);
     this.loading = this.elementRef.nativeElement.querySelector('.page-loading');
     this.commonService.initializePage();
     this.write();
@@ -155,17 +134,11 @@ export class AboutComponent implements OnInit {
   }
 
 
-  ngOnDestroy() {
-    const nav = (<HTMLElement>document.getElementById('navDesktop'));
-    const logo = (<HTMLElement>document.querySelector('a.lcode'));
-    const links = document.querySelectorAll('li.item-menu-principal');
 
-    nav.style.backgroundColor =  this.defaultStyle.backgroundColor;
-    nav.style.height = this.defaultStyle.height;
-    nav.style.paddingTop =  this.defaultStyle.paddingTop;
-    nav.style.paddingLeft = this.defaultStyle.paddingLeft;
-    nav.style.marginTop = this.defaultStyle.marginTop;
-  }
+  ngOnDestroy() {
+    this.commonService.unsetLayout();
+   }
+
    scrollInto(id: string) {
     document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
   }

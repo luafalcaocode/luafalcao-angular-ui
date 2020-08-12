@@ -16,6 +16,10 @@ export class ArticlePostComponent implements OnInit {
   ngOnInit() {
   }
 
+  ngOnChange() {
+    console.log(this.posts);
+  }
+
   openUrl(url) {
     window.open(url);
   }

@@ -29,6 +29,15 @@
   --newDark: #212127;
   --iconsHome: rgba(255, 255, 255, 0.65);
   --red: #ff0000;
+
+  --h1: 48.83px;
+  --h2: 39.06px;
+  --h3: 31.25px;
+  --h4: 25.00px;
+  --h5: 20.00px;
+  --normal: 16.00px;
+  --small: 12.80px;
+
 }
 
 body {
@@ -37,6 +46,16 @@ body {
   background: var(--white) !important;
   font-family: 'Baloo Da 2', cursive;
 }
+
+h1 { font-size: var(--h1); }
+h2 { font-size: var(--h2); }
+h3 { font-size: var(--h3); }
+h4 { font-size: var(--h4); }
+h5 { font-size: var(--h5); };
+p, span { font-size: var(--normal); }
+
+
+
 
 
 a:hover,

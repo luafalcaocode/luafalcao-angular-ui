@@ -123,8 +123,8 @@ export class ServiceService {
           '02. Farei o entendimento do seu problema e encontraremos uma solução adequada.',
           '03. Será feito um planejamento para o desenvolvimento e a entrega das funcionalidades',
           '04. Seguimos com o projeto e construção da sua aplicação.',
-          '05. Você recebe algo de valor a cada 2-4 semanas e fornece <span class="u-underline">feedback.</span>',
-          '06. Se tudo estiver OK, efetue o pagamento da entrega.',
+          '05. Você recebe algo de valor a cada 2-4 semanas e fornece feedback.',
+          '06. Se tudo estiver OK, efetue o pagamento do incremento de software recebido.',
           '07. Repetimos o fluxo acima do passo 03 em diante até a conclusão do projeto.'
 
           // '01. Ao fazer uma solicitação será criado um login de usuário e você terá acesso ao Painel.',

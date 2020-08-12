@@ -1,7 +1,10 @@
 <div class="row article-pagination-container">
-  <div class="col-lg-6">
+  <div class="col-lg-8">
     <ul>
-      <li *ngFor="let item of posts; let i = index" [id]="'elemento_' + item.id" (click)="activePage(elem.id)" #elem>{{ i }}</li>
+      <li (click)="whenClickPreviousPage()" *ngIf="leftArrowVisible"><i class="fas fa-chevron-left pagination-arrow"></i></li>
+      <li *ngFor="let item of paginationNumbersRendered; let i = index" [id]="'elemento_' + item.page" class="pagination-number" [class.active]="item.active" (click)="whenClickPageNumber(elem.id)" #elem>
+        {{ item.page }}</li>
+      <li (click)="whenClickNextPage()" *ngIf="rightArrowVisible"><i class="fas fa-chevron-right pagination-arrow"></i></li>
     </ul>
   </div>
 </div>

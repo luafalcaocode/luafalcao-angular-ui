@@ -1,15 +1,15 @@
 export class ArticleViewModel {
     public id?: number;
-    public title?: string;
-    public description?: string;
-    public publishedDate?: string;
-    public image?: string;
+    public titulo?: string;
+    public descricao?: string;
+    public dataPublicacao?: string;
+    public thumbnail?: any;
 
-    constructor(id?: number, image?: string, publishedDate?: string, title?: string, description?: string) {
+    constructor(id?: number, thumbnail?: string, dataPublicacao?: string, titulo?: string, descricao?: string) {
         this.id = id;
-        this.image = image;
-        this.publishedDate = publishedDate;
-        this.title = title;
-        this.description = description;
+        this.thumbnail = thumbnail;
+        this.dataPublicacao = dataPublicacao;
+        this.titulo = titulo;
+        this.descricao = descricao;
     }
 }

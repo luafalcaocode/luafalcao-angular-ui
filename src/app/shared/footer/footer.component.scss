@@ -1,10 +1,10 @@
 footer {
   height: auto;
   min-height: 150px;
-  background-color: var(--violet);
   background-position: top center;
   background-repeat: no-repeat;
   color: var(--silver);
+
 
   position: relative;
   width: 100%;
@@ -48,6 +48,7 @@ footer {
       text-transform: uppercase;
       text-decoration: none;
       transition: 0.5s ease-out;
+      pointer-events: none;
     }
     li a:hover {
       color: var(--white);

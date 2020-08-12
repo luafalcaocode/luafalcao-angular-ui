@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ArticleViewModel } from '../../viewModels/article.viewModel';
+import { RequestService } from '../request.service';
 
 @Injectable({
   providedIn: 'root'
@@ -9,67 +10,28 @@ export class ArticleService {
   featuredArticles: ArticleViewModel[];
   blogName: string;
   paginations:  ArticleViewModel[];
+  count: number;
 
-  constructor() { }
+  constructor(public api: RequestService) { }
 
   initialize(screen: string) {
     switch(screen) {
       case 'diario-de-um-engenheiro-software':
-        this.posts = [
-          {
-            id: 0,
-            title: 'Lorem ipsum dolor sit amet, consectetur adipiscing',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus lectus ac ante dictum, quis vehicula nibh auctor. Morbi mattis varius leo in rhoncus. ',
-            publishedDate: '10/10/2020',
-            image: 'https://picsum.photos/seed/picsum/200/300'
-          },
-          {
-            id: 1,
-            title: 'Lorem ipsum dolor sit amet, consectetur adipiscing',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus lectus ac ante dictum, quis vehicula nibh auctor. Morbi mattis varius leo in rhoncus. ',
-            publishedDate: '11/10/2020',
-            image: 'https://picsum.photos/seed/picsum/200/300'
-          },
-          {
-            id: 2,
-            title: 'Lorem ipsum dolor sit amet, consectetur adipiscing',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus lectus ac ante dictum, quis vehicula nibh auctor. Morbi mattis varius leo in rhoncus. ',
-            publishedDate: '10/09/2020',
-            image: 'https://picsum.photos/seed/picsum/200/300'
-          },
-          {
-            id: 3,
-            title: 'Lorem ipsum dolor sit amet, consectetur adipiscing',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus lectus ac ante dictum, quis vehicula nibh auctor. Morbi mattis varius leo in rhoncus. .',
-            publishedDate: '10/09/2020',
-            image: 'https://picsum.photos/seed/picsum/200/300'
-          },
-          {
-            id: 4,
-            title: 'Lorem ipsum dolor sit amet, consectetur adipiscing',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus lectus ac ante dictum, quis vehicula nibh auctor. Morbi mattis varius leo in rhoncus. ',
-            publishedDate: '10/09/2020',
-            image: 'https://picsum.photos/seed/picsum/200/300'
-          },
-          {
-            id: 5,
-            title: 'Lorem ipsum dolor sit amet, consectetur adipiscing',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus lectus ac ante dictum, quis vehicula nibh auctor. Morbi mattis varius leo in rhoncus. .',
-            publishedDate: '10/09/2020',
-            image: 'https://picsum.photos/seed/picsum/200/300'
-          },
-          {
-            id: 6,
-            title: 'Lorem ipsum dolor sit amet, consectetur adipiscing',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus lectus ac ante dictum, quis vehicula nibh auctor. Morbi mattis varius leo in rhoncus. .',
-            publishedDate: '10/09/2020',
-            image: 'https://picsum.photos/seed/picsum/200/300'
-          }
-        ];
         this.blogName = 'Diário de um Engenheiro de Software';
-        this.featuredArticles = this.posts.slice(0, 4);
-        this.paginations = this.posts;
+        return this.GetArticlesByTag('diario-de-um-engenheiro-software', 1, 6);
         break;
       }
+  }
+
+  public GetAllArticles(page)  {
+    return this.api.get('/artigos', null, page, 6);
+  }
+
+  public GetArticlesByTag(tag: string, page?: number, qtd?: number)  {
+    return this.api.getByTag(`/artigos/tag`, tag, null, page, qtd);
+  }
+
+  public GetCountOfArticles() {
+    return this.api.get('/artigos/count', null)
   }
 }

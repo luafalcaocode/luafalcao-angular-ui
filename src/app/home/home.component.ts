@@ -12,7 +12,7 @@ import { LoadingService } from '../services/layout/loading.service';
 export class HomeComponent implements OnInit {
   public images: ImageViewModel[];
   public currentYear = new Date().getFullYear();
-  public titulos: any[] = ['How can a man die better?', 'Than facing fearful odds', 'for the ashes of his fathers', 'and the temple of these gods', '- Horatius']
+  public titulos: any[] = ['Projeto em construção (em 10%)', 'github.com/luafalcaocode']
   public colorWriter: string;
   public h1Size: string;
   public h2Size: string;
@@ -26,6 +26,7 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.commonService.setLayout(false, true);
     (<HTMLInputElement>document.getElementById('navDesktop')).style.backgroundColor = 'transparent';
     (<HTMLInputElement>document.getElementById('navMobile')).style.backgroundColor = 'transparent';
     this.loading = this.elementRef.nativeElement.querySelector('.page-loading');
@@ -64,4 +65,8 @@ export class HomeComponent implements OnInit {
   open(url) {
     window.open(url);
   }
+
+  ngOnDestroy() {
+    this.commonService.unsetLayout();
+   }
 }

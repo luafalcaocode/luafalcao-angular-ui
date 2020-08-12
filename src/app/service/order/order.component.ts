@@ -218,7 +218,7 @@ export class OrderComponent implements OnInit {
     this.invalid.clear();
 
     try {
-      if (!this.form.solicitante || !this.form.solicitante.match(regExpLetters))
+      if (!this.form.solicitante)
         this.invalid.set('solicitante', true);
       else
         this.invalid.set('solicitante', false);

@@ -1,0 +1,32 @@
+<div class="col-lg-3 aside-container hide-on-small-only ">
+  <aside>
+    <div class="aside-category">
+      <h5 class="u-uppercase">Em destaque</h5>
+      <ul>
+        <li *ngFor="let article of featuredArticles"
+          (click)="commonService.navigateTo('/blogs/diario-de-um-engenheiro-de-software/' + article.id)">
+          <span>{{ article.title}}</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="aside-category">
+      <h5 class="u-uppercase">Categorias</h5>
+      <ul>
+        <li>Design Patterns</li>
+        <li>Carreira</li>
+        <li>Tutoriais</li>
+        <li>Dicionário de Problemas</li>
+      </ul>
+    </div>
+
+    <div class="aside-category">
+      <h5 class="u-uppercase">Newsletter</h5>
+      <h6>Saiba quando um novo artigo for publicado: </h6>
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="insira seu e-mail aqui"  />
+        <button type="button">Enviar</button>
+      </div>
+    </div>
+  </aside>
+</div>
