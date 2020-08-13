@@ -1,0 +1,17 @@
+.message-container {
+  padding-left: 113px;
+  margin-top: -70px;
+
+  @media only screen and (max-width: 767px) {
+    padding-left: 0;
+  }
+
+  h1 {
+    font-size: var(--h1);
+  }
+
+  p {
+    font-size: var(--normal);
+    margin-bottom: 20px;
+  }
+}

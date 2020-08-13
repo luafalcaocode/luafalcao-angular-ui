@@ -9,9 +9,14 @@
       </div>
     </div>
   </header>
-  <h6>Todos os artigos</h6>
+  <h6 *ngIf="!error">Todos os artigos</h6>
   <article-post [posts]="posts"></article-post>
-  <article-pagination (paginar)="paginar($event)" (paginaInvalida)="paginaInvalida($event)" [count]="count"></article-pagination>
+  <article-pagination *ngIf="!error" (paginar)="paginar($event)" (paginaInvalida)="paginaInvalida($event)" [count]="count"></article-pagination>
+  <div class="row">
+    <div class="col-xs-12 bbcolor">
+      <message [details]="error"></message>
+    </div>
+  </div>
   <!-- <article-aside [featuredArticles]="featuredArticles"></article-aside> -->
 </section>
 <page-loading class="page-loading"></page-loading>

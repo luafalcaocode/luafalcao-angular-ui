@@ -21,7 +21,7 @@
   --blueDev: #008aff;
   --niceGray: #303e4b;
   --cream: #d0dee9;
-  --silver2: #F5F7F7;
+  --silver2: #f5f7f7;
   --ice: #ecf0f4;
   --hightlightBlue: #00e0ff;
   --purple: rgba(17, 22, 46, 0.98);
@@ -33,30 +33,38 @@
   --h1: 48.83px;
   --h2: 39.06px;
   --h3: 31.25px;
-  --h4: 25.00px;
-  --h5: 20.00px;
-  --normal: 16.00px;
-  --small: 12.80px;
-
+  --h4: 25px;
+  --h5: 20px;
+  --normal: 16px;
+  --small: 12.8px;
 }
 
 body {
   overflow-x: hidden !important;
   height: 100%;
   background: var(--white) !important;
-  font-family: 'Baloo Da 2', cursive;
+  font-family: "Baloo Da 2", cursive;
 }
 
-h1 { font-size: var(--h1); }
-h2 { font-size: var(--h2); }
-h3 { font-size: var(--h3); }
-h4 { font-size: var(--h4); }
-h5 { font-size: var(--h5); };
-p, span { font-size: var(--normal); }
-
-
-
-
+h1 {
+  font-size: var(--h1);
+}
+h2 {
+  font-size: var(--h2);
+}
+h3 {
+  font-size: var(--h3);
+}
+h4 {
+  font-size: var(--h4);
+}
+h5 {
+  font-size: var(--h5);
+}
+p,
+span {
+  font-size: var(--normal);
+}
 
 a:hover,
 button:hover,
@@ -86,7 +94,6 @@ a {
 #timelineList li:last-child .timeline-scarface {
   background-color: transparent;
 }
-
 
 /* Helpers */
 .u-not-allowed {
@@ -247,3 +254,30 @@ a {
   transition: 0.4s;
 }
 
+.button-alpha {
+  height: 35px;
+  color: var(--white);
+  transition: 0.4s ease-out;
+  background: var(--niceGreen);
+  box-shadow: 2px 5px 5px #999;
+  font-size: 18px;
+  border: splid 1px var(--niceGreen);
+  border-radius: 4px;
+}
+
+.button-alpha:hover {
+  color: var(--green);
+  transition: 0.3s;
+}
+
+.button-alpha:focus {
+  outline: none;
+}
+
+.button-large {
+  width: 370px;
+}
+
+.button-normal {
+  width: 105px;
+}

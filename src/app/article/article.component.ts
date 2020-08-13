@@ -24,6 +24,7 @@ export class ArticleComponent implements OnInit {
   count: number;
 
   defaultStyle: any;
+  error: any;
 
   blogName: string;
 
@@ -93,7 +94,8 @@ export class ArticleComponent implements OnInit {
   }
 
   paginaInvalida(event) {
-
+    this.error = event;
+    this.posts = [];
   }
 
   getCount() {

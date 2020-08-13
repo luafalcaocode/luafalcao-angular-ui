@@ -22,6 +22,7 @@ export class ArticlePaginationComponent implements OnInit {
   leftArrowVisible: boolean;
   rightArrowVisible: boolean;
   pageName: string;
+  pageNumber: string;
 
   constructor(public articleService: ArticleService, public elementRef: ElementRef, public activatedRouter: ActivatedRoute) { }
 
@@ -32,6 +33,7 @@ export class ArticlePaginationComponent implements OnInit {
       this.activatedRouter.params.subscribe(params => {
         if (params.pagina) {
           this.pageName = params.nome;
+          this.pageNumber = params.pagina;
           this.setCurrentPagination(parseInt(params.pagina));
           this.paginationNumbersRendered.forEach(item => {
             if (params.pagina == item.page) {
@@ -73,6 +75,7 @@ export class ArticlePaginationComponent implements OnInit {
       this.paginationNumbersRendered.push({ page: nextPageNumbersToShowOnPage, active: true });
       this.paginar.emit({ page: this.paginationNumbersRendered[this.paginationNumbersRendered.length - 1].page, tag: this.pageName });
       this.setnextPageActiveStyle();
+      this.showOrHideArrows();
     }
   }
 
@@ -84,6 +87,7 @@ export class ArticlePaginationComponent implements OnInit {
       this.paginationNumbersRendered.unshift({ page: previousPageNumbersToShowOnPage, active: true });
       this.paginar.emit({ page: this.paginationNumbersRendered[0].page, tag: this.pageName });
       this.setpreviousPagePageActiveStyle();
+      this.showOrHideArrows();
     }
   }
 
@@ -96,9 +100,8 @@ export class ArticlePaginationComponent implements OnInit {
     this.rightArrowVisible = true;
     this.leftArrowVisible = true;
 
-    if (previousPage == 0) {
+    if (pageSelectedByUser == 1) {
       ++previousPage;
-
       this.paginationNumbersRendered.push({ page: previousPage, active: false });
       this.paginationNumbersRendered.push({ page: pageSelectedByUser + 1, active: false });
       this.paginationNumbersRendered.push({ page: nextPage + 1, active: false });
@@ -108,8 +111,8 @@ export class ArticlePaginationComponent implements OnInit {
       this.paginationNumbersRendered.push({ page: nextPage - 2, active: false });
       this.paginationNumbersRendered.push({ page: pageSelectedByUser, active: false });
     }
-    else if (pageSelectedByUser > this.totalOfPagesAvailable) {
-      this.paginaInvalida.emit(true);
+    else if (pageSelectedByUser > this.totalOfPagesAvailable || pageSelectedByUser <= 0) {
+      this.paginaInvalida.emit({ title: 'Conteúdo não encontrado ', description: 'A página que você procura não está cadastrado no sistema ou ainda não existe.'});
     }
     else {
       this.paginationNumbersRendered.push({ page: previousPage, active: false });
@@ -127,7 +130,26 @@ export class ArticlePaginationComponent implements OnInit {
       else
         return 0;
     });
+
+    this.showOrHideArrows();
   }
+
+  showOrHideArrows() {
+    if (this.paginationNumbersRendered[0].page == 1) {
+      this.leftArrowVisible = false;
+    }
+    else {
+      this.leftArrowVisible = true;
+    }
+
+    if (this.paginationNumbersRendered[this.paginationNumbersRendered.length - 1].page == this.totalOfPagesAvailable) {
+      this.rightArrowVisible = false;
+    }
+    else {
+      this.rightArrowVisible = true;
+    }
+  }
+
 
 
   getNumbersOfArticlesPerPage() {

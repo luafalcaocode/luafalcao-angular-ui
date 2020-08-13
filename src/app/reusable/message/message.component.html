@@ -1,0 +1,9 @@
+<div class="message-container" *ngIf="details">
+  <div class="message-header">
+    <h1>{{ details.title }}</h1>
+    <p>{{ details.description }}</p>
+  </div>
+  <div class="message-footer">
+    <p><button class="button-alpha button-normal" (click)="commonService.backToPreviousPage()">voltar</button></p>
+  </div>
+</div>

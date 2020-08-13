@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 @Injectable({
   providedIn: 'root'
 })
-export class CommonService {
+export class  CommonService {
   defaultStyle: any;
   constructor(public loading: LoadingService, public router: Router) {
     this.defaultStyle = {};
@@ -68,5 +68,9 @@ export class CommonService {
 
   gotoTop() {
     window.scrollTo(0, 0);
+  }
+
+  backToPreviousPage() {
+    window.history.back();
   }
 }
