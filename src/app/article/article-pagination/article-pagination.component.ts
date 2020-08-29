@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, ElementRef, EventEmitter, Output } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
-import { ArticleService } from '../../services/pages/article.service';
+import { ArticleService } from '../article.service';
 import { ArticleViewModel } from '../../viewModels/article.viewModel';
 
 
@@ -45,7 +45,7 @@ export class ArticlePaginationComponent implements OnInit {
           this.setCurrentPageActiveStyle(1);
         }
 
-        this.paginar.emit({page: params.pagina, tag: this.pageName});
+        this.paginar.emit({ page: params.pagina, tag: this.pageName });
 
       });
     }
@@ -58,7 +58,8 @@ export class ArticlePaginationComponent implements OnInit {
   getTotalOfPageAvailable() {
     let numberOfPages = this.count / 6;
     let rest = this.count % 6;
-    return (rest > 0 ? Math.round(numberOfPages) + 1 : numberOfPages);
+    this.totalOfPagesAvailable = (rest > 0 ? Math.round(numberOfPages) : numberOfPages);
+    return this.totalOfPagesAvailable;
   }
 
   whenClickPageNumber(id) {
@@ -100,6 +101,7 @@ export class ArticlePaginationComponent implements OnInit {
     this.rightArrowVisible = true;
     this.leftArrowVisible = true;
 
+
     if (pageSelectedByUser == 1) {
       ++previousPage;
       this.paginationNumbersRendered.push({ page: previousPage, active: false });
@@ -112,7 +114,7 @@ export class ArticlePaginationComponent implements OnInit {
       this.paginationNumbersRendered.push({ page: pageSelectedByUser, active: false });
     }
     else if (pageSelectedByUser > this.totalOfPagesAvailable || pageSelectedByUser <= 0) {
-      this.paginaInvalida.emit({ title: 'Conteúdo não encontrado ', description: 'A página que você procura não está cadastrado no sistema ou ainda não existe.'});
+      this.paginaInvalida.emit({ title: 'Conteúdo não encontrado ', description: 'A página que você procura não está cadastrado no sistema ou ainda não existe.' });
     }
     else {
       this.paginationNumbersRendered.push({ page: previousPage, active: false });
@@ -135,22 +137,22 @@ export class ArticlePaginationComponent implements OnInit {
   }
 
   showOrHideArrows() {
-    if (this.paginationNumbersRendered[0].page == 1) {
-      this.leftArrowVisible = false;
-    }
-    else {
-      this.leftArrowVisible = true;
-    }
+    if (this.paginationNumbersRendered != null) {
+      if (this.paginationNumbersRendered[0].page == 1) {
+        this.leftArrowVisible = false;
+      }
+      else {
+        this.leftArrowVisible = true;
+      }
 
-    if (this.paginationNumbersRendered[this.paginationNumbersRendered.length - 1].page == this.totalOfPagesAvailable) {
-      this.rightArrowVisible = false;
-    }
-    else {
-      this.rightArrowVisible = true;
+      if (this.paginationNumbersRendered[this.paginationNumbersRendered.length - 1].page == this.totalOfPagesAvailable) {
+        this.rightArrowVisible = false;
+      }
+      else {
+        this.rightArrowVisible = true;
+      }
     }
   }
-
-
 
   getNumbersOfArticlesPerPage() {
     for (let index = 1; index <= this.totalOfPagesAvailable; index++)

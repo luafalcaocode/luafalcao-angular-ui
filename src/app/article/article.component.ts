@@ -5,9 +5,10 @@ import { LoadingService } from '../services/layout/loading.service';
 import { CommonService } from '../services/layout/common.service';
 import { MenuService } from '../services/layout/menu.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ArticleService } from '../services/pages/article.service';
+import { ArticleService } from './article.service';
 import { RequestService } from '../services/request.service';
 import { HttpHeaders } from '@angular/common/http';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-article',
@@ -27,6 +28,8 @@ export class ArticleComponent implements OnInit {
   error: any;
 
   blogName: string;
+  pageName: string;
+  blogImagesFolder: string = environment.assets.blogs;
 
   isLoading: boolean;
 
@@ -47,19 +50,25 @@ export class ArticleComponent implements OnInit {
   }
 
   ngOnInit() {
+    const thiss = this;
     this.loading = this.elementRef.nativeElement.querySelector('.page-loading');
     this.commonService.setLayout();
 
     this.router.params.subscribe(param => {
       this.articleService.initialize(param.nome)
         .toPromise()
-        .then((artigos: any) => {
+        .then((message: any) => {
           this.blogName = this.articleService.blogName;
-          this.posts = artigos;
+          this.pageName = this.articleService.pageName;
+          this.posts = message.data.slice();
+
           this.commonService.gotoTop();
           this.loadingService.hide(this.loading);
         }).then(() => {
-          this.getCount();
+          this.getCount(this.pageName);
+        })
+        .then(() => {
+          this.obterUltimasPublicacoes(this.pageName);
         })
         .catch((reason: any) => {
           console.log(reason);
@@ -76,10 +85,10 @@ export class ArticleComponent implements OnInit {
   paginar(event) {
     const thiss = this;
     this.commonService.loading.show(thiss.loading);
-    this.articleService.GetArticlesByTag(event.tag, event.page, 6)
+    this.articleService.obterArtigosPorBlog(this.commonService.mapNameToCategory(event.tag), event.page, 6)
       .toPromise()
       .then((response: any) => {
-        thiss.posts = response.slice();
+        thiss.posts = response.data.slice();
         let oldURL = document.URL;
         let newURL = document.URL.substring(0, document.URL.lastIndexOf('/')) + '/' + event.page;
 
@@ -98,12 +107,20 @@ export class ArticleComponent implements OnInit {
     this.posts = [];
   }
 
-  getCount() {
+  getCount(blog) {
     const thiss = this;
-    this.articleService.GetCountOfArticles()
+    this.articleService.obterQuantidadeDeArtigos(this.commonService.mapNameToCategory(blog))
       .toPromise()
       .then((response: any) => {
-        thiss.count = response;
+        thiss.count = response.data;
+      });
+  }
+
+  obterUltimasPublicacoes(blog: string) {
+    this.articleService.obterUltimasPublicacoes(this.commonService.mapNameToCategory(blog))
+      .toPromise()
+      .then((message: any) => {
+        this.featuredArticles = message.data.slice();
       });
   }
 }

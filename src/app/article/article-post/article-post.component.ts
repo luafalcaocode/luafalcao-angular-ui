@@ -1,4 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { environment } from '../../../environments/environment';
 import { ArticleViewModel } from '../../viewModels/article.viewModel';
 
 
@@ -11,13 +12,17 @@ export class ArticlePostComponent implements OnInit {
   @Input() posts: ArticleViewModel[];
   @Input() featuredArticles: ArticleViewModel[];
 
+
+
+
   constructor() { }
 
   ngOnInit() {
   }
 
-  ngOnChange() {
-    console.log(this.posts);
+  ngOnChanges(changes: SimpleChanges) {
+    if (this.posts != null && this.posts.length > 0)
+      console.log(changes);
   }
 
   openUrl(url) {

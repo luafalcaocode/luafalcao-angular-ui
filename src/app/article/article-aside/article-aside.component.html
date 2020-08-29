@@ -1,17 +1,25 @@
 <div class="col-lg-3 aside-container hide-on-small-only ">
   <aside>
     <div class="aside-category">
-      <h5 class="u-uppercase">Em destaque</h5>
+      <h5 class="u-uppercase aside-title">Últimas Publicações</h5>
       <ul>
-        <li *ngFor="let article of featuredArticles"
-          (click)="commonService.navigateTo('/blogs/diario-de-um-engenheiro-de-software/' + article.id)">
-          <span>{{ article.title}}</span>
+        <li *ngFor="let featured of featuredArticles" class="aside-featured-items">
+          <div class="row">
+            <div class="col-xs-6 u-padding-left-zero">
+              <img [src]="featured.thumbnail" class="aside-featured-thumbnail" />
+            </div>
+            <div class="col-xs-6 u-padding-left-zero">
+              <h5>{{ featured.titulo }}</h5>
+              <p>{{ featured.dataPublicacao }}</p>
+            </div>
+          </div>
         </li>
       </ul>
+
     </div>
 
     <div class="aside-category">
-      <h5 class="u-uppercase">Categorias</h5>
+      <h5 class="u-uppercase aside-title">Categorias</h5>
       <ul>
         <li>Design Patterns</li>
         <li>Carreira</li>
@@ -21,12 +29,21 @@
     </div>
 
     <div class="aside-category">
-      <h5 class="u-uppercase">Newsletter</h5>
-      <h6>Saiba quando um novo artigo for publicado: </h6>
-      <div class="form-group">
-        <input type="text" class="form-control" placeholder="insira seu e-mail aqui"  />
+      <h5 class="u-uppercase aside-title">Newsletter</h5>
+      <p>Se inscreva na nossa Newsletter para ficar por dentro quando um novo artigo for publicado</p>
+      <form>
+        <div class="form-group">
+          <label for="email">Nome: </label>
+          <input type="text" class="form-control" placeholder="insira seu nome aqui" />
+        </div>
+
+        <div class="form-group">
+          <label for="email">E-mail: </label>
+          <input type="text" class="form-control" placeholder="insira seu e-mail aqui" />
+
+        </div>
         <button type="button">Enviar</button>
-      </div>
+      </form>
     </div>
   </aside>
 </div>

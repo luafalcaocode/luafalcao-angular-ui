@@ -66,11 +66,24 @@ export class  CommonService {
     window.open(url);
   }
 
+  navigateHere(url) {
+    this.router.navigate(url);
+  }
+
   gotoTop() {
     window.scrollTo(0, 0);
   }
 
   backToPreviousPage() {
     window.history.back();
+  }
+
+  mapNameToCategory(name)
+  {
+    switch(name)
+    {
+      case 'diario-de-um-engenheiro-software' :
+        return '0'
+    }
   }
 }

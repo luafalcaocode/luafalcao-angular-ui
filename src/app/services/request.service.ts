@@ -24,7 +24,7 @@ export class RequestService {
   }
 
   getByTag(path: string, tag: string, requestHeaders?:any, page?: number, qtd?: number) {
-    return this.httpClient.get(`${environment.endpoint.url}${path}?chave=${tag}&page=${page}&qtd=${qtd}`,
+    return this.httpClient.get(`${environment.endpoint.url}${path}?blog=${tag}&pagina=${page}&quantidade=${qtd}`,
      { headers: requestHeaders });
   }
 }

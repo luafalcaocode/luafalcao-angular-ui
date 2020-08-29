@@ -21,7 +21,7 @@ export class ServiceService {
           {
             title: 'Construção de',
             description: 'APIs',
-            background: 'assets/backgrounds/nice-gallery/api.jpg',
+            background: 'assets/backgrounds/components/nice-gallery/api.jpg',
             reveal: {
               icon: 'fas fa-server reveal-icons',
               // text: 'Com o framework ASP .NET Core podemos construir aplicações distribuídas com acesso a bancos de dados diversos para oferecer diferentes tipos de funcionalidades para sua aplicação, disponíveis para web e plataformas móveis.'
@@ -31,7 +31,7 @@ export class ServiceService {
           {
             title: 'Construção de',
             description: 'Interfaces de Usuário',
-            background: 'assets/backgrounds/nice-gallery/ui.jpeg',
+            background: 'assets/backgrounds/components/nice-gallery/ui.jpeg',
             reveal: {
               icon: 'fas fa-quidditch',
               text: 'Com tecnologias como HTML5, CSS3 e JavaScript sua aplicação pode contar com uma rica interface de usuário com design responsivo, animações e transições de tela para diferentes resoluções de dispositivos, ganhando um excelente visual.'
@@ -40,7 +40,7 @@ export class ServiceService {
           {
             title: 'Construção de',
             description: 'SPA',
-            background: 'assets/backgrounds/nice-gallery/spa.jpg',
+            background: 'assets/backgrounds/components/nice-gallery/spa.jpg',
             reveal: {
               icon: 'fab fa-angular',
               text: 'Single Page Applications: Aplicações com boa performance que interagem com Web APIs no servidor através de requisições AJAX e que possuem um esquema de navegação bastante fluido que transmite ao usuário a experiência de estar navegando em um app nativo de uma plataforma móvel. '
@@ -49,7 +49,7 @@ export class ServiceService {
           {
             title: 'Projeto de',
             description: 'Portais Web',
-            background: 'assets/backgrounds/nice-gallery/portais.jpg',
+            background: 'assets/backgrounds/components/nice-gallery/portais.jpg',
             reveal: {
               icon: 'fab fa-firefox',
               text: 'Com experiência na construção e manutenção de Portais Web para companhias no ramo de seguro e admnistração é possível projetar e construir um sistema completo que seja robusto e possibilite fazer a gestão do seu conteúdo.'
@@ -58,7 +58,7 @@ export class ServiceService {
           {
             title: 'Projeto de ',
             description: 'Migração de sistemas',
-            background: 'assets/backgrounds/nice-gallery/migracao.jpg',
+            background: 'assets/backgrounds/components/nice-gallery/migracao.jpg',
             reveal: {
               icon: 'fab fa-windows',
               text: 'Migração de sistemas para tecnologias mais modernas com o objetivo de facilitar a manutenção de suas funções de negócio e garantir a extensão de funcionalidades de maneira mais veloz.'
@@ -67,7 +67,7 @@ export class ServiceService {
           {
             title: 'Projeto de',
             description: 'Banco de Dados',
-            background: 'assets/backgrounds/nice-gallery/modelagem.jpg',
+            background: 'assets/backgrounds/components/nice-gallery/modelagem.jpg',
             reveal: {
               icon: 'fas fa-database',
               text: 'Precisa de um novo banco de dados para o seu sistema? Podemos fazer um projeto, iniciando pela modelagem conceitual, partindo para a lógica e finalizando com o modelo físico escrito na linguagem SQL ou algum de seus dialetos.'
@@ -145,7 +145,7 @@ export class ServiceService {
           {
             title: 'Realização de',
             description: 'Workshops',
-            background: 'assets/backgrounds/nice-gallery/spa.jpg',
+            background: 'assets/backgrounds/components/nice-gallery/spa.jpg',
             reveal: {
               icon: 'fas fa-cogs reveal-icons',
               text: 'Precisa de ajuda para aprender sobre Design Patterns, APIs, front-end ou algum outro assunto da área de tecnologia? Com a realização de workshops podemos trocar conhecimento e adquirir habilidades em diferentes ferramentas.'
@@ -154,7 +154,7 @@ export class ServiceService {
           {
             title: 'Publicação de ',
             description: 'Artigos de TI',
-            background: 'assets/backgrounds/nice-gallery/modelagem.jpg',
+            background: 'assets/backgrounds/components/nice-gallery/modelagem.jpg',
             reveal: {
               icon: 'fas fa-pencil-alt reveal-icons',
               text: 'Publicação de artigos de tecnologia sobre diferentes temas com a intenção de ajudar a solucionar problemas técnicos de uma maneira efetiva, compartilhando dicas, tutoriais e experiência profissional. '
@@ -163,7 +163,7 @@ export class ServiceService {
           {
             title: 'Contribuição em ',
             description: 'Projetos Open-Source',
-            background: 'assets/backgrounds/nice-gallery/ui.jpeg',
+            background: 'assets/backgrounds/components/nice-gallery/ui.jpeg',
             reveal: {
               icon: 'fas fa-folder-open reveal-icons',
               text: 'Disponibilidade para ajudar com projetos open-source cujo objetivo é construir soluções de valor para a comunidade sem fins lucrativos.'
