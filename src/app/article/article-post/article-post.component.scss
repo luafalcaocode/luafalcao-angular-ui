@@ -36,7 +36,7 @@
       }
 
       img {
-        height: 240px;
+        height: 312px;
         width: 100%;
 
         @media only screen and (max-width: 1279px) {
@@ -50,7 +50,7 @@
       }
 
       h5 {
-        font-size: 26px;
+        font-size: var(--h5);
         font-weight: bold;
         height: auto;
         min-height: 60px;
@@ -61,7 +61,7 @@
 
       p {
         margin-top: 10px;
-        font-size: 18px;
+        font-size: var(--notTooBig);
         height: auto;
         margin-bottom: 20px;
       }
@@ -74,7 +74,7 @@
         color: var(--niceGreen);
         transition: 0.6s ease-out;
         font-weight: bold;
-        font-size: 16px;
+        font-size: var(--notTooBig);
       }
 
       button:hover {
