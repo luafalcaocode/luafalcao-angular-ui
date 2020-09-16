@@ -4,13 +4,13 @@
       <div class="col-lg-9 col-xs-12 articles-container">
         <ul>
           <li *ngFor="let post of posts">
-            <div class="col-lg-6 col-xs-12" [id]="post.id" [ngStyle]="{'margin-top' : '30px'}">
-              <img [src]="post.thumbnail" />
+            <div class="col-lg-6 col-xs-12" [id]="post.id" [ngStyle]="{'margin-top' : '30px'}" #meupost>
+              <img [src]="post.thumbnail" class="lds-facebook" />
               <h4>{{ post.titulo }}</h4>
               <span><strong>Publicado por:</strong> Luã Falcão</span>
               <span class="u-right"><strong>{{ post.dataPublicacao }}</strong></span>
               <p>{{ post.descricao.length > 100 ? post.descricao.substring(0, 99) + '...' : post.descricao }}</p>
-              <button class="u-no-click" type="button" (click)="openUrl('/blogs/diario-de-um-engenheiro-software/post.id')">Leia mais
+              <button class="u-no-click" type="button" class="btn-leia-mais" (click)="open(post)">Leia mais
                 <i class="fas fa-chevron-right"></i>
               </button>
             </div>

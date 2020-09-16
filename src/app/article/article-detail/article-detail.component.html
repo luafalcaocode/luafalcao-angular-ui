@@ -1,0 +1,38 @@
+<section class="main-section">
+  <header><!-- conteúdo dinâmico inserido via JavaScript --></header>
+
+  <div class="article-area">
+    <h2>{{ blogName }} <strong>Blog</strong> </h2>
+    <div class="article-title-group">
+      <h4>{{ articleDetails.dataPublicacao }}</h4>
+      <h1>{{ articleDetails.titulo }}</h1>
+      <h5><strong>Postado por: {{ autor }}</strong></h5>
+    </div>
+    <div class="row article-interaction">
+      <div class="col-xs-12">
+        <div class="article-interaction-group">
+          <i class="fas fa-comment"></i> &nbsp;
+          <span>30</span>
+
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+          <i class="fas fa-eye"></i>&nbsp;
+          <span>1540</span>
+
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+          <i class="fas fa-thumbs-up"></i>&nbsp;
+          <span>25</span>
+        </div>
+
+      </div>
+    </div>
+    <div class="row article-content">
+      <div class="col-xs-12" [innerHTML]="articleDetails.descricao">
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<page-loading class="page-loading"></page-loading>

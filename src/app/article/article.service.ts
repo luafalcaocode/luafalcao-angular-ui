@@ -26,6 +26,11 @@ export class ArticleService {
         this.pageName = screen;
 
         return this.obterArtigosPorBlog(this.commonService.mapNameToCategory(screen), 1, 6);
+      case 'next-gameplay':
+        this.blogName = 'Next Gameplay';
+        this.pageName = screen;
+
+        return this.obterArtigosPorBlog(this.commonService.mapNameToCategory(screen), 1, 6); //  incluir nova categoria no back-end
     }
   }
 
@@ -41,8 +46,7 @@ export class ArticleService {
     return this.httpClient.get(`${environment.endpoint.url}/artigos/quantidade?blog=${blog}`);
   }
 
-  public obterUltimasPublicacoes(blog: string)
-  {
+  public obterUltimasPublicacoes(blog: string) {
     return this.httpClient.get(`${environment.endpoint.url}/artigos/destaques?blog=${blog}`)
   }
 }

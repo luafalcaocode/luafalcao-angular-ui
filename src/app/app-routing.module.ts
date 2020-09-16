@@ -19,7 +19,7 @@ const routes: Routes = [
   //   component: PanelComponent
   // },
   {
-    path: 'blogs/diario-de-um-engenheiro-software/post/:id',
+    path: 'blogs/:nome/posts/:id',
     component: ArticleDetailComponent
   },
   {

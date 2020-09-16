@@ -123,4 +123,9 @@ export class ArticleComponent implements OnInit {
         this.featuredArticles = message.data.slice();
       });
   }
+
+  openUrl(url) {
+    url = url.replace('[nome]', this.articleService.pageName);
+    this.commonService.navigateHere(url);
+  }
 }

@@ -67,7 +67,7 @@ export class  CommonService {
   }
 
   navigateHere(url) {
-    this.router.navigate(url);
+    this.router.navigateByUrl(url);
   }
 
   gotoTop() {
@@ -83,7 +83,9 @@ export class  CommonService {
     switch(name)
     {
       case 'diario-de-um-engenheiro-software' :
-        return '0'
+        return '0';
+      case 'next-gameplay':
+        return '0';
     }
   }
 }

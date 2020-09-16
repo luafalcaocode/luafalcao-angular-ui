@@ -1,0 +1,87 @@
+.main-section {
+  min-height: 800px;
+
+  header {
+    background-size: cover;
+    height: 674px;
+    font-weight: bold;
+    background-position-y: -337px;
+    position: relative;
+    z-index: 1;
+
+    @media only screen and (max-width: 1279px) {
+      height: 508px;
+      background-position-y: -300px;
+      background-position: center;
+    }
+    div {
+      top: 185px;
+      color: var(--white);
+      text-align: center;
+
+      @media only screen and (max-width: 1279px) {
+        top: 140px;
+      }
+
+      h1 {
+        margin-bottom: 40px;
+        font-weight: bold;
+
+        @media only screen and (max-width: 1279px) {
+          font-size: 36px;
+          margin-bottom: 60px;
+        }
+      }
+
+      svg {
+        font-size: 52px;
+        transition: 0.6s ease-out;
+        @media only screen and (max-width: 1279px) {
+          font-size: 34px;
+        }
+      }
+
+      svg:hover {
+        transition: 0.5s;
+        transform: scale(1.2);
+      }
+    }
+  }
+}
+
+.article-area {
+  min-height: 700px;
+  background: var(--white);
+  position: relative;
+  z-index: 2;
+  top: -114px;
+  margin-left: 140px;
+  margin-right: 140px;
+  padding: 20px;
+    padding-left: 40px;
+    padding-right: 40px;
+
+  .article-title-group {
+    text-align: center;
+    margin-top: 100px;
+  }
+
+  .article-interaction {
+    text-align: center;
+    margin-top: 30px;
+
+    .article-interaction-group {
+      span, svg, i {
+        font-size: var(--big);
+      }
+
+    }
+  }
+
+  .article-content {
+    padding-left: 100PX;
+    padding-right: 100px;
+    margin-top: 40px;
+    font-size: var(--notTooBig);
+  }
+}
