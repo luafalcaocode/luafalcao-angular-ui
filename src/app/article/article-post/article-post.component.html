@@ -1,14 +1,12 @@
-<div class="row" [ngStyle]="{'margin-bottom' : '100px'}">
-  <div class="col-lg-12 col-xs-12">
-    <div class="row">
-      <div class="col-lg-9 col-xs-12 articles-container">
+<div class="row article-post-container" [ngStyle]="{'margin-bottom' : '100px'}">
+  <div class="col-lg-12 col-xs-12 articles-container">
         <ul>
           <li *ngFor="let post of posts">
-            <div class="col-lg-6 col-xs-12" [id]="post.id" [ngStyle]="{'margin-top' : '30px'}" #meupost>
-              <img [src]="post.thumbnail" class="lds-facebook" />
+            <div class="col-lg-4 col-xs-12" [id]="post.id" [ngStyle]="{'margin-top' : '30px'}" #meupost>
+              <img [src]="post.thumbnail" class="lds-facebook" (click)="open(post)" />
               <h4>{{ post.titulo }}</h4>
-              <span><strong>Publicado por:</strong> Luã Falcão</span>
-              <span class="u-right"><strong>{{ post.dataPublicacao }}</strong></span>
+              <!-- <span><strong>Luã Falcão</strong></span>
+              <span class="u-right"><strong>{{ post.dataPublicacao }}</strong></span> -->
               <p>{{ post.descricao.length > 100 ? post.descricao.substring(0, 99) + '...' : post.descricao }}</p>
               <button class="u-no-click" type="button" class="btn-leia-mais" (click)="open(post)">Leia mais
                 <i class="fas fa-chevron-right"></i>
@@ -16,7 +14,6 @@
             </div>
           </li>
         </ul>
-      </div>
-    </div>
+
   </div>
 </div>

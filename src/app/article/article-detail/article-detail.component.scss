@@ -1,11 +1,14 @@
 .main-section {
   min-height: 800px;
 
+
   header {
+    // background-image: url('../../../assets/backgrounds/blogs/next-gameplay/capa.jpeg');
+    background-color: blue;
     background-size: cover;
-    height: 674px;
+    height: 515px;
     font-weight: bold;
-    background-position-y: -337px;
+    background-position: center;
     position: relative;
     z-index: 1;
 
@@ -58,16 +61,17 @@
   margin-left: 140px;
   margin-right: 140px;
   padding: 20px;
-    padding-left: 40px;
-    padding-right: 40px;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 26px;
+  margin-top: 80px;
 
   .article-title-group {
-    text-align: center;
-    margin-top: 100px;
+    text-align: left;
+    margin-top: 40px;
   }
 
   .article-interaction {
-    text-align: center;
     margin-top: 30px;
 
     .article-interaction-group {
@@ -79,9 +83,12 @@
   }
 
   .article-content {
-    padding-left: 100PX;
-    padding-right: 100px;
     margin-top: 40px;
-    font-size: var(--notTooBig);
+    font-size: var(--big);
+
+    img {
+      width: 100%;
+      margin-bottom: 30px;
+    }
   }
 }

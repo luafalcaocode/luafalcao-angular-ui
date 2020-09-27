@@ -204,7 +204,7 @@ export class OrderComponent implements OnInit {
 
   inactive() {
     const orderForm = this.elementRef.nativeElement.querySelector('#order');
-    orderForm.style.top = '800px';
+    orderForm.style.top = '1200px';
 
     setTimeout(() => {
       document.getElementsByTagName('body')[0].style.overflowY = 'auto';
@@ -239,12 +239,6 @@ export class OrderComponent implements OnInit {
       let err = 'Parece que um ou mais campos não foram preenchidos corretamente!';
       this.invalid.forEach((value, key) => {
         if (value) {
-          // if (key.includes('solicitante'))
-          //   err += '<br />(o campo solicitante não aceita números e precisa ser preenchido)';
-          // if (key.includes('e-mail'))
-          //   err += '<br />(o campo e-mail precisa ser preenchido com um e-mail válido)';
-          // if (key.includes('tiposDeProjeto'))
-          //   err += '<br /> o tipo de projeto precisa ser selecionado';
           throw err;
         }
       });

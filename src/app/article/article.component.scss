@@ -2,11 +2,12 @@
   min-height: 800px;
 
   header {
-    background-image: url('../../assets/backgrounds/blogs/diario-de-um-engenheiro-de-software/capa.jpeg');
+    // background-image: url('../../assets/backgrounds/blogs/next-gameplay/capa.jpeg');
+    background-color: var(--dark);
     background-size: cover;
-    height: 674px;
+    height: 515px;
     font-weight: bold;
-    background-position-y: -337px;
+    background-position: center;
 
     @media only screen and (max-width: 1279px) {
       height: 508px;

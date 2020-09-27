@@ -82,7 +82,7 @@ export class  CommonService {
   {
     switch(name)
     {
-      case 'diario-de-um-engenheiro-software' :
+      case 'diario-de-um-engenheiro-de-software' :
         return '0';
       case 'next-gameplay':
         return '0';

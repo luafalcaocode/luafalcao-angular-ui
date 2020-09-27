@@ -15,13 +15,14 @@ export class ArticleService {
   pageName: string;
   paginations: ArticleViewModel[];
   count: number;
+  autor: string = 'Luã Falcão';
 
 
   constructor(public api: RequestService, public httpClient: HttpClient, public commonService: CommonService) { }
 
   initialize(screen: string) {
     switch (screen) {
-      case 'diario-de-um-engenheiro-software':
+      case 'diario-de-um-engenheiro-de-software':
         this.blogName = 'Diário de um Engenheiro de Software';
         this.pageName = screen;
 
@@ -32,6 +33,19 @@ export class ArticleService {
 
         return this.obterArtigosPorBlog(this.commonService.mapNameToCategory(screen), 1, 6); //  incluir nova categoria no back-end
     }
+  }
+
+  initializeArticleDetails(screen: string, id: number) {
+    switch (screen) {
+      case 'diario-de-um-engenheiro-de-software':
+        this.blogName = 'Diário de um Engenheiro de Software';
+        this.pageName = screen;
+      case 'next-gameplay':
+        this.blogName = 'Next Gameplay';
+        this.pageName = screen;
+    }
+
+    return this.api.getById(id, '/artigos', null);
   }
 
   public ObterArtigos(page) {

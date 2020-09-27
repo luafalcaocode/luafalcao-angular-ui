@@ -7,6 +7,7 @@ import { ArticleViewModel } from '../../viewModels/article.viewModel';
 import { LoaderService } from '../../services/layout/loader.service';
 import { LoadingService } from '../../services/layout/loading.service';
 import { CommonService } from '../../services/layout/common.service';
+import { RequestService } from '../../services/request.service';
 
 
 @Component({
@@ -35,39 +36,40 @@ export class ArticleDetailComponent implements OnInit {
     public router: ActivatedRoute,
     public loadingService: LoadingService,
     public elementRef: ElementRef,
-    public articleService: ArticleService) {
+    public articleService: ArticleService,
+    public apiService: RequestService) {
     this.defaultStyle = {};
+    this.articleDetails = new ArticleViewModel();
   }
 
   ngOnInit() {
-    const thiss = this;
     const header = this.elementRef.nativeElement.querySelector('header');
 
-    this.articleDetails  = new ArticleViewModel();
-
     this.loading = this.elementRef.nativeElement.querySelector('.page-loading');
-    this.commonService. initializePage();
+    this.commonService.initializePage();
     this.commonService.setLayout();
 
-    this.blogName = 'Next Gameplay';
-    this.pageName = 'next-gameplay';
-    this.autor = 'Luã Falcão';
+    this.router.params.subscribe(params => {
+      this.id = params.id;
+      this.articleService.initializeArticleDetails(params.nome, params.id)
+        .toPromise()
+        .then((message: any) => {
+          this.articleDetails.id = message.data.id;
+          this.articleDetails.descricao = message.data.descricao;
+          this.articleDetails.titulo = message.data.titulo;
+          this.articleDetails.dataPublicacao = message.data.dataPublicacao;
+          this.blogName = this.articleService.blogName;
+          this.pageName = this.articleService.pageName;
+          this.autor = this.articleService.autor;
+
+          header.style.backgroundImage = `url(../../../assets/backgrounds/blogs/${this.pageName}/capa.jpeg)`;
+
+          this.articleDetails.thumbnail = 'assets/backgrounds/blogs/[nome_do_blog]/posts/[id_post]/thumbnail.jpg';
+          this.articleDetails.thumbnail = this.articleDetails.thumbnail.replace('[nome_do_blog]', this.pageName).replace('[id_post]', message.data.id);
 
 
-    this.articleDetails.id = 3;
-    this.articleDetails.descricao = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.';
-    this.articleDetails.titulo = 'Especial: Valkyrie Profile';
-    this.articleDetails.dataPublicacao = '15 de Setembro de 2020';
-    this.articleDetails.thumbnail = 'assets/backgrounds/blogs/next-gameplay/posts/17/thumbnail.jpg';
-
-    header.style.backgroundImage = `url(../../../assets/backgrounds/blogs/${this.pageName}/posts/${this.articleDetails.id}/thumbnail.jpg)`;
-    header.style.backgroundPosition = 'center top';
-
-
-    // fazer um GET na API por ID (que vem da URL) para pegar o ID do artigo
-    this.router.params.subscribe(params => this.id = params.id);
-    console.log(this.id);
-    this.loadingService.hide(this.loading);
-
+          this.loadingService.hide(this.loading);
+        });
+    });
   }
 }

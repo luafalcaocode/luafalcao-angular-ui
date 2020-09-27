@@ -36,8 +36,11 @@
       }
 
       img {
-        height: 312px;
+        height: 260px;
         width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+        cursor: pointer;
 
         @media only screen and (max-width: 1279px) {
           width: 100%;
@@ -48,6 +51,8 @@
           height: auto;
         }
       }
+
+
 
       h5 {
         font-size: var(--h5);
@@ -93,5 +98,17 @@
   }
 }
 
+.article-post-container {
+  margin-right: 100px !important;
 
+  @media only screen and (max-width: 1279px) {
+    margin-right: 0 !important;
+
+  }
+}
+
+h4 {
+  margin-bottom: 18px;
+  font-weight: bold;
+}
 

@@ -51,6 +51,7 @@ export class ArticleComponent implements OnInit {
 
   ngOnInit() {
     const thiss = this;
+    const header = this.elementRef.nativeElement.querySelector('header');
     this.loading = this.elementRef.nativeElement.querySelector('.page-loading');
     this.commonService.setLayout();
 
@@ -61,6 +62,9 @@ export class ArticleComponent implements OnInit {
           this.blogName = this.articleService.blogName;
           this.pageName = this.articleService.pageName;
           this.posts = message.data.slice();
+
+
+          header.style.backgroundImage = `url(../../../assets/backgrounds/blogs/${this.pageName}/capa.jpeg)`;
 
           this.commonService.gotoTop();
           this.loadingService.hide(this.loading);

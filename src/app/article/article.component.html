@@ -1,13 +1,5 @@
 <section class="main-section">
   <header>
-    <div class="row">
-      <div class="col-lg-12">
-        <h1 [innerHTML]="blogName"> </h1>
-        <i class="fas fa-code"></i> &nbsp; &nbsp; &nbsp;  &nbsp;  &nbsp;
-        <i class="fas fa-laptop-code"></i> &nbsp; &nbsp; &nbsp;  &nbsp;  &nbsp;
-        <i class="fas fa-coffee"></i>
-      </div>
-    </div>
   </header>
   <h6 *ngIf="!error">Todos os artigos</h6>
   <article-post [posts]="posts" (openUrl)="openUrl($event)"></article-post>
@@ -17,6 +9,6 @@
       <message [details]="error"></message>
     </div>
   </div>
-  <article-aside [featuredArticles]="featuredArticles"></article-aside>
+  <!-- <article-aside [featuredArticles]="featuredArticles"></article-aside> -->
 </section>
 <page-loading class="page-loading"></page-loading>
