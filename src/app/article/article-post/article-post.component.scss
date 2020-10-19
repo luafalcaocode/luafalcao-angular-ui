@@ -41,6 +41,7 @@
         padding-left: 0;
         padding-right: 0;
         cursor: pointer;
+        transition: .5s ease-in-out;
 
         @media only screen and (max-width: 1279px) {
           width: 100%;
@@ -51,6 +52,7 @@
           height: auto;
         }
       }
+
 
 
 
@@ -93,6 +95,21 @@
 
       svg {
         font-size: 11px;
+      }
+    }
+  }
+
+  ul {
+    li:hover {
+
+      img {
+        transition: .5s;
+        box-shadow: 5px 5px 5px var(--shadow);
+      }
+
+      h4 {
+        transition: .5s;
+        color: var(--niceGreen) !important;
       }
     }
   }

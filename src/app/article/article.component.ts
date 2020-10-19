@@ -64,7 +64,7 @@ export class ArticleComponent implements OnInit {
           this.posts = message.data.slice();
 
 
-          header.style.backgroundImage = `url(../../../assets/backgrounds/blogs/${this.pageName}/capa.jpeg)`;
+      //    header.style.backgroundImage = `url(../../../assets/backgrounds/blogs/${this.pageName}/capa.jpeg)`;
 
           this.commonService.gotoTop();
           this.loadingService.hide(this.loading);

@@ -15,7 +15,6 @@ import { ProjectModule } from './project/project.module';
 import { ReusableModule } from './reusable/reusable.module';
 import { ServiceModule } from './service/service.module';
 
-
 @NgModule({
   declarations: [
     AppComponent
