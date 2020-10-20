@@ -70,7 +70,7 @@
   background: var(--white);
   position: relative;
   z-index: 2;
-  top: -114px;
+  top: -130px;
   margin-left: 140px;
   margin-right: 140px;
   padding: 20px;
@@ -82,6 +82,8 @@
   @media only screen and (max-width: 1279px) {
     margin-left: 0;
     margin-right: 0;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 
   .article-title-group {
