@@ -41,6 +41,7 @@
   --small: 12.8px;
   --notTooBig: 18px;
   --big: 22px;
+  --bigBig: 30px;
   --notToSmall: 14px;
 }
 
@@ -77,6 +78,10 @@ span {
 
 .almost-giant-size {
   font-size: 72px;
+
+  @media only screen and (max-width: 1279px) {
+    font-size: 36px;
+  }
 }
 
 a:hover,
@@ -148,6 +153,7 @@ a {
 .u-inline {
   display: inline;
 }
+
 .u-border-none {
   border: none !important;
 }
@@ -293,4 +299,10 @@ a {
 
 .button-normal {
   width: 105px;
+}
+
+
+.btn-medium {
+  width: 130px;
+  height: 40px;
 }

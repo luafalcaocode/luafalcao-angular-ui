@@ -84,6 +84,7 @@
     margin-right: 0;
     padding-left: 20px;
     padding-right: 20px;
+    top: -80px;
   }
 
   .article-title-group {
@@ -110,5 +111,25 @@
       width: 100%;
       margin-bottom: 30px;
     }
+  }
+
+  .social-icons-group {
+    svg, i, span {
+      font-size: var(--bigBig) !important;
+      transition: .4s ease-out;
+    }
+  }
+}
+
+.social-icons-hovered:hover {
+    transition: .4s;
+    transform: scale(1.2);
+    cursor: pointer;
+    color: var(--green);
+}
+
+.dot-group-icons {
+  @media only screen and (max-width: 1279px) {
+    margin-bottom: 60px;
   }
 }

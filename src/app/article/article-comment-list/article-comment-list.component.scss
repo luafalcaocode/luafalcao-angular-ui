@@ -16,7 +16,6 @@ section {
 
     .comments-number-container {
       margin-top: -20px;
-      width: 300px;
       text-align: center;
 
       @media only screen and (max-width: 1279px) {
@@ -94,7 +93,7 @@ section {
 }
 
 .silver-line {
-  border-bottom: solid 2px var(--cream) !important;
+  border-bottom: solid 2px var(--cream);
 
   @media only screen and (max-width: 1279px) {
     border-width: 100%;
