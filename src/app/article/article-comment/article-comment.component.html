@@ -7,39 +7,40 @@
     <div class="col-lg-4 silver-line hide-on-small-only "></div>
   </header>
 
+  <div class="row">
+    <div class="col-xs-12 comments-warning">
+      <i class="fa fa-exclamation-circle" aria-hidden="true"></i>&nbsp;&nbsp;
+      <strong>Seu e-mail será armazenado para identificação e não será compartilhado com ninguém!</strong>
+    </div>
+  </div>
+
   <div>
     <form>
       <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-6">
           <div class="form-group">
-            <input type="text" placeholder="Nome" class="form-control" />
+            <input type="text" placeholder="Nome" class="form-control" [(ngModel)]="comentario.autor" name="autor" />
           </div>
         </div>
 
-        <div class="col-md-4">
+        <div class="col-md-6">
           <div class="form-group">
-            <input type="text" placeholder="E-mail" class="form-control" />
+            <input type="text" placeholder="E-mail" class="form-control" [(ngModel)]="comentario.email" name="email" />
           </div>
-        </div>
-
-        <div class="col-md-4">
-          <div class="form-group">
-            <input type="text" placeholder="Website" class="form-control" />
-          </div>
-        </div>
+        </div>     
       </div>
 
       <div class="row">
         <div class="col-md-12">
           <div class="form-group">
-            <textarea  placeholder="Escreva o seu comentário aqui." class="form-control"></textarea>
+            <textarea  placeholder="Escreva o seu comentário aqui." class="form-control" [(ngModel)]="comentario.descricao" name="descricao"></textarea>
           </div>
         </div>
       </div>
 
       <div class="row">
         <div class="col-xs-12">
-          <button class="button-alpha button-normal btn-medium">enviar</button>
+          <button class="button-alpha button-normal btn-medium" (click)="enviarComentario(comentario)">enviar</button>
         </div>
       </div>
     </form>

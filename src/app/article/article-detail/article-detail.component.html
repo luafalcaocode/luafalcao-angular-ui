@@ -46,8 +46,8 @@
     </div>
   </div>
 
-  <article-comment-list></article-comment-list>
-  <article-comment></article-comment>
+  <article-comment-list [comentarios]="comments"></article-comment-list>
+  <article-comment (post)="enviarComentario($event)"></article-comment>
 </section>
 
 <page-loading class="page-loading"></page-loading>

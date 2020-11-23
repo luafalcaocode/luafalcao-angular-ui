@@ -67,4 +67,8 @@ export class ArticleService {
   public obterComentariosDoArtigo(artigoId: number) {
     return this.httpClient.get(`${environment.endpoint.url}/artigos/${artigoId}/comentarios`);
   }
+
+  public enviarNovoComentario(comentario: any, artigoId: number) {
+    return this.api.post(`/artigos/${artigoId}/comentarios`, comentario);
+  }
 }

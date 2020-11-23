@@ -20,7 +20,6 @@ export class RequestService {
   }
 
   getById(id: number, path: string, requestHeaders?:any) {
-    debugger;
     return this.httpClient.get(`${environment.endpoint.url}/${path}/${id}`, { headers: requestHeaders });
   }
 

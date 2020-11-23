@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ArticleService } from '../article.service';
 
@@ -9,18 +9,13 @@ import { ArticleService } from '../article.service';
 })
 export class ArticleCommentListComponent implements OnInit {
 
-  comentarios: any[];
+  @Input() comentarios: any[];
 
-  constructor(private service: ArticleService, private router: ActivatedRoute) { }
-
-  ngOnInit() {
-    this.router.params.subscribe(params => {
-      this.service.obterComentariosDoArtigo(params.id)
-      .toPromise()
-      .then((message: any) => {
-        this.comentarios = message.data;
-      });       
-    })
+  constructor(private service: ArticleService, private router: ActivatedRoute) { 
+    this.comentarios = [];
   }
 
+  ngOnInit() {
+  
+  }
 }

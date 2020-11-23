@@ -67,9 +67,23 @@ export class ArticleDetailComponent implements OnInit {
           this.articleDetails.thumbnail = 'assets/backgrounds/blogs/[nome_do_blog]/posts/[id_post]/thumbnail.jpg';
           this.articleDetails.thumbnail = this.articleDetails.thumbnail.replace('[nome_do_blog]', this.pageName).replace('[id_post]', message.data.id);
 
+          this.articleService.obterComentariosDoArtigo(params.id)
+          .toPromise()
+          .then((message: any) => {                                
+            this.comments = message.data;
+          });       
 
           this.loadingService.hide(this.loading);
         });
+    });
+  }
+
+  enviarComentario(comentario) {   
+    comentario.artigoId = this.id;
+    this.articleService.enviarNovoComentario(comentario, this.id)
+    .toPromise()
+    .then((message: any) => {
+      console.log(message);
     });
   }
 }
