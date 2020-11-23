@@ -45,7 +45,7 @@ export class ArticleService {
         this.pageName = screen;
     }
 
-    return this.api.getById(id, '/artigos', null);
+    return this.api.getById(id, 'artigos', null);
   }
 
   public ObterArtigos(page) {
@@ -61,6 +61,10 @@ export class ArticleService {
   }
 
   public obterUltimasPublicacoes(blog: string) {
-    return this.httpClient.get(`${environment.endpoint.url}/artigos/destaques?blog=${blog}`)
+    return this.httpClient.get(`${environment.endpoint.url}/artigos/destaques?blog=${blog}`);
+  }
+
+  public obterComentariosDoArtigo(artigoId: number) {
+    return this.httpClient.get(`${environment.endpoint.url}/artigos/${artigoId}/comentarios`);
   }
 }

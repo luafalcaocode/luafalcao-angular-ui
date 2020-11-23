@@ -5,7 +5,8 @@
 export const environment = {
   production: false,
   endpoint: {
-    url: 'https://localhost:44332/api/v1'
+    // url: 'https://localhost:44332/api/v1'
+    url: 'https://localhost:5001/api/v1'
   },
   assets: {
     blogs:  'assets/backgrounds/blogs/{nome_do_blog}/posts/{id_do_post}/{imagem}.{extensao}'

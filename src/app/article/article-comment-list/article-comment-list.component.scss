@@ -8,6 +8,7 @@ section {
     padding: 100px;
     padding-left: 300px;
     padding-right: 300px;
+    padding-bottom: 20px;
 
     @media only screen and (max-width: 1279px) {
       padding: 0;
@@ -69,6 +70,7 @@ section {
         list-style-type: none;
 
         padding-bottom: 67px;
+        padding-top: 67px;
         border-width: 1px;
         width: 100% !important;
         margin-left: 33px;
