@@ -1,4 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Input } from '@angular/core';
 
 
 @Component({
@@ -8,6 +9,9 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class ArticleCommentComponent implements OnInit {
   comentario: any;
+  @Input() isLoading: boolean;
+  @Input() clean: boolean;
+
   @Output() post: EventEmitter<any> = new EventEmitter<any>();
 
   constructor() { 
@@ -15,7 +19,15 @@ export class ArticleCommentComponent implements OnInit {
   }
 
   ngOnInit() {
+
   }
+
+  ngOnChanges() {
+    if (this.clean) {      
+      this.comentario = {};
+    }
+  }
+
 
   enviarComentario(comentario: any) {   
     this.post.emit(comentario);

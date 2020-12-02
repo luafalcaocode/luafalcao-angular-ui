@@ -18,9 +18,11 @@ import { RequestService } from '../../services/request.service';
 export class ArticleDetailComponent implements OnInit {
   allArticles: any[];
   comments: any[];
+  cleanCommentForm: boolean;
   articleDetails: ArticleViewModel;
 
   isLoading: boolean;
+  isLoadingRequest: boolean;
   id: number;
   defaultStyle: any;
   public loading: any;
@@ -44,7 +46,6 @@ export class ArticleDetailComponent implements OnInit {
 
   ngOnInit() {
     const header = this.elementRef.nativeElement.querySelector('header');
-
     this.loading = this.elementRef.nativeElement.querySelector('.page-loading');
     this.commonService.initializePage();
     this.commonService.setLayout();
@@ -68,22 +69,40 @@ export class ArticleDetailComponent implements OnInit {
           this.articleDetails.thumbnail = this.articleDetails.thumbnail.replace('[nome_do_blog]', this.pageName).replace('[id_post]', message.data.id);
 
           this.articleService.obterComentariosDoArtigo(params.id)
-          .toPromise()
-          .then((message: any) => {                                
-            this.comments = message.data;
-          });       
+            .toPromise()
+            .then((message: any) => {
+              this.comments = message.data;
+            });
 
           this.loadingService.hide(this.loading);
         });
     });
   }
 
-  enviarComentario(comentario) {   
+  enviarComentario(comentario) {
+    this.isLoadingRequest = true;
     comentario.artigoId = this.id;
     this.articleService.enviarNovoComentario(comentario, this.id)
-    .toPromise()
-    .then((message: any) => {
-      console.log(message);
-    });
+      .toPromise()
+      .then((message: any) => {
+        setTimeout(() => {
+          this.isLoadingRequest = false;
+          this.cleanCommentForm = true;
+        },
+          1000);
+
+        this.articleService.obterComentariosDoArtigo(this.id)
+          .toPromise()
+          .then((message: any) => {
+            this.comments = message.data.reverse();
+            document.querySelector('.comments-number-container').scrollIntoView({ behavior: 'smooth' });
+          });
+      })
+      .catch((reason: any) => {
+        setTimeout(() => {
+          this.isLoadingRequest = false;
+        },
+          1000)
+      });
   }
 }

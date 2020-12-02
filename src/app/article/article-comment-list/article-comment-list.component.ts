@@ -18,4 +18,8 @@ export class ArticleCommentListComponent implements OnInit {
   ngOnInit() {
   
   }
+
+  getCommentsCount() {
+    return (this.comentarios) ? this.comentarios.length : 0;
+  }
 }

@@ -2,9 +2,9 @@
   <header class="row comments-header">
     <div class="col-lg-4 silver-line hide-on-small-only "></div>
     <div class="col-lg-4 comments-number-container">
-      <span>{{ comentarios.length }}</span>&nbsp;
-      <span *ngIf="comentarios.length != 1">Comentários</span>
-      <span *ngIf="comentarios.length == 1">Comentário</span>
+      <span>{{ this.getCommentsCount() }}</span>&nbsp;
+      <span *ngIf="this.getCommentsCount() != 1">Comentários</span>
+      <span *ngIf="this.getCommentsCount() == 1">Comentário</span>
     </div>
     <div class="col-lg-4 silver-line hide-on-small-only "></div>
   </header>

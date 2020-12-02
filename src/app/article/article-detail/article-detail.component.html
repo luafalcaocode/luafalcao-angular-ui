@@ -25,9 +25,6 @@
             <i class="fab fa-linkedin social-icons-group social-icons-hovered"></i>
           </div>
         </div>
-
-
-
       </div>
     </div>
     <div class="row article-content">
@@ -47,7 +44,7 @@
   </div>
 
   <article-comment-list [comentarios]="comments"></article-comment-list>
-  <article-comment (post)="enviarComentario($event)"></article-comment>
+  <article-comment (post)="enviarComentario($event)" [isLoading]="isLoadingRequest" [clean]="cleanCommentForm"></article-comment>
 </section>
 
 <page-loading class="page-loading"></page-loading>
