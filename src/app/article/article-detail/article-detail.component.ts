@@ -20,6 +20,8 @@ export class ArticleDetailComponent implements OnInit {
   comments: any[];
   cleanCommentForm: boolean;
   articleDetails: ArticleViewModel;
+  showModal: boolean;
+  commentFillValidations: string[];
 
   isLoading: boolean;
   isLoadingRequest: boolean;
@@ -55,6 +57,7 @@ export class ArticleDetailComponent implements OnInit {
       this.articleService.initializeArticleDetails(params.nome, params.id)
         .toPromise()
         .then((message: any) => {
+          console.log(message);
           this.articleDetails.id = message.data.id;
           this.articleDetails.descricao = message.data.descricao;
           this.articleDetails.titulo = message.data.titulo;
@@ -62,6 +65,7 @@ export class ArticleDetailComponent implements OnInit {
           this.blogName = this.articleService.blogName;
           this.pageName = this.articleService.pageName;
           this.autor = this.articleService.autor;
+          this.articleDetails.numeroLikes = message.data.numeroLikes;
 
           header.style.backgroundImage = `url(../../../assets/backgrounds/blogs/${this.pageName}/capa.jpeg)`;
 
@@ -100,9 +104,26 @@ export class ArticleDetailComponent implements OnInit {
       })
       .catch((reason: any) => {
         setTimeout(() => {
+          this.commentFillValidations = reason.error.validations;
           this.isLoadingRequest = false;
+          this.showModal = true;
         },
           1000)
       });
+  }
+
+  like(articleDetails: ArticleViewModel) {
+      this.articleService.like(articleDetails)
+        .toPromise()
+        .then((message: any) => {
+          if (message.success) {
+            this.articleDetails.numeroLikes++;
+            localStorage.setItem('jaCurtiu', 'true');
+          }
+      });
+  }
+
+  onConfirm(event) {
+    this.showModal = false;
   }
 }

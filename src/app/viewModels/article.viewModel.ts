@@ -4,4 +4,5 @@ export class ArticleViewModel {
     public descricao?: string;
     public dataPublicacao?: string;
     public thumbnail?: string;
+    public numeroLikes?: number;
 }

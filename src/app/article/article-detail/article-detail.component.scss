@@ -116,16 +116,15 @@
   .social-icons-group {
     svg, i, span {
       font-size: var(--bigBig) !important;
-      transition: .4s ease-out;
+      transition: .2s ease-out;
     }
   }
 }
 
 .social-icons-hovered:hover {
-    transition: .4s;
-    transform: scale(1.2);
-    cursor: pointer;
-    color: var(--green);
+    transition: .2s;    
+    cursor: pointer;    
+    color: var(--green)
 }
 
 .dot-group-icons {

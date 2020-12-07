@@ -6,11 +6,12 @@ import { MiniLoadingComponent } from './mini-loading/mini-loading.component';
 import { PageLoadingComponent } from './page-loading/page-loading.component';
 import { WriterComponent } from './writer/writer.component';
 import { MessageComponent } from './message/message.component';
+import { ModalComponent } from './modal/modal.component';
 
 
 
 @NgModule({
-  declarations: [BlinkComponent, CardComponent, MiniLoadingComponent, PageLoadingComponent, WriterComponent, MessageComponent],
+  declarations: [BlinkComponent, CardComponent, MiniLoadingComponent, PageLoadingComponent, WriterComponent, MessageComponent, ModalComponent],
   imports: [
     CommonModule
   ],
@@ -20,7 +21,8 @@ import { MessageComponent } from './message/message.component';
     MiniLoadingComponent,
     PageLoadingComponent,
     WriterComponent,
-    MessageComponent
+    MessageComponent,
+    ModalComponent
   ]
 })
 export class ReusableModule { }

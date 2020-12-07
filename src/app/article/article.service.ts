@@ -71,4 +71,8 @@ export class ArticleService {
   public enviarNovoComentario(comentario: any, artigoId: number) {
     return this.api.post(`/artigos/${artigoId}/comentarios`, comentario);
   }
+
+  public like(article: ArticleViewModel) {
+    return this.api.put(`/artigos/${article.id}/like`, article);
+  }
 }

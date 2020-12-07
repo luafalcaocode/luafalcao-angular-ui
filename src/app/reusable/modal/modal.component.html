@@ -1,0 +1,32 @@
+<div class="row fadeOut" [ngClass]="{'fadeIn': isActive, 'fadeOut' : !isActive }">
+    <div class="col-xs-12">
+        <div class="centered-modal-container">
+            <div class="centered-modal-content">                    
+                <div class="row u-center">
+                    <div class="col-xs-12">                                                                      
+                       <div class="modal-body">
+                            <h1>{{ title }}</h1>
+                            <section [ngSwitch]="modalType">                                
+                                <div *ngSwitchCase="'validation'">
+                                    <h4>Ocorreram os seguintes erros durante a validação dos dados: </h4>
+                                    <ul>
+                                        <li *ngFor="let item of validations">
+                                            <i class="fas fa-arrow-right"></i> <span>{{ item }}</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                
+                                <div *ngSwitchDefault>
+                                    <h4>conteúdo genérico para ser adicionado aqui futuramente</h4>
+                                </div>
+                            </section>
+                            <div class="modal-action-container">
+                                <button type="buton" class="button-alpha btn-medium" (click)="onClickConfirmButton()">{{ confirmButtonText }}</button>
+                            </div>
+                       </div>                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

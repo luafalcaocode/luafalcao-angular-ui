@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 @Injectable({
   providedIn: 'root'
 })
-export class  CommonService {
+export class CommonService {
   defaultStyle: any;
   constructor(public loading: LoadingService, public router: Router) {
     this.defaultStyle = {};
@@ -74,15 +74,17 @@ export class  CommonService {
     window.scrollTo(0, 0);
   }
 
+  gotoSection(selector: string) {
+    document.querySelector(selector).scrollIntoView({ behavior: 'smooth' });
+  }
+
   backToPreviousPage() {
     window.history.back();
   }
 
-  mapNameToCategory(name)
-  {
-    switch(name)
-    {
-      case 'diario-de-um-engenheiro-de-software' :
+  mapNameToCategory(name) {
+    switch (name) {
+      case 'diario-de-um-engenheiro-de-software':
         return '0';
       case 'next-gameplay':
         return '0';

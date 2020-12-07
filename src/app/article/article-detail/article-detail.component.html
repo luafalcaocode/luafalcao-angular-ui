@@ -8,25 +8,34 @@
       <h4>{{ articleDetails.dataPublicacao }}</h4>
       <h1 class="almost-giant-size u-bold">{{ articleDetails.titulo }}</h1>
     </div>
+
     <div class="row article-interaction">
       <div class="col-xs-12">
         <div class="article-interaction-group">
-          <i class="fas fa-comment"></i> &nbsp;
-          <span>30</span>
+
+          <div  class="u-inline u-pointer social-icons-hovered" (click)="commonService.gotoSection('.dot-group-icons')">
+            <i class="fas fa-comment"></i> &nbsp;
+            <span>{{ comments.length }}</span>
+          </div>
 
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-          <i class="fas fa-thumbs-up"></i>&nbsp;
-          <span>25</span>
+          <div class="u-inline u-pointer social-icons-hovered" (click)="like(articleDetails)">
+            <i class="fas fa-thumbs-up"></i>&nbsp;
+            <span>{{ articleDetails.numeroLikes }}</span>
+          </div>
 
           <div class="u-right u-inline social-icons-group">
-            <i class="fab fa-facebook-square social-icons-group social-icons-hovered"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <i class="fab fa-twitter-square social-icons-group social-icons-hovered"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <i
+              class="fab fa-facebook-square social-icons-group social-icons-hovered"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <i
+              class="fab fa-twitter-square social-icons-group social-icons-hovered"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <i class="fab fa-linkedin social-icons-group social-icons-hovered"></i>
           </div>
         </div>
       </div>
     </div>
+
     <div class="row article-content">
       <div class="col-xs-12">
         <img [src]="articleDetails.thumbnail" />
@@ -44,7 +53,10 @@
   </div>
 
   <article-comment-list [comentarios]="comments"></article-comment-list>
-  <article-comment (post)="enviarComentario($event)" [isLoading]="isLoadingRequest" [clean]="cleanCommentForm"></article-comment>
+  <article-comment (post)="enviarComentario($event)" [isLoading]="isLoadingRequest" [clean]="cleanCommentForm">
+  </article-comment>
 </section>
 
 <page-loading class="page-loading"></page-loading>
+<modal (onConfirm)="onConfirm($event)" modalType="validation" [isActive]="showModal"
+  [validations]="commentFillValidations" title="Ops!" confirmButtonText="Okee"></modal>

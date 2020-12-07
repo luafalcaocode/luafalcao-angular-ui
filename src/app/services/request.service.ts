@@ -14,6 +14,10 @@ export class RequestService {
     return this.httpClient.post(`${environment.endpoint.url}${path}`,  body, { headers: requestHeaders});
   }
 
+  put(path: string, body: any, requestHeaders?: any) {
+    return this.httpClient.put(`${environment.endpoint.url}${path}`, body, { headers: requestHeaders});
+  }
+
   get(path: string, requestHeaders?:any, page?: number, qtd?: number) {
     return this.httpClient.get(`${environment.endpoint.url}${path}?page=${page}&qtd=${qtd}`,
      { headers: requestHeaders });
