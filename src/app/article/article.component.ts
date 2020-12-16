@@ -49,23 +49,19 @@ export class ArticleComponent implements OnInit {
     this.defaultStyle = {};
   }
 
-  ngOnInit() {
-    const thiss = this;
+  ngOnInit() {    
     const header = this.elementRef.nativeElement.querySelector('header');
     this.loading = this.elementRef.nativeElement.querySelector('.page-loading');
     this.commonService.setLayout();
 
     this.router.params.subscribe(param => {
+      this.pageName = param.nome;
       this.articleService.initialize(param.nome)
         .toPromise()
         .then((message: any) => {
-          this.blogName = this.articleService.blogName;
-          this.pageName = this.articleService.pageName;
-          this.posts = message.data.slice();
-
-
-      //    header.style.backgroundImage = `url(../../../assets/backgrounds/blogs/${this.pageName}/capa.jpeg)`;
-
+          this.error = null;
+          this.blogName = this.articleService.blogName;  
+          this.posts = message.data.slice();        
           this.commonService.gotoTop();
           this.loadingService.hide(this.loading);
         }).then(() => {
@@ -75,10 +71,19 @@ export class ArticleComponent implements OnInit {
           this.obterUltimasPublicacoes(this.pageName);
         })
         .catch((reason: any) => {
-          console.log(reason);
+          this.error = {
+            title: 'Ops! :(',
+            description: reason.error.description
+          };
+          
+          this.posts = [];
+          
           this.loadingService.hide(this.loading);
         })
-
+        .finally(() => {
+          header.style.backgroundImage = `url(../../../assets/backgrounds/blogs/${this.pageName}/capa.jpeg)`;
+          
+        });
     });
   }
 
@@ -101,7 +106,7 @@ export class ArticleComponent implements OnInit {
         thiss.commonService.loading.hide(thiss.loading);
       })
       .catch(reason => {
-        console.log(reason);
+        console.log(reason);       
         thiss.commonService.loading.hide(thiss.loading);
       });
   }

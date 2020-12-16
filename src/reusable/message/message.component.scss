@@ -1,0 +1,20 @@
+.message-container {
+    border: solid 1px var;
+    width: 800px;
+    height: 300px;
+    margin-bottom: 100px;
+    margin-left: 60px;
+    border-radius: 5px;
+    background: var(--niceGreen);
+    color: var(--white);
+    padding-top: 40px;
+    .message-footer {
+        margin-top: 60px;
+
+        button {
+            color: var(--green);
+            box-shadow: none;
+            background: none;
+        }
+    }
+}

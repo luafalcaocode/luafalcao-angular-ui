@@ -62,6 +62,8 @@ export class ArticleDetailComponent implements OnInit {
           this.articleDetails.descricao = message.data.descricao;
           this.articleDetails.titulo = message.data.titulo;
           this.articleDetails.dataPublicacao = message.data.dataPublicacao;
+          this.articleDetails.aQualBlogPertence = message.data.aQualBlogPertence;
+          this.articleDetails.tags = message.data.tags;
           this.blogName = this.articleService.blogName;
           this.pageName = this.articleService.pageName;
           this.autor = this.articleService.autor;
@@ -98,7 +100,7 @@ export class ArticleDetailComponent implements OnInit {
         this.articleService.obterComentariosDoArtigo(this.id)
           .toPromise()
           .then((message: any) => {
-            this.comments = message.data.reverse();
+            this.comments = message.data;
             document.querySelector('.comments-number-container').scrollIntoView({ behavior: 'smooth' });
           });
       })
@@ -113,13 +115,13 @@ export class ArticleDetailComponent implements OnInit {
   }
 
   like(articleDetails: ArticleViewModel) {
-      this.articleService.like(articleDetails)
-        .toPromise()
-        .then((message: any) => {
-          if (message.success) {
-            this.articleDetails.numeroLikes++;
-            localStorage.setItem('jaCurtiu', 'true');
-          }
+    this.articleService.like(articleDetails)
+      .toPromise()
+      .then((message: any) => {
+        if (message.success) {
+          this.articleDetails.numeroLikes++;
+          localStorage.setItem('jaCurtiu', 'true');
+        }
       });
   }
 

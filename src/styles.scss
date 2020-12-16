@@ -305,4 +305,8 @@ a {
 .btn-medium {
   width: 130px;
   height: 40px;
+
+  @media only screen and (max-width: 1279px) {
+    width: 100%;
+  }
 }

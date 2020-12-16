@@ -1,9 +1,6 @@
 <section class="main-section">
 
-  <div class="blog-title-container">
-    <h1>{{ blogName }}</h1>
-  </div>
-
+  <header></header>
   <h6 *ngIf="!error">Todos os artigos</h6>
   <article-post [posts]="posts" (openUrl)="openUrl($event)"></article-post>
   <article-pagination *ngIf="!error" (paginar)="paginar($event)" (paginaInvalida)="paginaInvalida($event)" [count]="count"></article-pagination>
@@ -15,3 +12,5 @@
   <!-- <article-aside [featuredArticles]="featuredArticles"></article-aside> -->
 </section>
 <page-loading class="page-loading"></page-loading>
+
+

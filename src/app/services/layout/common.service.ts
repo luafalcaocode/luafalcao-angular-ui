@@ -85,9 +85,9 @@ export class CommonService {
   mapNameToCategory(name) {
     switch (name) {
       case 'diario-de-um-engenheiro-de-software':
-        return '0';
+        return '1';
       case 'next-gameplay':
-        return '0';
+        return '2';
     }
   }
 }

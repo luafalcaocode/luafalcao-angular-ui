@@ -11,7 +11,7 @@ section {
 
     @media only screen and (max-width: 1279px) {
       padding: 0;
-      padding-bottom: 60px;
+      padding-bottom: 0px;
     }
 
     .comments-container {
@@ -76,4 +76,8 @@ section {
   font-size: 20px;
   margin-bottom: 30px;
   color: var(--niceGreen);
+
+  @media only screen and (max-width: 1279px) {
+    padding: 30px;
+  }
 }

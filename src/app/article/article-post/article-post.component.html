@@ -5,9 +5,20 @@
             <div class="col-lg-4 col-xs-12" [id]="post.id" [ngStyle]="{'margin-top' : '30px'}" #meupost>
               <img [src]="post.thumbnail" class="lds-facebook" (click)="open(post)" />
               <h4>{{ post.titulo }}</h4>
-              <!-- <span><strong>Luã Falcão</strong></span>
-              <span class="u-right"><strong>{{ post.dataPublicacao }}</strong></span> -->
-              <p>{{ post.descricao.length > 100 ? post.descricao.substring(0, 99) + '...' : post.descricao }}</p>
+            
+              <div  class="u-inline social-icons-group">
+                <i class="fas fa-comment"></i> &nbsp;
+                <span>{{ 1 + 1 }}</span>
+              </div>
+    
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    
+              <div class="u-inline social-icons-group">
+                <i class="fas fa-thumbs-up"></i>&nbsp;
+                <span>{{ post.numeroLikes }}</span>
+              </div>
+            
+              <p [innerHTML]="post.descricao.length > 100 ? post.descricao.substring(0, 99) + '...' : post.descricao"></p>
               <button class="u-no-click" type="button" class="btn-leia-mais" (click)="open(post)">Leia mais
                 <i class="fas fa-chevron-right"></i>
               </button>

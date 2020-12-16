@@ -1,6 +1,11 @@
 .message-container {
   padding-left: 113px;
   margin-top: -70px;
+  
+  
+  max-width: 600px;
+  padding-top: 30px;
+  padding-bottom: 30px;
 
   @media only screen and (max-width: 767px) {
     padding-left: 0;

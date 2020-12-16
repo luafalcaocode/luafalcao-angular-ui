@@ -58,7 +58,8 @@ export class ArticlePaginationComponent implements OnInit {
   getTotalOfPageAvailable() {
     let numberOfPages = this.count / 6;
     let rest = this.count % 6;
-    this.totalOfPagesAvailable = (rest > 0 ? Math.round(numberOfPages) : numberOfPages);
+    this.totalOfPagesAvailable = (rest > 0) ? rest : numberOfPages;
+
     return this.totalOfPagesAvailable;
   }
 
@@ -101,26 +102,32 @@ export class ArticlePaginationComponent implements OnInit {
     this.rightArrowVisible = true;
     this.leftArrowVisible = true;
 
-
-    if (pageSelectedByUser == 1) {
-      ++previousPage;
-      this.paginationNumbersRendered.push({ page: previousPage, active: false });
-      this.paginationNumbersRendered.push({ page: pageSelectedByUser + 1, active: false });
-      this.paginationNumbersRendered.push({ page: nextPage + 1, active: false });
-    }
-    else if (pageSelectedByUser == this.totalOfPagesAvailable) {
-      this.paginationNumbersRendered.push({ page: previousPage - 1, active: false });
-      this.paginationNumbersRendered.push({ page: nextPage - 2, active: false });
-      this.paginationNumbersRendered.push({ page: pageSelectedByUser, active: false });
-    }
-    else if (pageSelectedByUser > this.totalOfPagesAvailable || pageSelectedByUser <= 0) {
-      this.paginaInvalida.emit({ title: 'Conteúdo não encontrado ', description: 'A página que você procura não está cadastrado no sistema ou ainda não existe.' });
+    if (this.count > 6) {
+      if (pageSelectedByUser == 1) {
+        ++previousPage;
+        this.paginationNumbersRendered.push({ page: previousPage, active: false });
+        this.paginationNumbersRendered.push({ page: pageSelectedByUser + 1, active: false });
+        this.paginationNumbersRendered.push({ page: nextPage + 1, active: false });
+      }
+      else if (pageSelectedByUser == this.totalOfPagesAvailable) {
+        this.paginationNumbersRendered.push({ page: previousPage - 1, active: false });
+        this.paginationNumbersRendered.push({ page: nextPage - 2, active: false });
+        this.paginationNumbersRendered.push({ page: pageSelectedByUser, active: false });
+      }
+      else if (pageSelectedByUser > this.totalOfPagesAvailable || pageSelectedByUser <= 0) {
+        this.paginaInvalida.emit({ title: 'Conteúdo não encontrado ', description: 'A página que você procura não está cadastrado no sistema ou ainda não existe.' });
+      }
+      else {
+        this.paginationNumbersRendered.push({ page: previousPage, active: false });
+        this.paginationNumbersRendered.push({ page: pageSelectedByUser, active: true });
+        this.paginationNumbersRendered.push({ page: nextPage, active: false });
+      }
     }
     else {
-      this.paginationNumbersRendered.push({ page: previousPage, active: false });
       this.paginationNumbersRendered.push({ page: pageSelectedByUser, active: true });
-      this.paginationNumbersRendered.push({ page: nextPage, active: false });
     }
+
+
 
     this.setCurrentPageActiveStyle(pageSelectedByUser);
 
@@ -145,7 +152,7 @@ export class ArticlePaginationComponent implements OnInit {
         this.leftArrowVisible = true;
       }
 
-      if (this.paginationNumbersRendered[this.paginationNumbersRendered.length - 1].page == this.totalOfPagesAvailable) {
+      if (this.paginationNumbersRendered[this.paginationNumbersRendered.length - 1].page == this.totalOfPagesAvailable || this.count < 7) {
         this.rightArrowVisible = false;
       }
       else {

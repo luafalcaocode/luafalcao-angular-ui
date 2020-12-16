@@ -129,3 +129,11 @@ h4 {
   font-weight: bold;
 }
 
+
+.social-icons-group {
+  svg, i, span {
+    font-size: var(--notTooBig) !important;
+    transition: .2s ease-out;
+  }
+}
+
